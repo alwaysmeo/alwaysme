@@ -1,0 +1,61 @@
+[class*="-button"] {
+	padding: 7px 15px;
+	color: var(--white);
+	font-size: 14px;
+	line-height: 14px;
+	border-radius: var(--radius);
+	border: 0;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+[class*="-type-primary"] {
+	background-color: var(--blue-5);
+}
+
+[class*="-type-primary"]:hover {
+	background-color: var(--blue-4);
+}
+
+[class*="-type-success"] {
+	background-color: var(--green-5);
+}
+
+[class*="-type-success"]:hover {
+	background-color: var(--green-4);
+}
+
+
+[class*="-type-warning"] {
+	background-color: var(--yellow-5);
+}
+
+[class*="-type-warning"]:hover {
+	background-color: var(--yellow-4);
+}
+
+[class*="-type-danger"] {
+	background-color: var(--red-5);
+}
+
+[class*="-type-danger"]:hover {
+	background-color: var(--red-4);
+}
+
+[class*="-type-info"] {
+	color: var(--black-1);
+	background-color: var(--gray-3);
+}
+
+[class*="-type-info"]:hover {
+	background-color: var(--gray-2);
+}
+
+[class*="-type-text"] {
+	color: var(--blue-5);
+	background-color: transparent;
+}
+
+[class*="-type-text"]:hover {
+	color: var(--blue-4);
+}
