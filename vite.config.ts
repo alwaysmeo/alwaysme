@@ -33,7 +33,7 @@ export default defineConfig(({ mode }) => {
         },
         server: {
             host: 'localhost',
-            port: 3000,
+            port: 6000,
             open: true,
             hmr: true
         }

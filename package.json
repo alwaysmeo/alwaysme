@@ -31,16 +31,16 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "vue": "^3.2.37"
+        "unplugin-vue-define-options": "^0.12.7",
+        "vue": "^3.2.41"
     },
     "devDependencies": {
-        "@types/node": "^18.7.23",
+        "@types/node": "^18.11.9",
         "@types/sass": "^1.43.1",
-        "@vitejs/plugin-vue": "^3.1.0",
-        "prettier": "2.7.1",
-        "typescript": "^4.6.4",
-        "unplugin-vue-define-options": "^0.12.0-beta.1",
-        "vite": "^3.1.0",
-        "vue-tsc": "^0.40.4"
+        "@vitejs/plugin-vue": "^3.2.0",
+        "prettier": "^2.7.1",
+        "typescript": "^4.8.4",
+        "vite": "^3.2.3",
+        "vue-tsc": "^0.40.13"
     }
 }
