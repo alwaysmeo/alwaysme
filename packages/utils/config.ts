@@ -1,9 +1,5 @@
-import type { App } from 'vue'
-import { zhHans } from '@/locale'
 
-const prefix = 'am'
-// const language = Language
-console.log('----------')
-console.log(Language)
+// 公共前缀
+const prefix = 'alwaysme'
 
 export { prefix }

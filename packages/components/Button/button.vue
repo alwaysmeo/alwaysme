@@ -1,11 +1,11 @@
 <template>
 	<template v-if="props.href">
-		<a :href="props.href" :class="[state.class]" :target="props.target" @click="handleClick">
+		<a :href="props.href" :class="[state.className]" :target="props.target" @click="handleClick">
 			<slot></slot>
 		</a>
 	</template>
 	<template v-else>
-		<button :class="[state.class]" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
+		<button :class="[state.className]" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
 			<slot></slot>
 		</button>
 	</template>
@@ -18,12 +18,12 @@ import { prefix } from '@utils/config'
 import './style.scss'
 
 
-defineOptions({ name: 'AButton' })
+defineOptions({ name: `${prefix}Bottom` })
 
 const props = defineProps({
 	// 按钮类型 default | primary | success | warning | danger | info | text
 	type: {
-		type: String as PropType<'primary' | 'success' | 'warning' | 'danger' | 'info' | 'text'>,
+		type: String as PropType<'primary' | 'link' | 'text'>,
 		default: 'primary',
 	},
 	// 按钮尺寸 large | default | small
@@ -68,7 +68,7 @@ const props = defineProps({
 const emits = defineEmits(['click'])
 
 const state = reactive({
-	class: [
+	className: [
 		`${prefix}-button`,
 		`${prefix}-type-${props.type}`,
 		`${prefix}-size-${props.size}`,

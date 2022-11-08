@@ -1,5 +1,5 @@
 import { App } from 'vue'
-import Button from './src/button.vue'
+import Button from '@components/Button'
 
 Button.install = function (app: App) {
     // 组件注册，按需引入
@@ -7,4 +7,6 @@ Button.install = function (app: App) {
     return app
 }
 
-export default Button
+export {
+    Button
+}
