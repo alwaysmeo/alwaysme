@@ -1,6 +1,6 @@
-import Button from '@/components/Button'
+import { Button } from '@components/index'
 import '@theme/index'
 
-export default [Button]
-
-export { Button }
+export default [
+    Button
+]
