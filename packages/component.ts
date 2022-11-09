@@ -1,6 +1,4 @@
-import { Button } from '@components/index'
 import '@theme/index'
+import { Button } from '@components/index'
 
-export default [
-    Button
-]
+export default [Button]
