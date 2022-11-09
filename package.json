@@ -1,16 +1,16 @@
 {
-    "name": "Alwaysme",
+    "name": "AlwaysMe",
     "version": "1.0.0",
     "private": false,
-    "description": "Alwaysme",
+    "title": "AlwaysMe Vue",
+    "description": "AlwaysMe UI design language and Vue-based implementation",
     "main": "lib/index.min.js",
     "module": "lib/index.esm.js",
     "typings": "lib/index.d.ts",
     "keyword": [
-        "alwaysme",
-        "alwaysme-design",
-        "alwaysme design",
-        "alwaysme_design",
+        "AlwaysMe",
+        "AlwaysMe Vue",
+        "alwaysme-vue",
         "ui",
         "vue3",
         "typescript"

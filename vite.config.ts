@@ -34,7 +34,7 @@ export default defineConfig(({ mode }) => {
         server: {
             host: 'localhost',
             port: 7100,
-            open: true,
+            open: false,
             hmr: true
         }
     }
