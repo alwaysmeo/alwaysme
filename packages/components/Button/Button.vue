@@ -13,7 +13,6 @@
 
 <script setup lang="ts">
 import { PropType, reactive } from 'vue'
-import { size } from '@utils/constant'
 import { prefix } from '@utils/config'
 
 defineOptions({ name: `${prefix}Button` })
@@ -24,14 +23,9 @@ const props = defineProps({
         type: String as PropType<'primary' | 'link' | 'text'>,
         default: 'primary'
     },
-    // 按钮尺寸 large | default | small
-    size: {
-        type: String as PropType<size>,
-        default: 'default'
-    },
-    // 按钮形状 default | circle | round
+    // 按钮形状 default | square | round
     shape: {
-        type: String as PropType<'default' | 'circle' | 'round'>,
+        type: String as PropType<'default' | 'square' | 'round'>,
         default: 'default'
     },
     // 使按钮的宽度跟随容器的宽度 true | false
@@ -69,7 +63,6 @@ const state = reactive({
     className: [
         `${prefix}-button`,
         `${prefix}-type-${props.type}`,
-        `${prefix}-size-${props.size}`,
         `${prefix}-shape-${props.shape}`,
         {
             [`${prefix}-long`]: props.long,
