@@ -1,14 +1,7 @@
 <template>
-    <template v-if="props.href">
-        <a :href="props.href" :class="[state.className]" :target="props.target" @click="handleClick">
-            <slot></slot>
-        </a>
-    </template>
-    <template v-else>
-        <button :class="[state.className]" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
-            <slot></slot>
-        </button>
-    </template>
+	<button :class="[state.className]" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
+		<slot></slot>
+	</button>
 </template>
 
 <script setup lang="ts">
@@ -18,10 +11,10 @@ import { prefix } from '@utils/config'
 defineOptions({ name: `${prefix}Button` })
 
 const props = defineProps({
-    // 按钮类型 default | primary | link | text
+    // 按钮类型 default | primary | dashed | link | text |
     type: {
-        type: String as PropType<'primary' | 'link' | 'text'>,
-        default: 'primary'
+        type: String as PropType<'default' | 'primary' | 'dashed' | 'link' | 'text'>,
+        default: 'default'
     },
     // 按钮形状 default | square | round
     shape: {
@@ -93,11 +86,39 @@ const handleClick = (event: MouseEvent) => {
     transition: 0.3s;
 }
 
+[class*='-type-default'] {
+	color: var(--blue);
+	background-color: transparent;
+    border: 1px solid var(--gray);
+}
+
+[class*='-type-default']:hover {
+    box-shadow: 0 0 6px 0 var(--gray);
+}
+
+[class*='-type-dashed'] {
+	color: var(--blue);
+	background-color: transparent;
+    border: 1px dashed var(--gray);
+}
+
+[class*='-type-dashed']:hover {
+    box-shadow: 0 0 6px 0 var(--gray);
+}
+
 [class*='-type-primary'] {
     background-image: linear-gradient(to bottom right, var(--blue-1), var(--blue));
 }
 
 [class*='-type-primary']:hover {
     box-shadow: 0 0 6px 0 var(--blue);
+}
+
+[class*='-type-link'] {
+	color: var(--blue);
+	background-color: transparent;
+}
+[class*='-type-link']:hover {
+	opacity: 0.8;
 }
 </style>
