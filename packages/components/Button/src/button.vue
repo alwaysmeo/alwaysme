@@ -1,7 +1,7 @@
 <template>
-	<button :class="[state.className]" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
-		<slot></slot>
-	</button>
+    <button :class="[state.className]" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
+        <slot></slot>
+    </button>
 </template>
 
 <script setup lang="ts">
@@ -11,9 +11,9 @@ import { prefix } from '@utils/config'
 defineOptions({ name: `${prefix}Button` })
 
 const props = defineProps({
-    // 按钮类型 default | primary | dashed | link | text |
+    // 按钮类型 default | primary | dashed | text | link |
     type: {
-        type: String as PropType<'default' | 'primary' | 'dashed' | 'link' | 'text'>,
+        type: String as PropType<'default' | 'primary' | 'dashed' | 'text' | 'link'>,
         default: 'default'
     },
     // 按钮形状 default | square | round
@@ -73,52 +73,3 @@ const handleClick = (event: MouseEvent) => {
     emits('click', event)
 }
 </script>
-
-<style scoped lang="scss">
-[class*='-button'] {
-    padding: 7px 15px;
-    color: var(--white);
-    font-size: 14px;
-    line-height: 14px;
-    border-radius: var(--radius);
-    border: 0;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-[class*='-type-default'] {
-	color: var(--blue);
-	background-color: transparent;
-    border: 1px solid var(--gray);
-}
-
-[class*='-type-default']:hover {
-    box-shadow: 0 0 6px 0 var(--gray);
-}
-
-[class*='-type-dashed'] {
-	color: var(--blue);
-	background-color: transparent;
-    border: 1px dashed var(--gray);
-}
-
-[class*='-type-dashed']:hover {
-    box-shadow: 0 0 6px 0 var(--gray);
-}
-
-[class*='-type-primary'] {
-    background-image: linear-gradient(to bottom right, var(--blue-1), var(--blue));
-}
-
-[class*='-type-primary']:hover {
-    box-shadow: 0 0 6px 0 var(--blue);
-}
-
-[class*='-type-link'] {
-	color: var(--blue);
-	background-color: transparent;
-}
-[class*='-type-link']:hover {
-	opacity: 0.8;
-}
-</style>
