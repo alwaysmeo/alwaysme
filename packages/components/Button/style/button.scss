@@ -3,7 +3,7 @@
     color: var(--white);
     font-size: 14px;
     line-height: 28px;
-    border-radius: var(--radius);
+    border-radius: $radius-base;
     cursor: pointer;
     transition: 0.3s;
     border: 0;
@@ -40,10 +40,12 @@
 
 [class*='-type-text'] {
     color: var(--black);
+    box-shadow: 0 0 6px 0 var(--gray);
     background-color: var(--white);
 }
 [class*='-type-text']:hover {
     background-color: var(--gray);
+    box-shadow: 0 0 6px 0 var(--gray);
 }
 
 [class*='-type-link'] {
