@@ -1,5 +1,5 @@
 <template>
-    <button :class="[state.className]" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
+    <button :class="[state.className]" :disabled="props.disabled" type="button" @click="handleClick">
         <slot></slot>
     </button>
 </template>
@@ -38,16 +38,9 @@ const props = defineProps({
     },
     // 设置 button 的原生 type 属性 可选值参考 HTML 标准
     htmlType: {
-        type: String as PropType<string>
+        type: String as PropType<string>,
+        default: 'button',
     },
-    // 设置跳转链接 设置此属性时按钮渲染为a标签
-    href: {
-        type: String as PropType<string>
-    },
-    // 规定在何处打开目标 URL。仅 href 属性存在时有效 可选值参考 HTML 标准
-    target: {
-        type: String as PropType<string>
-    }
 })
 
 const emits = defineEmits(['click'])
