@@ -1,5 +1,5 @@
 <template>
-    <button :class="[state.className]" :disabled="props.disabled" type="button" @click="handleClick">
+    <button :class="[state.className]" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
         <slot></slot>
     </button>
 </template>
@@ -38,7 +38,7 @@ const props = defineProps({
     },
     // 设置 button 的原生 type 属性 可选值参考 HTML 标准
     htmlType: {
-        type: String as PropType<string>,
+        type: String as PropType<'value' | 'button' | 'submit' | 'reset' | 'menu'>,
         default: 'button',
     },
 })
