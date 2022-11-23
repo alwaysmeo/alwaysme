@@ -31,17 +31,16 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "sass": "^1.56.1",
-        "unplugin-vue-define-options": "^0.12.7",
-        "vue": "^3.2.41"
+        "unplugin-vue-define-options": "^0.12.8",
+        "vue": "^3.2.45"
     },
     "devDependencies": {
         "@types/node": "^18.11.9",
         "@types/sass": "^1.43.1",
         "@vitejs/plugin-vue": "^3.2.0",
         "prettier": "^2.7.1",
-        "typescript": "^4.8.4",
-        "vite": "^3.2.3",
+        "typescript": "^4.9.3",
+        "vite": "^3.2.4",
         "vue-tsc": "^0.40.13"
     }
 }
