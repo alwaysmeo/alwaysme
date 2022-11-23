@@ -1,0 +1,24 @@
+// 📦️ 本项目图标均来自 iconfont - 阿里巴巴矢量图标库，更多图标请访问 http://www.iconfont.cn/
+// 📦️ The icons of this project are all from iconfont - Alibaba vector icon library, for more icons, please visit http://www.iconfont.cn
+
+@font-face {
+  font-family: "iconfont";
+  /* Project id 3788332 */
+  /* Color fonts */
+  src:
+    url('//at.alicdn.com/t/c/font_3788332_s6i5m06dr3j.woff2?t=1669188231631') format('woff2'),
+    url('//at.alicdn.com/t/c/font_3788332_s6i5m06dr3j.woff?t=1669188231631') format('woff'),
+    url('//at.alicdn.com/t/c/font_3788332_s6i5m06dr3j.ttf?t=1669188231631') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-loading:before {
+  content: "\e730";
+}

@@ -1,4 +1,5 @@
 import { App } from 'vue'
+import './icon/iconfont.scss'
 import components from '@/component'
 
 // 完整引入组件
