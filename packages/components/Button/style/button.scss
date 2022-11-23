@@ -85,8 +85,23 @@
     background-color: $gray-base;
 }
 
-[class*='btn-disabled'][class*='btn-type-primary']{
+[class*='btn-disabled'][class*='btn-type-primary'] {
     background-image: none;
     background-color: $gray-base;
     border: 1px solid mix($gray-base, $black, 80%);
+}
+
+.icon-loading {
+    margin-right: 5px;
+    animation: rotate1 3s infinite;
+}
+
+@keyframes rotate1 {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
 }

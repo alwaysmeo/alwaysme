@@ -1,5 +1,4 @@
 import { App } from 'vue'
-import '@theme/index.scss'
 import components from '@/component'
 
 // 完整引入组件

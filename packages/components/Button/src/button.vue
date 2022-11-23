@@ -1,6 +1,6 @@
 <template>
     <button :class="[state.className]" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
-        <i class="iconfont icon-loading" v-if="loading"></i>
+        <i class="iconfont icon-loading" v-if="loading" >1</i>
         <slot></slot>
     </button>
 </template>
