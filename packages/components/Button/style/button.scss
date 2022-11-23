@@ -1,63 +1,93 @@
 @import '@theme/color/color.scss';
 @import '@theme/style.scss';
 
-[class*='-button'] {
+[class*='btn'] {
+    box-sizing: border-box;
     padding: 0 15px;
     color: $white;
     font-size: 14px;
-    line-height: 28px;
+    line-height: 1;
+    height: 30px;
     border-radius: $radius-base;
     cursor: pointer;
     transition: box-shadow 0.5s, border 0.5s, color 0.5s, background-color 0.5s;
     border: 0;
 }
 
-[class*='-type-default'] {
+
+[class*='btn-type-primary'] {
+    background-image: linear-gradient(to bottom right, $secondary-color, $primary-color);
+}
+
+[class*='btn-type-primary']:hover {
+    box-shadow: 0 0 6px 0 mix($gray-base, $primary-color, 20%);
+}
+
+[class*='btn-type-default'] {
     color: $black;
     background-color: $white;
     border: 1px solid $gray-base;
 }
 
-[class*='-type-default']:hover {
+[class*='btn-type-default']:hover {
     color: $primary-color;
-    border: 1px solid $primary-color;
-    box-shadow: 0 0 6px 0 mix($gray-base, $primary-color, 80%);
+    border-color: $primary-color;
+    box-shadow: 0 0 6px 0 mix($gray-base, $primary-color, 60%);
 }
 
-[class*='-type-primary'] {
-    background-image: linear-gradient(to bottom right, $secondary-color, $primary-color);
-}
-
-[class*='-type-primary']:hover {
-    box-shadow: 0 0 4px 0 $primary-color;
-}
-
-[class*='-type-dashed'] {
-    color: var(--black);
+[class*='btn-type-dashed'] {
+    color: $black;
     background-color: $white;
     border: 1px dashed $gray-base;
 }
 
-[class*='-type-dashed']:hover {
+[class*='btn-type-dashed']:hover {
     color: $primary-color;
-    box-shadow: 0 0 6px 0 mix($gray-base, $primary-color, 80%);
+    box-shadow: 0 0 6px 0 mix($gray-base, $primary-color, 60%);
     border-color: $primary-color;
 }
 
-[class*='-type-text'] {
-    color: var(--black);
+[class*='btn-type-text'] {
+    color: $black;
     background-color: $white;
 }
 
-[class*='-type-text']:hover {
+[class*='btn-type-text']:hover {
     box-shadow: 0 0 6px 0 mix($gray-base, $black, 90%);
 }
 
-[class*='-type-link'] {
+[class*='btn-type-link'] {
     color: $primary-color;
     background-color: transparent;
 }
 
-[class*='-type-link']:hover {
+[class*='btn-type-link']:hover {
     color: mix($primary-color, $gray-base, 50%);
+}
+
+[class*='btn-long'] {
+    width: 100%;
+}
+
+[class*='btn-disabled'] {
+    cursor: not-allowed;
+    border-color: mix($gray-base, $black, 80%);
+    color: mix($gray-base, $black, 70%);
+}
+
+[class*='btn-disabled']:hover {
+    box-shadow: none;
+    color: mix($gray-base, $black, 70%);
+    border-color: mix($gray-base, $black, 80%);
+}
+
+[class*='btn-disabled'][class*='btn-type-default'],
+[class*='btn-disabled'][class*='btn-type-dashed'] {
+    background-color: $gray-base;
+}
+
+[class*='btn-disabled'][class*='btn-type-primary']{
+    background-image: none;
+    background-color: $gray-base;
+    border: 1px solid mix($gray-base, $black, 80%);
 }

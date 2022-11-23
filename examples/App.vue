@@ -7,6 +7,10 @@
             <me-button type="text">按钮</me-button>
             <me-button type="link">按钮</me-button>
         </div>
+        <div style="width: 200px">
+            <me-button type="primary" long>按钮</me-button>
+            <me-button type="primary" loading>按钮</me-button>
+        </div>
     </div>
 </template>
 
@@ -17,9 +21,8 @@
     box-sizing: border-box;
     padding: 30px;
     height: 90vh;
-    //background-color: var(--dark);
-    .me-button {
-        margin-right: 10px;
+    .me-btn {
+        margin: 6px;
     }
 }
 </style>

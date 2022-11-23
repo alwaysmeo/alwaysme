@@ -1,5 +1,6 @@
 <template>
     <button :class="[state.className]" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
+        <i class="iconfont icon-loading"></i>
         <slot></slot>
     </button>
 </template>
@@ -47,22 +48,19 @@ const emits = defineEmits(['click'])
 
 const state = reactive({
     className: [
-        `${prefix}-button`,
-        `${prefix}-type-${props.type}`,
-        `${prefix}-shape-${props.shape}`,
+        `${prefix}-btn`,
+        `${prefix}-btn-type-${props.type}`,
+        `${prefix}-btn-shape-${props.shape}`,
         {
-            [`${prefix}-long`]: props.long,
-            [`${prefix}-disabled`]: props.disabled,
-            [`${prefix}-loading`]: props.loading
+            [`${prefix}-btn-long`]: props.long,
+            [`${prefix}-btn-disabled`]: props.disabled,
+            [`${prefix}-btn-loading`]: props.loading
         }
     ]
 })
 
 const handleClick = (event: MouseEvent) => {
-    if (props.disabled || props.loading) {
-        event.preventDefault()
-        return
-    }
+    if (props.disabled || props.loading) return event.preventDefault()
     emits('click', event)
 }
 </script>
