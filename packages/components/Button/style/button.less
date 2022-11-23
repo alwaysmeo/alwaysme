@@ -1,12 +1,12 @@
-@import '@theme/color/color.scss';
-@import '@theme/style.scss';
+@import '@theme/color/color.less';
+@import '@theme/style.less';
 
 [class*='-button'] {
     padding: 0 15px;
     color: var(--white);
     font-size: 14px;
     line-height: 28px;
-    border-radius: $radius-base;
+    border-radius: @radius-base;
     cursor: pointer;
     transition: 0.3s;
     border: 0;
@@ -25,7 +25,7 @@
 
 [class*='-type-primary'] {
     // background-image: linear-gradient(to bottom right, var(--blue-1), var(--blue));
-    background-color: $red-10;
+    background-color: @red-base;
 }
 [class*='-type-primary']:hover {
     box-shadow: 0 0 6px 0 var(--blue);

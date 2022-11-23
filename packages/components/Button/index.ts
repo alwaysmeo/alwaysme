@@ -1,5 +1,5 @@
 import { App } from 'vue'
-import './style/button.scss'
+import './style/button.less'
 import Button from './src/button.vue'
 
 Button.install = function (app: App) {

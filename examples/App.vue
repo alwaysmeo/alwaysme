@@ -12,7 +12,7 @@
 
 <script setup lang="ts"></script>
 
-<style scoped lang="scss">
+<style scoped lang="less">
 .always-me {
     box-sizing: border-box;
     padding: 30px;
