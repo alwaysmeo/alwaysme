@@ -58,7 +58,7 @@
 }
 
 .me-button-type-link:not(.me-button-loading):not(.me-button-disabled):hover {
-	color: mix($primary-color, $theme, 60%);
+	color: mix($primary-color, $secondary-color, 40%);
 }
 
 

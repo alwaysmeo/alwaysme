@@ -1,5 +1,5 @@
 <template>
-    <button :class="[state.className]" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
+    <button :class="state.className" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
         <i class="iconfont icon-loading" v-if="loading" />
         <slot name="icon" />
         <slot></slot>
