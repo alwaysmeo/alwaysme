@@ -9,3 +9,10 @@ $yellow-base: #f79600;
 $gray-base: #eceff2;
 $black: #22272e;
 $white: #ffffff;
+
+$light: #ffffff;
+$dark: #22272e;
+$theme: $dark;
+body{
+	background-color: $theme;
+}
