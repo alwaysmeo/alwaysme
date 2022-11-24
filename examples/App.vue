@@ -33,6 +33,13 @@
             <me-button type="text" ghost>按钮</me-button>
             <me-button type="link" ghost>按钮</me-button>
         </div>
+        <div>
+            <me-button-group>
+                <me-button type="primary">按钮1</me-button>
+                <me-button>按钮2</me-button>
+                <me-button>按钮3</me-button>
+            </me-button-group>
+        </div>
     </div>
 </template>
 
@@ -47,7 +54,7 @@
         padding: 10px 20px;
     }
     .me-btn {
-        margin: 6px;
+        // margin: 6px;
     }
 }
 </style>

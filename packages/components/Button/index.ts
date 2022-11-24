@@ -1,10 +1,13 @@
 import { App } from 'vue'
 import '@components/Button/style/button.scss'
+import '@/components/Button/style/group.scss'
 import Button from '@/components/Button/src/button.vue'
+import ButtonGroup from '@/components/Button/src/group.vue'
 
 Button.install = function (app: App) {
     app.component(Button.name, Button)
+    app.component(ButtonGroup.name, ButtonGroup)
     return app
 }
 
-export { Button }
+export { Button, ButtonGroup }

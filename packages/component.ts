@@ -1,3 +1,3 @@
-import { Button } from '@components/Button'
+import { Button, ButtonGroup } from '@components/Button'
 
-export default [Button]
+export default [Button, ButtonGroup]

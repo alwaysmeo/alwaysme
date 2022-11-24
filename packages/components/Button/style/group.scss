@@ -1,0 +1,18 @@
+@import '@theme/index.scss';
+
+[class*='btn-group'] {
+	[class*='btn'] {
+		border-radius: 0px;
+		&:first-child {
+			border-top-left-radius: $radius-base;
+			border-bottom-left-radius: $radius-base;
+		}
+		&:last-child {
+			border-top-right-radius: $radius-base;
+			border-bottom-right-radius: $radius-base;
+		}
+		&:not(&:first-child) {
+			border-left: 0px;
+		}
+	}
+}
