@@ -1,6 +1,7 @@
 <template>
     <button :class="[state.className]" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
         <i class="iconfont icon-loading" v-if="loading" />
+        <slot name="icon" />
         <slot></slot>
     </button>
 </template>
@@ -42,6 +43,11 @@ const props = defineProps({
         type: String as PropType<'submit' | 'reset' | 'button'>,
         default: 'button',
     },
+    // 幽灵按钮，使按钮背景透明
+    ghost: {
+        type: Boolean as PropType<boolean>,
+        default: false
+    }
 })
 
 const emits = defineEmits(['click'])
@@ -54,7 +60,8 @@ const state = reactive({
         {
             [`${prefix}-btn-long`]: props.long,
             [`${prefix}-btn-loading`]: props.loading,
-            [`${prefix}-btn-disabled`]: props.disabled
+            [`${prefix}-btn-disabled`]: props.disabled,
+            [`${prefix}-btn-ghost`]: props.ghost
         }
     ]
 })

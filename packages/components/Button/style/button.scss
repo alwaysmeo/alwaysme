@@ -3,11 +3,9 @@
 [class*='btn'] {
 	box-sizing: border-box;
 	padding: 0 15px;
-	color: $white;
 	font-size: 14px;
 	line-height: 1;
 	height: 30px;
-	border-radius: $radius-base;
 	cursor: pointer;
 	transition: box-shadow 0.3s, border 0.3s, color 0.3s, background-color 0.3s;
 	border: 0;
@@ -15,6 +13,7 @@
 
 // type
 [class*='btn-type-primary'] {
+	color: $white;
 	background-image: linear-gradient(to bottom right, $secondary-color, $primary-color);
 }
 
@@ -25,24 +24,24 @@
 [class*='btn-type-default'] {
 	color: if($theme == $light, $dark, $light);
 	background-color: $theme;
-	border: 1px solid $gray-base;
+	border: 1px solid mix($gray-base, if($theme == $light, $dark, $light), 80%);
 }
 
 [class*='btn-type-default']:not([class*='btn-loading']):not([class*='btn-disabled']):hover {
 	color: $primary-color;
 	border-color: $primary-color;
-	box-shadow: 0 0 6px 0 mix($theme, $primary-color, 60%);
+	box-shadow: 0 0 6px 0 $primary-color;
 }
 
 [class*='btn-type-dashed'] {
 	color: if($theme == $light, $dark, $light);
 	background-color: $theme;
-	border: 1px dashed $gray-base;
+	border: 1px dashed mix($gray-base, if($theme == $light, $dark, $light), 80%);
 }
 
 [class*='btn-type-dashed']:not([class*='btn-loading']):not([class*='btn-disabled']):hover {
 	color: $primary-color;
-	box-shadow: 0 0 6px 0 mix($theme, $primary-color, 40%);
+	box-shadow: 0 0 6px 0 $primary-color;
 	border-color: $primary-color;
 }
 
@@ -52,7 +51,7 @@
 }
 
 [class*='btn-type-text']:not([class*='btn-loading']):not([class*='btn-disabled']):hover {
-	box-shadow: 0 0 6px 0 mix($theme, if($theme == $light, $dark, $light), 80%);
+	box-shadow: 0 0 6px 0 mix($theme, if($theme == $light, $dark, $light), 50%);
 }
 
 [class*='btn-type-link'] {
@@ -68,6 +67,25 @@
 // long
 [class*='btn-long'] {
 	width: 100%;
+}
+
+// shape
+[class*='btn-shape-default'] {
+	border-radius: $radius-base;
+}
+
+[class*='btn-shape-square'] {
+	border-radius: $radius-square;
+}
+
+[class*='btn-shape-round'] {
+	padding: 0;
+	width: 30px;
+	text-align: center;
+	border-radius: 50%;
+	.icon-loading {
+		margin-right: 0px !important;
+	}
 }
 
 
@@ -109,6 +127,10 @@
 [class*='btn-disabled'] {
 	cursor: not-allowed;
 }
+// disabled-status
+[class*='btn-disabled'] {
+	cursor: not-allowed;
+}
 
 [class*='btn-disabled'][class*='btn-type-default'],
 [class*='btn-disabled'][class*='btn-type-dashed'],
@@ -126,4 +148,21 @@
 
 [class*='btn-disabled'][class*='btn-type-text'] {
 	color: mix($gray-base, $dark, if($theme == $light, 80%, 40%));
+}
+
+// ghost
+[class*='btn-ghost'] {
+	background-color: transparent;
+}
+
+[class*='btn-ghost'][class*='btn-type-primary'] {
+	position: relative;
+	background-image: none;
+	color: mix($primary-color, $white, 90%);
+	border: 1px solid mix($primary-color, $white, 90%);
+}
+
+[class*='btn-ghost'][class*='btn-type-primary']:hover {
+	color: mix($primary-color, $white, 90%);
+	border-color: mix($primary-color, $white, 90%);
 }
