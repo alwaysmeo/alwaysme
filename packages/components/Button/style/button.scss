@@ -13,7 +13,7 @@
 	border: 0;
 }
 
-
+// type
 [class*='btn-type-primary'] {
 	background-image: linear-gradient(to bottom right, $secondary-color, $primary-color);
 }
@@ -21,7 +21,6 @@
 [class*='btn-type-primary']:not([class*='btn-loading']):not([class*='btn-disabled']):hover {
 	box-shadow: 0 0 6px 0 $primary-color;
 }
-
 
 [class*='btn-type-default'] {
 	color: if($theme == $light, $dark, $light);
@@ -35,7 +34,6 @@
 	box-shadow: 0 0 6px 0 mix($theme, $primary-color, 60%);
 }
 
-
 [class*='btn-type-dashed'] {
 	color: if($theme == $light, $dark, $light);
 	background-color: $theme;
@@ -47,7 +45,6 @@
 	box-shadow: 0 0 6px 0 mix($theme, $primary-color, 40%);
 	border-color: $primary-color;
 }
-
 
 [class*='btn-type-text'] {
 	color: if($theme == $light, $dark, $light);
@@ -68,13 +65,13 @@
 }
 
 
-// 长按钮
+// long
 [class*='btn-long'] {
 	width: 100%;
 }
 
 
-// 加载中图标
+// loading-iconfont
 [class*='btn'] .icon-loading {
 	display: inline-block;
 	margin-right: 5px;
@@ -83,7 +80,7 @@
 }
 
 
-// 加载中状态
+// loading
 [class*='btn-loading'] {
 	box-shadow: none;
 	cursor: default;
@@ -108,7 +105,7 @@
 }
 
 
-// 禁用状态
+// disabled-status
 [class*='btn-disabled'] {
 	cursor: not-allowed;
 }
