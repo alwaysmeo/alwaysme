@@ -54,14 +54,14 @@ const emits = defineEmits(['click'])
 
 const state = reactive({
     className: [
-        `${prefix}-btn`,
-        `${prefix}-btn-type-${props.type}`,
-        `${prefix}-btn-shape-${props.shape}`,
+        `me-btn`,
+        `me-btn-type-${props.type}`,
+        `me-btn-shape-${props.shape}`,
         {
-            [`${prefix}-btn-long`]: props.long,
-            [`${prefix}-btn-loading`]: props.loading,
-            [`${prefix}-btn-disabled`]: props.disabled,
-            [`${prefix}-btn-ghost`]: props.ghost
+            [`me-btn-long`]: props.long,
+            [`me-btn-loading`]: props.loading,
+            [`me-btn-disabled`]: props.disabled,
+            [`me-btn-ghost`]: props.ghost
         }
     ]
 })

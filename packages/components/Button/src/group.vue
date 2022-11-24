@@ -12,7 +12,7 @@ defineOptions({ name: `${prefix}ButtonGroup` })
 
 const state = reactive({
     className: [
-        `${prefix}-btn-group`
+        'me-btn-group'
     ]
 })
 </script>

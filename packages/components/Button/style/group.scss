@@ -1,6 +1,6 @@
 
-[class*='btn-group'] {
-	[class*='btn'] {
+.me-btn-group {
+	.me-btn{
 		border-radius: 0px;
 		&:first-child {
 			border-top-left-radius: $radius-base;

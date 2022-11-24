@@ -1,83 +1,83 @@
 
-[class*='btn'] {
+.me-btn {
+	cursor: pointer;
 	box-sizing: border-box;
 	padding: 0 15px;
 	font-size: 14px;
 	line-height: 1;
 	height: 30px;
-	cursor: pointer;
 	transition: box-shadow 0.3s, border 0.3s, color 0.3s, background-color 0.3s;
 	border: 0;
 }
 
 // type
-[class*='btn-type-primary'] {
+.me-btn-type-primary {
 	color: $white;
 	background-image: linear-gradient(to bottom right, $secondary-color, $primary-color);
 }
 
-[class*='btn-type-primary']:not([class*='btn-loading']):not([class*='btn-disabled']):hover {
+.me-btn-type-primary:not(.me-btn-loading):not(.me-btn-disabled):hover {
 	box-shadow: 0 0 6px 0 $primary-color;
 }
 
-[class*='btn-type-default'] {
-	color: if($theme == $light, $dark, $light);
+.me-btn-type-default {
+	color: $reverse-theme;
 	background-color: $theme;
-	border: 1px solid mix($gray-base, if($theme == $light, $dark, $light), 80%);
+	border: 1px solid mix($gray-base, $reverse-theme, 80%);
 }
 
-[class*='btn-type-default']:not([class*='btn-loading']):not([class*='btn-disabled']):hover {
+.me-btn-type-default:not(.me-btn-loading):not(.me-btn-disabled):hover {
 	color: $primary-color;
 	border-color: $primary-color;
 	box-shadow: 0 0 6px 0 $primary-color;
 }
 
-[class*='btn-type-dashed'] {
-	color: if($theme == $light, $dark, $light);
+.me-btn-type-dashed {
+	color: $reverse-theme;
 	background-color: $theme;
-	border: 1px dashed mix($gray-base, if($theme == $light, $dark, $light), 80%);
+	border: 1px dashed mix($gray-base, $reverse-theme, 80%);
 }
 
-[class*='btn-type-dashed']:not([class*='btn-loading']):not([class*='btn-disabled']):hover {
+.me-btn-type-dashed:not(.me-btn-loading):not(.me-btn-disabled):hover {
 	color: $primary-color;
 	box-shadow: 0 0 6px 0 $primary-color;
 	border-color: $primary-color;
 }
 
-[class*='btn-type-text'] {
-	color: if($theme == $light, $dark, $light);
+.me-btn-type-text {
+	color: $reverse-theme;
 	background-color: $theme;
 }
 
-[class*='btn-type-text']:not([class*='btn-loading']):not([class*='btn-disabled']):hover {
-	box-shadow: 0 0 6px 0 mix($theme, if($theme == $light, $dark, $light), 50%);
+.me-btn-type-text:not(.me-btn-loading):not(.me-btn-disabled):hover {
+	box-shadow: 0 0 6px 0 mix($theme, $reverse-theme, 50%);
 }
 
-[class*='btn-type-link'] {
+.me-btn-type-link {
 	color: $primary-color;
 	background-color: transparent;
 }
 
-[class*='btn-type-link']:not([class*='btn-loading']):not([class*='btn-disabled']):hover {
+.me-btn-type-link:not(.me-btn-loading):not(.me-btn-disabled):hover {
 	color: mix($primary-color, $theme, 60%);
 }
 
 
 // long
-[class*='btn-long'] {
+.me-btn-long {
 	width: 100%;
 }
 
 // shape
-[class*='btn-shape-default'] {
+.me-btn-shape-default {
 	border-radius: $radius-base;
 }
 
-[class*='btn-shape-square'] {
+.me-btn-shape-square {
 	border-radius: $radius-square;
 }
 
-[class*='btn-shape-round'] {
+.me-btn-shape-round {
 	padding: 0;
 	width: 30px;
 	text-align: center;
@@ -89,7 +89,7 @@
 
 
 // loading-iconfont
-[class*='btn'] .icon-loading {
+.me-btn .icon-loading {
 	display: inline-block;
 	margin-right: 5px;
 	vertical-align: text-bottom;
@@ -98,70 +98,70 @@
 
 
 // loading
-[class*='btn-loading'] {
+.me-btn-loading {
 	box-shadow: none;
 	cursor: default;
 }
 
-[class*='btn-loading'][class*='btn-type-primary'] {
+.me-btn-loading.me-btn-type-primary {
 	background-image: linear-gradient(to bottom right, mix($secondary-color, $theme, 60%), mix($primary-color, $theme, 60%));
 }
 
-[class*='btn-loading'][class*='btn-type-default'],
-[class*='btn-loading'][class*='btn-type-dashed'] {
+.me-btn-loading.me-btn-type-default,
+.me-btn-loading.me-btn-type-dashed {
 		border-color: if($theme == $light, $gray-base, mix($gray-base,  $dark, 60%));
 		color: mix($gray-base,  $dark, 60%);
 }
 
-[class*='btn-loading'][class*='btn-type-text'] {
+.me-btn-loading.me-btn-type-text {
 	color: mix($gray-base,  $dark, 60%);
 }
 
-[class*='btn-loading'][class*='btn-type-link'] {
+.me-btn-loading.me-btn-type-link {
 	color: mix($primary-color, $theme, 60%);
 }
 
 
 // disabled-status
-[class*='btn-disabled'] {
+.me-btn-disabled {
 	cursor: not-allowed;
 }
 // disabled-status
-[class*='btn-disabled'] {
+.me-btn-disabled {
 	cursor: not-allowed;
 }
 
-[class*='btn-disabled'][class*='btn-type-default'],
-[class*='btn-disabled'][class*='btn-type-dashed'],
-[class*='btn-disabled'][class*='btn-type-primary'] {
+.me-btn-disabled.me-btn-type-default,
+.me-btn-disabled.me-btn-type-dashed,
+.me-btn-disabled.me-btn-type-primary {
 	color: mix($gray-base, $dark, if($theme == $light, 80%, 40%));
 	background-color: if($theme == $light, $gray-base, mix($gray-base, $dark, 10%));
 	border-color: mix($gray-base, $dark, if($theme == $light, 80%, 40%));
 }
 
-[class*='btn-disabled'][class*='btn-type-primary'] {
+.me-btn-disabled.me-btn-type-primary {
 	background-image: none;
 	border: 1px solid mix($gray-base, $dark, if($theme == $light, 80%, 40%));
 	background-color: if($theme == $light, $gray-base, mix($gray-base, $dark, 10%));
 }
 
-[class*='btn-disabled'][class*='btn-type-text'] {
+.me-btn-disabled.me-btn-type-text {
 	color: mix($gray-base, $dark, if($theme == $light, 80%, 40%));
 }
 
 // ghost
-[class*='btn-ghost'] {
+.me-btn-ghost {
 	background-color: transparent;
 }
 
-[class*='btn-ghost'][class*='btn-type-primary'] {
+.me-btn-ghost.me-btn-type-primary {
 	position: relative;
 	background-image: none;
 	color: mix($primary-color, $white, 90%);
 	border: 1px solid mix($primary-color, $white, 90%);
 }
 
-[class*='btn-ghost'][class*='btn-type-primary']:hover {
+.me-btn-ghost.me-btn-type-primary:hover {
 	color: mix($primary-color, $white, 90%);
 	border-color: mix($primary-color, $white, 90%);
 }
