@@ -1,6 +1,5 @@
 import { App } from 'vue'
-import '@components/Button/style/button.scss'
-import '@components/Button/style/group.scss'
+import '@components/Button/style/index.scss'
 import Button from '@components/Button/src/button.vue'
 import ButtonGroup from '@components/Button/src/group.vue'
 
