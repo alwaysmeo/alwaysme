@@ -4,20 +4,19 @@
 @font-face {
   font-family: "iconfont";
   /* Project id 3788332 */
-  src: url('//at.alicdn.com/t/c/font_3788332_ml9pnl0z0kn.woff2?t=1669198151034') format('woff2'),
-    url('//at.alicdn.com/t/c/font_3788332_ml9pnl0z0kn.woff?t=1669198151034') format('woff'),
-    url('//at.alicdn.com/t/c/font_3788332_ml9pnl0z0kn.ttf?t=1669198151034') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_3788332_a3kj498mcid.woff2?t=1669258948193') format('woff2'),
+    url('//at.alicdn.com/t/c/font_3788332_a3kj498mcid.woff?t=1669258948193') format('woff'),
+    url('//at.alicdn.com/t/c/font_3788332_a3kj498mcid.ttf?t=1669258948193') format('truetype');
 }
 
 .iconfont {
   font-family: "iconfont" !important;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
-  line-height: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-loading:before {
-  content: "\e730";
+  content: "\e60b";
 }
