@@ -1,4 +1,3 @@
-
 .me-btn {
 	cursor: pointer;
 	box-sizing: border-box;
@@ -82,6 +81,7 @@
 	width: 30px;
 	text-align: center;
 	border-radius: 50%;
+
 	.icon-loading {
 		margin-right: 0px !important;
 	}
@@ -109,12 +109,12 @@
 
 .me-btn-loading.me-btn-type-default,
 .me-btn-loading.me-btn-type-dashed {
-		border-color: if($theme == $light, $gray-base, mix($gray-base,  $dark, 60%));
-		color: mix($gray-base,  $dark, 60%);
+	border-color: if($theme ==$light, $gray-base, mix($gray-base, $dark, 60%));
+	color: mix($gray-base, $dark, 60%);
 }
 
 .me-btn-loading.me-btn-type-text {
-	color: mix($gray-base,  $dark, 60%);
+	color: mix($gray-base, $dark, 60%);
 }
 
 .me-btn-loading.me-btn-type-link {
@@ -126,6 +126,7 @@
 .me-btn-disabled {
 	cursor: not-allowed;
 }
+
 // disabled-status
 .me-btn-disabled {
 	cursor: not-allowed;
@@ -134,19 +135,19 @@
 .me-btn-disabled.me-btn-type-default,
 .me-btn-disabled.me-btn-type-dashed,
 .me-btn-disabled.me-btn-type-primary {
-	color: mix($gray-base, $dark, if($theme == $light, 80%, 40%));
-	background-color: if($theme == $light, $gray-base, mix($gray-base, $dark, 10%));
-	border-color: mix($gray-base, $dark, if($theme == $light, 80%, 40%));
+	color: mix($gray-base, $dark, if($theme ==$light, 80%, 40%));
+	background-color: if($theme ==$light, $gray-base, mix($gray-base, $dark, 10%));
+	border-color: mix($gray-base, $dark, if($theme ==$light, 80%, 40%));
 }
 
 .me-btn-disabled.me-btn-type-primary {
 	background-image: none;
-	border: 1px solid mix($gray-base, $dark, if($theme == $light, 80%, 40%));
-	background-color: if($theme == $light, $gray-base, mix($gray-base, $dark, 10%));
+	border: 1px solid mix($gray-base, $dark, if($theme ==$light, 80%, 40%));
+	background-color: if($theme ==$light, $gray-base, mix($gray-base, $dark, 10%));
 }
 
 .me-btn-disabled.me-btn-type-text {
-	color: mix($gray-base, $dark, if($theme == $light, 80%, 40%));
+	color: mix($gray-base, $dark, if($theme ==$light, 80%, 40%));
 }
 
 // ghost
