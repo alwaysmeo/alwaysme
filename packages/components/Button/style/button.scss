@@ -1,107 +1,132 @@
 @import '@theme/index.scss';
 
 [class*='btn'] {
-    box-sizing: border-box;
-    padding: 0 15px;
-    color: $white;
-    font-size: 14px;
-    line-height: 1;
-    height: 30px;
-    border-radius: $radius-base;
-    cursor: pointer;
-    transition: box-shadow 0.5s, border 0.5s, color 0.5s, background-color 0.5s;
-    border: 0;
+	box-sizing: border-box;
+	padding: 0 15px;
+	color: $white;
+	font-size: 14px;
+	line-height: 1;
+	height: 30px;
+	border-radius: $radius-base;
+	cursor: pointer;
+	transition: box-shadow 0.3s, border 0.3s, color 0.3s, background-color 0.3s;
+	border: 0;
 }
 
 
 [class*='btn-type-primary'] {
-    background-image: linear-gradient(to bottom right, $secondary-color, $primary-color);
+	background-image: linear-gradient(to bottom right, $secondary-color, $primary-color);
 }
 
-[class*='btn-type-primary']:hover {
-    box-shadow: 0 0 6px 0 mix($gray-base, $primary-color, 20%);
+[class*='btn-type-primary']:not([class*='btn-loading']):not([class*='btn-disabled']):hover {
+	box-shadow: 0 0 6px 0 $primary-color;
 }
+
 
 [class*='btn-type-default'] {
-    color: $black;
-    background-color: $white;
-    border: 1px solid $gray-base;
+	color: if($theme == $light, $dark, $light);
+	background-color: $theme;
+	border: 1px solid $gray-base;
 }
 
-[class*='btn-type-default']:hover {
-    color: $primary-color;
-    border-color: $primary-color;
-    box-shadow: 0 0 6px 0 mix($gray-base, $primary-color, 60%);
+[class*='btn-type-default']:not([class*='btn-loading']):not([class*='btn-disabled']):hover {
+	color: $primary-color;
+	border-color: $primary-color;
+	box-shadow: 0 0 6px 0 mix($theme, $primary-color, 60%);
 }
+
 
 [class*='btn-type-dashed'] {
-    color: $black;
-    background-color: $white;
-    border: 1px dashed $gray-base;
+	color: if($theme == $light, $dark, $light);
+	background-color: $theme;
+	border: 1px dashed $gray-base;
 }
 
-[class*='btn-type-dashed']:hover {
-    color: $primary-color;
-    box-shadow: 0 0 6px 0 mix($gray-base, $primary-color, 60%);
-    border-color: $primary-color;
+[class*='btn-type-dashed']:not([class*='btn-loading']):not([class*='btn-disabled']):hover {
+	color: $primary-color;
+	box-shadow: 0 0 6px 0 mix($theme, $primary-color, 40%);
+	border-color: $primary-color;
 }
+
 
 [class*='btn-type-text'] {
-    color: $black;
-    background-color: $white;
+	color: if($theme == $light, $dark, $light);
+	background-color: $theme;
 }
 
-[class*='btn-type-text']:hover {
-    box-shadow: 0 0 6px 0 mix($gray-base, $black, 90%);
+[class*='btn-type-text']:not([class*='btn-loading']):not([class*='btn-disabled']):hover {
+	box-shadow: 0 0 6px 0 mix($theme, if($theme == $light, $dark, $light), 80%);
 }
 
 [class*='btn-type-link'] {
-    color: $primary-color;
-    background-color: transparent;
+	color: $primary-color;
+	background-color: transparent;
 }
 
-[class*='btn-type-link']:hover {
-    color: mix($primary-color, $gray-base, 50%);
+[class*='btn-type-link']:not([class*='btn-loading']):not([class*='btn-disabled']):hover {
+	color: mix($primary-color, $theme, 60%);
 }
 
+
+// 长按钮
 [class*='btn-long'] {
-    width: 100%;
+	width: 100%;
 }
 
+
+// 加载中图标
+[class*='btn'] .icon-loading {
+	display: inline-block;
+	margin-right: 5px;
+	vertical-align: text-bottom;
+	animation: rotate 1s linear infinite;
+}
+
+
+// 加载中状态
+[class*='btn-loading'] {
+	box-shadow: none;
+	cursor: default;
+}
+
+[class*='btn-loading'][class*='btn-type-primary'] {
+	background-image: linear-gradient(to bottom right, mix($secondary-color, $theme, 60%), mix($primary-color, $theme, 60%));
+}
+
+[class*='btn-loading'][class*='btn-type-default'],
+[class*='btn-loading'][class*='btn-type-dashed'] {
+		border-color: if($theme == $light, $gray-base, mix($gray-base,  $dark, 60%));
+		color: mix($gray-base,  $dark, 60%);
+}
+
+[class*='btn-loading'][class*='btn-type-text'] {
+	color: mix($gray-base,  $dark, 60%);
+}
+
+[class*='btn-loading'][class*='btn-type-link'] {
+	color: mix($primary-color, $theme, 60%);
+}
+
+
+// 禁用状态
 [class*='btn-disabled'] {
-    cursor: not-allowed;
-    border-color: mix($gray-base, $black, 80%);
-    color: mix($gray-base, $black, 70%);
-}
-
-[class*='btn-disabled']:hover {
-    box-shadow: none;
-    color: mix($gray-base, $black, 70%);
-    border-color: mix($gray-base, $black, 80%);
+	cursor: not-allowed;
 }
 
 [class*='btn-disabled'][class*='btn-type-default'],
-[class*='btn-disabled'][class*='btn-type-dashed'] {
-    background-color: $gray-base;
+[class*='btn-disabled'][class*='btn-type-dashed'],
+[class*='btn-disabled'][class*='btn-type-primary'] {
+	color: mix($gray-base, $dark, if($theme == $light, 80%, 40%));
+	background-color: if($theme == $light, $gray-base, mix($gray-base, $dark, 10%));
+	border-color: mix($gray-base, $dark, if($theme == $light, 80%, 40%));
 }
 
 [class*='btn-disabled'][class*='btn-type-primary'] {
-    background-image: none;
-    background-color: $gray-base;
-    border: 1px solid mix($gray-base, $black, 80%);
+	background-image: none;
+	border: 1px solid mix($gray-base, $dark, if($theme == $light, 80%, 40%));
+	background-color: if($theme == $light, $gray-base, mix($gray-base, $dark, 10%));
 }
 
-.icon-loading {
-    margin-right: 5px;
-    animation: rotate1 3s infinite;
-}
-
-@keyframes rotate1 {
-	from {
-		transform: rotate(0deg);
-	}
-
-	to {
-		transform: rotate(360deg);
-	}
+[class*='btn-disabled'][class*='btn-type-text'] {
+	color: mix($gray-base, $dark, if($theme == $light, 80%, 40%));
 }

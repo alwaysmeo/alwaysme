@@ -1,6 +1,6 @@
 <template>
     <button :class="[state.className]" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
-        <i class="iconfont icon-loading" v-if="loading" >1</i>
+        <i class="iconfont icon-loading" v-if="loading" />
         <slot></slot>
     </button>
 </template>
@@ -53,8 +53,8 @@ const state = reactive({
         `${prefix}-btn-shape-${props.shape}`,
         {
             [`${prefix}-btn-long`]: props.long,
-            [`${prefix}-btn-disabled`]: props.disabled,
-            [`${prefix}-btn-loading`]: props.loading
+            [`${prefix}-btn-loading`]: props.loading,
+            [`${prefix}-btn-disabled`]: props.disabled
         }
     ]
 })
