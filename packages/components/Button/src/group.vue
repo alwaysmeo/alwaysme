@@ -11,6 +11,6 @@ import { prefix } from '@utils/config'
 defineOptions({ name: `${prefix}ButtonGroup` })
 
 const state = reactive({
-    className: ['me-btn-group']
+    className: ['me-button-group']
 })
 </script>
