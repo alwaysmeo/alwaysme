@@ -5,12 +5,12 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { PropType, reactive } from 'vue'
 import { prefix } from '@utils/config'
 
-defineOptions({ name: `${prefix}ButtonGroup` })
+defineOptions({ name: `${prefix}Link` })
 
 const state = reactive({
-    className: ['me-btn-group']
+    className: ['me-link-group']
 })
 </script>
