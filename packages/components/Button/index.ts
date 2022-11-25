@@ -5,6 +5,10 @@ import ButtonGroup from '@components/Button/src/group.vue'
 
 Button.install = function (app: App) {
     app.component(Button.name, Button)
+    return app
+}
+
+ButtonGroup.install = function (app: App) {
     app.component(ButtonGroup.name, ButtonGroup)
     return app
 }
