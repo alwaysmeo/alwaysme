@@ -42,8 +42,8 @@
             </me-button-group>
         </div>
         <div>
-            <me-link>链接1</me-link>
-            <me-link>链接2</me-link>
+            <me-link :underline="false">链接1</me-link>
+            <me-link disabled>链接2</me-link>
             <me-link>链接3</me-link>
         </div>
     </div>

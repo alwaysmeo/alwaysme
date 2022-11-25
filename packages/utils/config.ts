@@ -1,4 +1,4 @@
 // 公共前缀
-const prefix = 'me'
+const prefix = 'Me'
 
 export { prefix }

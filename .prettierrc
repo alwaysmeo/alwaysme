@@ -5,6 +5,5 @@
 	"semi": false,
 	"singleQuote": true,
 	"htmlWhitespaceSensitivity": "ignore",
-	"endOfLine": "lf",
-	"printWidth": 180
+	"endOfLine": "lf"
 }

@@ -1,5 +1,20 @@
 <template>
-    <button :class="state.className" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
+    <button
+        :class="[
+            'me-button',
+            `me-button-type-${state.type}`,
+            `me-button-shape-${state.shape}`,
+            {
+                [`me-button-long`]: state.long,
+                [`me-button-loading`]: state.loading,
+                [`me-button-disabled`]: state.disabled,
+                [`me-button-ghost`]: state.ghost
+            }
+        ]"
+        :disabled="props.disabled"
+        :type="props.htmlType"
+        @click="handleClick"
+    >
         <i class="iconfont icon-loading" v-if="loading" />
         <slot name="icon" />
         <slot></slot>
@@ -7,15 +22,16 @@
 </template>
 
 <script setup lang="ts">
-import { PropType, reactive } from 'vue'
-import { prefix } from '@utils/config'
+import { PropType, reactive, computed } from 'vue'
 
-defineOptions({ name: `${prefix}Button` })
+defineOptions({ name: 'MeButton' })
 
 const props = defineProps({
     // 按钮类型 default | primary | dashed | text | link |
     type: {
-        type: String as PropType<'default' | 'primary' | 'dashed' | 'text' | 'link'>,
+        type: String as PropType<
+            'default' | 'primary' | 'dashed' | 'text' | 'link'
+        >,
         default: 'default'
     },
     // 按钮形状 default | square | round
@@ -41,7 +57,7 @@ const props = defineProps({
     // 设置 button 的原生 type 属性 可选值参考 HTML 标准
     htmlType: {
         type: String as PropType<'submit' | 'reset' | 'button'>,
-        default: 'button',
+        default: 'button'
     },
     // 幽灵按钮，使按钮背景透明
     ghost: {
@@ -53,17 +69,13 @@ const props = defineProps({
 const emits = defineEmits(['click'])
 
 const state = reactive({
-    className: [
-        `me-button`,
-        `me-button-type-${props.type}`,
-        `me-button-shape-${props.shape}`,
-        {
-            [`me-button-long`]: props.long,
-            [`me-button-loading`]: props.loading,
-            [`me-button-disabled`]: props.disabled,
-            [`me-button-ghost`]: props.ghost
-        }
-    ]
+    type: computed(() => props.type),
+    shape: computed(() => props.shape),
+    long: computed(() => props.long),
+    disabled: computed(() => props.disabled),
+    loading: computed(() => props.loading),
+    htmlType: computed(() => props.htmlType),
+    ghost: computed(() => props.ghost)
 })
 
 const handleClick = (event: MouseEvent) => {
