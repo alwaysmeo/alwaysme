@@ -12,9 +12,8 @@
 		&:not(&:last-child):hover {
 			position: relative;
 			z-index: 1;
-			border-color: $primary-color !important;
-			border-right-color: transparent !important;
-			border-left-color: transparent !important;
+			border-right-color: transparent;
+			border-left-color: transparent;
 		}
 
 		&:first-child {
