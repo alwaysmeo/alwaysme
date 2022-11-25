@@ -5,6 +5,10 @@
 	.me-button {
 		border-radius: 0px;
 
+		&:not(&:first-child) {
+			border-left: 0px;
+		}
+
 		&:not(&:last-child):hover {
 			position: relative;
 			z-index: 1;
@@ -21,10 +25,6 @@
 		&:last-child {
 			border-top-right-radius: $radius-base;
 			border-bottom-right-radius: $radius-base;
-		}
-
-		&:not(&:first-child) {
-			border-left: 0px;
 		}
 	}
 }

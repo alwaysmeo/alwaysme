@@ -13,52 +13,52 @@
 .me-button-type-primary {
 	color: $white;
 	background-image: linear-gradient(to bottom right, $secondary-color, $primary-color);
-}
 
-.me-button-type-primary:not(.me-button-loading):not(.me-button-disabled):hover {
-	box-shadow: 0 0 6px 0 $primary-color;
+	&:not(.me-button-loading):not(.me-button-disabled):hover {
+		box-shadow: 0 0 6px 0 $primary-color;
+	}
 }
 
 .me-button-type-default {
 	color: $reverse-theme;
 	background-color: $theme;
 	border: 1px solid mix($gray-base, $reverse-theme, 80%);
-}
 
-.me-button-type-default:not(.me-button-loading):not(.me-button-disabled):hover {
-	color: $primary-color;
-	border-color: $primary-color;
-	box-shadow: 0 0 6px 0 $primary-color;
+	&:not(.me-button-loading):not(.me-button-disabled):hover {
+		color: $primary-color;
+		border-color: $primary-color;
+		box-shadow: 0 0 6px 0 $primary-color;
+	}
 }
 
 .me-button-type-dashed {
 	color: $reverse-theme;
 	background-color: $theme;
 	border: 1px dashed mix($gray-base, $reverse-theme, 80%);
-}
 
-.me-button-type-dashed:not(.me-button-loading):not(.me-button-disabled):hover {
-	color: $primary-color;
-	box-shadow: 0 0 6px 0 $primary-color;
-	border-color: $primary-color;
+	&:not(.me-button-loading):not(.me-button-disabled):hover {
+		color: $primary-color;
+		box-shadow: 0 0 6px 0 $primary-color;
+		border-color: $primary-color;
+	}
 }
 
 .me-button-type-text {
 	color: $reverse-theme;
 	background-color: $theme;
-}
 
-.me-button-type-text:not(.me-button-loading):not(.me-button-disabled):hover {
-	box-shadow: 0 0 6px 0 mix($theme, $reverse-theme, 50%);
+	&:not(.me-button-loading):not(.me-button-disabled):hover {
+		box-shadow: 0 0 6px 0 mix($theme, $reverse-theme, 50%);
+	}
 }
 
 .me-button-type-link {
 	color: $primary-color;
 	background-color: transparent;
-}
 
-.me-button-type-link:not(.me-button-loading):not(.me-button-disabled):hover {
-	color: mix($primary-color, $secondary-color, 40%);
+	&:not(.me-button-loading):not(.me-button-disabled):hover {
+		color: mix($primary-color, $secondary-color, 40%);
+	}
 }
 
 
@@ -66,6 +66,7 @@
 .me-button-long {
 	width: 100%;
 }
+
 
 // shape
 .me-button-shape-default {
@@ -101,68 +102,63 @@
 .me-button-loading {
 	box-shadow: none;
 	cursor: default;
-}
 
-.me-button-loading.me-button-type-primary {
-	background-image: linear-gradient(to bottom right, mix($secondary-color, $theme, 60%), mix($primary-color, $theme, 60%));
-}
+	&.me-button-type-primary {
+		background-image: linear-gradient(to bottom right, mix($secondary-color, $theme, 60%), mix($primary-color, $theme, 60%));
+	}
 
-.me-button-loading.me-button-type-default,
-.me-button-loading.me-button-type-dashed {
-	border-color: if($theme ==$light, $gray-base, mix($gray-base, $dark, 60%));
-	color: mix($gray-base, $dark, 60%);
-}
+	&.me-button-type-default,
+	&.me-button-type-dashed {
+		border-color: if($theme ==$light, $gray-base, mix($gray-base, $dark, 60%));
+		color: mix($gray-base, $dark, 60%);
+	}
 
-.me-button-loading.me-button-type-text {
-	color: mix($gray-base, $dark, 60%);
-}
+	&.me-button-type-text {
+		color: mix($gray-base, $dark, 60%);
+	}
 
-.me-button-loading.me-button-type-link {
-	color: mix($primary-color, $theme, 60%);
+	&.me-button-type-link {
+		color: mix($primary-color, $theme, 60%);
+	}
 }
 
 
 // disabled-status
 .me-button-disabled {
 	cursor: not-allowed;
-}
 
-// disabled-status
-.me-button-disabled {
-	cursor: not-allowed;
-}
+	&.me-button-type-default,
+	&.me-button-type-dashed,
+	&.me-button-type-primary {
+		color: mix($gray-base, $dark, if($theme ==$light, 80%, 40%));
+		background-color: if($theme ==$light, $gray-base, mix($gray-base, $dark, 10%));
+		border-color: mix($gray-base, $dark, if($theme ==$light, 80%, 40%));
+	}
 
-.me-button-disabled.me-button-type-default,
-.me-button-disabled.me-button-type-dashed,
-.me-button-disabled.me-button-type-primary {
-	color: mix($gray-base, $dark, if($theme ==$light, 80%, 40%));
-	background-color: if($theme ==$light, $gray-base, mix($gray-base, $dark, 10%));
-	border-color: mix($gray-base, $dark, if($theme ==$light, 80%, 40%));
-}
+	&.me-button-type-primary {
+		background-image: none;
+		border: 1px solid mix($gray-base, $dark, if($theme ==$light, 80%, 40%));
+		background-color: if($theme ==$light, $gray-base, mix($gray-base, $dark, 10%));
+	}
 
-.me-button-disabled.me-button-type-primary {
-	background-image: none;
-	border: 1px solid mix($gray-base, $dark, if($theme ==$light, 80%, 40%));
-	background-color: if($theme ==$light, $gray-base, mix($gray-base, $dark, 10%));
-}
-
-.me-button-disabled.me-button-type-text {
-	color: mix($gray-base, $dark, if($theme ==$light, 80%, 40%));
+	&.me-button-type-text {
+		color: mix($gray-base, $dark, if($theme ==$light, 80%, 40%));
+	}
 }
 
 // ghost
 .me-button-ghost {
 	background-color: transparent;
-}
 
-.me-button-ghost.me-button-type-primary {
-	position: relative;
-	background-image: none;
-	color: mix($primary-color, $white, 90%);
-	border: 1px solid mix($primary-color, $white, 90%);
-}
+	&.me-button-type-primary {
+		position: relative;
+		background-image: none;
+		color: mix($primary-color, $white, 90%);
+		border: 1px solid mix($primary-color, $white, 90%);
+	}
 
-.me-button-ghost.me-button-type-primary:hover {
-	color: mix($primary-color, $white, 90%);
-	border-color: mix($primary-color, $white, 90%);
+	&.me-button-type-primary:hover {
+		color: mix($primary-color, $white, 90%);
+		border-color: mix($primary-color, $white, 90%);
+	}
 }
