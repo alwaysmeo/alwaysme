@@ -52,7 +52,7 @@ const state = reactive({
     color: computed(() => props.color),
     underline: computed(() => props.underline),
     disabled: computed(() => props.disabled),
-    href: computed(() => props.href),
+    href: computed(() => props.disabled) || !computed(() => props.href) ? 'javascript:;' : computed(() => props.href),
     target: computed(() => props.target)
 })
 </script>
