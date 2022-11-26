@@ -51,7 +51,7 @@
 
 <script setup lang="ts"></script>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .always-me {
     box-sizing: border-box;
     height: 90vh;
