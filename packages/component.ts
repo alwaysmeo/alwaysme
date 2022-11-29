@@ -1,4 +1,4 @@
-import { Button, ButtonGroup } from '@components/Button'
+import { Button } from '@components/Button'
 import { Link } from '@components/Link'
 
-export default [Button, ButtonGroup, Link]
+export default [Button, Link]
