@@ -34,14 +34,6 @@
             <me-button type="link" ghost>按钮</me-button>
         </div>
         <div>
-            <me-button-group>
-                <me-button type="primary">按钮1</me-button>
-                <me-button>按钮2</me-button>
-                <me-button>按钮3</me-button>
-                <me-button>按钮4</me-button>
-            </me-button-group>
-        </div>
-        <div>
             <me-link :underline="false">链接1</me-link>
             <me-link disabled>链接2</me-link>
             <me-link>链接3</me-link>
