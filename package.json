@@ -1,19 +1,19 @@
 {
-    "name": "AlwaysMe",
+    "name": "alwaysme-vue",
     "version": "1.0.0",
     "private": false,
-    "title": "AlwaysMe Vue",
+    "title": "AlwaysMe-Vue",
     "description": "AlwaysMe UI design language and Vue-based implementation",
-    "main": "lib/index.min.js",
-    "module": "lib/index.esm.js",
-    "typings": "lib/index.d.ts",
+    "main": "lib/index.js",
+    "module": "lib/index.mjs",
+    "types": "lib/index.d.ts",
     "keyword": [
-        "AlwaysMe",
-        "AlwaysMe Vue",
+        "alwaysme",
         "alwaysme-vue",
         "ui",
         "vue3",
-        "typescript"
+        "vue",
+        "component library"
     ],
     "license": "MIT",
     "author": {
@@ -31,6 +31,7 @@
         "preview": "vite preview"
     },
     "dependencies": {
+        "element-plus": "^2.2.25",
         "unplugin-vue-define-options": "^0.12.8",
         "vue": "^3.2.45"
     },
