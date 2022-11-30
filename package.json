@@ -1,37 +1,37 @@
 {
     "name": "alwaysme",
-    "version": "1.0.0",
+    "version": "1.0.0-base.1",
     "private": false,
-    "title": "AlwaysMe-Vue",
+    "title": "AlwaysMe-Vue3",
     "description": "AlwaysMe UI design language and Vue-based implementation",
     "main": "lib/index.js",
     "module": "lib/index.mjs",
     "types": "lib/index.d.ts",
     "keyword": [
         "alwaysme",
-        "alwaysme-vue",
+        "component library",
         "ui",
         "vue3",
-        "vue",
-        "component library"
+        "vue"
     ],
     "license": "MIT",
     "author": {
         "name": "AlwaysMe",
         "email": "hello2000@vip.qq.com"
     },
+    "homepage": "https://alwaysme.org",
     "repository": {
         "type": "git",
         "url": "https://github.com/Alwaysmeo/Alwaysme.git"
     },
-    "homepage": "https://alwaysme.org",
+    "files": [
+        "packages/"
+    ],
     "scripts": {
         "dev": "vite --host --mode dev",
-        "build": "vue-tsc --noEmit && vite build",
-        "preview": "vite preview"
+        "build": "vite build"
     },
     "dependencies": {
-        "element-plus": "^2.2.25",
         "unplugin-vue-define-options": "^0.12.8",
         "vue": "^3.2.45"
     },
