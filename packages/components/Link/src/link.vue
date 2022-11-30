@@ -16,8 +16,9 @@
 
 <script setup lang="ts">
 import { PropType, reactive, computed } from 'vue'
+import { prefix } from '@/config'
 
-defineOptions({ name: 'MeLink' })
+defineOptions({ name: `${prefix}Link` })
 
 const props = defineProps({
     // 链接色值

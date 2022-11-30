@@ -11,8 +11,7 @@ export default defineConfig(({ mode }) => {
                 '@': resolve(__dirname, './packages'),
                 '@components': resolve(__dirname, './packages/components'),
                 '@utils': resolve(__dirname, './packages/utils'),
-                '@theme': resolve(__dirname, './packages/theme'),
-                '@public': resolve(__dirname, './public')
+                '@theme': resolve(__dirname, './packages/theme')
             }
         },
         build: {

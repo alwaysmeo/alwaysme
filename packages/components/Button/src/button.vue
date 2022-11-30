@@ -23,8 +23,9 @@
 
 <script setup lang="ts">
 import { PropType, reactive, computed } from 'vue'
+import { prefix } from '@/config'
 
-defineOptions({ name: 'MeButton' })
+defineOptions({ name: `${prefix}Button` })
 
 const props = defineProps({
     // 按钮类型 default | primary | dashed | text | link |
