@@ -48,7 +48,7 @@
     box-sizing: border-box;
     height: 90vh;
 
-    > div{
+    > div {
         padding: 10px 20px;
     }
     .me-btn {
