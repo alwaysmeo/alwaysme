@@ -1,7 +1,6 @@
 import { App } from 'vue'
 import components from '@/component'
 
-// 完整引入组件
 // Import components completely
 const install = function (app: App) {
     components.forEach((component) => {
