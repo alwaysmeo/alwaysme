@@ -1,7 +1,5 @@
 # AlwaysMe-Design
 
-## Vite + Vue3 + TypeScript
-
 ## Desc
 
 -   This project is currently under development and should not be used in a production environment.
@@ -13,10 +11,10 @@
 
 ## Run
 
--   `npm run dev`
 -   `npx turbo dev`
+-   `npm run dev`
 
 ## Packaging
 
--   `npm run build`
 -   `npx turbo build`
+-   `npm run build`
