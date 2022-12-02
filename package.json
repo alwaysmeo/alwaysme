@@ -4,29 +4,41 @@
     "private": false,
     "title": "AlwaysMe-Vue3",
     "description": "AlwaysMe UI design language and Vue-based implementation",
-    "main": "lib/index.js",
-    "module": "lib/index.mjs",
-    "types": "lib/index.d.ts",
-    "keyword": [
+    "keywords": [
         "alwaysme",
         "component library",
         "ui",
         "vue3",
         "vue"
     ],
-    "license": "MIT",
+    "homepage": "https://alwaysme.org",
     "author": {
         "name": "AlwaysMe",
         "email": "hello2000@vip.qq.com"
     },
-    "homepage": "https://alwaysme.org",
+    "license": "MIT",
+    "main": "lib/index.js",
+    "module": "es/index.mjs",
+    "types": "es/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./es/index.d.ts",
+            "import": "./es/index.mjs",
+            "require": "./lib/index.js"
+        },
+        "./es": "./es/index.mjs",
+        "./lib": "./lib/index.js",
+        "./es/*.mjs": "./es/*.mjs",
+        "./es/*": "./es/*.mjs",
+        "./lib/*.js": "./lib/*.js",
+        "./lib/*": "./lib/*.js",
+        "./*": "./*"
+    },
+    "style": "dist/index.css",
     "repository": {
         "type": "git",
         "url": "https://github.com/Alwaysmeo/Alwaysme.git"
     },
-    "files": [
-        "packages/"
-    ],
     "scripts": {
         "dev": "vite --host --mode dev",
         "build": "vite build"
