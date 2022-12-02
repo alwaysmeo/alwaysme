@@ -41,7 +41,8 @@
     },
     "scripts": {
         "dev": "vite --host --mode dev",
-        "build": "vite build"
+        "build": "vite build",
+        "lint": "tsc"
     },
     "dependencies": {
         "unplugin-vue-define-options": "^0.12.8",
