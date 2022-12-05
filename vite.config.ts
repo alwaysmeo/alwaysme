@@ -18,7 +18,6 @@ export default defineConfig(({ mode }) => {
             outDir: 'lib',
             lib: {
                 entry: resolve(__dirname, 'packages/index.ts'),
-                formats: ['es', 'esm', 'umd', 'cjs'],
                 name: 'alwaysme',
                 fileName: 'index'
             },
