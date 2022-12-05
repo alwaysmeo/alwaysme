@@ -17,15 +17,16 @@
         "email": "hello2000@vip.qq.com"
     },
     "license": "MIT",
-    "main": "./lib/index.umd.js",
-    "module": "./lib/index.es.mjs",
-    "types": "./lib/index.d.ts",
+    "types": "./lib/alwaysme.d.ts",
+    "module": "./lib/alwaysme.es.mjs",
+    "main": "./lib/alwaysme.umd.js",
     "exports": {
         ".": {
-            "types": "./lib/index.d.ts",
-            "import": "./lib/index.es.mjs",
-            "require": "./lib/index.umd.js"
-        }
+            "types": "./lib/alwaysme.d.ts",
+            "import": "./lib/alwaysme.es.mjs",
+            "require": "./lib/alwaysme.umd.js"
+        },
+        "./lib/style.css": "./lib/style.css"
     },
     "style": "dist/index.css",
     "repository": {
@@ -34,7 +35,7 @@
     },
     "scripts": {
         "dev": "vite --host --mode dev",
-        "build": "vue-tsc && vite build",
+        "build": "vue-tsc --noEmit && vite build",
         "preview": "vite preview"
     },
     "dependencies": {

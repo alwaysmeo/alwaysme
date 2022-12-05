@@ -18,8 +18,9 @@ export default defineConfig(({ mode }) => {
             outDir: 'lib',
             lib: {
                 entry: resolve(__dirname, 'packages/index.ts'),
+                formats: ['es', 'umd'],
                 name: 'alwaysme',
-                fileName: 'index'
+                fileName: (format: string) => `alwaysme.${format}.js`
             },
             rollupOptions: {
                 external: ['vue'],
