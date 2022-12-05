@@ -1,6 +1,6 @@
 {
     "name": "alwaysme",
-    "version": "1.0.0-base.4",
+    "version": "1.0.0-alpha.1",
     "private": false,
     "title": "AlwaysMe-Vue3",
     "description": "AlwaysMe UI design language and Vue-based implementation",
@@ -34,7 +34,8 @@
     },
     "scripts": {
         "dev": "vite --host --mode dev",
-        "build": "vite build"
+        "build": "vue-tsc && vite build",
+        "preview": "vite preview"
     },
     "dependencies": {
         "unplugin-vue-define-options": "^0.12.8",

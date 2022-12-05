@@ -1,0 +1,12 @@
+.idea
+.vscode
+node_modules
+dist
+examples
+packages
+public
+.prettierrc
+vite.config.ts
+vite.svg
+*.map
+*.html
