@@ -3,19 +3,20 @@
         :class="[
             'me-link',
             {
-                [`me-link-underline`]: state.underline,
-                [`me-link-disabled`]: state.disabled
+                [`me-link-underline`]: props.underline,
+                [`me-link-disabled`]: props.disabled
             }
         ]"
-        :href="state.href"
-        :target="state.target"
+        :href="props.href || 'javascript:;'"
+        :target="props.target"
+        @click="handleClick"
     >
         <slot></slot>
     </a>
 </template>
 
 <script setup lang="ts">
-import { PropType, reactive, computed } from 'vue'
+import { PropType } from 'vue'
 import { prefix } from '@/config'
 
 defineOptions({ name: `${prefix}Link` })
@@ -23,7 +24,7 @@ defineOptions({ name: `${prefix}Link` })
 const props = defineProps({
     // 链接色值
     color: {
-        type: String,
+        type: String as PropType<string>,
         default: ''
     },
     // 是否需要下划线
@@ -38,7 +39,7 @@ const props = defineProps({
     },
     // 原生 herf 属性
     href: {
-        type: String,
+        type: String as PropType<string>,
         default: ''
     },
     // 原生 target 属性
@@ -47,12 +48,11 @@ const props = defineProps({
         default: '_self'
     }
 })
+const emits = defineEmits(['click'])
 
-const state = reactive({
-    color: computed(() => props.color),
-    underline: computed(() => props.underline),
-    disabled: computed(() => props.disabled),
-    href: computed(() => props.disabled) || !computed(() => props.href) ? 'javascript:;' : computed(() => props.href),
-    target: computed(() => props.target)
-})
+const handleClick = (event: MouseEvent) => {
+    console.log(props)
+    if (props.disabled) return event.preventDefault()
+    emits('click', event)
+}
 </script>

@@ -8,5 +8,7 @@ public
 .prettierrc
 vite.config.ts
 vite.svg
+tsconfig.json
+tsconfig.node.json
 *.map
 *.html

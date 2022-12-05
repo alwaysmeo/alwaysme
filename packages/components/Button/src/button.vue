@@ -2,27 +2,27 @@
     <button
         :class="[
             'me-button',
-            `me-button-type-${state.type}`,
-            `me-button-shape-${state.shape}`,
+            `me-button-type-${props.type}`,
+            `me-button-shape-${props.shape}`,
             {
-                [`me-button-long`]: state.long,
-                [`me-button-loading`]: state.loading,
-                [`me-button-disabled`]: state.disabled,
-                [`me-button-ghost`]: state.ghost
+                [`me-button-long`]: props.long,
+                [`me-button-loading`]: props.loading,
+                [`me-button-disabled`]: props.disabled,
+                [`me-button-ghost`]: props.ghost
             }
         ]"
         :disabled="props.disabled"
         :type="props.htmlType"
         @click="handleClick"
     >
-        <i class="iconfont icon-loading" v-if="loading" />
+        <i class="iconfont icon-loading" v-if="props.loading" />
         <slot name="icon" />
         <slot></slot>
     </button>
 </template>
 
 <script setup lang="ts">
-import { PropType, reactive, computed } from 'vue'
+import { PropType } from 'vue'
 import { prefix } from '@/config'
 
 defineOptions({ name: `${prefix}Button` })
@@ -30,9 +30,7 @@ defineOptions({ name: `${prefix}Button` })
 const props = defineProps({
     // 按钮类型 default | primary | dashed | text | link |
     type: {
-        type: String as PropType<
-            'default' | 'primary' | 'dashed' | 'text' | 'link'
-        >,
+        type: String as PropType<'default' | 'primary' | 'dashed' | 'text' | 'link'>,
         default: 'default'
     },
     // 按钮形状 default | square | round
@@ -66,21 +64,10 @@ const props = defineProps({
         default: false
     }
 })
-
 const emits = defineEmits(['click'])
 
-const state = reactive({
-    type: computed(() => props.type),
-    shape: computed(() => props.shape),
-    long: computed(() => props.long),
-    disabled: computed(() => props.disabled),
-    loading: computed(() => props.loading),
-    htmlType: computed(() => props.htmlType),
-    ghost: computed(() => props.ghost)
-})
-
 const handleClick = (event: MouseEvent) => {
-    if (props.disabled || props.loading) return event.preventDefault()
+    // if (props.disabled || props.loading) return event.preventDefault()
     emits('click', event)
 }
 </script>

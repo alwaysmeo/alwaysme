@@ -23,7 +23,7 @@
     },
     "include": [
         "examples/**/*.vue",
-        "examples/**/*.ts",
+        "typings/**/*.ts",
         "packages/**/*.ts",
         "packages/**/*.tsx",
         "packages/**/*.vue"
