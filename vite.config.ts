@@ -5,7 +5,12 @@ import DefineOptions from 'unplugin-vue-define-options/vite'
 import dts from 'vite-plugin-dts'
 
 export default defineConfig({
-    plugins: [vue(), DefineOptions(), dts()],
+    plugins: [
+        vue(),
+        DefineOptions(),
+        dts({ tsConfigFilePath: './tsconfig.json'}),
+        dts({ outputDir: 'lib', tsConfigFilePath: './tsconfig.json'})
+    ],
     resolve: {
         alias: {
             '@': resolve(__dirname, './packages'),

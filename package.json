@@ -1,6 +1,6 @@
 {
     "name": "alwaysme",
-    "version": "1.0.0-alpha.1",
+    "version": "1.0.0-alpha.2",
     "private": false,
     "title": "AlwaysMe-Vue3",
     "description": "AlwaysMe UI design language and Vue-based implementation",
@@ -17,14 +17,14 @@
         "email": "hello2000@vip.qq.com"
     },
     "license": "MIT",
-    "types": "./es/alwaysme.d.ts",
-    "module": "./es/alwaysme.mjs",
-    "main": "./lib/alwaysme.js",
+    "types": "./es/index.d.ts",
+    "module": "./es/index.js",
+    "main": "./lib/index.js",
     "exports": {
         ".": {
-            "types": "./es/alwaysme.d.ts",
-            "import": "./es/alwaysme.mjs",
-            "require": "./lib/alwaysme.js"
+            "types": "./es/index.d.ts",
+            "import": "./es/index.js",
+            "require": "./lib/index.js"
         },
         "./lib/style.css": "./lib/style.css",
         "./es/style.css": "./es/style.css"
