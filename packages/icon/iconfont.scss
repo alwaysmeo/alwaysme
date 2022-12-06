@@ -2,21 +2,21 @@
 // 📦️ The icons of this project are all from iconfont - Alibaba vector icon library, for more icons, please visit http://www.iconfont.cn
 
 @font-face {
-  font-family: "iconfont";
-  /* Project id 3788332 */
-  src: url('//at.alicdn.com/t/c/font_3788332_a3kj498mcid.woff2?t=1669258948193') format('woff2'),
-    url('//at.alicdn.com/t/c/font_3788332_a3kj498mcid.woff?t=1669258948193') format('woff'),
-    url('//at.alicdn.com/t/c/font_3788332_a3kj498mcid.ttf?t=1669258948193') format('truetype');
+	font-family: 'iconfont';
+	/* Project id 3788332 */
+	src: url('//at.alicdn.com/t/c/font_3788332_a3kj498mcid.woff2?t=1669258948193') format('woff2'),
+		url('//at.alicdn.com/t/c/font_3788332_a3kj498mcid.woff?t=1669258948193') format('woff'),
+		url('//at.alicdn.com/t/c/font_3788332_a3kj498mcid.ttf?t=1669258948193') format('truetype');
 }
 
 .iconfont {
-  font-family: "iconfont" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-family: 'iconfont' !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .icon-loading:before {
-  content: "\e60b";
+	content: '\e60b';
 }

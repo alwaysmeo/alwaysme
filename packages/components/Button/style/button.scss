@@ -61,12 +61,10 @@
 	}
 }
 
-
 // long
 .me-button-long {
 	width: 100%;
 }
-
 
 // shape
 .me-button-shape-default {
@@ -88,7 +86,6 @@
 	}
 }
 
-
 // loading-iconfont
 .me-button .icon-loading {
 	display: inline-block;
@@ -97,14 +94,17 @@
 	animation: rotate 1s linear infinite;
 }
 
-
 // loading
 .me-button-loading {
 	box-shadow: none;
 	cursor: default;
 
 	&.me-button-type-primary {
-		background-image: linear-gradient(to bottom right, mix($secondary-color, $theme, 60%), mix($primary-color, $theme, 60%));
+		background-image: linear-gradient(
+			to bottom right,
+			mix($secondary-color, $theme, 60%),
+			mix($primary-color, $theme, 60%)
+		);
 	}
 
 	&.me-button-type-default,
@@ -121,7 +121,6 @@
 		color: mix($primary-color, $theme, 60%);
 	}
 }
-
 
 // disabled-status
 .me-button-disabled {

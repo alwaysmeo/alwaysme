@@ -3,9 +3,9 @@ import components from '@/component'
 
 // Import components completely
 const install = function (app: App) {
-    components.forEach((component) => {
-        app.use(component as unknown as { install: () => any })
-    })
+	components.forEach((component) => {
+		app.use(component as unknown as { install: () => any })
+	})
 }
 
 export default { install }
