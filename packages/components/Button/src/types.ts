@@ -18,17 +18,17 @@ export const ButtonProps = {
 	},
 	// 使按钮的宽度跟随容器的宽度 true | false
 	long: {
-		type: Boolean,
+		type: Boolean as PropType<boolean>,
 		default: false
 	},
 	// 禁用状态 true | false
 	disabled: {
-		type: Boolean,
+		type: Boolean as PropType<boolean>,
 		default: false
 	},
 	// 加载中状态 true | false
 	loading: {
-		type: Boolean,
+		type: Boolean as PropType<boolean>,
 		default: false
 	},
 	// 设置 button 的原生 type 属性 可选值参考 HTML 标准
@@ -38,7 +38,7 @@ export const ButtonProps = {
 	},
 	// 幽灵按钮，使按钮背景透明
 	ghost: {
-		type: Boolean,
+		type: Boolean as PropType<boolean>,
 		default: false
 	}
 }

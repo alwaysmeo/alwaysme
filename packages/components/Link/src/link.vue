@@ -16,38 +16,11 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue'
-import { prefix } from '@/config'
+import { LinkProps, Name } from '@components/Link/src/types'
 
-defineOptions({ name: `${prefix}Link` })
+defineOptions({ name: Name })
 
-const props = defineProps({
-    // 链接色值
-    color: {
-        type: String as PropType<string>,
-        default: ''
-    },
-    // 是否需要下划线
-    underline: {
-        type: Boolean as PropType<boolean>,
-        default: true
-    },
-    // 是否禁用状态
-    disabled: {
-        type: Boolean as PropType<boolean>,
-        default: false
-    },
-    // 原生 herf 属性
-    href: {
-        type: String as PropType<string>,
-        default: ''
-    },
-    // 原生 target 属性
-    target: {
-        type: String as PropType<'_self' | '_blank' | '_parent' | '_top'>,
-        default: '_self'
-    }
-})
+const props = defineProps(LinkProps)
 const emits = defineEmits(['click'])
 
 const handleClick = (event: MouseEvent) => {

@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { ButtonProps, Name } from '@/components/Button/src/types'
+import { ButtonProps, Name } from '@components/Button/src/types'
 
 defineOptions({ name: Name })
 const props = defineProps(ButtonProps)

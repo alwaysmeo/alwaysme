@@ -23,29 +23,27 @@ export default defineConfig({
         target: 'modules',
         outDir: 'lib',
         minify: false,
+        lib: {
+            entry: resolve(__dirname, 'packages/index.ts'),
+            name: 'alwaysme'
+        },
         rollupOptions: {
             external: ['vue'],
-            input: ['packages/index.ts'],
+            input: ['./packages/index.ts'],
             output: [
                 {
                     dir: 'es',
                     format: 'es',
-                    entryFileNames: '[name].js',
+                    entryFileNames: '[name].[format].js',
                     preserveModules: true,
-                    preserveModulesRoot: 'packages'
                 },
                 {
                     dir: 'lib',
                     format: 'cjs',
-                    entryFileNames: '[name].js',
+                    entryFileNames: '[name].[format].js',
                     preserveModules: true,
-                    preserveModulesRoot: 'packages'
                 }
             ]
-        },
-        lib: {
-            entry: resolve(__dirname, 'packages/index.ts'),
-            formats: ['es', 'cjs'],
         }
     },
     server: {
