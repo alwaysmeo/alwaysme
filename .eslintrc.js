@@ -1,18 +1,28 @@
 module.exports = {
 	env: {
 		browser: true,
-		es2021: true
+		es2021: true,
+		'vue/setup-compiler-macros': true // vue3写法校验
 	},
-	extends: ['eslint:recommended', 'plugin:vue/vue3-essential', 'plugin:@typescript-eslint/recommended'],
+	extends: [
+		'eslint:recommended',
+		'plugin:vue/vue3-essential',
+		'plugin:@typescript-eslint/recommended',
+		'plugin:vue/base'
+	],
 	overrides: [],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
+		parser: 'vue-eslint-parser',
 		ecmaVersion: 'latest',
 		sourceType: 'module'
 	},
 	plugins: ['vue', '@typescript-eslint'],
 	rules: {
-		indent: ['error', 'tab', { allowSingleLine: true }], // 强制使用制表符缩进
+		'@typescript-eslint/no-explicit-any': ['off'], // 关闭any类型校验
+		'vue/script-indent': ['error', 'tab', { baseIndent: 1, switchCase: 0, ignores: [] }],
+		indent: ['error', 'tab'], // 强制使用制表符缩进
+		eqeqeq: 'warn', // 必须使用全等
 		'comma-dangle': ['warn', 'never'], // 对象字面量项尾不能有逗号
 		'comma-spacing': ['error', { before: false, after: true }], // 控制逗号前后的空格
 		'keyword-spacing': ['error', { before: true, after: true }], // 强制在关键字前后使用一致的空格

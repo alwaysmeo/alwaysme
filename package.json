@@ -36,6 +36,7 @@
 	},
 	"scripts": {
 		"dev": "vite --host --mode dev",
+		"lint": "eslint --ext .js,.jsx,.ts,.tsx packages",
 		"build": "vue-tsc --noEmit && vite build",
 		"preview": "vite preview"
 	},
