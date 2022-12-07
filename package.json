@@ -1,5 +1,5 @@
 {
-	"name": "alwaysme",
+	"name": "@alwaysme/design-vue3",
 	"version": "1.0.0-dev.1.0",
 	"private": false,
 	"title": "AlwaysMe-Vue3",
@@ -12,10 +12,7 @@
 		"component library"
 	],
 	"homepage": "https://www.alwaysme.org",
-	"author": {
-		"name": "AlwaysMe",
-		"email": "hello2000@vip.qq.com"
-	},
+	"author": "AlwaysMeo <hello2000@vip.qq.com>",
 	"license": "MIT",
 	"types": "./es/packages/index.d.ts",
 	"module": "./es/index.es.js",
@@ -29,10 +26,7 @@
 		"./style.css": "./es/style.css"
 	},
 	"style": "dist/index.css",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/Alwaysmeo/Alwaysme.git"
-	},
+	"repository": "https://github.com/Alwaysmeo/Alwaysme.git",
 	"scripts": {
 		"dev": "vite --host --mode dev",
 		"lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue packages",

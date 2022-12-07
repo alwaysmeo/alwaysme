@@ -1,4 +1,4 @@
-# AlwaysMe-Design
+# AlwaysMe-Design-Vue3
 
 ## 📌 Desc
 
@@ -13,9 +13,11 @@
 
 ## 📦️ Install
 
--   **推荐使用 npm 的方式进行包管理**
+-   **推荐使用 npm 或 yarn 的方式进行包管理**
 
--   `npm install alwaysme --save-dev`
+-   `npm install alwaysme`
+
+-   `yarn add alwaysme`
 
 ## 🧑‍💻 Use
 
@@ -25,15 +27,7 @@
     import { createApp } from 'vue'
     import App from './App.vue'
 
-    import ALwaysMe from 'alwaysme'
-    import 'alwaysme/style.css'
+    import AlwaysMe from '@alwaysme/design-vue3'
+    import '@alwaysme/design-vue3/style.css'
     createApp(App).use(AlwaysMe).mount('#app')
     ```
-
----
-
-#### 🌐	Link
-
-[✅ Home](https://www.alwaysme.org)
-
-[✅ 首页](https://www.alwaysme.org)
