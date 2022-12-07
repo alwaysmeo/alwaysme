@@ -11,7 +11,7 @@
 		:target="props.target"
 		@click="handleClick"
 	>
-		<slot></slot>
+		<slot />
 	</a>
 </template>
 
@@ -24,8 +24,7 @@
 	const emits = defineEmits(['click'])
 
 	const handleClick = (event: MouseEvent) => {
-		console.log(props)
-		// if (props.disabled) return event.preventDefault()
+		if (props.disabled) return event.preventDefault()
 		emits('click', event)
 	}
 </script>

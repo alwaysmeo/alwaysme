@@ -15,9 +15,9 @@
 		:type="props.htmlType"
 		@click="handleClick"
 	>
-		<i class="iconfont icon-loading" v-if="props.loading" />
+		<i v-if="props.loading" class="iconfont icon-loading" />
 		<slot name="icon" />
-		<slot></slot>
+		<slot />
 	</button>
 </template>
 
@@ -29,7 +29,7 @@
 	const emits = defineEmits(['click'])
 
 	const handleClick = (event: MouseEvent) => {
-		// if (props.disabled || props.loading) return event.preventDefault()
+		if (props.disabled || props.loading) return event.preventDefault()
 		emits('click', event)
 	}
 </script>
