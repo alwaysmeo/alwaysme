@@ -2,11 +2,10 @@
 
 $primary-color: #007fff;
 $secondary-color: #00ddff;
-$red-base: #c21533;
-$green-base: #00b66a;
-$blue-base: #007fff;
-$yellow-base: #f79600;
-$gray-base: #eceff2;
+$danger-base: #c21533;
+$success-base: #00b66a;
+$warning-base: #f79600;
+$info-base: #eceff2;
 $black: #22272e;
 $white: #ffffff;
 
@@ -14,8 +13,3 @@ $light: #ffffff;
 $dark: #22272e;
 $theme: $light;
 $reverse-theme: if($theme ==$light, $dark, $light);
-
-body {
-	background-color: $theme;
-	// background-image: url(https://img1.baidu.com/it/u=2122261723,623933855&fm=253&fmt=auto&app=138&f=JPEG);
-}

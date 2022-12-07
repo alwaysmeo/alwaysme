@@ -18,13 +18,13 @@
 	},
 	"license": "MIT",
 	"types": "./es/packages/index.d.ts",
-	"module": "./es/index.js",
-	"main": "./lib/index.js",
+	"module": "./es/index.es.js",
+	"main": "./lib/index.cjs.js",
 	"exports": {
 		".": {
 			"types": "./es/packages/index.d.ts",
-			"import": "./es/index.js",
-			"require": "./lib/index.js"
+			"module": "./es/index.es.js",
+			"main": "./lib/index.cjs.js"
 		},
 		"./lib/style.css": "./lib/style.css",
 		"./style.css": "./es/style.css"

@@ -22,7 +22,7 @@
 .me-button-type-default {
 	color: $reverse-theme;
 	background-color: $theme;
-	border: 1px solid mix($gray-base, $reverse-theme, 80%);
+	border: 1px solid mix($info-base, $reverse-theme, 80%);
 
 	&:not(.me-button-loading):not(.me-button-disabled):hover {
 		color: $primary-color;
@@ -34,7 +34,7 @@
 .me-button-type-dashed {
 	color: $reverse-theme;
 	background-color: $theme;
-	border: 1px dashed mix($gray-base, $reverse-theme, 80%);
+	border: 1px dashed mix($info-base, $reverse-theme, 80%);
 
 	&:not(.me-button-loading):not(.me-button-disabled):hover {
 		color: $primary-color;
@@ -109,12 +109,12 @@
 
 	&.me-button-type-default,
 	&.me-button-type-dashed {
-		border-color: if($theme ==$light, $gray-base, mix($gray-base, $dark, 60%));
-		color: mix($gray-base, $dark, 60%);
+		border-color: if($theme ==$light, $info-base, mix($info-base, $dark, 60%));
+		color: mix($info-base, $dark, 60%);
 	}
 
 	&.me-button-type-text {
-		color: mix($gray-base, $dark, 60%);
+		color: mix($info-base, $dark, 60%);
 	}
 
 	&.me-button-type-link {
@@ -129,19 +129,19 @@
 	&.me-button-type-default,
 	&.me-button-type-dashed,
 	&.me-button-type-primary {
-		color: mix($gray-base, $dark, if($theme ==$light, 80%, 40%));
-		background-color: if($theme ==$light, $gray-base, mix($gray-base, $dark, 10%));
-		border-color: mix($gray-base, $dark, if($theme ==$light, 80%, 40%));
+		color: mix($info-base, $dark, if($theme ==$light, 80%, 40%));
+		background-color: if($theme ==$light, $info-base, mix($info-base, $dark, 10%));
+		border-color: mix($info-base, $dark, if($theme ==$light, 80%, 40%));
 	}
 
 	&.me-button-type-primary {
 		background-image: none;
-		border: 1px solid mix($gray-base, $dark, if($theme ==$light, 80%, 40%));
-		background-color: if($theme ==$light, $gray-base, mix($gray-base, $dark, 10%));
+		border: 1px solid mix($info-base, $dark, if($theme ==$light, 80%, 40%));
+		background-color: if($theme ==$light, $info-base, mix($info-base, $dark, 10%));
 	}
 
 	&.me-button-type-text {
-		color: mix($gray-base, $dark, if($theme ==$light, 80%, 40%));
+		color: mix($info-base, $dark, if($theme ==$light, 80%, 40%));
 	}
 }
 
