@@ -27,7 +27,7 @@ import App from './App.vue'
 
 import ALwaysMe from 'alwaysme'
 import 'alwaysme/style.css'
-createApp(App).use(ALwaysMe).mount('#app')
+createApp(App).use(AlwaysMe).mount('#app')
 ```
 
 ---
