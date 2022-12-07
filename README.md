@@ -13,22 +13,22 @@
 
 ## Install 📦️
 
-**推荐使用 npm 的方式进行包管理**
+-   **推荐使用 npm 的方式进行包管理**
 
-`npm install alwaysme --save-dev`
+-   `npm install alwaysme --save-dev`
 
 ## Use 🧑‍💻
 
-`/src/main.js` 文件中全局引入 `ALwaysMe` 组件库
+-   `/src/main.js` 文件中全局引入 `ALwaysMe` 组件库
 
-```javascript
-import { createApp } from 'vue'
-import App from './App.vue'
+    ```javascript
+    import { createApp } from 'vue'
+    import App from './App.vue'
 
-import ALwaysMe from 'alwaysme'
-import 'alwaysme/style.css'
-createApp(App).use(AlwaysMe).mount('#app')
-```
+    import ALwaysMe from 'alwaysme'
+    import 'alwaysme/style.css'
+    createApp(App).use(AlwaysMe).mount('#app')
+    ```
 
 ---
 
