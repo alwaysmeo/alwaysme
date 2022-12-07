@@ -17,17 +17,17 @@
 		"email": "hello2000@vip.qq.com"
 	},
 	"license": "MIT",
-	"types": "./es/index.d.ts",
+	"types": "./es/packages/index.d.ts",
 	"module": "./es/index.js",
 	"main": "./lib/index.js",
 	"exports": {
 		".": {
-			"types": "./es/index.d.ts",
+			"types": "./es/packages/index.d.ts",
 			"import": "./es/index.js",
 			"require": "./lib/index.js"
 		},
 		"./lib/style.css": "./lib/style.css",
-		"./es/style.css": "./es/style.css"
+		"./style.css": "./es/style.css"
 	},
 	"style": "dist/index.css",
 	"repository": {
