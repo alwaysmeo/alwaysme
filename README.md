@@ -13,6 +13,12 @@
 
 ## Install
 
+**推荐使用 npm 的方式进行包管理**
+
+-	`npm install alwaysme --save-dev`
+
+## Use
+
 -   `/src/main.js` 文件中全局引入 `ALwaysMe` 组件库
 
     ```javascript
@@ -23,3 +29,12 @@
     import 'alwaysme/style.css'
     createApp(App).use(ALwaysMe).mount('#app')
     ```
+
+
+---
+
+#### Link
+
+[Home](www.alwaysme.org)
+
+[首页](www.alwaysme.org)
