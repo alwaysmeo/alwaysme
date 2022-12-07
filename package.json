@@ -37,8 +37,7 @@
 	"scripts": {
 		"dev": "vite --host --mode dev",
 		"lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue packages",
-		"build": "vue-tsc --noEmit && vite build",
-		"preview": "vite preview"
+		"build": "vue-tsc --noEmit && vite build"
 	},
 	"dependencies": {
 		"unplugin-vue-define-options": "^0.12.8",
@@ -56,6 +55,6 @@
 		"typescript": "^4.9.3",
 		"vite": "^3.2.4",
 		"vite-plugin-dts": "^1.7.1",
-		"vue-tsc": "^1.0.9"
+		"vue-tsc": "^1.0.11"
 	}
 }
