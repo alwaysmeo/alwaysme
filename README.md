@@ -7,12 +7,11 @@
 
 ## Start
 
--   `npm install`
+-   `main.js` 中引入 `ALwaysMe` 组件库
 
-## Run
+    ```javascript
+    import ALwaysMe from 'alwaysme'
+    import 'alwaysme/style.css'
 
--   `npm run dev`
-
-## Packaging
-
--   `npm run build`
+    createApp(App).use(ALwaysMe).mount('#app')
+    ```
