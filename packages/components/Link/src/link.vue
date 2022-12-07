@@ -28,7 +28,7 @@
 		target: '_self'
 	})
 
-	const emits = defineEmits(['click'])
+	const emits = defineEmits<{ (key: 'click', val: MouseEvent): void }>()
 
 	const handleClick = (event: MouseEvent) => {
 		if (props.disabled) return event.preventDefault()
