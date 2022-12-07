@@ -6,10 +6,10 @@
 	"description": "AlwaysMe UI design language and Vue-based implementation",
 	"keywords": [
 		"alwaysme",
-		"component library",
 		"ui",
 		"vue3",
-		"vue3-design"
+		"design",
+		"component library"
 	],
 	"homepage": "https://alwaysme.org",
 	"author": {
