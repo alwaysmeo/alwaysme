@@ -1,8 +1,8 @@
 <template>
 	<div class="always-me">
 		<div>
-			<me-button type="primary" long>按钮</me-button>
-			<me-button type="primary" shape="round" loading></me-button>
+			<me-button type="primary" long @click="handleClick">按钮</me-button>
+			<me-button type="primary" shape="round" loading />
 			<me-button type="primary" shape="square">按钮</me-button>
 		</div>
 		<div>
@@ -41,7 +41,11 @@
 	</div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+	const handleClick = (e: MouseEvent) => {
+		console.log(e)
+	}
+</script>
 
 <style scoped lang="scss">
 	.always-me {

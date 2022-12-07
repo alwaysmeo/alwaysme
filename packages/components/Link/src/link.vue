@@ -1,12 +1,6 @@
 <template>
 	<a
-		:class="[
-			'me-link',
-			{
-				[`me-link-underline`]: props.underline,
-				[`me-link-disabled`]: props.disabled
-			}
-		]"
+		:class="['me-link', { [`me-link-underline`]: props.underline, [`me-link-disabled`]: props.disabled }]"
 		:href="props.href || 'javascript:;'"
 		:target="props.target"
 		@click="handleClick"
@@ -16,11 +10,24 @@
 </template>
 
 <script setup lang="ts">
-	import { LinkProps, Name } from '@components/Link/src/types'
+	import { prefix } from '@/config'
 
-	defineOptions({ name: Name })
+	interface Props {
+		color?: string // 链接色值
+		underline?: boolean // 是否需要下划线
+		disabled?: boolean // 是否禁用状态
+		href?: string // 原生 herf 属性
+		target?: '_self' | '_blank' | '_parent' | '_top' // 原生 target 属性
+	}
 
-	const props = defineProps(LinkProps)
+	defineOptions({ name: `${prefix}Link` })
+
+	const props = withDefaults(defineProps<Props>(), {
+		color: '',
+		href: 'javascrit:;',
+		target: '_self'
+	})
+
 	const emits = defineEmits(['click'])
 
 	const handleClick = (event: MouseEvent) => {
