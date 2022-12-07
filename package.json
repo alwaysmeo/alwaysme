@@ -1,6 +1,6 @@
 {
 	"name": "alwaysme",
-	"version": "1.0.0-alpha.1.0.0",
+	"version": "1.0.0-alpha.1",
 	"private": false,
 	"title": "AlwaysMe-Vue3",
 	"description": "AlwaysMe UI design language and Vue-based implementation",
@@ -26,7 +26,6 @@
 			"module": "./es/index.es.js",
 			"main": "./lib/index.cjs.js"
 		},
-		"./lib/style.css": "./lib/style.css",
 		"./style.css": "./es/style.css"
 	},
 	"style": "dist/index.css",
