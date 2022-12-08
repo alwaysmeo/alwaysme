@@ -31,3 +31,6 @@
     import '@alwaysme/design-vue3/style.css'
     createApp(App).use(AlwaysMe).mount('#app')
     ```
+
+####  📌 Contributors 贡献者
+-   <a href="https://github.com/Alwaysmeo" target="_blank"><img src="https://avatars.githubusercontent.com/u/62600916?v=4" height="52" style="border-radius: 50%"></a>
