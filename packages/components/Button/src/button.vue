@@ -35,15 +35,16 @@
 	}
 
 	defineOptions({ name: `${prefix}Button` })
+
 	const props = withDefaults(defineProps<Props>(), {
 		type: 'default',
 		shape: 'default',
 		htmlType: 'button'
 	})
 
-	const emits = defineEmits<{ (key: 'click', val: MouseEvent): void }>()
+	const emits = defineEmits<{ (key: 'click', val: Event): void }>()
 
-	const handleClick = (event: MouseEvent) => {
+	const handleClick = (event: Event) => {
 		if (props.disabled || props.loading) return event.preventDefault()
 		emits('click', event)
 	}

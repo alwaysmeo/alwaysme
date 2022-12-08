@@ -41,7 +41,7 @@ module.exports = {
 		'no-empty-character-class': 'error', // 禁止在正则表达式中使用空字符集
 		'no-extra-parens': ['error', 'functions'], // 禁止不必要的括号
 		'comma-spacing': ['error', { before: false, after: true }], // 控制逗号前后的空格
-		'no-unused-vars': ['error', { vars: 'all', args: 'none' }], // 禁止出现未使用过的变量
+		'no-unused-vars': ['warn', { vars: 'all', args: 'none' }], // 禁止出现未使用过的变量
 		'keyword-spacing': ['error', { before: true, after: true }], // 强制在关键字前后使用一致的空格
 		'@typescript-eslint/no-explicit-any': ['off'], // 关闭any类型校验
 		'vue/max-attributes-per-line': 'off', // 关闭属性换行

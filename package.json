@@ -33,6 +33,7 @@
 		"build": "vue-tsc --noEmit && vite build"
 	},
 	"dependencies": {
+		"sass": "^1.56.1",
 		"unplugin-vue-define-options": "^0.12.8",
 		"vue": "^3.2.45"
 	},

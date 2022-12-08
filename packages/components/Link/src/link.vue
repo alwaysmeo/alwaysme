@@ -13,7 +13,6 @@
 	import { prefix } from '@/config'
 
 	interface Props {
-		color?: string // 链接色值
 		underline?: boolean // 是否需要下划线
 		disabled?: boolean // 是否禁用状态
 		href?: string // 原生 herf 属性
@@ -23,14 +22,13 @@
 	defineOptions({ name: `${prefix}Link` })
 
 	const props = withDefaults(defineProps<Props>(), {
-		color: '',
 		href: 'javascrit:;',
 		target: '_self'
 	})
 
-	const emits = defineEmits<{ (key: 'click', val: MouseEvent): void }>()
+	const emits = defineEmits<{ (key: 'click', val: Event): void }>()
 
-	const handleClick = (event: MouseEvent) => {
+	const handleClick = (event: Event) => {
 		if (props.disabled) return event.preventDefault()
 		emits('click', event)
 	}

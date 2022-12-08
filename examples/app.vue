@@ -42,7 +42,7 @@
 </template>
 
 <script setup lang="ts">
-	const handleClick = (e: MouseEvent) => {
+	const handleClick = (e: Event) => {
 		console.log(e)
 	}
 </script>
