@@ -24,12 +24,14 @@ export default defineConfig({
 		outDir: 'dist',
 		minify: false,
 		lib: {
-			entry: resolve(__dirname, 'packages/index.ts'),
+			entry: resolve(__dirname, './index.ts'),
 			name: 'alwaysme'
 		},
 		rollupOptions: {
 			external: ['vue'],
-			input: ['./packages/index.ts'],
+			input: {
+				alwaysme: resolve(__dirname, './packages/index.ts')
+			},
 			output: [
 				{
 					dir: 'es',
