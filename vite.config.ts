@@ -21,7 +21,7 @@ export default defineConfig({
 	},
 	build: {
 		target: 'modules',
-		outDir: 'lib',
+		outDir: 'dist',
 		minify: false,
 		lib: {
 			entry: resolve(__dirname, 'packages/index.ts'),
@@ -34,12 +34,14 @@ export default defineConfig({
 				{
 					dir: 'es',
 					format: 'es',
+					sourcemap: true,
 					entryFileNames: '[name].[format].js',
 					preserveModules: true
 				},
 				{
 					dir: 'lib',
 					format: 'cjs',
+					sourcemap: true,
 					entryFileNames: '[name].[format].js',
 					preserveModules: true
 				}

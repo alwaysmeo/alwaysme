@@ -32,5 +32,13 @@
     createApp(App).use(AlwaysMe).mount('#app')
     ```
 
+-   如果是 TypeScript 项目，需在您的项目 `.d.ts` 文件中添加以下内容，以避免报错。无此文件可自行创建。
+
+    ```typescript
+    declare module '@alwaysme/design-vue3' {
+        export function install(app: App): void
+    }
+    ```
+
 ###  📌 Contributors 贡献者
 -   <a href="https://github.com/Alwaysmeo" target="_blank"><img src="https://avatars.githubusercontent.com/u/62600916?v=4" height="52" style="border-radius: 50%"></a>

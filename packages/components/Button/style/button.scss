@@ -3,8 +3,8 @@
 	box-sizing: border-box;
 	padding: 0 15px;
 	font-size: 14px;
-	line-height: 1;
-	height: 30px;
+	line-height: 1.5;
+	height: 32px;
 	transition: box-shadow 0.3s, border 0.3s, color 0.3s, background-color 0.3s;
 	border: 0;
 }
@@ -90,7 +90,6 @@
 .me-button .icon-loading {
 	display: inline-block;
 	margin-right: 5px;
-	vertical-align: text-bottom;
 	animation: rotate 1s linear infinite;
 }
 
