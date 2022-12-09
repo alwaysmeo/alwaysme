@@ -1,11 +1,11 @@
 {
-    "printWidth": 120,
-    "tabWidth": 4,
-    "useTabs": true,
-    "vueIndentScriptAndStyle": true,
-    "semi": false,
-    "trailingComma": "none",
-    "singleQuote": true,
-    "bracketSpacing": true,
-    "editor.formatOnSave": true
+	"printWidth": 120,
+	"tabWidth": 2,
+	"useTabs": true,
+	"vueIndentScriptAndStyle": true,
+	"semi": false,
+	"trailingComma": "none",
+	"singleQuote": true,
+	"bracketSpacing": true,
+	"editor.formatOnSave": true
 }
