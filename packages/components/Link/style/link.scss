@@ -10,11 +10,11 @@
 		line-height: 20px;
 	}
 
-	&.me-link-underline:hover {
+	&-underline:hover {
 		border-color: mix($primary-color, $secondary-color, 40%);
 	}
 
-	&.me-link-disabled {
+	&-disabled {
 		color: mix($primary-color, $theme, 60%);
 
 		&:hover {

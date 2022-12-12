@@ -42,9 +42,9 @@
 		htmlType: 'button'
 	})
 
-	const emits = defineEmits<{ (key: 'click', val: Event): void }>()
+	const emits = defineEmits<{ (key: 'click', val: MouseEvent): void }>()
 
-	const handleClick = (event: Event) => {
+	const handleClick = (event: MouseEvent) => {
 		if (props.disabled || props.loading) return event.preventDefault()
 		emits('click', event)
 	}

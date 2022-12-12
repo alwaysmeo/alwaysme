@@ -30,7 +30,7 @@ export default defineConfig({
 		rollupOptions: {
 			external: ['vue'],
 			input: {
-				alwaysme: resolve(__dirname, './packages/index.ts')
+				main: resolve(__dirname, './packages/index.ts')
 			},
 			output: [
 				{

@@ -7,156 +7,157 @@
 	height: 32px;
 	transition: box-shadow 0.3s, border 0.3s, color 0.3s, background-color 0.3s;
 	border: 0;
-}
 
-// type
-.me-button-type-primary {
-	color: $white;
-	background-image: linear-gradient(to bottom right, $secondary-color, $primary-color);
+	// type
+	&-type-primary {
+		color: $white;
+		background-image: linear-gradient(to bottom right, $secondary-color, $primary-color);
 
-	&:not(.me-button-loading):not(.me-button-disabled):hover {
-		box-shadow: 0 0 6px 0 $primary-color;
+		&:not(.me-button-loading):not(.me-button-disabled):hover {
+			box-shadow: 0 0 6px 0 $primary-color;
+		}
 	}
-}
 
-.me-button-type-default {
-	color: $reverse-theme;
-	background-color: $theme;
-	border: 1px solid mix($info-base, $reverse-theme, 80%);
+	&-type-default {
+		color: $reverse-theme;
+		background-color: $theme;
+		border: 1px solid mix($info-base, $reverse-theme, 80%);
 
-	&:not(.me-button-loading):not(.me-button-disabled):hover {
+		&:not(.me-button-loading):not(.me-button-disabled):hover {
+			color: $primary-color;
+			border-color: $primary-color;
+			box-shadow: 0 0 6px 0 $primary-color;
+		}
+	}
+
+	&-type-dashed {
+		color: $reverse-theme;
+		background-color: $theme;
+		border: 1px dashed mix($info-base, $reverse-theme, 80%);
+
+		&:not(.me-button-loading):not(.me-button-disabled):hover {
+			color: $primary-color;
+			box-shadow: 0 0 6px 0 $primary-color;
+			border-color: $primary-color;
+		}
+	}
+
+	&-type-text {
+		color: $reverse-theme;
+		background-color: $theme;
+
+		&:not(.me-button-loading):not(.me-button-disabled):hover {
+			box-shadow: 0 0 6px 0 mix($theme, $reverse-theme, 50%);
+		}
+	}
+
+	&-type-link {
 		color: $primary-color;
-		border-color: $primary-color;
-		box-shadow: 0 0 6px 0 $primary-color;
-	}
-}
+		background-color: transparent;
 
-.me-button-type-dashed {
-	color: $reverse-theme;
-	background-color: $theme;
-	border: 1px dashed mix($info-base, $reverse-theme, 80%);
-
-	&:not(.me-button-loading):not(.me-button-disabled):hover {
-		color: $primary-color;
-		box-shadow: 0 0 6px 0 $primary-color;
-		border-color: $primary-color;
-	}
-}
-
-.me-button-type-text {
-	color: $reverse-theme;
-	background-color: $theme;
-
-	&:not(.me-button-loading):not(.me-button-disabled):hover {
-		box-shadow: 0 0 6px 0 mix($theme, $reverse-theme, 50%);
-	}
-}
-
-.me-button-type-link {
-	color: $primary-color;
-	background-color: transparent;
-
-	&:not(.me-button-loading):not(.me-button-disabled):hover {
-		color: mix($primary-color, $secondary-color, 40%);
-	}
-}
-
-// long
-.me-button-long {
-	width: 100%;
-}
-
-// shape
-.me-button-shape-default {
-	border-radius: $radius-base;
-}
-
-.me-button-shape-square {
-	border-radius: $radius-square;
-}
-
-.me-button-shape-round {
-	padding: 0;
-	width: 30px;
-	text-align: center;
-	border-radius: 50%;
-
-	.icon-loading {
-		margin-right: 0px !important;
-	}
-}
-
-// loading-iconfont
-.me-button .icon-loading {
-	display: inline-block;
-	margin-right: 5px;
-	animation: rotate 1s linear infinite;
-}
-
-// loading
-.me-button-loading {
-	box-shadow: none;
-	cursor: default;
-
-	&.me-button-type-primary {
-		background-image: linear-gradient(
-			to bottom right,
-			mix($secondary-color, $theme, 60%),
-			mix($primary-color, $theme, 60%)
-		);
+		&:not(.me-button-loading):not(.me-button-disabled):hover {
+			color: mix($primary-color, $secondary-color, 40%);
+		}
 	}
 
-	&.me-button-type-default,
-	&.me-button-type-dashed {
-		border-color: if($theme ==$light, $info-base, mix($info-base, $dark, 60%));
-		color: mix($info-base, $dark, 60%);
+	// long
+	&-long {
+		width: 100%;
 	}
 
-	&.me-button-type-text {
-		color: mix($info-base, $dark, 60%);
+	// shape
+	&-shape-default {
+		border-radius: $radius-base;
 	}
 
-	&.me-button-type-link {
-		color: mix($primary-color, $theme, 60%);
-	}
-}
-
-// disabled-status
-.me-button-disabled {
-	cursor: not-allowed;
-
-	&.me-button-type-default,
-	&.me-button-type-dashed,
-	&.me-button-type-primary {
-		color: mix($info-base, $dark, if($theme ==$light, 80%, 40%));
-		background-color: if($theme ==$light, $info-base, mix($info-base, $dark, 10%));
-		border-color: mix($info-base, $dark, if($theme ==$light, 80%, 40%));
+	&-shape-square {
+		border-radius: $radius-square;
 	}
 
-	&.me-button-type-primary {
-		background-image: none;
-		border: 1px solid mix($info-base, $dark, if($theme ==$light, 80%, 40%));
-		background-color: if($theme ==$light, $info-base, mix($info-base, $dark, 10%));
+	&-shape-round {
+		padding: 0;
+		width: 32px;
+		text-align: center;
+		border-radius: 50%;
+
+		.icon-loading {
+			margin-right: 0px !important;
+		}
 	}
 
-	&.me-button-type-text {
-		color: mix($info-base, $dark, if($theme ==$light, 80%, 40%));
-	}
-}
-
-// ghost
-.me-button-ghost {
-	background-color: transparent;
-
-	&.me-button-type-primary {
-		position: relative;
-		background-image: none;
-		color: mix($primary-color, $white, 90%);
-		border: 1px solid mix($primary-color, $white, 90%);
+	// loading-iconfont
+	& .icon-loading {
+		display: inline-block;
+		margin-right: 5px;
+		line-height: 1;
+		animation: rotate 1s linear infinite;
 	}
 
-	&.me-button-type-primary:hover {
-		color: mix($primary-color, $white, 90%);
-		border-color: mix($primary-color, $white, 90%);
+	// loading
+	&-loading {
+		box-shadow: none;
+		cursor: default;
+
+		&.me-button-type-primary {
+			background-image: linear-gradient(
+				to bottom right,
+				mix($secondary-color, $theme, 60%),
+				mix($primary-color, $theme, 60%)
+			);
+		}
+
+		&.me-button-type-default,
+		&.me-button-type-dashed {
+			border-color: if($theme ==$light, $info-base, mix($info-base, $dark, 60%));
+			color: mix($info-base, $dark, 60%);
+		}
+
+		&.me-button-type-text {
+			color: mix($info-base, $dark, 60%);
+		}
+
+		&.me-button-type-link {
+			color: mix($primary-color, $theme, 60%);
+		}
+	}
+
+	// disabled-status
+	&-disabled {
+		cursor: not-allowed;
+
+		&.me-button-type-default,
+		&.me-button-type-dashed,
+		&.me-button-type-primary {
+			color: mix($info-base, $dark, if($theme ==$light, 80%, 40%));
+			background-color: if($theme ==$light, $info-base, mix($info-base, $dark, 10%));
+			border-color: mix($info-base, $dark, if($theme ==$light, 80%, 40%));
+		}
+
+		&.me-button-type-primary {
+			background-image: none;
+			border: 1px solid mix($info-base, $dark, if($theme ==$light, 80%, 40%));
+			background-color: if($theme ==$light, $info-base, mix($info-base, $dark, 10%));
+		}
+
+		&.me-button-type-text {
+			color: mix($info-base, $dark, if($theme ==$light, 80%, 40%));
+		}
+	}
+
+	// ghost
+	&-ghost {
+		background-color: transparent;
+
+		&.me-button-type-primary {
+			position: relative;
+			background-image: none;
+			color: mix($primary-color, $white, 90%);
+			border: 1px solid mix($primary-color, $white, 90%);
+		}
+
+		&.me-button-type-primary:hover {
+			color: mix($primary-color, $white, 90%);
+			border-color: mix($primary-color, $white, 90%);
+		}
 	}
 }
