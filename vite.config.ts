@@ -8,8 +8,7 @@ export default defineConfig({
 	plugins: [
 		vue(),
 		DefineOptions(),
-		dts({ outputDir: 'es', tsConfigFilePath: './tsconfig.json' }),
-		dts({ outputDir: 'lib', tsConfigFilePath: './tsconfig.json' })
+		dts({ outputDir: 'es'})
 	],
 	resolve: {
 		alias: {
