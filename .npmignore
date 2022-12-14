@@ -6,11 +6,8 @@ examples
 packages
 public
 typings
-.prettierrc
-.eslintrc.js
 vite.config.ts
 vite.svg
 tsconfig.json
 tsconfig.node.json
-*.map
 *.html
