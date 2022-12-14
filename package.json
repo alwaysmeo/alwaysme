@@ -1,6 +1,6 @@
 {
 	"name": "@alwaysme/design-vue3",
-	"version": "1.0.0-dev",
+	"version": "1.0.0-dev.1",
 	"private": false,
 	"title": "AlwaysMe-Vue3",
 	"description": "AlwaysMe UI design language and Vue-based implementation",
@@ -15,13 +15,13 @@
 	"author": "AlwaysMeo <hello2000@vip.qq.com>",
 	"license": "MIT",
 	"types": "./es/packages/index.d.ts",
-	"module": "./es/index.es.js",
-	"main": "./lib/index.cjs.js",
+	"module": "./es/main.es.js",
+	"main": "./lib/main.cjs.js",
 	"exports": {
 		".": {
 			"types": "./es/packages/index.d.ts",
-			"module": "./es/index.es.js",
-			"main": "./lib/index.cjs.js"
+			"module": "./es/main.es.js",
+			"main": "./lib/main.cjs.js"
 		},
 		"./style.css": "./es/style.css"
 	},

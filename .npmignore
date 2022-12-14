@@ -3,7 +3,7 @@
 node_modules
 dist
 examples
-packages
+/packages
 public
 typings
 vite.config.ts
