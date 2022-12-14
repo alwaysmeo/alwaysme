@@ -16,9 +16,9 @@
 
 -   **推荐使用 npm 或 yarn 的方式进行包管理**
 
-    `npm install @alwaysme/design-vue3`
+    `npm install @alwaysme/design`
 
-    `yarn add @alwaysme/design-vue3`
+    `yarn add @alwaysme/design`
 
 ### 🧑‍💻 Use
 
@@ -28,15 +28,15 @@
     import { createApp } from 'vue'
     import App from './App.vue'
 
-    import AlwaysMe from '@alwaysme/design-vue3'
-    import '@alwaysme/design-vue3/style.css'
+    import AlwaysMe from '@alwaysme/design'
+    import '@alwaysme/design/style.css'
     createApp(App).use(AlwaysMe).mount('#app')
     ```
 
 -   如果是 TypeScript 项目，需在您的项目 `.d.ts` 文件中添加以下内容，以避免报错。无此文件可自行创建。
 
     ```typescript
-    declare module '@alwaysme/design-vue3' {
+    declare module '@alwaysme/design' {
         export function install(app: App): void
     }
     ```

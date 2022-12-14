@@ -4,8 +4,13 @@ node_modules
 dist
 examples
 /packages
+/lib/packages
+/lib/typings
 public
-typings
+/typings
+.eslintignore
+.eslintrc.js
+.prettierrc
 vite.config.ts
 vite.svg
 tsconfig.json
