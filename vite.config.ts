@@ -25,7 +25,8 @@ export default defineConfig({
 		minify: false,
 		lib: {
 			entry: resolve(__dirname, './index.ts'),
-			name: 'alwaysme'
+			name: 'alwaysme',
+			fileName: (format, name) => `${name.replace(/_(\S*)/, "")}.${format}.js`
 		},
 		rollupOptions: {
 			external: ['vue'],
@@ -37,14 +38,14 @@ export default defineConfig({
 					dir: 'es',
 					format: 'es',
 					sourcemap: true,
-					entryFileNames: '[name].[format].js',
+					// entryFileNames: '[name].[format].js',
 					preserveModules: true
 				},
 				{
 					dir: 'lib',
 					format: 'cjs',
 					sourcemap: true,
-					entryFileNames: '[name].[format].js',
+					// entryFileNames: '[name].[format].js',
 					preserveModules: true
 				}
 			]
