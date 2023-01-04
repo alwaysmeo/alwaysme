@@ -7,7 +7,7 @@
 			{ ['me-divider-dashed']: props.dashed }
 		]"
 	>
-		<div>
+		<div v-if="props.orientation === 'horizontal'">
 			<slot />
 		</div>
 	</div>

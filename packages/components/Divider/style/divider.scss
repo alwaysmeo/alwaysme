@@ -8,7 +8,7 @@
 
 	> div {
 		white-space: nowrap;
-		padding: 0 12px;
+		padding: 0 16px;
 		font-size: 16px;
 		font-weight: 600;
 	}
@@ -18,7 +18,16 @@
 		content: '';
 		width: 50%;
 		transform: translateY(50%);
-		border-top: 1px solid $info-base;
+		border-top-width: 1px;
+		border-top-color: $info-base;
+		border-top-style: solid;
+	}
+
+	&-dashed {
+		&::before,
+		&::after {
+			border-top-style: dashed;
+		}
 	}
 
 	&-align-left {
@@ -45,5 +54,17 @@
 
 	&-align-center {
 		text-align: center;
+	}
+
+	&-vertical {
+		position: relative;
+		top: -0.06em;
+		bottom: 0;
+		margin: 0 8px;
+		display: inline-block;
+		height: 0.9em;
+		width: 1px;
+		vertical-align: middle;
+		background-color: $info-base;
 	}
 }

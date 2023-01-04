@@ -39,7 +39,14 @@
 			<me-link>链接3</me-link>
 		</div> -->
 		<div>
-			<me-divider textalign="center">Text</me-divider>
+			<me-divider textalign="center" dashed>Text</me-divider>
+			<div>
+				<span>Text</span>
+				<me-divider orientation="vertical" />
+				<span>Text</span>
+				<me-divider orientation="vertical" />
+				<span>Text</span>
+			</div>
 		</div>
 	</div>
 </template>
