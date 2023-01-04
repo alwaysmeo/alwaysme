@@ -1,0 +1,49 @@
+.me-divider {
+	display: flex;
+	box-sizing: border-box;
+	margin: 20px 0;
+	height: 20px;
+	width: 100%;
+	line-height: 20px;
+
+	> div {
+		white-space: nowrap;
+		padding: 0 12px;
+		font-size: 16px;
+		font-weight: 600;
+	}
+
+	&::before,
+	&::after {
+		content: '';
+		width: 50%;
+		transform: translateY(50%);
+		border-top: 1px solid $info-base;
+	}
+
+	&-align-left {
+		text-align: left;
+
+		&::before {
+			width: 5%;
+		}
+		&::after {
+			width: 95%;
+		}
+	}
+
+	&-align-right {
+		text-align: right;
+
+		&::before {
+			width: 95%;
+		}
+		&::after {
+			width: 5%;
+		}
+	}
+
+	&-align-center {
+		text-align: center;
+	}
+}
