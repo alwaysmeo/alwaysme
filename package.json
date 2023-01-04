@@ -33,6 +33,7 @@
 		"build": "vue-tsc --noEmit && vite build"
 	},
 	"dependencies": {
+		"rollup-plugin-visualizer": "^5.9.0",
 		"sass": "^1.56.1",
 		"unplugin-vue-define-options": "^0.12.8",
 		"vue": "^3.2.45"
@@ -40,11 +41,11 @@
 	"devDependencies": {
 		"@types/node": "^18.11.10",
 		"@types/sass": "^1.43.1",
-		"@vitejs/plugin-vue": "^3.2.0",
 		"@typescript-eslint/eslint-plugin": "^5.45.1",
 		"@typescript-eslint/parser": "^5.45.1",
-		"eslint-plugin-vue": "^9.8.0",
+		"@vitejs/plugin-vue": "^3.2.0",
 		"eslint": "^8.29.0",
+		"eslint-plugin-vue": "^9.8.0",
 		"prettier": "^2.7.1",
 		"typescript": "^4.9.3",
 		"vite": "^3.2.4",
