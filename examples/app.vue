@@ -40,6 +40,7 @@
 		</div> -->
 		<div>
 			<me-divider textalign="center" dashed>Text</me-divider>
+			<me-divider textalign="center" />
 			<div>
 				<span>Text</span>
 				<me-divider orientation="vertical" />

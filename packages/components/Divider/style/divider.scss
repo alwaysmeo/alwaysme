@@ -57,6 +57,9 @@
 	}
 
 	&-vertical {
+		> div {
+			display: none;
+		}
 		position: relative;
 		top: -0.06em;
 		bottom: 0;
