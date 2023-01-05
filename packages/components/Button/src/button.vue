@@ -20,8 +20,6 @@
 		ghost?: boolean // 幽灵按钮，使按钮背景透明
 	}
 
-	defineOptions({ name: `${prefix}Button` })
-
 	const props = withDefaults(defineProps<Props>(), {
 		type: 'default',
 		shape: 'default',

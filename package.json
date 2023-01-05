@@ -35,7 +35,6 @@
 	"dependencies": {
 		"rollup-plugin-visualizer": "^5.9.0",
 		"sass": "^1.56.1",
-		"unplugin-vue-define-options": "^0.12.8",
 		"vue": "^3.2.45"
 	},
 	"devDependencies": {

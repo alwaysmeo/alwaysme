@@ -16,8 +16,6 @@
 		textalign?: 'left' | 'right' | 'center' // 文本对齐方向
 	}
 
-	defineOptions({ name: `${prefix}Divider` })
-
 	const props = withDefaults(defineProps<Props>(), {
 		orientation: 'horizontal',
 		textalign: 'left'

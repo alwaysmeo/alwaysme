@@ -15,8 +15,6 @@
 		target?: '_self' | '_blank' | '_parent' | '_top' // 原生 target 属性
 	}
 
-	defineOptions({ name: `${prefix}Link` })
-
 	const props = withDefaults(defineProps<Props>(), {
 		href: 'javascrit:;',
 		target: '_self'
