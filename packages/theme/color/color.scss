@@ -6,6 +6,7 @@ $danger-base: #c21533;
 $success-base: #00b66a;
 $warning-base: #f79600;
 $info-base: #eceff2;
+$border-color-base: #cecece;
 $black: #22272e;
 $white: #ffffff;
 
@@ -13,3 +14,10 @@ $light: #ffffff;
 $dark: #22272e;
 $theme: $light;
 $reverse-theme: if($theme ==$light, $dark, $light);
+
+:root {
+	body {
+		background-color: $theme;
+		color: $reverse-theme;
+	}
+}

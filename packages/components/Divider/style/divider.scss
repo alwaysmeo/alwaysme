@@ -1,6 +1,6 @@
 $prefix: #{$prefix-base}-divider;
 
-.#{$prefix}{
+.#{$prefix} {
 	display: flex;
 	box-sizing: border-box;
 	margin: 20px 0;
@@ -21,7 +21,7 @@ $prefix: #{$prefix-base}-divider;
 		width: 50%;
 		transform: translateY(50%);
 		border-top-width: 1px;
-		border-top-color: $info-base;
+		border-top-color:  mix($theme, $border-color-base, 50%);
 		border-top-style: solid;
 	}
 
@@ -59,9 +59,6 @@ $prefix: #{$prefix-base}-divider;
 	}
 
 	&-vertical {
-		> div {
-			display: none;
-		}
 		position: relative;
 		top: -0.06em;
 		bottom: 0;
@@ -70,6 +67,6 @@ $prefix: #{$prefix-base}-divider;
 		height: 0.9em;
 		width: 1px;
 		vertical-align: middle;
-		background-color: $info-base;
+		background-color: mix($theme, $border-color-base, 40%);
 	}
 }
