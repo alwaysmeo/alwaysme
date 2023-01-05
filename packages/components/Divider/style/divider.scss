@@ -1,6 +1,6 @@
-$prefix: #{$prefix-base}-divider;
+$prefix-base: #{$prefix}-divider;
 
-.#{$prefix} {
+.#{$prefix-base} {
 	display: flex;
 	box-sizing: border-box;
 	margin: 20px 0;

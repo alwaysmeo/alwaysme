@@ -1,6 +1,6 @@
-$prefix: #{$prefix-base}-button;
+$prefix-base: #{$prefix}-button;
 
-.#{$prefix} {
+.#{$prefix-base} {
 	cursor: pointer;
 	box-sizing: border-box;
 	padding: 0 15px;
@@ -15,7 +15,7 @@ $prefix: #{$prefix-base}-button;
 		color: $white;
 		background-image: linear-gradient(to bottom right, $secondary-color, $primary-color);
 
-		&:not(.#{$prefix}-loading):not(.#{$prefix}-disabled):hover {
+		&:not(.#{$prefix-base}-loading):not(.#{$prefix-base}-disabled):hover {
 			box-shadow: 0 0 6px 0 $primary-color;
 		}
 	}
@@ -25,7 +25,7 @@ $prefix: #{$prefix-base}-button;
 		background-color: $theme;
 		border: 1px solid mix($info-base, $reverse-theme, 80%);
 
-		&:not(.#{$prefix}-loading):not(.#{$prefix}-disabled):hover {
+		&:not(.#{$prefix-base}-loading):not(.#{$prefix-base}-disabled):hover {
 			color: $primary-color;
 			border-color: $primary-color;
 			box-shadow: 0 0 6px 0 $primary-color;
@@ -37,7 +37,7 @@ $prefix: #{$prefix-base}-button;
 		background-color: $theme;
 		border: 1px dashed mix($info-base, $reverse-theme, 80%);
 
-		&:not(.#{$prefix}-loading):not(.#{$prefix}-disabled):hover {
+		&:not(.#{$prefix-base}-loading):not(.#{$prefix-base}-disabled):hover {
 			color: $primary-color;
 			box-shadow: 0 0 6px 0 $primary-color;
 			border-color: $primary-color;
@@ -48,7 +48,7 @@ $prefix: #{$prefix-base}-button;
 		color: $reverse-theme;
 		background-color: $theme;
 
-		&:not(.#{$prefix}-loading):not(.#{$prefix}-disabled):hover {
+		&:not(.#{$prefix-base}-loading):not(.#{$prefix-base}-disabled):hover {
 			box-shadow: 0 0 6px 0 mix($theme, $reverse-theme, 50%);
 		}
 	}
@@ -57,7 +57,7 @@ $prefix: #{$prefix-base}-button;
 		color: $primary-color;
 		background-color: transparent;
 
-		&:not(.#{$prefix}-loading):not(.#{$prefix}-disabled):hover {
+		&:not(.#{$prefix-base}-loading):not(.#{$prefix-base}-disabled):hover {
 			color: mix($primary-color, $secondary-color, 40%);
 		}
 	}
@@ -100,7 +100,7 @@ $prefix: #{$prefix-base}-button;
 		box-shadow: none;
 		cursor: default;
 
-		&.#{$prefix}-type-primary {
+		&.#{$prefix-base}-type-primary {
 			background-image: linear-gradient(
 				to bottom right,
 				mix($secondary-color, $theme, 60%),
@@ -108,17 +108,17 @@ $prefix: #{$prefix-base}-button;
 			);
 		}
 
-		&.#{$prefix}-type-default,
-		&.#{$prefix}-type-dashed {
+		&.#{$prefix-base}-type-default,
+		&.#{$prefix-base}-type-dashed {
 			border-color: if($theme ==$light, $info-base, mix($info-base, $dark, 60%));
 			color: mix($info-base, $dark, 60%);
 		}
 
-		&.#{$prefix}-type-text {
+		&.#{$prefix-base}-type-text {
 			color: mix($info-base, $dark, 60%);
 		}
 
-		&.#{$prefix}-type-link {
+		&.#{$prefix-base}-type-link {
 			color: mix($primary-color, $theme, 60%);
 		}
 	}
@@ -127,21 +127,21 @@ $prefix: #{$prefix-base}-button;
 	&-disabled {
 		cursor: not-allowed;
 
-		&.#{$prefix}-type-default,
-		&.#{$prefix}-type-dashed,
-		&.#{$prefix}-type-primary {
+		&.#{$prefix-base}-type-default,
+		&.#{$prefix-base}-type-dashed,
+		&.#{$prefix-base}-type-primary {
 			color: mix($info-base, $dark, if($theme ==$light, 80%, 40%));
 			background-color: if($theme ==$light, $info-base, mix($info-base, $dark, 10%));
 			border-color: mix($info-base, $dark, if($theme ==$light, 80%, 40%));
 		}
 
-		&.#{$prefix}-type-primary {
+		&.#{$prefix-base}-type-primary {
 			background-image: none;
 			border: 1px solid mix($info-base, $dark, if($theme ==$light, 80%, 40%));
 			background-color: if($theme ==$light, $info-base, mix($info-base, $dark, 10%));
 		}
 
-		&.#{$prefix}-type-text {
+		&.#{$prefix-base}-type-text {
 			color: mix($info-base, $dark, if($theme ==$light, 80%, 40%));
 		}
 	}
@@ -150,14 +150,14 @@ $prefix: #{$prefix-base}-button;
 	&-ghost {
 		background-color: transparent;
 
-		&.#{$prefix}-type-primary {
+		&.#{$prefix-base}-type-primary {
 			position: relative;
 			background-image: none;
 			color: mix($primary-color, $white, 90%);
 			border: 1px solid mix($primary-color, $white, 90%);
 		}
 
-		&.#{$prefix}-type-primary:hover {
+		&.#{$prefix-base}-type-primary:hover {
 			color: mix($primary-color, $white, 90%);
 			border-color: mix($primary-color, $white, 90%);
 		}
