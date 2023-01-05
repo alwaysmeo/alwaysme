@@ -1,4 +1,4 @@
-import { prefix } from '@/config'
+import { prefix } from '@utils/config'
 import { App } from 'vue'
 import '@components/Divider/style/index.scss'
 import Divider from '@components/Divider/src/divider.vue'

@@ -1,4 +1,4 @@
-import { prefix } from '@/config'
+import { prefix } from '@utils/config'
 import { App } from 'vue'
 import '@components/Button/style/index.scss'
 import Button from '@/components/Button/src/button.vue'

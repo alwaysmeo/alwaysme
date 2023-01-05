@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 	import { computed } from 'vue'
-	import { prefix } from '@/config'
+	import { prefix } from '@utils/config'
 
 	interface Props {
 		dashed?: boolean // 是否为虚线

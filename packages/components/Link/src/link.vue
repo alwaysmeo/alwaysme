@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 	import { computed } from 'vue'
-	import { prefix } from '@/config'
+	import { prefix } from '@utils/config'
 
 	interface Props {
 		underline?: boolean // 是否需要下划线
