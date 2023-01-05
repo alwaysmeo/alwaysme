@@ -1,12 +1,5 @@
 <template>
-	<div
-		:class="[
-			'me-divider',
-			`me-divider-${props.orientation}`,
-			`me-divider-align-${props.textalign}`,
-			{ ['me-divider-dashed']: props.dashed }
-		]"
-	>
+	<div :class="classNames">
 		<div v-if="$slots.default">
 			<slot />
 		</div>
@@ -14,6 +7,7 @@
 </template>
 
 <script setup lang="ts">
+	import { computed } from 'vue'
 	import { prefix } from '@/config'
 
 	interface Props {
@@ -27,5 +21,14 @@
 	const props = withDefaults(defineProps<Props>(), {
 		orientation: 'horizontal',
 		textalign: 'left'
+	})
+
+	const classNames = computed(() => {
+		return [
+			`${prefix}-divider`,
+			`${prefix}-divider-${props.orientation}`,
+			`${prefix}-divider-align-${props.textalign}`,
+			{ [`${prefix}-divider-dashed`]: props.dashed }
+		]
 	})
 </script>

@@ -1,15 +1,11 @@
 <template>
-	<a
-		:class="['me-link', { [`me-link-underline`]: props.underline, [`me-link-disabled`]: props.disabled }]"
-		:href="props.href || 'javascript:;'"
-		:target="props.target"
-		@click="handleClick"
-	>
+	<a :class="classNames" :href="props.href || 'javascript:;'" :target="props.target" @click="handleClick">
 		<slot />
 	</a>
 </template>
 
 <script setup lang="ts">
+	import { computed } from 'vue'
 	import { prefix } from '@/config'
 
 	interface Props {
@@ -24,6 +20,16 @@
 	const props = withDefaults(defineProps<Props>(), {
 		href: 'javascrit:;',
 		target: '_self'
+	})
+
+	const classNames = computed(() => {
+		return [
+			`${prefix}-link`,
+			{
+				[`${prefix}-link-underline`]: props.underline,
+				[`${prefix}-link-disabled`]: props.disabled
+			}
+		]
 	})
 
 	const emits = defineEmits<{ (key: 'click', val: Event): void }>()

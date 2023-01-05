@@ -1,4 +1,6 @@
-.me-button {
+$prefix: #{$prefix-base}-button;
+
+.#{$prefix} {
 	cursor: pointer;
 	box-sizing: border-box;
 	padding: 0 15px;
@@ -13,7 +15,7 @@
 		color: $white;
 		background-image: linear-gradient(to bottom right, $secondary-color, $primary-color);
 
-		&:not(.me-button-loading):not(.me-button-disabled):hover {
+		&:not(.#{$prefix}-loading):not(.#{$prefix}-disabled):hover {
 			box-shadow: 0 0 6px 0 $primary-color;
 		}
 	}
@@ -23,7 +25,7 @@
 		background-color: $theme;
 		border: 1px solid mix($info-base, $reverse-theme, 80%);
 
-		&:not(.me-button-loading):not(.me-button-disabled):hover {
+		&:not(.#{$prefix}-loading):not(.#{$prefix}-disabled):hover {
 			color: $primary-color;
 			border-color: $primary-color;
 			box-shadow: 0 0 6px 0 $primary-color;
@@ -35,7 +37,7 @@
 		background-color: $theme;
 		border: 1px dashed mix($info-base, $reverse-theme, 80%);
 
-		&:not(.me-button-loading):not(.me-button-disabled):hover {
+		&:not(.#{$prefix}-loading):not(.#{$prefix}-disabled):hover {
 			color: $primary-color;
 			box-shadow: 0 0 6px 0 $primary-color;
 			border-color: $primary-color;
@@ -46,7 +48,7 @@
 		color: $reverse-theme;
 		background-color: $theme;
 
-		&:not(.me-button-loading):not(.me-button-disabled):hover {
+		&:not(.#{$prefix}-loading):not(.#{$prefix}-disabled):hover {
 			box-shadow: 0 0 6px 0 mix($theme, $reverse-theme, 50%);
 		}
 	}
@@ -55,7 +57,7 @@
 		color: $primary-color;
 		background-color: transparent;
 
-		&:not(.me-button-loading):not(.me-button-disabled):hover {
+		&:not(.#{$prefix}-loading):not(.#{$prefix}-disabled):hover {
 			color: mix($primary-color, $secondary-color, 40%);
 		}
 	}
@@ -98,7 +100,7 @@
 		box-shadow: none;
 		cursor: default;
 
-		&.me-button-type-primary {
+		&.#{$prefix}-type-primary {
 			background-image: linear-gradient(
 				to bottom right,
 				mix($secondary-color, $theme, 60%),
@@ -106,17 +108,17 @@
 			);
 		}
 
-		&.me-button-type-default,
-		&.me-button-type-dashed {
+		&.#{$prefix}-type-default,
+		&.#{$prefix}-type-dashed {
 			border-color: if($theme ==$light, $info-base, mix($info-base, $dark, 60%));
 			color: mix($info-base, $dark, 60%);
 		}
 
-		&.me-button-type-text {
+		&.#{$prefix}-type-text {
 			color: mix($info-base, $dark, 60%);
 		}
 
-		&.me-button-type-link {
+		&.#{$prefix}-type-link {
 			color: mix($primary-color, $theme, 60%);
 		}
 	}
@@ -125,21 +127,21 @@
 	&-disabled {
 		cursor: not-allowed;
 
-		&.me-button-type-default,
-		&.me-button-type-dashed,
-		&.me-button-type-primary {
+		&.#{$prefix}-type-default,
+		&.#{$prefix}-type-dashed,
+		&.#{$prefix}-type-primary {
 			color: mix($info-base, $dark, if($theme ==$light, 80%, 40%));
 			background-color: if($theme ==$light, $info-base, mix($info-base, $dark, 10%));
 			border-color: mix($info-base, $dark, if($theme ==$light, 80%, 40%));
 		}
 
-		&.me-button-type-primary {
+		&.#{$prefix}-type-primary {
 			background-image: none;
 			border: 1px solid mix($info-base, $dark, if($theme ==$light, 80%, 40%));
 			background-color: if($theme ==$light, $info-base, mix($info-base, $dark, 10%));
 		}
 
-		&.me-button-type-text {
+		&.#{$prefix}-type-text {
 			color: mix($info-base, $dark, if($theme ==$light, 80%, 40%));
 		}
 	}
@@ -148,14 +150,14 @@
 	&-ghost {
 		background-color: transparent;
 
-		&.me-button-type-primary {
+		&.#{$prefix}-type-primary {
 			position: relative;
 			background-image: none;
 			color: mix($primary-color, $white, 90%);
 			border: 1px solid mix($primary-color, $white, 90%);
 		}
 
-		&.me-button-type-primary:hover {
+		&.#{$prefix}-type-primary:hover {
 			color: mix($primary-color, $white, 90%);
 			border-color: mix($primary-color, $white, 90%);
 		}

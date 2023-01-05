@@ -1,20 +1,5 @@
 <template>
-	<button
-		:class="[
-			'me-button',
-			`me-button-type-${props.type}`,
-			`me-button-shape-${props.shape}`,
-			{
-				[`me-button-long`]: props.long,
-				[`me-button-loading`]: props.loading,
-				[`me-button-disabled`]: props.disabled,
-				[`me-button-ghost`]: props.ghost
-			}
-		]"
-		:disabled="props.disabled"
-		:type="props.htmlType"
-		@click="handleClick"
-	>
+	<button :class="classNames" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
 		<i v-if="props.loading" class="iconfont icon-loading" />
 		<slot name="icon" />
 		<slot />
@@ -22,6 +7,7 @@
 </template>
 
 <script setup lang="ts">
+	import { computed } from 'vue'
 	import { prefix } from '@/config'
 
 	interface Props {
@@ -40,6 +26,20 @@
 		type: 'default',
 		shape: 'default',
 		htmlType: 'button'
+	})
+
+	const classNames = computed(() => {
+		return [
+			`${prefix}-button`,
+			`${prefix}-button-type-${props.type}`,
+			`${prefix}-button-shape-${props.shape}`,
+			{
+				[`${prefix}-button-long`]: props.long,
+				[`${prefix}-button-loading`]: props.loading,
+				[`${prefix}-button-disabled`]: props.disabled,
+				[`${prefix}-button-ghost`]: props.ghost
+			}
+		]
 	})
 
 	const emits = defineEmits<{ (key: 'click', val: MouseEvent): void }>()

@@ -1,3 +1,3 @@
-const prefix = 'Me'
+const prefix = 'me'
 
 export { prefix }

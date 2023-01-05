@@ -1,4 +1,6 @@
-.me-link {
+$prefix: #{$prefix-base}-link;
+
+.#{$prefix} {
 	margin-right: 8px;
 	color: $primary-color;
 	text-decoration: none;
