@@ -37,14 +37,12 @@ export default defineConfig({
 					dir: 'es',
 					format: 'es',
 					sourcemap: true,
-					// entryFileNames: '[name].[format].js',
 					preserveModules: true
 				},
 				{
 					dir: 'lib',
 					format: 'cjs',
 					sourcemap: true,
-					// entryFileNames: '[name].[format].js',
 					preserveModules: true
 				}
 			]
