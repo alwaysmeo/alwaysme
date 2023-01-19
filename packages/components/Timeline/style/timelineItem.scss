@@ -1,0 +1,38 @@
+$prefix-base: #{$prefix}-timeline-item;
+
+.#{$prefix-base} {
+	position: relative;
+	&-icon {
+		height: 100%;
+		top: 0;
+		position: absolute;
+		.iconfont {
+			vertical-align: middle;
+			background-color: $theme;
+		}
+	}
+
+	&:not(:last-child) .iconfont::after {
+		content: '';
+		margin: 0 auto;
+		display: block;
+		width: 1px;
+		height: 100%;
+		background-color: $border-color-base;
+	}
+
+	&-container {
+		padding: 0 30px 30px 30px;
+	}
+
+	&-title {
+		padding-top: 2px;
+		font-weight: 700;
+		color: var(--#{$prefix-base}-color);
+		margin-bottom: 12px;
+	}
+
+	.iconfont {
+		color: var(--#{$prefix-base}-color);
+	}
+}

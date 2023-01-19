@@ -1,0 +1,5 @@
+$prefix-base: #{$prefix}-timeline;
+
+.#{$prefix-base} {
+	text-align: var(--#{$prefix-base}-item-position);
+}
