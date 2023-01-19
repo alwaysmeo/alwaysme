@@ -50,7 +50,7 @@
 			</div>
 		</div>
 		<div style="width: 400px">
-			<me-timeline>
+			<me-timeline position="right">
 				<me-timeline-item color="green">
 					<template #title>2022-02-21 12:00:00</template>
 					<div>内容内容内容内容内容内容内容内容</div>

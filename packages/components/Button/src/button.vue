@@ -7,9 +7,6 @@
 </template>
 
 <script setup lang="ts">
-	import { computed } from 'vue'
-	import { prefix } from '@utils/config'
-
 	interface Props {
 		type?: 'default' | 'primary' | 'dashed' | 'text' | 'link' // 按钮类型 default | primary | dashed | text | link
 		shape?: 'default' | 'square' | 'round' // 按钮形状 default | square | round

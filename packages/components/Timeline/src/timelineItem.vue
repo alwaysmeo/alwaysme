@@ -16,10 +16,6 @@
 </template>
 
 <script setup lang="ts">
-	import { reactive } from 'vue'
-	import { prefix } from '@utils/config'
-	import mitt from '@utils/mitt'
-
 	interface Props {
 		color?: string // 标题颜色
 		icon?: string // 图标

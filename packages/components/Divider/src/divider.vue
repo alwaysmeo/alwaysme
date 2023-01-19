@@ -7,9 +7,6 @@
 </template>
 
 <script setup lang="ts">
-	import { computed } from 'vue'
-	import { prefix } from '@utils/config'
-
 	interface Props {
 		dashed?: boolean // 是否为虚线
 		orientation?: 'horizontal' | 'vertical' // 线段方向

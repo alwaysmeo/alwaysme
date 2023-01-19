@@ -5,10 +5,6 @@
 </template>
 
 <script setup lang="ts">
-	import { onMounted, watch } from 'vue'
-	import { prefix } from '@utils/config'
-	import mitt from '@utils/mitt'
-
 	interface Props {
 		position?: 'left' | 'right' // 对齐方式
 	}
