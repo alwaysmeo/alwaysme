@@ -3,17 +3,26 @@
 
 @font-face {
 	font-family: 'iconfont'; /* Project id 3788332 */
-	src: url('//at.alicdn.com/t/c/font_3788332_2f2m7cpnawm.woff2?t=1674091488074') format('woff2'),
-		url('//at.alicdn.com/t/c/font_3788332_2f2m7cpnawm.woff?t=1674091488074') format('woff'),
-		url('//at.alicdn.com/t/c/font_3788332_2f2m7cpnawm.ttf?t=1674091488074') format('truetype');
+	src: url('//at.alicdn.com/t/c/font_3788332_i4ab0slwbgf.woff2?t=1674120624605') format('woff2'),
+		url('//at.alicdn.com/t/c/font_3788332_i4ab0slwbgf.woff?t=1674120624605') format('woff'),
+		url('//at.alicdn.com/t/c/font_3788332_i4ab0slwbgf.ttf?t=1674120624605') format('truetype');
 }
 
 .iconfont {
 	font-family: 'iconfont' !important;
 	font-size: 16px;
 	font-style: normal;
+	vertical-align: middle;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-eye:before {
+	content: '\e6ac';
+}
+
+.icon-image:before {
+	content: '\e63b';
 }
 
 .icon-search:before {
