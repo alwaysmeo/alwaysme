@@ -1,20 +1,71 @@
-// 📦️ 本项目图标均来自 iconfont - 阿里巴巴矢量图标库，更多图标请访问 http://www.iconfont.cn/
+// 📦️ 项目图标均来自 iconfont - 阿里巴巴矢量图标库，更多图标请访问 http://www.iconfont.cn/
 // 📦️ The icons of this project are all from iconfont - Alibaba vector icon library, for more icons, please visit http://www.iconfont.cn
 
 @font-face {
-	font-family: 'iconfont';
-	/* Project id 3788332 */
-	src: url('//at.alicdn.com/t/c/font_3788332_a3kj498mcid.woff2?t=1669258948193') format('woff2'),
-		url('//at.alicdn.com/t/c/font_3788332_a3kj498mcid.woff?t=1669258948193') format('woff'),
-		url('//at.alicdn.com/t/c/font_3788332_a3kj498mcid.ttf?t=1669258948193') format('truetype');
+	font-family: 'iconfont'; /* Project id 3788332 */
+	src: url('//at.alicdn.com/t/c/font_3788332_2f2m7cpnawm.woff2?t=1674091488074') format('woff2'),
+		url('//at.alicdn.com/t/c/font_3788332_2f2m7cpnawm.woff?t=1674091488074') format('woff'),
+		url('//at.alicdn.com/t/c/font_3788332_2f2m7cpnawm.ttf?t=1674091488074') format('truetype');
 }
 
 .iconfont {
 	font-family: 'iconfont' !important;
-	font-size: 14px;
+	font-size: 16px;
 	font-style: normal;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search:before {
+	content: '\e62e';
+}
+
+.icon-arrow-right:before {
+	content: '\e62f';
+}
+
+.icon-arrow-down:before {
+	content: '\e630';
+}
+
+.icon-arrow-left:before {
+	content: '\e631';
+}
+
+.icon-arrow-up:before {
+	content: '\e632';
+}
+
+.icon-selected:before {
+	content: '\e633';
+}
+
+.icon-unselected:before {
+	content: '\e634';
+}
+
+.icon-exclamation-circle:before {
+	content: '\e635';
+}
+
+.icon-address:before {
+	content: '\e636';
+}
+
+.icon-issues:before {
+	content: '\e637';
+}
+
+.icon-menu:before {
+	content: '\e638';
+}
+
+.icon-collection-solid:before {
+	content: '\e639';
+}
+
+.icon-collection-hollow:before {
+	content: '\e63a';
 }
 
 .icon-loading:before {
