@@ -38,7 +38,7 @@
 			<me-link disabled>链接2</me-link>
 			<me-link>链接3</me-link>
 		</div> -->
-		<div>
+		<!-- <div>
 			<me-divider textalign="center" dashed>Text</me-divider>
 			<me-divider textalign="center" />
 			<div>
@@ -50,7 +50,7 @@
 			</div>
 		</div>
 		<div style="width: 400px">
-			<me-timeline position="right">
+			<me-timeline position="left">
 				<me-timeline-item color="green">
 					<template #title>2022-02-21 12:00:00</template>
 					<div>内容内容内容内容内容内容内容内容</div>
@@ -65,26 +65,8 @@
 					<template #title>2022-02-21 12:00:00</template>
 					<div>内容内容内容内容内容内容内容内容</div>
 				</me-timeline-item>
-				<me-timeline-item>
-					<template #title>2022-02-21 12:00:00</template>
-					<div>内容内容内容内容内容内容内容内容</div>
-				</me-timeline-item>
-				<me-timeline-item>
-					<template #title>2022-02-21 12:00:00</template>
-					<div>
-						内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-					</div>
-				</me-timeline-item>
-				<me-timeline-item>
-					<template #title>2022-02-21 12:00:00</template>
-					<div>内容内容内容内容内容内容内容内容</div>
-				</me-timeline-item>
-				<me-timeline-item>
-					<template #title>2022-02-21 12:00:00</template>
-					<div>内容内容内容内容内容内容内容内容</div>
-				</me-timeline-item>
 			</me-timeline>
-		</div>
+		</div> -->
 	</div>
 </template>
 
