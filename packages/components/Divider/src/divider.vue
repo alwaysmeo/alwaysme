@@ -1,5 +1,5 @@
 <template>
-	<div :class="classNames">
+	<div :class="classes">
 		<div v-if="$slots.default">
 			<slot />
 		</div>
@@ -18,7 +18,7 @@
 		textalign: 'left'
 	})
 
-	const classNames = computed(() => {
+	const classes = computed(() => {
 		return [
 			`${prefix}-divider`,
 			`${prefix}-divider-${props.orientation}`,

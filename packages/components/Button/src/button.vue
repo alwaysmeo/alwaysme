@@ -1,5 +1,5 @@
 <template>
-	<button :class="classNames" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
+	<button :class="classes" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
 		<i v-if="props.loading" class="iconfont icon-loading" />
 		<slot name="icon" />
 		<slot />
@@ -23,7 +23,7 @@
 		htmlType: 'button'
 	})
 
-	const classNames = computed(() => {
+	const classes = computed(() => {
 		return [
 			`${prefix}-button`,
 			`${prefix}-button-type-${props.type}`,

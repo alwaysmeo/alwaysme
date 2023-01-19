@@ -1,5 +1,5 @@
 <template>
-	<a :class="classNames" :href="props.href || 'javascript:;'" :target="props.target" @click="handleClick">
+	<a :class="classes" :href="props.href || 'javascript:;'" :target="props.target" @click="handleClick">
 		<slot />
 	</a>
 </template>
@@ -17,7 +17,7 @@
 		target: '_self'
 	})
 
-	const classNames = computed(() => {
+	const classes = computed(() => {
 		return [
 			`${prefix}-link`,
 			{
