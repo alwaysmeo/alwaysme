@@ -20,4 +20,13 @@ $reverse-theme: if($theme ==$light, $dark, $light);
 		background-color: $theme;
 		color: $reverse-theme;
 	}
+	--primary-color: #007fff;
+	--secondary-color: #00ddff;
+	--danger-base: #c21533;
+	--success-base: #00b66a;
+	--warning-base: #f79600;
+	--info-base: #eceff2;
+	--border-color-base:#cecece;
+	--black: #22272e;
+	--white: #ffffff;
 }
