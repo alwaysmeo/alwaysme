@@ -33,6 +33,7 @@
 		"build": "vue-tsc --noEmit && vite build"
 	},
 	"dependencies": {
+		"mitt": "^3.0.0",
 		"rollup-plugin-visualizer": "^5.9.0",
 		"sass": "^1.56.1",
 		"vue": "^3.2.45"
