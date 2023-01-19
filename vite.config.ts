@@ -3,12 +3,19 @@ import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import vue from '@vitejs/plugin-vue'
 import { visualizer } from 'rollup-plugin-visualizer'
+import AutoImport from 'unplugin-auto-import/vite'
 
 export default defineConfig({
 	plugins: [
 		vue(),
 		dts({ outputDir: 'es' }),
-		visualizer()
+		visualizer(),
+		AutoImport({
+			imports: ['vue'],
+			dirs: ['./packages/utils'],
+			dts: './typings/auto-import.d.ts',
+			vueTemplate: true
+		})
 	],
 	resolve: {
 		alias: {
