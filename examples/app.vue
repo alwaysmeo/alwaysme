@@ -67,6 +67,9 @@
 				</me-timeline-item>
 			</me-timeline>
 		</div> -->
+		<div>
+			<me-image src="http://files.drcloud.me/727788e6-5841-49fb-902e-5c5b3a240bc1" width="200px" height="200px"></me-image>
+		</div>
 	</div>
 </template>
 
@@ -79,10 +82,10 @@
 <style scoped lang="scss">
 	.always-me {
 		box-sizing: border-box;
-		height: 90vh;
+		height: 100vh;
 
 		> div {
-			padding: 10px 20px;
+			padding: 10px;
 		}
 	}
 </style>

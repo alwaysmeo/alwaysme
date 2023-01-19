@@ -49,6 +49,7 @@ module.exports = {
 		'vue/multi-word-component-names': 'off', // 关闭组件名必须包含一个连字符
 		'vue/html-indent': ['error', 'tab'], // 强制使用制表符缩进
 		'vue/html-self-closing': ['error', { html: { void: 'never', normal: 'always', component: 'always' } }], // 关闭自闭合标签
-		'vue/singleline-html-element-content-newline': 'off' // 此规则强制在单行元素的内容前后换行
+		'vue/singleline-html-element-content-newline': 'off', // 此规则强制在单行元素的内容前后换行
+		'vue/html-self-closing': ['off'] // 此规则旨在强制将自闭合符号作为配置样式
 	}
 }
