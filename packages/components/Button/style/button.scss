@@ -2,7 +2,6 @@ $prefix-base: #{$prefix}-button;
 
 .#{$prefix-base} {
 	cursor: pointer;
-	box-sizing: border-box;
 	padding: 0 15px;
 	font-size: 14px;
 	line-height: 2;

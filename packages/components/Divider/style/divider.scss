@@ -2,7 +2,6 @@ $prefix-base: #{$prefix}-divider;
 
 .#{$prefix-base} {
 	display: flex;
-	box-sizing: border-box;
 	margin: 20px 0;
 	height: 20px;
 	width: 100%;

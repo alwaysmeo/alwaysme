@@ -84,7 +84,6 @@
 
 <style scoped lang="scss">
 	.always-me {
-		box-sizing: border-box;
 		height: 100vh;
 
 		> div {
