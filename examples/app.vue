@@ -69,6 +69,9 @@
 		</div> -->
 		<div>
 			<me-image src="http://files.drcloud.me/727788e6-5841-49fb-902e-5c5b3a240bc1" width="200px" height="200px"></me-image>
+			<me-image src="http://files.drcloud.me/727788e6-5841-49fb-902e-5c5b3a240bc1" width="200px" height="200px">
+				<template #mask>12</template>
+			</me-image>
 		</div>
 	</div>
 </template>

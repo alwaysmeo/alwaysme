@@ -1,12 +1,14 @@
 <template>
 	<button :class="classes" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
 		<i v-if="props.loading" class="iconfont icon-loading" />
-		<slot name="icon" />
+		<slot v-if="slots.icon" name="icon" />
 		<slot />
 	</button>
 </template>
 
 <script setup lang="ts">
+	const slots = useSlots()
+
 	interface Props {
 		type?: 'default' | 'primary' | 'dashed' | 'text' | 'link' // 按钮类型 default | primary | dashed | text | link
 		shape?: 'default' | 'square' | 'round' // 按钮形状 default | square | round

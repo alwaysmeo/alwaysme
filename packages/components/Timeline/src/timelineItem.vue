@@ -2,12 +2,12 @@
 <template>
 	<div :class="`${prefix}-timeline-item`" :style="`--${prefix}-timeline-item-color: ${props.color}`">
 		<div :class="`${prefix}-timeline-item-icon`" :style="`${state.position}: 0`">
-			<slot v-if="$slots.icon" name="icon" />
+			<slot v-if="slots.icon" name="icon" />
 			<i v-else :class="`iconfont ${props.icon}`" />
 		</div>
 		<div :class="`${prefix}-timeline-item-container`">
 			<div :class="`${prefix}-timeline-item-title`">
-				<slot v-if="$slots.title" name="title" />
+				<slot v-if="slots.title" name="title" />
 				<span v-else>{{ props.title }}</span>
 			</div>
 			<slot />
@@ -16,6 +16,8 @@
 </template>
 
 <script setup lang="ts">
+	const slots = useSlots()
+
 	interface Props {
 		color?: string // 标题颜色
 		icon?: string // 图标

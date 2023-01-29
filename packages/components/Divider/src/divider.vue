@@ -1,12 +1,14 @@
 <template>
 	<div :class="classes">
-		<div v-if="$slots.default">
+		<div v-if="slots.default">
 			<slot />
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
+	const slots = useSlots()
+
 	interface Props {
 		dashed?: boolean // 是否为虚线
 		orientation?: 'horizontal' | 'vertical' // 线段方向

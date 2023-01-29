@@ -2,7 +2,7 @@
 	<div :class="`${prefix}-image`" :style="styles">
 		<img :class="`${prefix}-image-img`" :src="props.src" :alt="props.alt" @load="imageLoad" @error="imageError" />
 		<div v-if="props.preview" :class="`${prefix}-image-mask`">
-			<slot v-if="$slots.mask" name="mask" />
+			<slot v-if="slots.mask" name="mask" />
 			<div v-else :class="`${prefix}-image-mask-text`">
 				<i class="iconfont icon-eye" />
 				<span :style="`display: ${parseInt(props.width.toString()) >= 60 ? 'inline-block' : 'none'}`">预览</span>
@@ -12,6 +12,8 @@
 </template>
 
 <script setup lang="ts">
+	const slots = useSlots()
+
 	interface Props {
 		src?: string // 图片地址
 		alt?: string // 图像描述
