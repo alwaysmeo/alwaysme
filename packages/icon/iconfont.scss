@@ -3,18 +3,21 @@
 
 @font-face {
 	font-family: 'iconfont'; /* Project id 3788332 */
-	src: url('//at.alicdn.com/t/c/font_3788332_i4ab0slwbgf.woff2?t=1674120624605') format('woff2'),
-		url('//at.alicdn.com/t/c/font_3788332_i4ab0slwbgf.woff?t=1674120624605') format('woff'),
-		url('//at.alicdn.com/t/c/font_3788332_i4ab0slwbgf.ttf?t=1674120624605') format('truetype');
+	src: url('//at.alicdn.com/t/c/font_3788332_2ves02q44s3.woff2?t=1674976509186') format('woff2'),
+		url('//at.alicdn.com/t/c/font_3788332_2ves02q44s3.woff?t=1674976509186') format('woff'),
+		url('//at.alicdn.com/t/c/font_3788332_2ves02q44s3.ttf?t=1674976509186') format('truetype');
 }
 
 .iconfont {
 	font-family: 'iconfont' !important;
 	font-size: 16px;
 	font-style: normal;
-	vertical-align: middle;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-image-failed:before {
+	content: '\e63c';
 }
 
 .icon-eye:before {
