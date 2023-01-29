@@ -1,6 +1,6 @@
 <template>
 	<div class="always-me">
-		<!-- <div>
+		<div>
 			<me-button type="primary" long @click="handleClick">按钮</me-button>
 			<me-button type="primary" shape="round" loading />
 			<me-button type="primary" shape="square">按钮</me-button>
@@ -37,7 +37,7 @@
 			<me-link :underline="false">链接1</me-link>
 			<me-link disabled>链接2</me-link>
 			<me-link>链接3</me-link>
-		</div> -->
+		</div>
 		<!-- <div>
 			<me-divider textalign="center" dashed>Text</me-divider>
 			<me-divider textalign="center" />
@@ -68,9 +68,9 @@
 			</me-timeline>
 		</div> -->
 		<div>
-			<me-image src="http://files.drcloud.me/727788e6-5841-49fb-902e-5c5b3a240bc1" width="200px" height="200px"></me-image>
-			<me-image src="http://files.drcloud.me/727788e6-5841-49fb-902e-5c5b3a240bc1" width="200px" height="200px">
-				<template #mask>12</template>
+			<me-image src="http://files.drcloud.me/727788e6-5841-49fb-902e-5c5b3a240bc1-" width="300px" height="200px"></me-image>
+			<me-image src="http://files.drcloud.me/727788e6-5841-49fb-902e-5c5b3a240bc1" :width="100" height="100">
+				<template #mask>预览</template>
 			</me-image>
 		</div>
 	</div>

@@ -32,3 +32,8 @@ h6 {
 li {
 	list-style: none;
 }
+
+body {
+	background-color: $theme;
+	color: $reverse-theme;
+}

@@ -12,7 +12,7 @@ $prefix-base: #{$prefix}-button;
 	// type
 	&-type-primary {
 		color: $white;
-		background-image: linear-gradient(to bottom right, $secondary-color, $primary-color);
+		background-image: linear-gradient(to bottom right, $secondary-color-80, $primary-color);
 
 		&:not(.#{$prefix-base}-loading):not(.#{$prefix-base}-disabled):hover {
 			box-shadow: 0 0 6px 0 $primary-color;
@@ -57,7 +57,7 @@ $prefix-base: #{$prefix}-button;
 		background-color: transparent;
 
 		&:not(.#{$prefix-base}-loading):not(.#{$prefix-base}-disabled):hover {
-			color: mix($primary-color, $secondary-color, 40%);
+			color: $primary-secondary-color-40;
 		}
 	}
 
@@ -100,11 +100,7 @@ $prefix-base: #{$prefix}-button;
 		cursor: default;
 
 		&.#{$prefix-base}-type-primary {
-			background-image: linear-gradient(
-				to bottom right,
-				mix($secondary-color, $theme, 60%),
-				mix($primary-color, $theme, 60%)
-			);
+			background-image: linear-gradient(to bottom right, $secondary-color-40, $primary-color-60);
 		}
 
 		&.#{$prefix-base}-type-default,
@@ -118,7 +114,7 @@ $prefix-base: #{$prefix}-button;
 		}
 
 		&.#{$prefix-base}-type-link {
-			color: mix($primary-color, $theme, 60%);
+			color: 、$primary-color-60;
 		}
 	}
 

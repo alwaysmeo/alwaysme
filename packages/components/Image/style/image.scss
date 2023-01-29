@@ -13,9 +13,23 @@ $prefix-base: #{$prefix}-image;
 		height: 100%;
 		border-radius: $radius-square;
 		border-style: none;
+		&-failed {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+			background: $primary-color-90;
+			border-radius: $radius-square;
+			color: mix($info-base, $dark, 50%);
+			> .iconfont {
+				font-size: calc(min(var(--#{$prefix-base}-width), var(--#{$prefix-base}-height)) / 4);
+			}
+		}
 	}
 
-	&-mask {
+	&-mask,
+	&-mask-slot {
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -24,9 +38,8 @@ $prefix-base: #{$prefix}-image;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		color: #fff;
+		color: $light;
 		border-radius: $radius-square;
-		background: rgba(0, 0, 0, 0.5);
 		transition: opacity 0.3s;
 		cursor: pointer;
 		opacity: 0;
@@ -42,5 +55,8 @@ $prefix-base: #{$prefix}-image;
 				flex-wrap: wrap;
 			}
 		}
+	}
+	&-mask {
+		background: rgba(0, 0, 0, 0.5);
 	}
 }
