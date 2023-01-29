@@ -31,6 +31,7 @@
 	const emits = defineEmits<{
 		(key: 'load', val: Event): void // 加载成功回调
 		(key: 'error', val: Event): void // 加载失败回调
+		(key: 'onPreview', val: Event): void // 点击预览回调
 	}>()
 
 	interface Props {
