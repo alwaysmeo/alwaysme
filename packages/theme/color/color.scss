@@ -16,10 +16,6 @@ $theme: $light;
 $reverse-theme: if($theme ==$light, $dark, $light);
 
 :root {
-	body {
-		background-color: $theme;
-		color: $reverse-theme;
-	}
 	--primary-color: #007fff;
 	--secondary-color: #00ddff;
 	--danger-base: #c21533;
