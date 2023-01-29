@@ -1,6 +1,6 @@
 {
 	"name": "@alwaysme/design",
-	"version": "1.0.2-dev",
+	"version": "1.0.3-dev",
 	"private": false,
 	"title": "Alwaysme Design",
 	"description": "Alwaysme UI design language and Vue-based implementation",
