@@ -19,7 +19,7 @@ $prefix-base: #{$prefix}-image;
 			justify-content: center;
 			width: 100%;
 			height: 100%;
-			background: $primary-color-90;
+			background: $info-base;
 			border-radius: $radius-square;
 			color: mix($info-base, $dark, 50%);
 			> .iconfont {
