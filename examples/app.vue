@@ -1,6 +1,6 @@
 <template>
 	<div class="always-me">
-		<div>
+		<!-- <div>
 			<me-button type="primary" long @click="handleClick">按钮</me-button>
 			<me-button type="primary" shape="round" loading />
 			<me-button type="primary" shape="square">按钮</me-button>
@@ -37,7 +37,7 @@
 			<me-link :underline="false">链接1</me-link>
 			<me-link disabled>链接2</me-link>
 			<me-link>链接3</me-link>
-		</div>
+		</div> -->
 		<!-- <div>
 			<me-divider textalign="center" dashed>Text</me-divider>
 			<me-divider textalign="center" />
