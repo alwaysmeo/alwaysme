@@ -1,3 +1,4 @@
+<!-- 图片组件 -->
 <template>
 	<div :class="`${prefix}-image`" :style="styles">
 		<img :class="`${prefix}-image-img`" :src="props.src" :alt="props.alt" @load="imageLoad" @error="imageError" />

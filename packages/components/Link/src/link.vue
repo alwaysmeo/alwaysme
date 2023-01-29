@@ -1,3 +1,4 @@
+<!-- 链接组件 -->
 <template>
 	<a :class="classes" :href="props.href || 'javascript:;'" :target="props.target" @click="handleClick">
 		<slot />
@@ -13,6 +14,8 @@
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
+		underline: false,
+		disabled: false,
 		href: 'javascrit:;',
 		target: '_self'
 	})

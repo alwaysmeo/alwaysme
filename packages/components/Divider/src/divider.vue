@@ -1,3 +1,4 @@
+<!-- 分割线组件 -->
 <template>
 	<div :class="classes">
 		<div v-if="slots.default">
