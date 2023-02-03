@@ -8,20 +8,20 @@ $prefix-base: #{$prefix}-link;
 	transition: border 0.3s, color 0.3s;
 
 	&:hover {
-		color: mix($primary-color, $secondary-color, 40%);
+		color: $primary-secondary-color-40;
 		line-height: 20px;
 	}
 
 	&-underline:hover {
-		border-color: mix($primary-color, $secondary-color, 40%);
+		border-color: $primary-secondary-color-40;
 	}
 
 	&-disabled {
-		color: mix($primary-color, $theme, 60%);
+		color: $primary-color-60;
 
 		&:hover {
 			cursor: not-allowed;
-			color: mix($primary-color, $theme, 60%);
+			color: $primary-color-60;
 			border-color: transparent;
 		}
 	}

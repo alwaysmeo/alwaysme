@@ -8,7 +8,7 @@ $prefix-base: #{$prefix}-divider;
 	line-height: 20px;
 
 	> div {
-		white-space: nowrap;
+		white-color-space: nowrap;
 		padding: 0 16px;
 		font-size: 16px;
 		font-weight: 600;
@@ -20,7 +20,7 @@ $prefix-base: #{$prefix}-divider;
 		width: 50%;
 		transform: translateY(50%);
 		border-top-width: 1px;
-		border-top-color:  mix($theme, $border-color-base, 50%);
+		border-top-color:  $border-color-50;
 		border-top-style: solid;
 	}
 
@@ -66,6 +66,6 @@ $prefix-base: #{$prefix}-divider;
 		height: 0.9em;
 		width: 1px;
 		vertical-align: middle;
-		background-color: mix($theme, $border-color-base, 40%);
+		background-color: $border-color-50;
 	}
 }
