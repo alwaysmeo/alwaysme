@@ -17,6 +17,14 @@ export default defineConfig({
 			vueTemplate: true
 		})
 	],
+	css: {
+		preprocessorOptions: {
+			scss: {
+				additionalData: '@import "./packages/theme/index.scss";',
+				charset: false
+			}
+		}
+	},
 	resolve: {
 		alias: {
 			'@': resolve(__dirname, './packages'),
@@ -27,8 +35,9 @@ export default defineConfig({
 	},
 	build: {
 		target: 'modules',
-		outDir: 'dist',
-		minify: false,
+		outDir: 'es',
+		minify: false, // 压缩
+		cssCodeSplit: true,
 		lib: {
 			entry: resolve(__dirname, './index.ts'),
 			name: 'alwaysme',

@@ -25,7 +25,7 @@
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
-		color: 'var(--black)',
+		color: 'var(--reverse-theme)',
 		icon: 'icon-unselected',
 		title: ''
 	})

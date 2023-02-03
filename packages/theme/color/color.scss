@@ -16,13 +16,15 @@ $theme: $light;
 $reverse-theme: if($theme ==$light, $dark, $light);
 
 :root {
-	--primary-color: #007fff;
-	--secondary-color: #00ddff;
-	--danger-base: #c21533;
-	--success-base: #00b66a;
-	--warning-base: #f79600;
-	--info-base: #eceff2;
-	--border-color-base:#cecece;
-	--black: #22272e;
-	--white: #ffffff;
+	--primary-color: #{$primary-color};
+	--secondary-color: #{$secondary-color};
+	--danger-base: #{$danger-base};
+	--success-base: #{$success-base};
+	--warning-base: #{$warning-base};
+	--info-base: #{$info-base};
+	--border-color-base: #{$border-color-base};
+	--black: #{$black};
+	--white: #{$white};
+	--theme: #{$theme};
+	--reverse-theme: #{$reverse-theme};
 }
