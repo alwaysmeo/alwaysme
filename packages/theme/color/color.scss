@@ -2,29 +2,24 @@
 
 $primary-color: #007fff;
 $secondary-color: #00ddff;
-$danger-base: #c21533;
-$success-base: #00b66a;
-$warning-base: #f79600;
-$info-base: #eceff2;
-$border-color-base: #cecece;
-$black: #22272e;
-$white: #ffffff;
-
-$light: #ffffff;
+$danger-color: #c21533;
+$success-color: #00b66a;
+$warning-color: #f79600;
+$info-color: #eceff2;
+$border-color: #cecece;
+$black-color: #000000;
+$white-color: #ffffff;
 $dark: #22272e;
-$theme: $light;
-$reverse-theme: if($theme ==$light, $dark, $light);
+$light: #ffffff;
 
 :root {
 	--primary-color: #{$primary-color};
 	--secondary-color: #{$secondary-color};
-	--danger-base: #{$danger-base};
-	--success-base: #{$success-base};
-	--warning-base: #{$warning-base};
-	--info-base: #{$info-base};
-	--border-color-base: #{$border-color-base};
-	--black: #{$black};
-	--white: #{$white};
-	--theme: #{$theme};
-	--reverse-theme: #{$reverse-theme};
+	--danger-color: #{$danger-color};
+	--success-color: #{$success-color};
+	--warning-color: #{$warning-color};
+	--info-color: #{$info-color};
+	--border-color: #{$border-color};
+	--black-color: #{$black-color};
+	--white-color: #{$white-color};
 }

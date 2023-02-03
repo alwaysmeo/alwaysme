@@ -1,1 +1,9 @@
 $prefix: me;
+
+$radius-base: 16px;
+$radius-square: 4px;
+$font-size: 14px;
+$line-height: 1.5715;
+
+$theme: $dark;
+$reverse-theme: if($theme ==$light, $dark, $light);

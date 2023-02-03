@@ -6,15 +6,20 @@ body {
     height: 100%;
 }
 
+html {
+	font-size: $font-size;
+}
+
+body {
+	background-color: $theme;
+	color: $reverse-theme;
+}
+
+
 div{
 	box-sizing: border-box;
 }
 
 li {
 	list-style: none;
-}
-
-body {
-	background-color: var(--theme);
-	color: var(--reverse-theme);
 }
