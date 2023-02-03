@@ -12,17 +12,13 @@
 		<div v-if="state.failed" :class="`${prefix}-image-img-failed`">
 			<i class="iconfont icon-image-failed" />
 		</div>
-		<template v-else>
-			<div v-if="props.preview && slots.mask" :class="`${prefix}-image-mask-slot`">
-				<slot name="mask" />
+		<div v-else-if="props.preview" :class="`${prefix}-image-mask`">
+			<slot v-if="slots.mask" name="mask" />
+			<div v-else :class="`${prefix}-image-mask-text`">
+				<i class="iconfont icon-eye" />
+				<span :style="`display: ${parseInt(props.width.toString()) >= 60 ? 'inline-block' : 'none'}`">预览</span>
 			</div>
-			<div v-else-if="props.preview" :class="`${prefix}-image-mask`">
-				<div :class="`${prefix}-image-mask-text`">
-					<i class="iconfont icon-eye" />
-					<span :style="`display: ${parseInt(props.width.toString()) >= 60 ? 'inline-block' : 'none'}`">预览</span>
-				</div>
-			</div>
-		</template>
+		</div>
 	</div>
 </template>
 
