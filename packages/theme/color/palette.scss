@@ -1,3 +1,5 @@
+// TODO: 主题混色
+
 $primary-color-90: mix($primary-color, $theme, 90%);
 $primary-color-80: mix($primary-color, $theme, 80%);
 $primary-color-70: mix($primary-color, $theme, 70%);
@@ -58,7 +60,7 @@ $border-color-30: mix($border-color, $theme, 30%);
 $border-color-20: mix($border-color, $theme, 20%);
 $border-color-10: mix($border-color, $theme, 10%);
 
-// TODO: 混色
+// TODO: 多色混色
 
 $primary-secondary-color-90: mix($primary-color, $secondary-color, 90%);
 $primary-secondary-color-80: mix($primary-color, $secondary-color, 80%);
