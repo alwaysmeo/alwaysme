@@ -5,5 +5,5 @@ $radius-square: 4px;
 $font-size: 14px;
 $line-height: 1.5715;
 
-$theme: $dark;
+$theme: $light;
 $reverse-theme: if($theme ==$light, $dark, $light);
