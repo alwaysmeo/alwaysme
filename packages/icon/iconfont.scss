@@ -16,6 +16,32 @@
 	-moz-osx-font-smoothing: grayscale;
 	vertical-align: middle;
 }
+@font-face {
+	font-family: 'iconfont'; /* Project id 3788332 */
+	src: url('//at.alicdn.com/t/c/font_3788332_uasqdfuvq3t.woff2?t=1675674610180') format('woff2'),
+		url('//at.alicdn.com/t/c/font_3788332_uasqdfuvq3t.woff?t=1675674610180') format('woff'),
+		url('//at.alicdn.com/t/c/font_3788332_uasqdfuvq3t.ttf?t=1675674610180') format('truetype');
+}
+
+.icon-full-screen:before {
+	content: '\e63d';
+}
+
+.icon-enlarge:before {
+	content: '\e63e';
+}
+
+.icon-rotation-right:before {
+	content: '\e63f';
+}
+
+.icon-shrink:before {
+	content: '\e640';
+}
+
+.icon-rotation-left:before {
+	content: '\e641';
+}
 
 .icon-image-failed:before {
 	content: '\e63c';
