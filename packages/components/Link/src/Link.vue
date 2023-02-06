@@ -20,6 +20,8 @@
 		target: '_self'
 	})
 
+	const emits = defineEmits<{ (key: 'onClick', val: Event): void }>()
+
 	const classes = computed(() => {
 		return [
 			`${prefix}-link`,
@@ -30,10 +32,8 @@
 		]
 	})
 
-	const emits = defineEmits<{ (key: 'click', val: Event): void }>()
-
 	const handleClick = (event: Event) => {
 		if (props.disabled) return event.preventDefault()
-		emits('click', event)
+		emits('onClick', event)
 	}
 </script>

@@ -16,8 +16,6 @@
 </template>
 
 <script setup lang="ts">
-	const slots = useSlots()
-
 	interface Props {
 		color?: string // 标题颜色
 		icon?: string // 图标
@@ -29,6 +27,8 @@
 		icon: 'icon-unselected',
 		title: ''
 	})
+
+	const slots = useSlots()
 
 	const state = reactive({
 		position: ''

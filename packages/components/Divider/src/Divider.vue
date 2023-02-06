@@ -8,8 +8,6 @@
 </template>
 
 <script setup lang="ts">
-	const slots = useSlots()
-
 	interface Props {
 		dashed?: boolean // 是否为虚线
 		orientation?: 'horizontal' | 'vertical' // 线段方向
@@ -21,6 +19,8 @@
 		orientation: 'horizontal',
 		textalign: 'left'
 	})
+
+	const slots = useSlots()
 
 	const classes = computed(() => {
 		return [

@@ -7,9 +7,6 @@
 </template>
 
 <script setup lang="ts">
-	const slots = useSlots()
-	const emits = defineEmits<{ (key: 'click', val: MouseEvent): void }>()
-
 	interface Props {
 		type?: 'default' | 'primary' | 'dashed' | 'text' | 'link' // 按钮类型 default | primary | dashed | text | link
 		shape?: 'default' | 'square' | 'round' // 按钮形状 default | square | round
@@ -25,6 +22,9 @@
 		shape: 'default',
 		htmlType: 'button'
 	})
+
+	const emits = defineEmits<{ (key: 'onClick', val: MouseEvent): void }>()
+	const slots = useSlots()
 
 	const classes = computed(() => {
 		return [
@@ -42,6 +42,6 @@
 
 	const handleClick = (event: MouseEvent) => {
 		if (props.disabled || props.loading) return event.preventDefault()
-		emits('click', event)
+		emits('onClick', event)
 	}
 </script>
