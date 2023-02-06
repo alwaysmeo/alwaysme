@@ -1,0 +1,74 @@
+$prefix-base: #{$prefix}-image-preview;
+
+.#{$prefix-base} {
+	&-mask {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: #0000004c;
+		z-index: 1100;
+		&-toolbar {
+			position: absolute;
+			bottom: 50px;
+			left: 50%;
+			display: flex;
+			align-items: content;
+			padding: 12px;
+			background-color: $white-color;
+			border-radius: 32px;
+			transform: translate(-50%);
+			box-shadow: 0 0 8px 0 #0000004c;
+			> .iconfont {
+				padding: 0 8px;
+				color: $info-dark-color-50;
+				font-size: 20px;
+				transition: color 0.3s;
+				&:hover {
+					color: $info-dark-color-80;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	&-switch {
+		&-left,
+		&-right {
+			position: absolute;
+			top: 50%;
+			width: 36px;
+			height: 36px;
+			text-align: center;
+			background: $white-color;
+			border-radius: 50%;
+			transform: translateY(-50%);
+			box-shadow: 0 0 8px 0 #0000004c;
+			> .iconfont {
+				color: $info-dark-color-50;
+				font-size: 20px;
+				transition: color 0.3s;
+				font-size: 18px;
+				line-height: 36px;
+			}
+			&:hover {
+				> .iconfont {
+					color: $info-dark-color-80;
+				}
+				cursor: pointer;
+			}
+		}
+		&-left {
+			left: 20px;
+			> .iconfont {
+				margin-left: -2px;
+			}
+		}
+		&-right {
+			right: 20px;
+			> .iconfont {
+				margin-right: -2px;
+			}
+		}
+	}
+}
