@@ -6,12 +6,13 @@ $prefix-base: #{$prefix}-timeline-item;
 		height: 100%;
 		top: 0;
 		position: absolute;
-		.iconfont {
+		> .iconfont {
 			background-color: $theme;
+			color: var(--#{$prefix-base}-color);
 		}
 	}
 
-	&:not(:last-child) .iconfont::after {
+	&:not(:last-child) &-icon > .iconfont::after {
 		content: '';
 		margin: 0 auto;
 		display: block;
@@ -29,9 +30,5 @@ $prefix-base: #{$prefix}-timeline-item;
 		font-weight: 700;
 		color: var(--#{$prefix-base}-color);
 		margin-bottom: 12px;
-	}
-
-	.iconfont {
-		color: var(--#{$prefix-base}-color);
 	}
 }
