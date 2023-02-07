@@ -40,6 +40,10 @@
 		fit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down' // 填充模式，同原生 object-fit 属性
 	}
 
+	interface State {
+		failed: boolean // 是否加载失败
+	}
+
 	const props = withDefaults(defineProps<Props>(), {
 		src: '',
 		alt: '',
@@ -58,10 +62,8 @@
 		]
 	})
 
-	const state = reactive({
+	const state = reactive<State>({
 		failed: false
-	} as {
-		failed: boolean
 	})
 
 	function load(event: Event) {
