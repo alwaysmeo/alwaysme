@@ -69,7 +69,8 @@
 		</div> -->
 		<div>
 			<me-image src="http://files.drcloud.me/727788e6-5841-49fb-902e-5c5b3a240bc1" width="300px" height="200px"></me-image>
-			<me-image-preview>
+			<!-- <me-image-preview :list="['http://files.drcloud.me/727788e6-5841-49fb-902e-5c5b3a240bc1', 132131]" /> -->
+			<me-image-preview infinite>
 				<me-image src="http://files.drcloud.me/727788e6-5841-49fb-902e-5c5b3a240bc1" :width="100" height="100">
 					<template #mask>查看</template>
 				</me-image>

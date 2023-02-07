@@ -3,7 +3,7 @@ body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
-    height: 100%;
+	height: 100%;
 }
 
 html {
@@ -15,11 +15,15 @@ body {
 	color: $reverse-theme;
 }
 
-
-div{
+div {
 	box-sizing: border-box;
 }
 
 li {
 	list-style: none;
+}
+
+img {
+	vertical-align: middle;
+	border-style: none;
 }
