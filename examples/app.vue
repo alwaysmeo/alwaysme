@@ -73,6 +73,7 @@
 				<me-image src="http://files.drcloud.me/727788e6-5841-49fb-902e-5c5b3a240bc1" :width="100" height="100">
 					<template #mask>查看</template>
 				</me-image>
+				<me-image src="http://files.drcloud.me/2ab32929-3827-4807-a308-13d56753ffbe" width="100" height="100"></me-image>
 			</me-image-preview>
 		</div>
 	</div>

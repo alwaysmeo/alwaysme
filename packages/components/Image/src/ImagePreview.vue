@@ -25,13 +25,13 @@
 	interface Props {
 		infinite?: boolean // 是否循环展示
 		maskClosable?: boolean // 点击遮罩是否关闭
-		list?: Array<string> // 图片列表
+		list?: string[] // 图片列表
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
 		infinite: false,
 		maskClosable: true,
-		list: [] as any
+		list: () => []
 	})
 
 	const emits = defineEmits<{
@@ -39,14 +39,18 @@
 		(key: 'onVisibleChange', visible: boolean): void // 切换可见状态触发的事件
 	}>()
 	const slots = useSlots()
-	console.log(slots);
-
 
 	const state = reactive({
 		visible: false,
-		index: 0
+		index: 0,
+		list: []
 	} as {
 		visible: boolean
 		index: number
+		list: string[]
 	})
+
+	if (slots.default) state.list = slots.default().map((item) => item.props?.src)
+
+	console.log(state.list)
 </script>
