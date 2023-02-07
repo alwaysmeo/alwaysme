@@ -16,6 +16,12 @@
 </template>
 
 <script setup lang="ts">
+	const slots = useSlots()
+
+	interface State {
+		position: string // 节点对齐方式
+	}
+
 	interface Props {
 		color?: string // 标题颜色
 		icon?: string // 图标
@@ -28,12 +34,8 @@
 		title: ''
 	})
 
-	const slots = useSlots()
-
-	const state = reactive({
+	const state = reactive<State>({
 		position: ''
-	} as {
-		position: string
 	})
 
 	mitt.on('timeline-position', (position: string) => {

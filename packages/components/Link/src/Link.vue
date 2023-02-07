@@ -6,6 +6,8 @@
 </template>
 
 <script setup lang="ts">
+	const emits = defineEmits<{ (key: 'onClick', val: Event): void }>()
+
 	interface Props {
 		underline?: boolean // 是否需要下划线
 		disabled?: boolean // 是否禁用状态
@@ -19,8 +21,6 @@
 		href: 'javascrit:;',
 		target: '_self'
 	})
-
-	const emits = defineEmits<{ (key: 'onClick', val: Event): void }>()
 
 	const classes = computed(() => {
 		return [
