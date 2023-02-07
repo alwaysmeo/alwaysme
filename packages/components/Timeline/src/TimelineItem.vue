@@ -32,6 +32,8 @@
 
 	const state = reactive({
 		position: ''
+	} as {
+		position: string
 	})
 
 	mitt.on('timeline-position', (position: string) => {

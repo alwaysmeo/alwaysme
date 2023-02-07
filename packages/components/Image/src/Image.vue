@@ -60,6 +60,8 @@
 
 	const state = reactive({
 		failed: false
+	} as {
+		failed: boolean
 	})
 
 	function load(event: Event) {
