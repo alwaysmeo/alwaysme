@@ -16,6 +16,7 @@
 			<div :class="`${prefix}-image-preview-switch-right`">
 				<i class="iconfont icon-arrow-right" />
 			</div>
+			<div :class="`${prefix}-image-preview-image`"></div>
 		</div>
 	</div>
 </template>
@@ -24,20 +25,28 @@
 	interface Props {
 		infinite?: boolean // 是否循环展示
 		maskClosable?: boolean // 点击遮罩是否关闭
+		list?: Array<string> // 图片列表
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
 		infinite: false,
-		maskClosable: true
+		maskClosable: true,
+		list: [] as any
 	})
 
 	const emits = defineEmits<{
 		(key: 'onChange', index: number): void // 切换图片触发的事件
 		(key: 'onVisibleChange', visible: boolean): void // 切换可见状态触发的事件
 	}>()
+	const slots = useSlots()
+	console.log(slots);
+
 
 	const state = reactive({
 		visible: false,
 		index: 0
+	} as {
+		visible: boolean
+		index: number
 	})
 </script>
