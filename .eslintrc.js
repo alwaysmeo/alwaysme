@@ -39,11 +39,12 @@ module.exports = {
 		'no-unused-components': 'off', // 关闭未使用的组件校验
 		'comma-dangle': ['warn', 'never'], // 对象字面量项尾不能有逗号
 		'no-empty-character-class': 'error', // 禁止在正则表达式中使用空字符集
-		'no-extra-parens': ['error', 'functions'], // 禁止不必要的括号
+		// 'no-extra-parens': ['error', 'functions'], // 禁止不必要的括号
 		'comma-spacing': ['error', { before: false, after: true }], // 控制逗号前后的空格
 		'no-unused-vars': ['warn', { vars: 'all', args: 'none' }], // 禁止出现未使用过的变量
 		'keyword-spacing': ['error', { before: true, after: true }], // 强制在关键字前后使用一致的空格
 		'@typescript-eslint/no-explicit-any': ['off'], // 关闭any类型校验
+		'@typescript-eslint/no-empty-function': 'off', // 不允许空函数
 		'vue/max-attributes-per-line': 'off', // 关闭属性换行
 		'vue/script-indent': ['error', 'tab'], // 强制使用制表符缩进
 		'vue/multi-word-component-names': 'off', // 关闭组件名必须包含一个连字符
