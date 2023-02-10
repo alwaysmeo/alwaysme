@@ -2,7 +2,7 @@
 <template>
 	<div :class="`${prefix}-image-preview`">
 		<slot />
-		<component :is="`${prefix}-image`" v-for="item in state.list" :key="item" :src="item?.src" />
+		<!-- <component :is="`${prefix}-image`" v-for="item in state.list" :key="item" :src="item?.src" /> -->
 		<component
 			:is="`${prefix}-mask`"
 			v-model:visible="state.visible"
@@ -48,20 +48,28 @@
 	}>()
 
 	interface Props {
-		image?: boolean | string // 预览图片
 		visible?: boolean // 是否可见
+		image?: boolean | string // 预览图片
 		infinite?: boolean // 是否循环展示
 	}
 
 	interface State {
 		visible: boolean
 		index: number
-		list: Array<{ [key: string]: any } | null>
+		list: Array<{
+			src?: string
+			alt?: string
+			preview?: boolean
+			fallback?: string
+			width?: string | number
+			height?: string | number
+			fit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down'
+		}>
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
-		image: '',
 		visible: false,
+		image: '',
 		infinite: false,
 		list: () => []
 	})
@@ -73,8 +81,8 @@
 	})
 
 	if (slots.default) {
-		state.list = slots.default().map((item) => item.props)
-		console.log(slots.default().map((item) => item))
+		state.list = slots.default().filter((item) => item.props)
+		console.log(state.list)
 	}
 
 	watchEffect(() => {

@@ -1,6 +1,7 @@
 $prefix-base: #{$prefix}-image-preview;
 
 .#{$prefix-base} {
+	display: inline-block;
 	&-toolbar {
 		position: absolute;
 		bottom: 50px;
