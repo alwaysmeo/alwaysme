@@ -2,32 +2,39 @@
 <template>
 	<div :class="`${prefix}-image-preview`">
 		<slot />
-		<div :class="`${prefix}-image-preview-mask`">
+		<component
+			:is="`${prefix}-mask`"
+			v-model:visible="state.visible"
+			zindex="1100"
+			@on-close="$emit('update:visible', false)"
+		>
 			<div :class="`${prefix}-image-preview-image`">
-				<img :class="`${prefix}-image-preview-image-img`" :src="state.list[state.index]" alt="" />
+				<img :class="`${prefix}-image-preview-image-img`" :src="state.list[state.index]" alt="" @click.stop />
 			</div>
-			<div :class="`${prefix}-image-preview-mask-toolbar`">
+			<div :class="`${prefix}-image-preview-toolbar`" @click.stop>
 				<i class="iconfont icon-zoom-in" />
 				<i class="iconfont icon-zoom-out" />
 				<i class="iconfont icon-rotate-left" />
 				<i class="iconfont icon-rotate-right" />
 				<i class="iconfont icon-full-screen" />
 			</div>
-			<div
-				:class="`${prefix}-image-preview-switch-left`"
-				:data-status="!props.infinite && state.index === 0"
-				@click="handleSwitch(state.index - 1)"
-			>
-				<i class="iconfont icon-arrow-left" />
-			</div>
-			<div
-				:class="`${prefix}-image-preview-switch-right`"
-				:data-status="!props.infinite && state.index === state.list.length - 1"
-				@click="handleSwitch(state.index + 1)"
-			>
-				<i class="iconfont icon-arrow-right" />
-			</div>
-		</div>
+			<template v-if="state.list.length > 1">
+				<div
+					:class="`${prefix}-image-preview-switch-left`"
+					:data-status="!props.infinite && state.index === 0"
+					@click.stop="handleSwitch(state.index - 1)"
+				>
+					<i class="iconfont icon-arrow-left" />
+				</div>
+				<div
+					:class="`${prefix}-image-preview-switch-right`"
+					:data-status="!props.infinite && state.index === state.list.length - 1"
+					@click.stop="handleSwitch(state.index + 1)"
+				>
+					<i class="iconfont icon-arrow-right" />
+				</div>
+			</template>
+		</component>
 	</div>
 </template>
 
@@ -36,11 +43,14 @@
 	const emits = defineEmits<{
 		(key: 'onChange', index: number): void // 切换图片触发的事件
 		(key: 'onVisibleChange', visible: boolean): void // 切换可见状态触发的事件
+		(key: 'update:visible', visible: boolean): void
 	}>()
 
 	interface Props {
+		image?: boolean | string // 预览图片
+		visible?: boolean // 是否可见
 		infinite?: boolean // 是否循环展示
-		maskClosable?: boolean // 点击遮罩是否关闭
+		maskClose?: boolean // 点击遮罩是否关闭
 		list?: string[] // 预览图片列表
 	}
 
@@ -51,8 +61,9 @@
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
+		image: '',
+		visible: false,
 		infinite: false,
-		maskClosable: true,
 		list: () => []
 	})
 
@@ -65,11 +76,15 @@
 	if (props.list.length) state.list = computed(() => props.list).value
 	else if (slots.default) state.list = slots.default().map((item) => item.props?.src)
 
+	watchEffect(() => {
+		state.visible = computed(() => props.visible).value
+		emits('onVisibleChange', state.visible)
+	})
+
 	function handleSwitch(index: number) {
-		if (props.infinite) {
-			if (index < 0) state.index = state.list.length - 1
-			else if (index >= state.list.length) state.index = 0
-			else state.index = index
-		} else if (index >= 0 && index < state.list.length) state.index = index
+		const length = state.list.length
+		if (props.infinite) state.index = index < 0 ? length - 1 : index >= length ? 0 : index
+		else if (index >= 0 && index < length) state.index = index
+		emits('onChange', index)
 	}
 </script>
