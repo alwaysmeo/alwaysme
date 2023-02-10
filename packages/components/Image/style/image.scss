@@ -2,6 +2,7 @@ $prefix-base: #{$prefix}-image;
 
 .#{$prefix-base} {
 	position: relative;
+	display: inline-block;
 	border-radius: $radius-square;
 	width: var(--#{$prefix-base}-width);
 	height: var(--#{$prefix-base}-height);

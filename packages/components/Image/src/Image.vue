@@ -20,13 +20,6 @@
 			</div>
 		</div>
 	</div>
-	<component
-		:is="`${prefix}-image-preview`"
-		v-if="!state.failed && props.preview"
-		v-model:visible="state.visible"
-		:list="[props.src]"
-		zindex="1100"
-	/>
 </template>
 
 <script setup lang="ts">

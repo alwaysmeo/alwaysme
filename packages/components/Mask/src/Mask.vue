@@ -1,8 +1,10 @@
 <!-- 链接组件 -->
 <template>
-	<div v-if="state.visible" :class="`${prefix}-mask`" :style="styles" @click="close">
-		<slot />
-	</div>
+	<teleport :to="state.mount">
+		<div v-if="state.visible" :class="`${prefix}-mask`" :style="styles" @click="close">
+			<slot />
+		</div>
+	</teleport>
 </template>
 
 <script setup lang="ts">
@@ -15,20 +17,24 @@
 		visible?: boolean // 是否可见
 		blur?: number | string // 模糊度
 		zindex?: number | string // 层级
+		mount?: string // 挂载节点
 	}
 
 	interface State {
 		visible: boolean
+		mount: string
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
 		visible: false,
 		blur: 12,
-		zindex: 1000
+		zindex: 1000,
+		mount: 'body'
 	})
 
 	const state = reactive<State>({
-		visible: false
+		visible: false,
+		mount: computed(() => props.mount).value
 	})
 
 	const styles = computed(() => {

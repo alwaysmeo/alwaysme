@@ -2,6 +2,7 @@
 <template>
 	<div :class="`${prefix}-image-preview`">
 		<slot />
+		<component :is="`${prefix}-image`" v-for="item in state.list" :key="item" :src="item?.src" />
 		<component
 			:is="`${prefix}-mask`"
 			v-model:visible="state.visible"
@@ -9,7 +10,7 @@
 			@on-close="$emit('update:visible', false)"
 		>
 			<div :class="`${prefix}-image-preview-image`">
-				<img :class="`${prefix}-image-preview-image-img`" :src="state.list[state.index]" alt="" @click.stop />
+				<img :class="`${prefix}-image-preview-image-img`" :src="state.list?.[state.index]?.src" alt="" @click.stop />
 			</div>
 			<div :class="`${prefix}-image-preview-toolbar`" @click.stop>
 				<i class="iconfont icon-zoom-in" />
@@ -50,14 +51,12 @@
 		image?: boolean | string // 预览图片
 		visible?: boolean // 是否可见
 		infinite?: boolean // 是否循环展示
-		maskClose?: boolean // 点击遮罩是否关闭
-		list?: string[] // 预览图片列表
 	}
 
 	interface State {
 		visible: boolean
 		index: number
-		list: string[]
+		list: Array<{ [key: string]: any } | null>
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
@@ -73,8 +72,10 @@
 		list: []
 	})
 
-	if (props.list.length) state.list = computed(() => props.list).value
-	else if (slots.default) state.list = slots.default().map((item) => item.props?.src)
+	if (slots.default) {
+		state.list = slots.default().map((item) => item.props)
+		console.log(slots.default().map((item) => item))
+	}
 
 	watchEffect(() => {
 		state.visible = computed(() => props.visible).value
@@ -86,5 +87,10 @@
 		if (props.infinite) state.index = index < 0 ? length - 1 : index >= length ? 0 : index
 		else if (index >= 0 && index < length) state.index = index
 		emits('onChange', index)
+	}
+
+	function close() {
+		state.visible = false
+		emits('update:visible', false)
 	}
 </script>
