@@ -56,15 +56,7 @@
 	interface State {
 		visible: boolean
 		index: number
-		list: Array<{
-			src?: string
-			alt?: string
-			preview?: boolean
-			fallback?: string
-			width?: string | number
-			height?: string | number
-			fit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down'
-		}>
+		list: Array<{ [key: string]: any }>
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
