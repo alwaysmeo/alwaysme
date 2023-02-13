@@ -25,47 +25,54 @@ $prefix-base: #{$prefix}-image-preview;
 			}
 		}
 	}
-	&-switch {
-		&-left,
-		&-right {
-			position: absolute;
-			top: 50%;
-			width: 36px;
-			height: 36px;
-			text-align: center;
-			color: $white-color;
-			background-color: #ffffff7f;
-			backdrop-filter: blur($blur-base);
-			border-radius: 50%;
-			box-shadow: 0 0 8px 0 #0000004c;
-			transform: translateY(-50%);
-			transition: color 0.3s;
-			cursor: pointer;
-			> .iconfont {
-				font-size: 20px;
-				font-size: 18px;
-				line-height: 36px;
-			}
-			&:hover {
-				color: $info-dark-color-70;
-			}
-			&[data-status='true'] {
-				color: $info-dark-color-70;
-				background-color: #ffffff19;
-				cursor: not-allowed;
-			}
+	&-switch-left,
+	&-switch-right,
+	&-close {
+		position: absolute;
+		width: 36px;
+		height: 36px;
+		text-align: center;
+		color: $white-color;
+		background-color: #ffffff7f;
+		backdrop-filter: blur($blur-base);
+		border-radius: 50%;
+		box-shadow: 0 0 8px 0 #0000004c;
+		transition: color 0.3s;
+		cursor: pointer;
+		> .iconfont {
+			font-size: 18px;
+			line-height: 36px;
 		}
-		&-left {
-			left: 20px;
-			> .iconfont {
-				margin-left: -2px;
-			}
+		&:hover {
+			color: $info-dark-color-70;
 		}
-		&-right {
-			right: 20px;
-			> .iconfont {
-				margin-right: -2px;
-			}
+		&[data-status='true'] {
+			color: $info-dark-color-70;
+			background-color: #ffffff19;
+			cursor: not-allowed;
+		}
+	}
+	&-switch-left {
+		top: 50%;
+		left: 20px;
+		transform: translateY(-50%);
+		> .iconfont {
+			margin-left: -2px;
+		}
+	}
+	&-switch-right {
+		top: 50%;
+		right: 20px;
+		transform: translateY(-50%);
+		> .iconfont {
+			margin-right: -2px;
+		}
+	}
+	&-close {
+		top: 20px;
+		right: 20px;
+		> .iconfont {
+			font-size: 16px;
 		}
 	}
 	&-image {

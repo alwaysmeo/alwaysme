@@ -2,15 +2,19 @@
 <template>
 	<div :class="`${prefix}-image-preview`">
 		<slot />
-		<!-- <component :is="`${prefix}-image`" v-for="item in state.list" :key="item" :src="item?.src" /> -->
 		<component
 			:is="`${prefix}-mask`"
 			v-model:visible="state.visible"
-			zindex="1100"
-			@on-close="$emit('update:visible', false)"
+			:zindex="props.zindex"
+			:mount="props.mount"
+			:close-on-press-escape="props.closeOnPressEscape"
+			@on-close="close"
 		>
 			<div :class="`${prefix}-image-preview-image`">
-				<img :class="`${prefix}-image-preview-image-img`" :src="state.list?.[state.index]?.src" alt="" @click.stop />
+				<img :class="`${prefix}-image-preview-image-img`" :src="state.list?.[state.index]" alt="" @click.stop />
+			</div>
+			<div :class="`${prefix}-image-preview-close`" @click.stop="close">
+				<i class="iconfont icon-close" />
 			</div>
 			<div :class="`${prefix}-image-preview-toolbar`" @click.stop>
 				<i class="iconfont icon-zoom-in" />
@@ -40,53 +44,57 @@
 </template>
 
 <script setup lang="ts">
-	const slots = useSlots()
 	const emits = defineEmits<{
-		(key: 'onChange', index: number): void // 切换图片触发的事件
-		(key: 'onVisibleChange', visible: boolean): void // 切换可见状态触发的事件
+		(key: 'switch', index: number): void // 切换图片触发的事件
+		(key: 'onVisibleChange', { visible, index }: { visible: boolean; index: number }): void // 切换可见状态触发的事件
 		(key: 'update:visible', visible: boolean): void
 	}>()
 
 	interface Props {
 		visible?: boolean // 是否可见
-		image?: boolean | string // 预览图片
+		list?: Array<string> // 预览列表
 		infinite?: boolean // 是否循环展示
+		zindex?: number // 设置预览层级
+		index?: number // 初始预览索引
+		mount?: string // 挂载节点
+		closeOnPressEscape?: boolean // 是否支持按下 ESC 关闭预览
 	}
 
 	interface State {
 		visible: boolean
 		index: number
-		list: Array<{ [key: string]: any }>
+		list: Array<string>
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
 		visible: false,
-		image: '',
-		infinite: false,
-		list: () => []
+		list: () => [],
+		infinite: true,
+		zindex: 1000,
+		index: 0,
+		mount: 'body',
+		closeOnPressEscape: true
 	})
 
 	const state = reactive<State>({
 		visible: false,
-		index: 0,
-		list: []
+		index: computed(() => props.index).value,
+		list: computed(() => props.list).value
 	})
 
-	if (slots.default) {
-		state.list = slots.default().filter((item) => item.props)
-		console.log(state.list)
-	}
-
-	watchEffect(() => {
-		state.visible = computed(() => props.visible).value
-		emits('onVisibleChange', state.visible)
-	})
+	watch(
+		() => props.visible,
+		(visible) => {
+			state.visible = visible
+			emits('onVisibleChange', { visible: state.visible, index: state.index })
+		}
+	)
 
 	function handleSwitch(index: number) {
 		const length = state.list.length
 		if (props.infinite) state.index = index < 0 ? length - 1 : index >= length ? 0 : index
 		else if (index >= 0 && index < length) state.index = index
-		emits('onChange', index)
+		nextTick(() => emits('switch', state.index))
 	}
 
 	function close() {
