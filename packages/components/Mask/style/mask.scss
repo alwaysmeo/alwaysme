@@ -6,6 +6,7 @@ $prefix-base: #{$prefix}-mask;
 	right: 0;
 	bottom: 0;
 	left: 0;
+	overflow: hidden;
 	background: #0000004c;
 	backdrop-filter: blur(var(--#{$prefix-base}-blur));
 	z-index: var(--#{$prefix-base}-zindex);
