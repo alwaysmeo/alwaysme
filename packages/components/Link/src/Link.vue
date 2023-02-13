@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-	const emits = defineEmits<{ (key: 'onClick', val: Event): void }>()
+	const emits = defineEmits<{ (key: 'onClick', val: MouseEvent): void }>()
 
 	interface Props {
 		underline?: boolean // 是否需要下划线
@@ -32,7 +32,7 @@
 		]
 	})
 
-	const handleClick = (event: Event) => {
+	const handleClick = (event: MouseEvent) => {
 		if (props.disabled) return event.preventDefault()
 		emits('onClick', event)
 	}

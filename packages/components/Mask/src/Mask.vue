@@ -12,7 +12,7 @@
 
 	const emits = defineEmits<{
 		(key: 'update:visible', visible: boolean): void
-		(key: 'onClose', event: Event | KeyboardEvent): void
+		(key: 'onClose', event: MouseEvent | KeyboardEvent): void
 	}>()
 
 	interface Props {
@@ -50,7 +50,7 @@
 		state.visible = computed(() => props.visible).value
 	})
 
-	function close(event: Event) {
+	function close(event: MouseEvent | KeyboardEvent) {
 		emits('update:visible', false)
 		emits('onClose', event)
 	}
