@@ -1,6 +1,6 @@
 <!-- 链接组件 -->
 <template>
-	<teleport :to="state.mount">
+	<teleport :to="props.mount">
 		<div v-if="state.visible" :class="`${prefix}-mask`" :style="styles" @click="close">
 			<slot />
 		</div>
@@ -8,9 +8,11 @@
 </template>
 
 <script setup lang="ts">
+	import { throttle } from 'lodash'
+
 	const emits = defineEmits<{
 		(key: 'update:visible', visible: boolean): void
-		(key: 'onClose', event: Event): void
+		(key: 'onClose', event: Event | KeyboardEvent): void
 	}>()
 
 	interface Props {
@@ -18,23 +20,23 @@
 		blur?: number | string // 模糊度
 		zindex?: number | string // 层级
 		mount?: string // 挂载节点
+		closeOnPressEscape?: boolean // 是否支持按下 ESC 关闭预览
 	}
 
 	interface State {
 		visible: boolean
-		mount: string
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
 		visible: false,
 		blur: 12,
 		zindex: 1000,
-		mount: 'body'
+		mount: 'body',
+		closeOnPressEscape: true
 	})
 
 	const state = reactive<State>({
-		visible: false,
-		mount: computed(() => props.mount).value
+		visible: false
 	})
 
 	const styles = computed(() => {
@@ -48,8 +50,23 @@
 		state.visible = computed(() => props.visible).value
 	})
 
-	const close = (event: Event) => {
+	function close(event: Event) {
 		emits('update:visible', false)
 		emits('onClose', event)
 	}
+
+	function registerEventListener() {
+		const keydownHandler = throttle((event: KeyboardEvent) => {
+			switch (event.code) {
+				case 'Escape':
+					props.closeOnPressEscape && close(event)
+					break
+			}
+		})
+		useEventListener(document, 'keydown', keydownHandler)
+	}
+
+	onMounted(() => {
+		registerEventListener()
+	})
 </script>
