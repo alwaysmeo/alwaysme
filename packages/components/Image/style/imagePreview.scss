@@ -95,6 +95,8 @@ $prefix-base: #{$prefix}-image-preview;
 			max-height: 100%;
 			cursor: grab;
 			transition: transform 0.3s;
+			transform: translate(var(--#{$prefix-base}-offsetX), var(--#{$prefix-base}-offsetY))
+				rotate(var(--#{$prefix-base}-rotate)) scale3d(var(--#{$prefix-base}-scale), var(--#{$prefix-base}-scale), 1);
 		}
 	}
 }
