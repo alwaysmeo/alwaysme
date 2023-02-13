@@ -19,6 +19,19 @@
 				<span :style="`display: ${parseInt(props.width.toString()) >= 60 ? 'inline-block' : 'none'}`">预览</span>
 			</div>
 		</div>
+		<component
+			:is="`${prefix}-image-preview`"
+			v-if="props.preview"
+			v-model:visible="state.visible"
+			:list="props.list"
+			:infinite="props.infinite"
+			:zindex="props.zindex"
+			:index="props.index ?? props.list.findIndex((item) => item === props.src)"
+			:mount="props.mount"
+			:close-on-press-escape="props.closeOnPressEscape"
+			@switch="handleSwitch"
+			@on-visible-change="handleVisibleChange"
+		/>
 	</div>
 </template>
 
@@ -27,17 +40,24 @@
 	const emits = defineEmits<{
 		(key: 'load', event: Event): void // 加载成功回调
 		(key: 'error', event: Event): void // 加载失败回调
-		(key: 'onPreview', event: Event): void // 点击预览回调
+		(key: 'onVisibleChange', { visible, index }: { visible: boolean; index: number }): void // 切换预览可见状态触发的事件
+		(key: 'switch', index: number): void // 切换预览回调
 	}>()
 
 	interface Props {
 		src?: string // 地址
 		alt?: string // 描述
-		preview?: boolean // 是否允许预览
 		fallback?: string // 加载失败容错地址
 		width?: string | number // 宽度
 		height?: string | number // 高度
 		fit?: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down' // 填充模式，同原生 object-fit 属性
+		preview?: boolean // 是否允许预览
+		list?: Array<string> // 预览列表
+		infinite?: boolean // 是否循环展示
+		zindex?: number // 设置预览层级
+		index?: number // 初始预览索引
+		mount?: string // 挂载节点
+		closeOnPressEscape?: boolean // 是否支持按下 ESC 关闭预览
 	}
 
 	interface State {
@@ -52,7 +72,13 @@
 		fallback: 'default',
 		width: 'auto',
 		height: 'auto',
-		fit: 'cover'
+		fit: 'cover',
+		list: () => [],
+		infinite: true,
+		zindex: 1000,
+		index: undefined,
+		mount: 'body',
+		closeOnPressEscape: true
 	})
 
 	const state = reactive<State>({
@@ -78,8 +104,16 @@
 		emits('error', event)
 	}
 
-	function handleMask(event: Event) {
+	function handleMask() {
+		if (!props.preview) return
 		state.visible = true
-		emits('onPreview', event)
+	}
+
+	function handleSwitch(index: number) {
+		emits('switch', index)
+	}
+
+	function handleVisibleChange({ visible, index }: { visible: boolean; index: number }) {
+		emits('onVisibleChange', { visible, index })
 	}
 </script>
