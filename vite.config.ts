@@ -11,7 +11,7 @@ export default defineConfig({
 		dts({ outputDir: 'es' }),
 		visualizer(),
 		AutoImport({
-			imports: ['vue'],
+			imports: ['vue', '@vueuse/core'],
 			dirs: ['./packages/utils'],
 			dts: './typings/auto-import.d.ts',
 			vueTemplate: true
