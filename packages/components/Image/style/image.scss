@@ -41,6 +41,7 @@ $prefix-base: #{$prefix}-image;
 		text-align: center;
 		font-size: 1rem;
 		color: $light;
+		user-select: none;
 		border-radius: $radius-square;
 		background: #0000007f;
 		transition: opacity 0.3s;
@@ -54,6 +55,7 @@ $prefix-base: #{$prefix}-image;
 				vertical-align: middle;
 				padding-left: 2px;
 				flex-wrap: wrap;
+				user-select: none;
 			}
 		}
 	}

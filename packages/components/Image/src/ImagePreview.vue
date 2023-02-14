@@ -51,6 +51,7 @@
 
 <script setup lang="ts">
 	const scopeEventListener = effectScope()
+
 	const emits = defineEmits<{
 		(key: 'switch', index: number): void // 切换图片触发的事件
 		(key: 'onVisibleChange', { visible, index }: { visible: boolean; index: number }): void // 切换可见状态触发的事件

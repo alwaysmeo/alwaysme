@@ -87,6 +87,7 @@
 		'http://files.drcloud.me/50602bfc-b603-4b45-a629-b0f474601f29'
 	])
 	const visible = ref(false)
+	const show = ref(false)
 </script>
 
 <style scoped lang="scss">
