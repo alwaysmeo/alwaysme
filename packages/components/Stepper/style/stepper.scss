@@ -1,0 +1,65 @@
+$prefix-base: #{$prefix}-stepper;
+
+.#{$prefix-base} {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: $radius-base;
+	border: 1px solid $border-color-50;
+	background-color: $theme;
+	&[data-disabled='true'] {
+		background-color: $disabled-color-20;
+		cursor: not-allowed;
+	}
+	&-minus,
+	&-push {
+		box-sizing: border-box;
+		height: var(--#{$prefix-base}-height);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: $radius-base;
+		cursor: pointer;
+		> .iconfont {
+			font-size: 16px;
+			vertical-align: middle;
+			user-select: none;
+		}
+		&[data-disabled='true'] {
+			color: if($theme ==$light, $disabled-color-40, $disabled-color-40);
+			cursor: not-allowed;
+		}
+		&[data-disabled='false'] {
+			color: if($theme ==$light, $info-dark-color-30, $info-color);
+		}
+	}
+	&-minus {
+		margin-right: -2px;
+		width: var(--#{$prefix-base}-height);
+	}
+	&-push {
+		margin-left: -2px;
+		width: var(--#{$prefix-base}-height);
+	}
+	&-input {
+		input {
+			&[disabled] {
+				background-color: $disabled-color-20;
+				color: $disabled-color-70;
+				cursor: not-allowed;
+			}
+			box-sizing: border-box;
+			width: var(--#{$prefix-base}-input-width);
+			height: var(--#{$prefix-base}-height);
+			text-align: center;
+			border: none;
+			outline: none;
+			font-size: 18px;
+			line-height: var(--#{$prefix-base}-height);
+			color: $reverse-theme;
+			background-color: $theme;
+			border-left: 1px solid $border-color-50;
+			border-right: 1px solid $border-color-50;
+		}
+	}
+}

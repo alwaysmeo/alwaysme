@@ -67,12 +67,14 @@
 				</me-timeline-item>
 			</me-timeline>
 		</div> -->
-		<div>
+		<!-- <div>
 			<me-image v-for="item in url" :key="url" :src="item" :list="url" width="180px" height="100px"></me-image>
-			<!-- <me-image-preview :list="['http://files.drcloud.me/727788e6-5841-49fb-902e-5c5b3a240bc1', 132131]" /> -->
+			<me-image-preview :list="['http://files.drcloud.me/727788e6-5841-49fb-902e-5c5b3a240bc1', 132131]" />
 			<me-button type="primary" shape="round" loading @click="visible = !visible" />
 			<me-image-preview infinite :list="url" v-model:visible="visible" />
-		</div>
+		</div> -->
+		<me-stepper v-model:value="value" disabled></me-stepper>
+		<me-stepper v-model:value="value"></me-stepper>
 	</div>
 </template>
 
@@ -88,14 +90,11 @@
 	])
 	const visible = ref(false)
 	const show = ref(false)
+	const value = ref(1)
 </script>
 
 <style scoped lang="scss">
 	.always-me {
 		height: 100vh;
-
-		> div {
-			padding: 10px;
-		}
 	}
 </style>
