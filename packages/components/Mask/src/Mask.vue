@@ -1,9 +1,11 @@
-<!-- 链接组件 -->
+<!-- 遮罩组件 -->
 <template>
 	<teleport :to="props.mount">
-		<div v-if="state.visible" :class="`${prefix}-mask`" :style="styles" @click="close">
-			<slot />
-		</div>
+		<transition name="fade">
+			<div v-if="state.visible" :class="`${prefix}-mask`" :style="styles" @click="close">
+				<slot />
+			</div>
+		</transition>
 	</teleport>
 </template>
 

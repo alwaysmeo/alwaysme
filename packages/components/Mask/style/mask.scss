@@ -1,12 +1,13 @@
 $prefix-base: #{$prefix}-mask;
 
 .#{$prefix-base} {
+	overflow: hidden;
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	overflow: hidden;
+	user-select: none;
 	background: #0000004c;
 	backdrop-filter: blur(var(--#{$prefix-base}-blur));
 	z-index: var(--#{$prefix-base}-zindex);
