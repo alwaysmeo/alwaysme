@@ -50,6 +50,16 @@ $warning-color-30: mix($warning-color, $theme, 30%);
 $warning-color-20: mix($warning-color, $theme, 20%);
 $warning-color-10: mix($warning-color, $theme, 10%);
 
+$info-color-90: mix($info-color, $theme, 90%);
+$info-color-80: mix($info-color, $theme, 80%);
+$info-color-70: mix($info-color, $theme, 70%);
+$info-color-60: mix($info-color, $theme, 60%);
+$info-color-50: mix($info-color, $theme, 50%);
+$info-color-40: mix($info-color, $theme, 40%);
+$info-color-30: mix($info-color, $theme, 30%);
+$info-color-20: mix($info-color, $theme, 20%);
+$info-color-10: mix($info-color, $theme, 10%);
+
 $border-color-90: mix($border-color, $theme, 90%);
 $border-color-80: mix($border-color, $theme, 80%);
 $border-color-70: mix($border-color, $theme, 70%);
@@ -59,6 +69,16 @@ $border-color-40: mix($border-color, $theme, 40%);
 $border-color-30: mix($border-color, $theme, 30%);
 $border-color-20: mix($border-color, $theme, 20%);
 $border-color-10: mix($border-color, $theme, 10%);
+
+$disabled-color-90: mix($disabled-color, $theme, 90%);
+$disabled-color-80: mix($disabled-color, $theme, 80%);
+$disabled-color-70: mix($disabled-color, $theme, 70%);
+$disabled-color-60: mix($disabled-color, $theme, 60%);
+$disabled-color-50: mix($disabled-color, $theme, 50%);
+$disabled-color-40: mix($disabled-color, $theme, 40%);
+$disabled-color-30: mix($disabled-color, $theme, 30%);
+$disabled-color-20: mix($disabled-color, $theme, 20%);
+$disabled-color-10: mix($disabled-color, $theme, 10%);
 
 // TODO: 多色混色
 
@@ -150,6 +170,15 @@ $info-dark-color-10: mix($info-color, $dark, 10%);
 	--warning-color-30: #{$warning-color-30};
 	--warning-color-20: #{$warning-color-20};
 	--warning-color-10: #{$warning-color-10};
+	--info-color-90: #{$info-color-90};
+	--info-color-80: #{$info-color-80};
+	--info-color-70: #{$info-color-70};
+	--info-color-60: #{$info-color-60};
+	--info-color-50: #{$info-color-50};
+	--info-color-40: #{$info-color-40};
+	--info-color-30: #{$info-color-30};
+	--info-color-20: #{$info-color-20};
+	--info-color-10: #{$info-color-10};
 	--border-color-90: #{$border-color-90};
 	--border-color-80: #{$border-color-80};
 	--border-color-70: #{$border-color-70};
@@ -159,6 +188,16 @@ $info-dark-color-10: mix($info-color, $dark, 10%);
 	--border-color-30: #{$border-color-30};
 	--border-color-20: #{$border-color-20};
 	--border-color-10: #{$border-color-10};
+	--disabled-color-90: #{$disabled-color-90};
+	--disabled-color-80: #{$disabled-color-80};
+	--disabled-color-70: #{$disabled-color-70};
+	--disabled-color-60: #{$disabled-color-60};
+	--disabled-color-50: #{$disabled-color-50};
+	--disabled-color-40: #{$disabled-color-40};
+	--disabled-color-30: #{$disabled-color-30};
+	--disabled-color-20: #{$disabled-color-20};
+	--disabled-color-10: #{$disabled-color-10};
+
 	--primary-secondary-color-90: #{$primary-secondary-color-90};
 	--primary-secondary-color-80: #{$primary-secondary-color-80};
 	--primary-secondary-color-70: #{$primary-secondary-color-70};
