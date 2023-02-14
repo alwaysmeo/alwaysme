@@ -1,0 +1,7 @@
+$prefix-base: #{$prefix}-icon;
+
+.#{$prefix-base} {
+	font-size: var(--#{$prefix-base}-size);
+	color: var(--#{$prefix-base}-color);
+	vertical-align: middle;
+}
