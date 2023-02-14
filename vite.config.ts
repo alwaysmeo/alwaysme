@@ -36,8 +36,8 @@ export default defineConfig({
 	build: {
 		target: 'modules',
 		outDir: 'es',
-		minify: false, // 压缩
-		cssCodeSplit: true,
+		minify: true, // 压缩
+		cssCodeSplit: false,
 		lib: {
 			entry: resolve(__dirname, './index.ts'),
 			name: 'alwaysme',
