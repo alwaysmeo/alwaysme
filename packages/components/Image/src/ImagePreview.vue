@@ -59,7 +59,7 @@
 	}>()
 
 	interface Props {
-		visible?: boolean // 是否可见
+		visible: boolean // 是否可见
 		list?: Array<string> // 预览列表
 		infinite?: boolean // 是否循环展示
 		zindex?: number // 设置预览层级
@@ -76,7 +76,6 @@
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
-		visible: false,
 		list: () => [],
 		infinite: true,
 		zindex: 1000,
@@ -92,14 +91,11 @@
 		transform: { scale: 1, rotate: 0, offsetX: 0, offsetY: 0 }
 	})
 
-	watch(
-		() => props.visible,
-		(visible) => {
-			resetTransform()
-			state.visible = visible
-			emits('onVisibleChange', { visible: state.visible, index: state.index })
-		}
-	)
+	watchEffect(() => {
+		resetTransform()
+		state.visible = computed(() => props.visible).value
+		emits('onVisibleChange', { visible: state.visible, index: state.index })
+	})
 
 	const styles = computed(() => {
 		return [

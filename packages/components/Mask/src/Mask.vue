@@ -18,7 +18,7 @@
 	}>()
 
 	interface Props {
-		visible?: boolean // 是否可见
+		visible: boolean // 是否可见
 		blur?: number | string // 模糊度
 		zindex?: number | string // 层级
 		mount?: string // 挂载节点
@@ -30,7 +30,6 @@
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
-		visible: false,
 		blur: 12,
 		zindex: 1000,
 		mount: 'body',
@@ -41,15 +40,15 @@
 		visible: false
 	})
 
+	watchEffect(() => {
+		state.visible = computed(() => props.visible).value
+	})
+
 	const styles = computed(() => {
 		return [
 			`--${prefix}-mask-blur: ${isNaN(<number>props.blur) ? props.blur : `${props.blur}px`}`,
 			`--${prefix}-mask-zindex: ${props.zindex}`
 		]
-	})
-
-	watchEffect(() => {
-		state.visible = computed(() => props.visible).value
 	})
 
 	function close(event: MouseEvent | KeyboardEvent) {

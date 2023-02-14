@@ -21,7 +21,6 @@
 		</div>
 		<component
 			:is="`${prefix}-image-preview`"
-			v-if="props.preview"
 			v-model:visible="state.visible"
 			:list="props.list"
 			:infinite="props.infinite"
@@ -40,8 +39,8 @@
 	const emits = defineEmits<{
 		(key: 'load', event: Event): void // 加载成功回调
 		(key: 'error', event: Event): void // 加载失败回调
-		(key: 'onVisibleChange', { visible, index }: { visible: boolean; index: number }): void // 切换预览可见状态触发的事件
 		(key: 'switch', index: number): void // 切换预览回调
+		(key: 'onVisibleChange', { visible, index }: { visible: boolean; index: number }): void // 切换预览可见状态触发的事件
 	}>()
 
 	interface Props {
