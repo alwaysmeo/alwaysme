@@ -50,7 +50,6 @@
 </template>
 
 <script setup lang="ts">
-	import { throttle } from 'lodash'
 	const scopeEventListener = effectScope()
 	const emits = defineEmits<{
 		(key: 'switch', index: number): void // 切换图片触发的事件
