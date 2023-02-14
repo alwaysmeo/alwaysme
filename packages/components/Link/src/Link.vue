@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-	const emits = defineEmits<{ (key: 'onClick', val: MouseEvent): void }>()
+	const emits = defineEmits<{ (key: 'onClick', event: MouseEvent): void }>()
 
 	interface Props {
 		underline?: boolean // 是否需要下划线

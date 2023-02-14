@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 	const slots = useSlots()
-	const emits = defineEmits<{ (key: 'onClick', val: MouseEvent): void }>()
+	const emits = defineEmits<{ (key: 'onClick', event: MouseEvent): void }>()
 
 	interface Props {
 		type?: 'default' | 'primary' | 'dashed' | 'text' | 'link' // 按钮类型 default | primary | dashed | text | link
