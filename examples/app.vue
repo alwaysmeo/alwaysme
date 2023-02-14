@@ -71,11 +71,12 @@
 		</div>
 		<me-stepper v-model:value="value" disabled></me-stepper>
 		<me-stepper v-model:value="value"></me-stepper> -->
-		<me-tag>标签1</me-tag>
-		<me-tag>标签2</me-tag>
-		<me-tag>标签3</me-tag>
-		<me-tag>标签4</me-tag>
-		<me-tag>标签5</me-tag>
+
+		<me-tag closable icon="issues">标签1</me-tag>
+		<me-tag color="red" closable>标签2</me-tag>
+		<me-tag color="purple" closable closeIcon="push">标签3</me-tag>
+		<me-tag color="pinkpurple">标签4</me-tag>
+		<me-tag color="arcoblue">标签5</me-tag>
 	</div>
 </template>
 
@@ -97,5 +98,6 @@
 <style scoped lang="scss">
 	.always-me {
 		height: 100vh;
+		padding: 30px;
 	}
 </style>

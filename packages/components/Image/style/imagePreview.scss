@@ -14,7 +14,7 @@ $prefix-base: #{$prefix}-image-preview;
 		border-radius: 32px;
 		box-shadow: 0 0 8px 0 #0000004c;
 		transform: translate(-50%);
-		> .iconfont {
+		> .#{$prefix}-icon {
 			padding: 0 8px;
 			color: $white-color;
 			transition: color 0.3s;
@@ -51,7 +51,7 @@ $prefix-base: #{$prefix}-image-preview;
 		top: 50%;
 		left: 20px;
 		transform: translateY(-50%);
-		> .iconfont {
+		> .#{$prefix}-icon {
 			margin-left: -2px;
 		}
 	}
@@ -59,14 +59,14 @@ $prefix-base: #{$prefix}-image-preview;
 		top: 50%;
 		right: 20px;
 		transform: translateY(-50%);
-		> .iconfont {
+		> .#{$prefix}-icon {
 			margin-right: -2px;
 		}
 	}
 	&-close {
 		top: 20px;
 		right: 20px;
-		> .iconfont {
+		> .#{$prefix}-icon {
 			font-size: 16px;
 		}
 	}

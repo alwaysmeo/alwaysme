@@ -20,7 +20,7 @@ $prefix-base: #{$prefix}-stepper;
 		justify-content: center;
 		border-radius: $radius-base;
 		cursor: pointer;
-		> .iconfont {
+		> .#{$prefix}-icon {
 			user-select: none;
 			&[data-type='minus'] {
 				margin-right: -2px;

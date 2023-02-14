@@ -8,7 +8,7 @@
 		name?: string // 图标颜色
 		color?: string // 图标颜色
 		size?: string | number // 图标大小
-		lineHeight: string | number // 图标行高
+		lineHeight?: string | number // 图标行高
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
