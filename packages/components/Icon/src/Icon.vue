@@ -12,10 +12,10 @@
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
-		name: '',
-		color: '',
+		name: undefined,
+		color: undefined,
 		size: '16px',
-		lineHeight: ''
+		lineHeight: undefined
 	})
 
 	const styles = computed(() => {

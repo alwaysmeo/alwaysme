@@ -31,7 +31,7 @@
 	const props = withDefaults(defineProps<Props>(), {
 		color: 'var(--info-dark-color-50)',
 		icon: 'unselected',
-		title: ''
+		title: undefined
 	})
 
 	const state = reactive<State>({
