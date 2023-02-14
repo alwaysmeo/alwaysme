@@ -48,16 +48,7 @@ $prefix-base: #{$prefix}-button;
 		background-color: $theme;
 
 		&:not(.#{$prefix-base}-loading):not(.#{$prefix-base}-disabled):hover {
-			box-shadow: 0 0 6px 0 $info-dark-color-40;
-		}
-	}
-
-	&-type-link {
-		color: $primary-color;
-		background-color: transparent;
-
-		&:not(.#{$prefix-base}-loading):not(.#{$prefix-base}-disabled):hover {
-			color: $primary-secondary-color-40;
+			box-shadow: 0 0 6px 0 $info-dark-color-60;
 		}
 	}
 
@@ -80,7 +71,6 @@ $prefix-base: #{$prefix}-button;
 		width: 32px;
 		text-align: center;
 		border-radius: 50%;
-
 		.icon-loading {
 			margin-right: 0px !important;
 		}
@@ -100,21 +90,18 @@ $prefix-base: #{$prefix}-button;
 		cursor: default;
 
 		&.#{$prefix-base}-type-primary {
+			color: $white-color;
 			background-image: linear-gradient(to bottom right, $secondary-color-40, $primary-color-60);
 		}
 
 		&.#{$prefix-base}-type-default,
 		&.#{$prefix-base}-type-dashed {
-			border-color: $info-dark-color-50;
-			color: $info-dark-color-60;
+			border-color: if($theme ==$light, $info-dark-color-90, $info-dark-color-30);
+			color: $info-dark-color-50;
 		}
 
 		&.#{$prefix-base}-type-text {
-			color: $info-dark-color-60;
-		}
-
-		&.#{$prefix-base}-type-link {
-			color: 、$primary-color-60;
+			color: $info-dark-color-50;
 		}
 	}
 
@@ -126,14 +113,14 @@ $prefix-base: #{$prefix}-button;
 		&.#{$prefix-base}-type-dashed,
 		&.#{$prefix-base}-type-primary {
 			color: $info-dark-color-50;
-			background-color: $info-dark-color-10;
-			border-color: $info-dark-color-50;
+			border-color: if($theme ==$light, $info-dark-color-90, $info-dark-color-30);
+			background-color: if($theme ==$light, $info-color-90, $info-dark-color-10);
 		}
 
 		&.#{$prefix-base}-type-primary {
 			background-image: none;
-			border: 1px solid $info-dark-color-50;
-			background-color: $info-dark-color-10;
+			border: 1px solid if($theme ==$light, $info-dark-color-90, $info-dark-color-30);
+			background-color: if($theme ==$light, $info-color-90, $info-dark-color-10);
 		}
 
 		&.#{$prefix-base}-type-text {

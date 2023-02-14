@@ -21,13 +21,13 @@
 				/>
 			</div>
 			<div :class="`${prefix}-image-preview-close`" @click.stop="close">
-				<i class="iconfont icon-close" />
+				<component :is="`${prefix}-icon`" name="close" size="18" line-height="36" />
 			</div>
 			<div :class="`${prefix}-image-preview-toolbar`" @click.stop="handleToolbar">
-				<i class="iconfont icon-rotate-left" data-type="rotate-left" />
-				<i class="iconfont icon-rotate-right" data-type="rotate-right" />
-				<i class="iconfont icon-zoom-in" data-type="zoom-in" />
-				<i class="iconfont icon-zoom-out" data-type="zoom-out" />
+				<component :is="`${prefix}-icon`" name="rotate-left" size="20" data-type="rotate-left" />
+				<component :is="`${prefix}-icon`" name="rotate-right" size="20" data-type="rotate-right" />
+				<component :is="`${prefix}-icon`" name="zoom-in" size="20" data-type="zoom-in" />
+				<component :is="`${prefix}-icon`" name="zoom-out" size="20" data-type="zoom-out" />
 			</div>
 			<template v-if="state.list.length > 1">
 				<div
@@ -35,14 +35,14 @@
 					:data-status="!props.infinite && state.index === 0"
 					@click.stop="handleSwitch(state.index - 1)"
 				>
-					<i class="iconfont icon-arrow-left" />
+					<component :is="`${prefix}-icon`" name="arrow-left" size="18" line-height="36" />
 				</div>
 				<div
 					:class="`${prefix}-image-preview-switch-right`"
 					:data-status="!props.infinite && state.index === state.list.length - 1"
 					@click.stop="handleSwitch(state.index + 1)"
 				>
-					<i class="iconfont icon-arrow-right" />
+					<component :is="`${prefix}-icon`" name="arrow-right" size="18" line-height="36" />
 				</div>
 			</template>
 		</component>

@@ -22,10 +22,6 @@ $prefix-base: #{$prefix}-image;
 			height: 100%;
 			background: $info-color;
 			border-radius: $radius-square;
-			color: $info-dark-color-50;
-			> .iconfont {
-				font-size: calc(min(var(--#{$prefix-base}-width), var(--#{$prefix-base}-height)) / 4);
-			}
 		}
 	}
 

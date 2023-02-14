@@ -10,35 +10,31 @@
 			<me-button>按钮</me-button>
 			<me-button type="dashed">按钮</me-button>
 			<me-button type="text">按钮</me-button>
-			<me-button type="link">按钮</me-button>
 		</div>
 		<div>
 			<me-button type="primary" disabled>按钮</me-button>
 			<me-button disabled>按钮</me-button>
 			<me-button type="dashed" disabled>按钮</me-button>
 			<me-button type="text" disabled>按钮</me-button>
-			<me-button type="link" disabled>按钮</me-button>
 		</div>
 		<div>
 			<me-button type="primary" loading>按钮</me-button>
 			<me-button loading>按钮</me-button>
 			<me-button type="dashed" loading>按钮</me-button>
 			<me-button type="text" loading>按钮</me-button>
-			<me-button type="link" loading>按钮</me-button>
 		</div>
 		<div>
 			<me-button type="primary" ghost>按钮</me-button>
 			<me-button ghost>按钮</me-button>
 			<me-button type="dashed" ghost>按钮</me-button>
 			<me-button type="text" ghost>按钮</me-button>
-			<me-button type="link" ghost>按钮</me-button>
 		</div>
 		<div>
 			<me-link :underline="false">链接1</me-link>
 			<me-link disabled>链接2</me-link>
 			<me-link>链接3</me-link>
-		</div> -->
-		<!-- <div>
+		</div>
+		<div>
 			<me-divider textalign="center" dashed>Text</me-divider>
 			<me-divider textalign="center" />
 			<div>
@@ -57,7 +53,7 @@
 				</me-timeline-item>
 				<me-timeline-item title="2022-02-21 12:23:00">
 					<template #icon>
-						<i class="iconfont icon-collection-hollow" />
+						<me-icon name="collection-hollow" color="#147ffa" />
 					</template>
 					<div>内容内容内容内容内容内容内容内容</div>
 				</me-timeline-item>
@@ -66,9 +62,10 @@
 					<div>内容内容内容内容内容内容内容内容</div>
 				</me-timeline-item>
 			</me-timeline>
-		</div> -->
-		<!-- <div>
+		</div>
+		<div>
 			<me-image v-for="item in url" :key="url" :src="item" :list="url" width="180px" height="100px"></me-image>
+			<me-image src="" width="500px" height="200px"></me-image>
 			<me-button type="primary" @click="visible = !visible">预览</me-button>
 			<me-image-preview infinite :list="url" v-model:visible="visible" />
 		</div>

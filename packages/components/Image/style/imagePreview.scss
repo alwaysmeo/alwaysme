@@ -17,7 +17,6 @@ $prefix-base: #{$prefix}-image-preview;
 		> .iconfont {
 			padding: 0 8px;
 			color: $white-color;
-			font-size: 20px;
 			transition: color 0.3s;
 			cursor: pointer;
 			&:hover {
@@ -39,10 +38,6 @@ $prefix-base: #{$prefix}-image-preview;
 		box-shadow: 0 0 8px 0 #0000004c;
 		transition: color 0.3s;
 		cursor: pointer;
-		> .iconfont {
-			font-size: 18px;
-			line-height: 36px;
-		}
 		&:hover {
 			color: $info-dark-color-70;
 		}

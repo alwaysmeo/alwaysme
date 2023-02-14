@@ -8,18 +8,21 @@
 		name?: string // 图标颜色
 		color?: string // 图标颜色
 		size?: string | number // 图标大小
+		lineHeight: string | number // 图标行高
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
 		name: '',
-		color: 'gray',
-		size: '16px'
+		color: '',
+		size: '16px',
+		lineHeight: ''
 	})
 
 	const styles = computed(() => {
-		return [
-			`--${prefix}-icon-color: ${props.color}`,
-			`--${prefix}-icon-size: ${isNaN(<number>props.size) ? props.size : `${props.size}`}px`
-		]
+		return {
+			[`--${prefix}-icon-color`]: props.color,
+			[`--${prefix}-icon-size`]: isNaN(<number>props.size) ? props.size : `${props.size}px`,
+			[`--${prefix}-icon-line-height`]: isNaN(<number>props.lineHeight) ? props.lineHeight : `${props.lineHeight}px`,
+		}
 	})
 </script>

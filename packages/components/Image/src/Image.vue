@@ -10,12 +10,17 @@
 			@error="error"
 		/>
 		<div v-if="state.failed" :class="`${prefix}-image-img-failed`">
-			<i class="iconfont icon-image-failed" />
+			<component
+				:is="`${prefix}-icon`"
+				name="image-failed"
+				:size="`calc(min(${styles[`--${prefix}-image-width`]}, ${styles[`--${prefix}-image-height`]}) / 4)`"
+				color="var(--info-dark-color-50)"
+			/>
 		</div>
 		<div v-else-if="props.preview" :class="`${prefix}-image-mask`" @click.stop="handleMask">
 			<slot v-if="slots.mask" name="mask" />
 			<div v-else :class="`${prefix}-image-mask-text`">
-				<i class="iconfont icon-eye" />
+				<component :is="`${prefix}-icon`" name="eye" />
 				<span :style="`display: ${parseInt(props.width.toString()) >= 60 ? 'inline-block' : 'none'}`">预览</span>
 			</div>
 		</div>
@@ -86,11 +91,11 @@
 	})
 
 	const styles = computed(() => {
-		return [
-			`--${prefix}-image-width: ${isNaN(<number>props.width) ? props.width : `${props.width}px`}`,
-			`--${prefix}-image-height: ${isNaN(<number>props.height) ? props.height : `${props.height}px`}`,
-			`--${prefix}-image-fit: ${props.fit}`
-		]
+		return {
+			[`--${prefix}-image-width`]: isNaN(<number>props.width) ? props.width : `${props.width}px`,
+			[`--${prefix}-image-height`]: isNaN(<number>props.height) ? props.height : `${props.height}px`,
+			[`--${prefix}-image-fit`]: props.fit
+		}
 	})
 
 	function load(event: Event) {

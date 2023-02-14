@@ -1,6 +1,6 @@
 <template>
 	<button :class="classes" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
-		<i v-if="props.loading" class="iconfont icon-loading" />
+		<component :is="`${prefix}-icon`" v-if="props.loading" name="loading" />
 		<slot v-if="slots.icon" name="icon" />
 		<slot />
 	</button>
@@ -11,7 +11,7 @@
 	const emits = defineEmits<{ (key: 'onClick', event: MouseEvent): void }>()
 
 	interface Props {
-		type?: 'default' | 'primary' | 'dashed' | 'text' | 'link' // 按钮类型 default | primary | dashed | text | link
+		type?: 'default' | 'primary' | 'dashed' | 'text' // 按钮类型 default | primary | dashed | text
 		shape?: 'default' | 'square' | 'round' // 按钮形状 default | square | round
 		long?: boolean // 使按钮的宽度跟随容器的宽度 true | false
 		disabled?: boolean // 禁用状态 true | false

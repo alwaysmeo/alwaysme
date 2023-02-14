@@ -2,13 +2,13 @@
 <template>
 	<div :class="`${prefix}-stepper`" :style="styles" :data-disabled="props.disabled">
 		<div :class="`${prefix}-stepper-minus`" :data-disabled="props.disabled || state.value <= props.min" @click="minus">
-			<i class="iconfont icon-minus" data-type="minus" />
+			<component :is="`${prefix}-icon`" name="minus" size="16" data-type="minus" />
 		</div>
 		<div :class="`${prefix}-stepper-input`">
 			<input type="text" :value="state.value" :disabled="props.disabled" @input="input" @blur="blur" />
 		</div>
 		<div :class="`${prefix}-stepper-push`" :data-disabled="props.disabled || state.value >= props.max" @click="push">
-			<i class="iconfont icon-push" data-type="push" />
+			<component :is="`${prefix}-icon`" name="push" size="16" data-type="push" />
 		</div>
 	</div>
 </template>
