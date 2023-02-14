@@ -67,13 +67,18 @@
 				</me-timeline-item>
 			</me-timeline>
 		</div> -->
-		<div>
+		<!-- <div>
 			<me-image v-for="item in url" :key="url" :src="item" :list="url" width="180px" height="100px"></me-image>
 			<me-button type="primary" @click="visible = !visible">预览</me-button>
 			<me-image-preview infinite :list="url" v-model:visible="visible" />
 		</div>
 		<me-stepper v-model:value="value" disabled></me-stepper>
-		<me-stepper v-model:value="value"></me-stepper>
+		<me-stepper v-model:value="value"></me-stepper> -->
+		<me-tag>标签1</me-tag>
+		<me-tag>标签2</me-tag>
+		<me-tag>标签3</me-tag>
+		<me-tag>标签4</me-tag>
+		<me-tag>标签5</me-tag>
 	</div>
 </template>
 
