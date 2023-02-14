@@ -45,10 +45,10 @@
 	})
 
 	const styles = computed(() => {
-		return [
-			`--${prefix}-mask-blur: ${isNaN(<number>props.blur) ? props.blur : `${props.blur}px`}`,
-			`--${prefix}-mask-zindex: ${props.zindex}`
-		]
+		return {
+			[`--${prefix}-mask-blur`]: isNaN(<number>props.blur) ? props.blur : `${props.blur}px`,
+			[`--${prefix}-mask-zindex`]: props.zindex
+		}
 	})
 
 	function close(event: MouseEvent | KeyboardEvent) {

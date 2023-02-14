@@ -98,12 +98,12 @@
 	})
 
 	const styles = computed(() => {
-		return [
-			`--${prefix}-image-preview-scale: ${state.transform.scale}`,
-			`--${prefix}-image-preview-rotate: ${state.transform.rotate}deg`,
-			`--${prefix}-image-preview-offsetX: ${state.transform.offsetX}px`,
-			`--${prefix}-image-preview-offsetY: ${state.transform.offsetY}px`
-		]
+		return {
+			[`--${prefix}-image-preview-scale`]: state.transform.scale,
+			[`--${prefix}-image-preview-rotate`]: `${state.transform.rotate}deg`,
+			[`--${prefix}-image-preview-offsetX`]: `${state.transform.offsetX}px`,
+			[`--${prefix}-image-preview-offsetY`]: `${state.transform.offsetY}px`
+		}
 	})
 
 	function handleSwitch(index: number) {

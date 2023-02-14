@@ -48,10 +48,10 @@
 	})
 
 	const styles = computed(() => {
-		return [
-			`--${prefix}-stepper-height: ${isNaN(<number>props.height) ? props.height : `${props.height}px`}`,
-			`--${prefix}-stepper-input-width: ${isNaN(<number>props.inputWidth) ? props.inputWidth : `${props.inputWidth}`}px`
-		]
+		return {
+			[`--${prefix}-stepper-height`]: isNaN(<number>props.height) ? props.height : `${props.height}px`,
+			[`--${prefix}-stepper-input-width`]: isNaN(<number>props.inputWidth) ? props.inputWidth : `${props.inputWidth}px`
+		}
 	})
 
 	watchEffect(() => {

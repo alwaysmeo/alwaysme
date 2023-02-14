@@ -42,10 +42,10 @@
 	})
 
 	const styles = computed(() => {
-		return [
-			`--${prefix}-tag-color: ${
-				Object.keys(state.colorMapping).includes(props.color) ? state.colorMapping[props.color] : props.color
-			}`
-		]
+		return {
+			[`--${prefix}-tag-color`]: Object.keys(state.colorMapping).includes(props.color)
+				? state.colorMapping[props.color]
+				: props.color
+		}
 	})
 </script>
