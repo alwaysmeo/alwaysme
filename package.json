@@ -1,6 +1,6 @@
 {
 	"name": "@alwaysme/design",
-	"version": "1.0.8-dev",
+	"version": "1.0.10-dev",
 	"private": false,
 	"title": "Alwaysme Design",
 	"description": "Alwaysme UI design language and Vue-based implementation",
@@ -26,6 +26,7 @@
 		"./style.css": "./es/style.css"
 	},
 	"style": "./es/style.css",
+	"files":["./es/", "./lib/"],
 	"repository": "https://github.com/Alwaysmeo/Alwaysme.git",
 	"scripts": {
 		"dev": "vite --host --mode dev",
