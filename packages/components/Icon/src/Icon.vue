@@ -22,7 +22,7 @@
 		return {
 			[`--${prefix}-icon-color`]: props.color,
 			[`--${prefix}-icon-size`]: isNaN(<number>props.size) ? props.size : `${props.size}px`,
-			[`--${prefix}-icon-line-height`]: isNaN(<number>props.lineHeight) ? props.lineHeight : `${props.lineHeight}px`,
+			[`--${prefix}-icon-line-height`]: isNaN(<number>props.lineHeight) ? props.lineHeight : `${props.lineHeight}px`
 		}
 	})
 </script>
