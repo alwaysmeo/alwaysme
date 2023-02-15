@@ -15,13 +15,15 @@ $prefix-base: #{$prefix}-image;
 		border-radius: $radius-square;
 		border-style: none;
 		&-failed {
-			display: flex;
+			display: inline-flex;
 			align-items: center;
 			justify-content: center;
 			width: 100%;
 			height: 100%;
+			vertical-align: middle;
 			background: $info-color;
 			border-radius: $radius-square;
+			border: 1px solid  $info-dark-color-90;
 		}
 	}
 
