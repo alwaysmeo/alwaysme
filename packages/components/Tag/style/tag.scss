@@ -4,53 +4,41 @@ $prefix-base: #{$prefix}-tag;
 	box-sizing: border-box;
 	display: inline-flex;
 	align-items: center;
-	height: 24px;
-	padding: 0 8px;
+	padding: 0 10px;
 	vertical-align: middle;
-	color: var(--#{$prefix-base}-color);
 	font-weight: 500;
-	font-size: 12px;
-	vertical-align: middle;
-	border-radius: $radius-base;
+	color: var(--#{$prefix-base}-color);
 	white-space: nowrap;
 	text-overflow: ellipsis;
-	&[data-color='red'] {
-		background-color: #ffece8;
+	vertical-align: middle;
+	background-color: var(--#{$prefix-base}-background-color);
+	> .#{$prefix}-icon {
+		&[data-type='icon'] {
+			margin-right: 4px;
+		}
+		&[data-type='close'] {
+			margin-left: 4px;
+			cursor: pointer;
+		}
 	}
-	&[data-color='orangered'] {
-		background-color: #fff3e8;
+	&-size-small {
+		font-size: 12px;
+		line-height: 20px;
 	}
-	&[data-color='orange'] {
-		background-color: #fff7e8;
+	&-size-medium {
+		font-size: 12px;
+		line-height: 24px;
 	}
-	&[data-color='gold'] {
-		background-color: #fffce8;
+	&-size-large {
+		font-size: 14px;
+		line-height: 30px;
 	}
-	&[data-color='lime'] {
-		background-color: #fcffe8;
+	// shape
+	&-shape-default {
+		border-radius: $radius-base;
 	}
-	&[data-color='green'] {
-		background-color: #e8ffea;
-	}
-	&[data-color='cyan'] {
-		background-color: #e8fffb;
-	}
-	&[data-color='blue'] {
-		background-color: #e8f7ff;
-	}
-	&[data-color='arcoblue'] {
-		background-color: #e8f3ff;
-	}
-	&[data-color='purple'] {
-		background-color: #f5e8ff;
-	}
-	&[data-color='pinkpurple'] {
-		background-color: #ffe8fb;
-	}
-	&[data-color='magenta'] {
-		background-color: #ffe8f1;
-	}
-	&[data-color='gray'] {
-		background-color: #f2f3f5;
+
+	&-shape-square {
+		border-radius: $radius-square;
 	}
 }
