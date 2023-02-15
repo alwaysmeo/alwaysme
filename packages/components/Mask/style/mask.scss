@@ -8,7 +8,7 @@ $prefix-base: #{$prefix}-mask;
 	bottom: 0;
 	left: 0;
 	user-select: none;
-	background: #0000004c;
+	background: #00000066;
 	backdrop-filter: blur(var(--#{$prefix-base}-blur));
 	z-index: var(--#{$prefix-base}-zindex);
 }
