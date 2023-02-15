@@ -11,13 +11,12 @@
 	const emits = defineEmits<{ (key: 'onClick', event: MouseEvent): void }>()
 
 	interface Props {
-		type?: 'default' | 'primary' | 'dashed' | 'text' // 按钮类型 default | primary | dashed | text
+		type?: 'default' | 'primary' | 'dashed' | 'solid' // 按钮类型 default | primary | dashed | solid
 		shape?: 'default' | 'square' | 'round' // 按钮形状 default | square | round
 		long?: boolean // 使按钮的宽度跟随容器的宽度 true | false
 		disabled?: boolean // 禁用状态 true | false
 		loading?: boolean // 加载中状态 true | false
 		htmlType?: 'submit' | 'reset' | 'button' // 设置 button 的原生 type 属性 可选值参考 HTML 标准
-		ghost?: boolean // 幽灵按钮，使按钮背景透明
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
@@ -28,14 +27,14 @@
 
 	const classes = computed(() => {
 		return [
+			'shadow',
 			`${prefix}-button`,
 			`${prefix}-button-type-${props.type}`,
 			`${prefix}-button-shape-${props.shape}`,
 			{
 				[`${prefix}-button-long`]: props.long,
 				[`${prefix}-button-loading`]: props.loading,
-				[`${prefix}-button-disabled`]: props.disabled,
-				[`${prefix}-button-ghost`]: props.ghost
+				[`${prefix}-button-disabled`]: props.disabled
 			}
 		]
 	})

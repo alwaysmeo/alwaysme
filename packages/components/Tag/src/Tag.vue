@@ -73,7 +73,7 @@
 	})
 
 	const classes = computed(() => {
-		return [`${prefix}-tag`, `${prefix}-tag-size-${props.size}`, `${prefix}-tag-shape-${props.shape}`]
+		return ['shadow', `${prefix}-tag`, `${prefix}-tag-size-${props.size}`, `${prefix}-tag-shape-${props.shape}`]
 	})
 
 	const styles = computed(() => {

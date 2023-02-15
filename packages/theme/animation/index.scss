@@ -7,3 +7,8 @@
 		transform: rotate(360deg);
 	}
 }
+
+.icon-loading {
+	display: inline-block;
+	animation: rotate 1s linear infinite;
+}

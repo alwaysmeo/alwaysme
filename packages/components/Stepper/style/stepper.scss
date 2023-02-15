@@ -5,10 +5,11 @@ $prefix-base: #{$prefix}-stepper;
 	align-items: center;
 	justify-content: center;
 	border-radius: $radius-base;
-	border: 1px solid $border-color-50;
+	border: 1px solid $gray-color;
 	background-color: $theme;
 	&[data-disabled='true'] {
-		background-color: $disabled-color-20;
+		background-color: if($theme ==$light, $info-dark-color-80, $info-dark-color-10);
+		color: if($theme ==$light, $info-dark-color-60, $info-dark-color-30);
 		cursor: not-allowed;
 	}
 	&-minus,
@@ -30,7 +31,7 @@ $prefix-base: #{$prefix}-stepper;
 			}
 		}
 		&[data-disabled='true'] {
-			color: if($theme ==$light, $disabled-color-40, $disabled-color-40);
+			color: if($theme ==$light, $info-dark-color-60, $info-dark-color-30);
 			cursor: not-allowed;
 		}
 		&[data-disabled='false'] {
@@ -48,8 +49,8 @@ $prefix-base: #{$prefix}-stepper;
 	&-input {
 		input {
 			&[disabled] {
-				background-color: $disabled-color-20;
-				color: $disabled-color-70;
+				background-color: if($theme ==$light, $info-dark-color-80, $info-dark-color-10);
+				color: if($theme ==$light, $info-dark-color-60, $info-dark-color-30);
 				cursor: not-allowed;
 			}
 			box-sizing: border-box;
@@ -62,8 +63,8 @@ $prefix-base: #{$prefix}-stepper;
 			line-height: var(--#{$prefix-base}-height);
 			color: $reverse-theme;
 			background-color: $theme;
-			border-left: 1px solid $border-color-50;
-			border-right: 1px solid $border-color-50;
+			border-left: 1px solid $gray-color;
+			border-right: 1px solid $gray-color;
 		}
 	}
 }

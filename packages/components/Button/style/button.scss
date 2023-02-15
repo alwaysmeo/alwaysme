@@ -1,55 +1,41 @@
 $prefix-base: #{$prefix}-button;
 
 .#{$prefix-base} {
-	cursor: pointer;
-	padding: 0 15px;
-	font-size: 14px;
-	line-height: 2;
-	height: 32px;
+	padding: 7px 15px;
+	color: $font-color;
+	border: 1px solid transparent;
 	transition: box-shadow 0.3s, border 0.3s, color 0.3s, background-color 0.3s;
-	border: 0;
+	cursor: pointer;
 
 	// type
+	&-type-default {
+		background-color: $theme;
+	}
 	&-type-primary {
 		color: $white-color;
-		background-image: linear-gradient(to bottom right, $secondary-color-80, $primary-color);
-
-		&:not(.#{$prefix-base}-loading):not(.#{$prefix-base}-disabled):hover {
-			box-shadow: 0 0 6px 0 $primary-color;
-		}
+		background-color: $primary-color;
 	}
-
-	&-type-default {
-		color: $reverse-theme;
+	&-type-dashed,
+	&-type-solid {
 		background-color: $theme;
-		border: 1px solid $border-color-60;
-
-		&:not(.#{$prefix-base}-loading):not(.#{$prefix-base}-disabled):hover {
-			color: $primary-color;
-			border-color: $primary-color;
-			box-shadow: 0 0 6px 0 $primary-color;
-		}
+		border-color: $info-dark-color-80;
 	}
-
 	&-type-dashed {
-		color: $reverse-theme;
-		background-color: $theme;
-		border: 1px dashed $border-color-60;
-
-		&:not(.#{$prefix-base}-loading):not(.#{$prefix-base}-disabled):hover {
-			color: $primary-color;
-			box-shadow: 0 0 6px 0 $primary-color;
-			border-color: $primary-color;
-		}
+		border-style: dashed;
+	}
+	&-type-solid {
+		border-style: solid;
 	}
 
-	&-type-text {
-		color: $reverse-theme;
-		background-color: $theme;
-
-		&:not(.#{$prefix-base}-loading):not(.#{$prefix-base}-disabled):hover {
-			box-shadow: 0 0 6px 0 $info-dark-color-60;
-		}
+	// shape
+	&-shape-default {
+		border-radius: $radius-base;
+	}
+	&-shape-square {
+		border-radius: $radius-square;
+	}
+	&-shape-round {
+		border-radius: 16px;
 	}
 
 	// long
@@ -57,91 +43,24 @@ $prefix-base: #{$prefix}-button;
 		width: 100%;
 	}
 
-	// shape
-	&-shape-default {
-		border-radius: $radius-base;
-	}
-
-	&-shape-square {
-		border-radius: $radius-square;
-	}
-
-	&-shape-round {
-		padding: 0;
-		width: 32px;
-		text-align: center;
-		border-radius: 50%;
-		.icon-loading {
-			margin-right: 0px !important;
-		}
-	}
-
-	// loading-iconfont
-	& .icon-loading {
-		display: inline-block;
-		margin-right: 5px;
-		line-height: 1;
-		animation: rotate 1s linear infinite;
-	}
-
-	// loading
-	&-loading {
-		box-shadow: none;
-		cursor: default;
-
-		&.#{$prefix-base}-type-primary {
-			color: $white-color;
-			background-image: linear-gradient(to bottom right, $secondary-color-40, $primary-color-60);
-		}
-
-		&.#{$prefix-base}-type-default,
-		&.#{$prefix-base}-type-dashed {
-			border-color: if($theme ==$light, $info-dark-color-90, $info-dark-color-30);
-			color: $info-dark-color-50;
-		}
-
-		&.#{$prefix-base}-type-text {
-			color: $info-dark-color-50;
-		}
-	}
-
-	// disabled-status
+	// loading | disabled
+	&-loading,
 	&-disabled {
-		cursor: not-allowed;
-
+		&.#{$prefix-base}-type-primary {
+			color: $info-color;
+			background-color: $primary-color-60;
+		}
 		&.#{$prefix-base}-type-default,
 		&.#{$prefix-base}-type-dashed,
-		&.#{$prefix-base}-type-primary {
-			color: $info-dark-color-50;
+		&.#{$prefix-base}-type-solid {
+			color: if($theme ==$light, $info-dark-color-80, $info-dark-color-30);
 			border-color: if($theme ==$light, $info-dark-color-90, $info-dark-color-30);
-			background-color: if($theme ==$light, $info-color-90, $info-dark-color-10);
-		}
-
-		&.#{$prefix-base}-type-primary {
-			background-image: none;
-			border: 1px solid if($theme ==$light, $info-dark-color-90, $info-dark-color-30);
-			background-color: if($theme ==$light, $info-color-90, $info-dark-color-10);
-		}
-
-		&.#{$prefix-base}-type-text {
-			color: $info-dark-color-50;
 		}
 	}
-
-	// ghost
-	&-ghost {
-		background-color: transparent;
-
-		&.#{$prefix-base}-type-primary {
-			position: relative;
-			background-image: none;
-			color: $primary-light-color-90;
-			border: 1px solid $primary-light-color-90;
-		}
-
-		&.#{$prefix-base}-type-primary:hover {
-			color: $primary-light-color-90;
-			border-color: $primary-light-color-90;
-		}
+	&-loading {
+		cursor: default;
+	}
+	&-disabled {
+		cursor: not-allowed;
 	}
 }

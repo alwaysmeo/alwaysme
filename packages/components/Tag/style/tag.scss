@@ -1,6 +1,7 @@
 $prefix-base: #{$prefix}-tag;
 
 .#{$prefix-base} {
+	margin: 10px;
 	box-sizing: border-box;
 	display: inline-flex;
 	align-items: center;
@@ -12,6 +13,7 @@ $prefix-base: #{$prefix}-tag;
 	text-overflow: ellipsis;
 	vertical-align: middle;
 	background-color: var(--#{$prefix-base}-background-color);
+
 	> .#{$prefix}-icon {
 		&[data-type='icon'] {
 			margin-right: 4px;

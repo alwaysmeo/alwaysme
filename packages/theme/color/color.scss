@@ -6,22 +6,12 @@ $danger-color: #c21533;
 $success-color: #00b66a;
 $warning-color: #f79600;
 $info-color: #eceff2;
-$border-color: #cecece;
-$disabled-color: #9c9fa3;
 $black-color: #000000;
 $white-color: #ffffff;
+$font-dark-color: #3c3e42;
+$font-light-color: #dddee0;
 $dark: #22272e;
-$light: #ffffff;
+$light: #eceff2;
 
-:root {
-	--primary-color: #{$primary-color};
-	--secondary-color: #{$secondary-color};
-	--danger-color: #{$danger-color};
-	--success-color: #{$success-color};
-	--warning-color: #{$warning-color};
-	--info-color: #{$info-color};
-	--border-color: #{$border-color};
-	--disabled-color: #{$disabled-color};
-	--black-color: #{$black-color};
-	--white-color: #{$white-color};
-}
+$theme: $light;
+$reverse-theme: if($theme ==$light, $dark, $light);

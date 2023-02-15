@@ -3,9 +3,9 @@
 
 @font-face {
 	font-family: 'iconfont'; /* Project id 3788332 */
-	src: url('//at.alicdn.com/t/c/font_3788332_3vl57z6tkqi.woff2?t=1676343773798') format('woff2'),
-		url('//at.alicdn.com/t/c/font_3788332_3vl57z6tkqi.woff?t=1676343773798') format('woff'),
-		url('//at.alicdn.com/t/c/font_3788332_3vl57z6tkqi.ttf?t=1676343773798') format('truetype');
+	src: url('//at.alicdn.com/t/c/font_3788332_unl1x6mrk0k.woff2?t=1676446590273') format('woff2'),
+		url('//at.alicdn.com/t/c/font_3788332_unl1x6mrk0k.woff?t=1676446590273') format('woff'),
+		url('//at.alicdn.com/t/c/font_3788332_unl1x6mrk0k.ttf?t=1676446590273') format('truetype');
 }
 
 .iconfont {
@@ -13,6 +13,26 @@
 	font-style: normal;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-loading:before {
+	content: '\e649';
+}
+
+.icon-arrow-up-solid:before {
+	content: '\e645';
+}
+
+.icon-arrow-left-solid:before {
+	content: '\e646';
+}
+
+.icon-arrow-right-solid:before {
+	content: '\e647';
+}
+
+.icon-arrow-down-solid:before {
+	content: '\e648';
 }
 
 .icon-push:before {
@@ -109,8 +129,4 @@
 
 .icon-collection-hollow:before {
 	content: '\e63a';
-}
-
-.icon-loading:before {
-	content: '\e60b';
 }
