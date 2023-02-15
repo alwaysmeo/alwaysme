@@ -1,6 +1,6 @@
 <!-- 图片组件 -->
 <template>
-	<div :class="`${prefix}-image`" :style="styles">
+	<div :class="`shadow ${prefix}-image`" :style="styles" :data-status="state.failed">
 		<img
 			v-show="!state.failed"
 			:class="`${prefix}-image-img`"

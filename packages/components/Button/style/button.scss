@@ -7,6 +7,11 @@ $prefix-base: #{$prefix}-button;
 	transition: box-shadow 0.3s, border 0.3s, color 0.3s, background-color 0.3s;
 	cursor: pointer;
 
+	&:not(.#{$prefix-base}-loading):not(.#{$prefix-base}-disabled):hover {
+		box-shadow: -2px -2px 4px 2px if($theme ==$light, $white-color, $info-dark-color-20),
+			2px 2px 4px 2px if($theme ==$light, $info-dark-color-70, $black-color);
+	}
+
 	// type
 	&-type-default {
 		background-color: $theme;

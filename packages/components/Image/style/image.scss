@@ -6,6 +6,12 @@ $prefix-base: #{$prefix}-image;
 	border-radius: $radius-square;
 	width: var(--#{$prefix-base}-width);
 	height: var(--#{$prefix-base}-height);
+	transition: box-shadow 0.3s;
+
+	&:not(.#{$prefix-base}[data-status='true']):hover {
+		box-shadow: -2px -2px 4px 2px if($theme ==$light, $white-color, $info-dark-color-20),
+			2px 2px 4px 2px if($theme ==$light, $info-dark-color-70, $black-color);
+	}
 
 	&-img {
 		object-fit: var(--#{$prefix-base}-fit);
@@ -23,7 +29,7 @@ $prefix-base: #{$prefix}-image;
 			vertical-align: middle;
 			background: $info-color;
 			border-radius: $radius-square;
-			border: 1px solid  $info-dark-color-90;
+			border: 1px solid $info-dark-color-90;
 		}
 	}
 

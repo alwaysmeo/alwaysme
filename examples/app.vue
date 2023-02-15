@@ -31,11 +31,13 @@
 			<me-button type="dashed" ghost>按钮</me-button>
 			<me-button type="solid" ghost>按钮</me-button>
 		</div>
+
 		<div>
 			<me-link underline>链接1</me-link>
 			<me-link disabled>链接2</me-link>
 			<me-link>链接3</me-link>
 		</div>
+
 		<div>
 			<me-divider textalign="center" dashed>Text</me-divider>
 			<me-divider textalign="center" />
@@ -47,6 +49,7 @@
 				<span>Text</span>
 			</div>
 		</div>
+
 		<div style="width: 400px">
 			<me-timeline position="left">
 				<me-timeline-item color="#147ffa">
@@ -65,21 +68,31 @@
 				</me-timeline-item>
 			</me-timeline>
 		</div>
+
 		<div>
 			<me-image v-for="item in url" :key="url" :src="item" :list="url" width="180px" height="100px"></me-image>
-			<me-image src="http://files.drcloud.me/2ab32929-3827-4807-a308-13d56753ffbe_" width="180px" height="100px"></me-image>
+			<me-image
+				src="http://files.drcloud.me/2ab32929-3827-4807-a308-13d56753ffbe_"
+				width="180px"
+				height="100px"
+			></me-image>
 			<me-button type="primary" @click="visible = !visible">预览</me-button>
 			<me-image-preview infinite :list="url" v-model:visible="visible" />
 		</div>
-		<me-stepper v-model:value="value" disabled></me-stepper>
-		<me-stepper v-model:value="value"></me-stepper> -->
 
-		<me-tag closable icon="issues" size="small">标签1</me-tag>
-		<me-tag color="red" closable>标签2</me-tag>
-		<me-tag color="purple" closable closeIcon="push" size="large">标签3</me-tag>
-		<me-tag color="#147ffa" shape="square">标签4</me-tag>
-		<me-tag color="blue" closable>标签5</me-tag>
-		<me-tag color="arcoblue">标签5</me-tag>
+		<div>
+			<me-stepper v-model:value="value" disabled></me-stepper>
+			<me-stepper v-model:value="value"></me-stepper>
+		</div>
+
+		<div>
+			<me-tag closable icon="issues" size="small">标签1</me-tag>
+			<me-tag color="red" closable>标签2</me-tag>
+			<me-tag color="purple" closable closeIcon="push" size="large">标签3</me-tag>
+			<me-tag color="#147ffa" shape="square">标签4</me-tag>
+			<me-tag color="blue" closable>标签5</me-tag>
+			<me-tag color="arcoblue">标签5</me-tag>
+		</div> -->
 	</div>
 </template>
 

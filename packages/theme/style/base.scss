@@ -26,6 +26,6 @@ img {
 }
 
 .shadow {
-	box-shadow: -2px -2px 4px 2px if($theme ==$light, $white-color, $info-dark-color-20),
-		2px 2px 4px 2px if($theme ==$light, $info-dark-color-70, $black-color);
+	box-shadow: -2px -2px 4px 0 if($theme ==$light, $white-color, $info-dark-color-20),
+		2px 2px 4px 0 if($theme ==$light, $info-dark-color-70, $black-color);
 }

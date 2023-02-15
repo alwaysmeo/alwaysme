@@ -1,6 +1,6 @@
 <!-- 步进器组件 -->
 <template>
-	<div :class="`${prefix}-stepper`" :style="styles" :data-disabled="props.disabled">
+	<div :class="`shadow ${prefix}-stepper`" :style="styles" :data-disabled="props.disabled">
 		<div :class="`${prefix}-stepper-minus`" :data-disabled="props.disabled || state.value <= props.min" @click="minus">
 			<component :is="`${prefix}-icon`" name="minus" size="16" data-type="minus" />
 		</div>
