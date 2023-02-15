@@ -14,7 +14,7 @@
 				:is="`${prefix}-icon`"
 				name="image-failed"
 				:size="`calc(min(${styles[`--${prefix}-image-width`]}, ${styles[`--${prefix}-image-height`]}) / 4)`"
-				color="var(--info-dark-color-50)"
+				color="#878b90"
 			/>
 		</div>
 		<div v-else-if="props.preview" :class="`${prefix}-image-mask`" @click.stop="handleMask">

@@ -80,7 +80,7 @@
 		return {
 			[`--${prefix}-tag-color`]: Object.keys(state.colorMapping).includes(props.color)
 				? state.colorMapping[props.color][0]
-				: 'var(--white-color)',
+				: '#fff',
 			[`--${prefix}-tag-background-color`]: Object.keys(state.colorMapping).includes(props.color)
 				? state.colorMapping[props.color][1]
 				: props.color

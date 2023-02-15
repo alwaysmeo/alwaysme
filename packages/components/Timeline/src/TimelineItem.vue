@@ -29,7 +29,7 @@
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
-		color: 'var(--info-dark-color-50)',
+		color: '#878b90',
 		icon: 'unselected',
 		title: undefined
 	})
