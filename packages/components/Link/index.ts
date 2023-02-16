@@ -1,4 +1,4 @@
-
+import { App } from 'vue'
 import '@components/Link/style/link.scss'
 import Link from '@components/Link/src/Link.vue'
 

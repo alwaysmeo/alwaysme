@@ -1,3 +1,4 @@
+import { App } from 'vue'
 import '@components/Stepper/style/stepper.scss'
 import Stepper from '@components/Stepper/src/Stepper.vue'
 

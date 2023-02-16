@@ -1,4 +1,4 @@
-
+import { App } from 'vue'
 import '@components/Mask/style/mask.scss'
 import Mask from '@components/Mask/src/Mask.vue'
 

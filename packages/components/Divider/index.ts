@@ -1,4 +1,4 @@
-
+import { App } from 'vue'
 import '@components/Divider/style/divider.scss'
 import Divider from '@components/Divider/src/Divider.vue'
 

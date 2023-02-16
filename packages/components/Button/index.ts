@@ -1,4 +1,5 @@
 
+import { App } from 'vue'
 import '@components/Button/style/button.scss'
 import Button from '@components/Button/src/Button.vue'
 

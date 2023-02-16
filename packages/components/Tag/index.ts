@@ -1,4 +1,4 @@
-
+import { App } from 'vue'
 import '@components/Tag/style/tag.scss'
 import Tag from '@components/Tag/src/Tag.vue'
 

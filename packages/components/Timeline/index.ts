@@ -1,4 +1,4 @@
-
+import { App } from 'vue'
 import '@components/Timeline/style/timeline.scss';
 import '@components/Timeline/style/timelineItem.scss';
 import Timeline from '@components/Timeline/src/Timeline.vue'
