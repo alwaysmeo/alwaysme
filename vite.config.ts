@@ -11,7 +11,7 @@ export default defineConfig({
 		dts({ outputDir: 'es' }),
 		visualizer(),
 		AutoImport({
-			imports: ['vue', '@vueuse/core'],
+			imports: ['vue'],
 			dirs: ['./packages/utils'],
 			dts: './typings/auto-import.d.ts',
 			vueTemplate: true
@@ -20,8 +20,7 @@ export default defineConfig({
 	css: {
 		preprocessorOptions: {
 			scss: {
-				additionalData: '@import "./packages/theme/index.scss";',
-				charset: false
+				additionalData: `@import './packages/style/index.scss';`
 			}
 		}
 	},
@@ -30,7 +29,7 @@ export default defineConfig({
 			'@': resolve(__dirname, './packages'),
 			'@components': resolve(__dirname, './packages/components'),
 			'@utils': resolve(__dirname, './packages/utils'),
-			'@theme': resolve(__dirname, './packages/theme')
+			'@style': resolve(__dirname, './packages/style')
 		}
 	},
 	build: {
