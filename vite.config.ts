@@ -52,13 +52,11 @@ export default defineConfig({
 				{
 					dir: 'es',
 					format: 'es',
-					sourcemap: true,
 					preserveModules: true
 				},
 				{
 					dir: 'lib',
 					format: 'cjs',
-					sourcemap: true,
 					preserveModules: true
 				}
 			]
