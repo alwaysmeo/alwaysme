@@ -24,10 +24,10 @@
 
 	const classes = computed(() => {
 		return [
-			`${prefix}-divider`,
-			`${prefix}-divider-${props.orientation}`,
-			`${prefix}-divider-align-${props.textalign}`,
-			{ [`${prefix}-divider-dashed`]: props.dashed }
+			`${namespace}-divider`,
+			`${namespace}-divider-${props.orientation}`,
+			`${namespace}-divider-align-${props.textalign}`,
+			{ [`${namespace}-divider-dashed`]: props.dashed }
 		]
 	})
 </script>

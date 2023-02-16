@@ -1,24 +1,24 @@
-$prefix-base: #{$prefix}-timeline-item;
+$namespace-base: #{$namespace}-timeline-item;
 
-.#{$prefix-base} {
+.#{$namespace-base} {
 	position: relative;
 	&-icon {
 		height: 100%;
 		top: 0;
 		position: absolute;
-		> .#{$prefix}-icon {
-			background-color: $theme;
-			color: var(--#{$prefix-base}-color);
+		> .#{$namespace}-icon {
+			background-color: var(--#{$namespace}-theme-color);
+			color: var(--#{$namespace-base}-color);
 		}
 	}
 
-	&:not(:last-child) &-icon > .#{$prefix}-icon::after {
+	&:not(:last-child) &-icon > .#{$namespace}-icon::after {
 		content: '';
 		margin: 0 auto;
 		display: block;
 		width: 1px;
 		height: 100%;
-		background-color: $gray-color;
+		background-color: var(--#{$namespace}-border-color-30);
 	}
 
 	&-container {
@@ -28,7 +28,7 @@ $prefix-base: #{$prefix}-timeline-item;
 	&-title {
 		padding-top: 2px;
 		font-weight: 700;
-		color: var(--#{$prefix-base}-color);
+		color: var(--#{$namespace-base}-color);
 		margin-bottom: 12px;
 	}
 }

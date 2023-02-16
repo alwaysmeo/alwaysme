@@ -1,14 +1,14 @@
 <!-- 步进器组件 -->
 <template>
-	<div :class="`shadow ${prefix}-stepper`" :style="styles" :data-disabled="props.disabled">
-		<div :class="`${prefix}-stepper-minus`" :data-disabled="props.disabled || state.value <= props.min" @click="minus">
-			<component :is="`${prefix}-icon`" name="minus" size="16" data-type="minus" />
+	<div :class="`${namespace}-stepper`" :style="styles" :data-disabled="props.disabled">
+		<div :class="`${namespace}-stepper-minus`" :data-disabled="props.disabled || state.value <= props.min" @click="minus">
+			<component :is="`${namespace}-icon`" name="minus" size="16" data-type="minus" />
 		</div>
-		<div :class="`${prefix}-stepper-input`">
+		<div :class="`${namespace}-stepper-input`">
 			<input type="text" :value="state.value" :disabled="props.disabled" @input="input" @blur="blur" />
 		</div>
-		<div :class="`${prefix}-stepper-push`" :data-disabled="props.disabled || state.value >= props.max" @click="push">
-			<component :is="`${prefix}-icon`" name="push" size="16" data-type="push" />
+		<div :class="`${namespace}-stepper-push`" :data-disabled="props.disabled || state.value >= props.max" @click="push">
+			<component :is="`${namespace}-icon`" name="push" size="16" data-type="push" />
 		</div>
 	</div>
 </template>
@@ -49,8 +49,8 @@
 
 	const styles = computed(() => {
 		return {
-			[`--${prefix}-stepper-height`]: isNaN(<number>props.height) ? props.height : `${props.height}px`,
-			[`--${prefix}-stepper-input-width`]: isNaN(<number>props.inputWidth) ? props.inputWidth : `${props.inputWidth}px`
+			[`--${namespace}-stepper-height`]: isNaN(<number>props.height) ? props.height : `${props.height}px`,
+			[`--${namespace}-stepper-input-width`]: isNaN(<number>props.inputWidth) ? props.inputWidth : `${props.inputWidth}px`
 		}
 	})
 

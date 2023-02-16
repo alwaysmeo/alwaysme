@@ -1,6 +1,6 @@
-$prefix-base: #{$prefix}-divider;
+$namespace-base: #{$namespace}-divider;
 
-.#{$prefix-base} {
+.#{$namespace-base} {
 	display: flex;
 	margin: 20px 0;
 	height: 20px;
@@ -19,7 +19,7 @@ $prefix-base: #{$prefix}-divider;
 		width: 50%;
 		transform: translateY(50%);
 		border-top-width: 1px;
-		border-top-color: $gray-color;
+		border-top-color: var(--#{$namespace}-border-color-30);
 		border-top-style: solid;
 	}
 
@@ -65,6 +65,6 @@ $prefix-base: #{$prefix}-divider;
 		height: 0.9em;
 		width: 1px;
 		vertical-align: middle;
-		background-color: $gray-color;
+		background-color: var(--#{$namespace}-border-color-30);
 	}
 }

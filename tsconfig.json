@@ -18,7 +18,7 @@
 			"@/*": ["packages/*"],
 			"@components/*": ["packages/components/*"],
 			"@utils/*": ["packages/utils/*"],
-			"@theme/*": ["packages/theme/*"]
+			"@style/*": ["packages/style/*"]
 		}
 	},
 	"include": ["examples/app.vue", "typings/**/*.ts", "packages/**/*.ts", "packages/**/*.tsx", "packages/**/*.vue"],

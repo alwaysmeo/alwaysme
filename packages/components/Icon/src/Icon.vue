@@ -1,6 +1,6 @@
 <!-- 链接组件 -->
 <template>
-	<i :class="`iconfont ${prefix}-icon icon-${props.name}`" :style="styles" />
+	<i :class="`iconfont ${namespace}-icon icon-${props.name}`" :style="styles" />
 </template>
 
 <script setup lang="ts">
@@ -20,9 +20,9 @@
 
 	const styles = computed(() => {
 		return {
-			[`--${prefix}-icon-color`]: props.color,
-			[`--${prefix}-icon-size`]: isNaN(<number>props.size) ? props.size : `${props.size}px`,
-			[`--${prefix}-icon-line-height`]: isNaN(<number>props.lineHeight) ? props.lineHeight : `${props.lineHeight}px`
+			[`--${namespace}-icon-color`]: props.color,
+			[`--${namespace}-icon-size`]: isNaN(<number>props.size) ? props.size : `${props.size}px`,
+			[`--${namespace}-icon-line-height`]: isNaN(<number>props.lineHeight) ? props.lineHeight : `${props.lineHeight}px`
 		}
 	})
 </script>

@@ -1,6 +1,6 @@
-$prefix-base: #{$prefix}-image-preview;
+$namespace-base: #{$namespace}-image-preview;
 
-.#{$prefix-base} {
+.#{$namespace-base} {
 	display: inline-block;
 	&-toolbar {
 		position: absolute;
@@ -10,17 +10,17 @@ $prefix-base: #{$prefix}-image-preview;
 		display: flex;
 		align-items: content;
 		background-color: #ffffff7f;
-		backdrop-filter: blur($blur-base);
+		backdrop-filter: blur(var(--#{$namespace}-blur-base));
 		border-radius: 32px;
 		box-shadow: 0 0 8px 0 #0000004c;
 		transform: translate(-50%);
-		> .#{$prefix}-icon {
+		> .#{$namespace}-icon {
 			padding: 0 8px;
-			color: $white-color;
+			color: var(--#{$namespace}-white-color);
 			transition: color 0.3s;
 			cursor: pointer;
 			&:hover {
-				color: $info-dark-color-70;
+				color: var(--#{$namespace}-border-color-30);
 			}
 		}
 	}
@@ -31,18 +31,18 @@ $prefix-base: #{$prefix}-image-preview;
 		width: 36px;
 		height: 36px;
 		text-align: center;
-		color: $white-color;
+		color: var(--#{$namespace}-white-color);
 		background-color: #ffffff7f;
-		backdrop-filter: blur($blur-base);
+		backdrop-filter: blur(var(--#{$namespace}-blur-base));
 		border-radius: 50%;
 		box-shadow: 0 0 8px 0 #0000004c;
 		transition: color 0.3s;
 		cursor: pointer;
 		&:hover {
-			color: $info-dark-color-70;
+			color: var(--#{$namespace}-border-color-30);
 		}
 		&[data-status='true'] {
-			color: $info-dark-color-70;
+			color: var(--#{$namespace}-disabled-color-20);
 			background-color: #ffffff19;
 			cursor: not-allowed;
 		}
@@ -51,7 +51,7 @@ $prefix-base: #{$prefix}-image-preview;
 		top: 50%;
 		left: 20px;
 		transform: translateY(-50%);
-		> .#{$prefix}-icon {
+		> .#{$namespace}-icon {
 			margin-left: -2px;
 		}
 	}
@@ -59,14 +59,14 @@ $prefix-base: #{$prefix}-image-preview;
 		top: 50%;
 		right: 20px;
 		transform: translateY(-50%);
-		> .#{$prefix}-icon {
+		> .#{$namespace}-icon {
 			margin-right: -2px;
 		}
 	}
 	&-close {
 		top: 20px;
 		right: 20px;
-		> .#{$prefix}-icon {
+		> .#{$namespace}-icon {
 			font-size: 16px;
 		}
 	}
@@ -90,8 +90,8 @@ $prefix-base: #{$prefix}-image-preview;
 			max-height: 100%;
 			cursor: grab;
 			transition: transform 0.3s;
-			transform: translate(var(--#{$prefix-base}-offsetX), var(--#{$prefix-base}-offsetY))
-				rotate(var(--#{$prefix-base}-rotate)) scale3d(var(--#{$prefix-base}-scale), var(--#{$prefix-base}-scale), 1);
+			transform: translate(var(--#{$namespace-base}-offsetX), var(--#{$namespace-base}-offsetY))
+				rotate(var(--#{$namespace-base}-rotate)) scale3d(var(--#{$namespace-base}-scale), var(--#{$namespace-base}-scale), 1);
 		}
 	}
 }

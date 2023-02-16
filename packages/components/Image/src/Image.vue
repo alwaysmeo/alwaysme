@@ -1,31 +1,31 @@
 <!-- 图片组件 -->
 <template>
-	<div :class="`shadow ${prefix}-image`" :style="styles" :data-status="state.failed">
+	<div :class="`${namespace}-image`" :style="styles" :data-status="state.failed">
 		<img
 			v-show="!state.failed"
-			:class="`${prefix}-image-img`"
+			:class="`${namespace}-image-img`"
 			:src="props.src"
 			:alt="props.alt"
 			@load="load"
 			@error="error"
 		/>
-		<div v-if="state.failed" :class="`${prefix}-image-img-failed`">
+		<div v-if="state.failed" :class="`${namespace}-image-img-failed`">
 			<component
-				:is="`${prefix}-icon`"
+				:is="`${namespace}-icon`"
 				name="image-failed"
-				:size="`calc(min(${styles[`--${prefix}-image-width`]}, ${styles[`--${prefix}-image-height`]}) / 4)`"
+				:size="`calc(min(${styles[`--${namespace}-image-width`]}, ${styles[`--${namespace}-image-height`]}) / 4)`"
 				color="#878b90"
 			/>
 		</div>
-		<div v-else-if="props.preview" :class="`${prefix}-image-mask`" @click.stop="handleMask">
+		<div v-else-if="props.preview" :class="`${namespace}-image-mask`" @click.stop="handleMask">
 			<slot v-if="slots.mask" name="mask" />
-			<div v-else :class="`${prefix}-image-mask-text`">
-				<component :is="`${prefix}-icon`" name="eye" />
+			<div v-else :class="`${namespace}-image-mask-text`">
+				<component :is="`${namespace}-icon`" name="eye" />
 				<span :style="`display: ${parseInt(props.width.toString()) >= 60 ? 'inline-block' : 'none'}`">预览</span>
 			</div>
 		</div>
 		<component
-			:is="`${prefix}-image-preview`"
+			:is="`${namespace}-image-preview`"
 			v-model:visible="state.visible"
 			:list="props.list"
 			:infinite="props.infinite"
@@ -86,15 +86,15 @@
 	})
 
 	const state = reactive<State>({
-		failed: false,
+		failed: true,
 		visible: false
 	})
 
 	const styles = computed(() => {
 		return {
-			[`--${prefix}-image-width`]: isNaN(<number>props.width) ? props.width : `${props.width}px`,
-			[`--${prefix}-image-height`]: isNaN(<number>props.height) ? props.height : `${props.height}px`,
-			[`--${prefix}-image-fit`]: props.fit
+			[`--${namespace}-image-width`]: isNaN(<number>props.width) ? props.width : `${props.width}px`,
+			[`--${namespace}-image-height`]: isNaN(<number>props.height) ? props.height : `${props.height}px`,
+			[`--${namespace}-image-fit`]: props.fit
 		}
 	})
 

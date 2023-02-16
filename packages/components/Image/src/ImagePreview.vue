@@ -1,18 +1,18 @@
 <!-- 图片预览组件 -->
 <template>
-	<div :class="`${prefix}-image-preview`">
+	<div :class="`${namespace}-image-preview`">
 		<slot />
 		<component
-			:is="`${prefix}-mask`"
+			:is="`${namespace}-mask`"
 			v-model:visible="state.visible"
 			:zindex="props.zindex"
 			:mount="props.mount"
 			:close-on-press-escape="props.closeOnPressEscape"
 			@on-close="close"
 		>
-			<div :class="`${prefix}-image-preview-image`">
+			<div :class="`${namespace}-image-preview-image`">
 				<img
-					:class="`${prefix}-image-preview-image-img`"
+					:class="`${namespace}-image-preview-image-img`"
 					:style="styles"
 					:src="state.list?.[state.index]"
 					alt=""
@@ -20,29 +20,29 @@
 					@mousedown="handleMouseDown"
 				/>
 			</div>
-			<div :class="`${prefix}-image-preview-close`" @click.stop="close">
-				<component :is="`${prefix}-icon`" name="close" size="18" line-height="36" />
+			<div :class="`${namespace}-image-preview-close`" @click.stop="close">
+				<component :is="`${namespace}-icon`" name="close" size="18" line-height="36" />
 			</div>
-			<div :class="`${prefix}-image-preview-toolbar`" @click.stop="handleToolbar">
-				<component :is="`${prefix}-icon`" name="rotate-left" size="20" data-type="rotate-left" />
-				<component :is="`${prefix}-icon`" name="rotate-right" size="20" data-type="rotate-right" />
-				<component :is="`${prefix}-icon`" name="zoom-in" size="20" data-type="zoom-in" />
-				<component :is="`${prefix}-icon`" name="zoom-out" size="20" data-type="zoom-out" />
+			<div :class="`${namespace}-image-preview-toolbar`" @click.stop="handleToolbar">
+				<component :is="`${namespace}-icon`" name="rotate-left" size="20" data-type="rotate-left" />
+				<component :is="`${namespace}-icon`" name="rotate-right" size="20" data-type="rotate-right" />
+				<component :is="`${namespace}-icon`" name="zoom-in" size="20" data-type="zoom-in" />
+				<component :is="`${namespace}-icon`" name="zoom-out" size="20" data-type="zoom-out" />
 			</div>
 			<template v-if="state.list.length > 1">
 				<div
-					:class="`${prefix}-image-preview-switch-left`"
+					:class="`${namespace}-image-preview-switch-left`"
 					:data-status="!props.infinite && state.index === 0"
 					@click.stop="handleSwitch(state.index - 1)"
 				>
-					<component :is="`${prefix}-icon`" name="arrow-left" size="18" line-height="36" />
+					<component :is="`${namespace}-icon`" name="arrow-left" size="18" line-height="36" />
 				</div>
 				<div
-					:class="`${prefix}-image-preview-switch-right`"
+					:class="`${namespace}-image-preview-switch-right`"
 					:data-status="!props.infinite && state.index === state.list.length - 1"
 					@click.stop="handleSwitch(state.index + 1)"
 				>
-					<component :is="`${prefix}-icon`" name="arrow-right" size="18" line-height="36" />
+					<component :is="`${namespace}-icon`" name="arrow-right" size="18" line-height="36" />
 				</div>
 			</template>
 		</component>
@@ -50,6 +50,7 @@
 </template>
 
 <script setup lang="ts">
+	import { useEventListener } from '@vueuse/core'
 	const scopeEventListener = effectScope()
 
 	const emits = defineEmits<{
@@ -99,10 +100,10 @@
 
 	const styles = computed(() => {
 		return {
-			[`--${prefix}-image-preview-scale`]: state.transform.scale,
-			[`--${prefix}-image-preview-rotate`]: `${state.transform.rotate}deg`,
-			[`--${prefix}-image-preview-offsetX`]: `${state.transform.offsetX}px`,
-			[`--${prefix}-image-preview-offsetY`]: `${state.transform.offsetY}px`
+			[`--${namespace}-image-preview-scale`]: state.transform.scale,
+			[`--${namespace}-image-preview-rotate`]: `${state.transform.rotate}deg`,
+			[`--${namespace}-image-preview-offsetX`]: `${state.transform.offsetX}px`,
+			[`--${namespace}-image-preview-offsetY`]: `${state.transform.offsetY}px`
 		}
 	})
 

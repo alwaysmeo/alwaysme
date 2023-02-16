@@ -2,7 +2,7 @@
 <template>
 	<teleport :to="props.mount">
 		<transition name="fade">
-			<div v-if="state.visible" :class="`${prefix}-mask`" :style="styles" @click="close">
+			<div v-if="state.visible" :class="`${namespace}-mask`" :style="styles" @click="close">
 				<slot />
 			</div>
 		</transition>
@@ -10,6 +10,7 @@
 </template>
 
 <script setup lang="ts">
+	import { useEventListener } from '@vueuse/core'
 	import { throttle } from 'lodash'
 
 	const emits = defineEmits<{
@@ -46,8 +47,8 @@
 
 	const styles = computed(() => {
 		return {
-			[`--${prefix}-mask-blur`]: isNaN(<number>props.blur) ? props.blur : `${props.blur}px`,
-			[`--${prefix}-mask-zindex`]: props.zindex
+			[`--${namespace}-mask-blur`]: isNaN(<number>props.blur) ? props.blur : `${props.blur}px`,
+			[`--${namespace}-mask-zindex`]: props.zindex
 		}
 	})
 

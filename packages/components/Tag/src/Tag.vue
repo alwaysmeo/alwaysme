@@ -3,21 +3,21 @@
 	<transition name="fade">
 		<span v-if="state.visible" :class="classes" :style="styles">
 			<component
-				:is="`${prefix}-icon`"
+				:is="`${namespace}-icon`"
 				v-if="props.icon"
 				data-type="icon"
 				:name="props.icon"
 				:size="{ small: 12, medium: 12, large: 14 }[props.size]"
-				:color="`var(--${prefix}-tag-color)`"
+				:color="`var(--${namespace}-tag-color)`"
 			/>
 			<slot />
 			<component
-				:is="`${prefix}-icon`"
+				:is="`${namespace}-icon`"
 				v-if="props.closable"
 				data-type="close"
 				:name="props.closeIcon"
 				:size="{ small: 12, medium: 12, large: 14 }[props.size]"
-				:color="`var(--${prefix}-tag-color)`"
+				:color="`var(--${namespace}-tag-color)`"
 				@click="close"
 			/>
 		</span>
@@ -73,15 +73,15 @@
 	})
 
 	const classes = computed(() => {
-		return ['shadow', `${prefix}-tag`, `${prefix}-tag-size-${props.size}`, `${prefix}-tag-shape-${props.shape}`]
+		return [`${namespace}-tag`, `${namespace}-tag-size-${props.size}`, `${namespace}-tag-shape-${props.shape}`]
 	})
 
 	const styles = computed(() => {
 		return {
-			[`--${prefix}-tag-color`]: Object.keys(state.colorMapping).includes(props.color)
+			[`--${namespace}-tag-color`]: Object.keys(state.colorMapping).includes(props.color)
 				? state.colorMapping[props.color][0]
 				: '#fff',
-			[`--${prefix}-tag-background-color`]: Object.keys(state.colorMapping).includes(props.color)
+			[`--${namespace}-tag-background-color`]: Object.keys(state.colorMapping).includes(props.color)
 				? state.colorMapping[props.color][1]
 				: props.color
 		}

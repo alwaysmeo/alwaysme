@@ -1,4 +1,2 @@
-
-const prefix = 'me'
-
-export { prefix }
+const namespace = 'me'
+export { namespace }

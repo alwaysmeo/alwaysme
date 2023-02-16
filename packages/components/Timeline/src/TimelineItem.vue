@@ -1,12 +1,12 @@
 <!-- 时间轴组件 -->
 <template>
-	<div :class="`${prefix}-timeline-item`" :style="`--${prefix}-timeline-item-color: ${props.color}`">
-		<div :class="`${prefix}-timeline-item-icon`" :style="`${state.position}: 0`">
+	<div :class="`${namespace}-timeline-item`" :style="`--${namespace}-timeline-item-color: ${props.color}`">
+		<div :class="`${namespace}-timeline-item-icon`" :style="`${state.position}: 0`">
 			<slot v-if="slots.icon" name="icon" />
-			<component :is="`${prefix}-icon`" v-else :name="props.icon" />
+			<component :is="`${namespace}-icon`" v-else :name="props.icon" />
 		</div>
-		<div :class="`${prefix}-timeline-item-container`">
-			<div :class="`${prefix}-timeline-item-title`">
+		<div :class="`${namespace}-timeline-item-container`">
+			<div :class="`${namespace}-timeline-item-title`">
 				<slot v-if="slots.title" name="title" />
 				<span v-else>{{ props.title }}</span>
 			</div>

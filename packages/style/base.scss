@@ -1,0 +1,57 @@
+:root {
+	--#{$namespace}-radius-base: 6px;
+	--#{$namespace}-radius-square: 2px;
+	--#{$namespace}-font-size: 14px;
+	--#{$namespace}-blur-base: 12px;
+	--#{$namespace}-line-height: 1.5715;
+
+	color: var(--#{$namespace}-font-color);
+	font-size: var(--#{$namespace}-font-size);
+	background-color: var(--#{$namespace}-theme-color);
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+div {
+	box-sizing: border-box;
+}
+
+li {
+	list-style: none;
+}
+
+img {
+	vertical-align: middle;
+	border-style: none;
+}
+
+// TODO: 亮主题公共样式
+html:not(html[data-theme='dark']),
+html[data-theme='light'] {
+	--#{$namespace}-box-shadow-color: -2px -2px 4px 0 var(--#{$namespace}-white-color),
+		2px 2px 4px 0 var(--#{$namespace}-black-color-50);
+	--#{$namespace}-box-shadow-hover-color: -2px -2px 4px 2px var(--#{$namespace}-white-color),
+		2px 2px 4px 2px var(--#{$namespace}-black-color-50);
+	@for $i from 1 to 10 {
+		--#{$namespace}-disabled-color-#{$i * 10}: var(--#{$namespace}-black-color-#{$i * 10});
+		--#{$namespace}-border-color-#{$i * 10}: var(--#{$namespace}-black-color-#{$i * 10});
+	}
+}
+
+// TODO: 暗主题公共样式
+html[data-theme='dark'] {
+	--#{$namespace}-box-shadow-color: -2px -2px 4px 0 var(--#{$namespace}-white-color-10),
+		2px 2px 4px 0 var(--#{$namespace}-black-color-80);
+	--#{$namespace}-box-shadow-hover-color: -2px -2px 4px 2px var(--#{$namespace}-white-color-10),
+		2px 2px 4px 2px var(--#{$namespace}-black-color-80);
+	@for $i from 1 to 10 {
+		--#{$namespace}-disabled-color-#{$i * 10}: var(--#{$namespace}-white-color-#{$i * 10});
+		--#{$namespace}-border-color-#{$i * 10}: var(--#{$namespace}-white-color-#{$i * 10});
+	}
+}

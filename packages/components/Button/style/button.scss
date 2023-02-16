@@ -1,29 +1,29 @@
-$prefix-base: #{$prefix}-button;
+$namespace-base: #{$namespace}-button;
 
-.#{$prefix-base} {
+.#{$namespace-base} {
 	padding: 7px 15px;
-	color: $font-color;
+	color: var(--#{$namespace}-font-color);
 	border: 1px solid transparent;
 	transition: box-shadow 0.3s, border 0.3s, color 0.3s, background-color 0.3s;
+	box-shadow: var(--#{$namespace}-box-shadow-color);
 	cursor: pointer;
 
-	&:not(.#{$prefix-base}-loading):not(.#{$prefix-base}-disabled):hover {
-		box-shadow: -2px -2px 4px 2px if($theme ==$light, $white-color, $info-dark-color-20),
-			2px 2px 4px 2px if($theme ==$light, $info-dark-color-70, $black-color);
+	&:not(.#{$namespace-base}-loading):not(.#{$namespace-base}-disabled):hover {
+		box-shadow: var(--#{$namespace}-box-shadow-hover-color);
 	}
 
 	// type
 	&-type-default {
-		background-color: $theme;
+		background-color: var(--#{$namespace}-theme-color);
 	}
 	&-type-primary {
-		color: $white-color;
-		background-color: $primary-color;
+		color: var(--#{$namespace}-white-color);
+		background-color: var(--#{$namespace}-primary-color);
 	}
 	&-type-dashed,
 	&-type-solid {
-		background-color: $theme;
-		border-color: $info-dark-color-80;
+		background-color: var(--#{$namespace}-theme-color);
+		border-color: var(--#{$namespace}-border-color-30);
 	}
 	&-type-dashed {
 		border-style: dashed;
@@ -34,10 +34,10 @@ $prefix-base: #{$prefix}-button;
 
 	// shape
 	&-shape-default {
-		border-radius: $radius-base;
+		border-radius: var(--#{$namespace}-radius-base);
 	}
 	&-shape-square {
-		border-radius: $radius-square;
+		border-radius: var(--#{$namespace}-radius-square);
 	}
 	&-shape-round {
 		border-radius: 16px;
@@ -51,15 +51,15 @@ $prefix-base: #{$prefix}-button;
 	// loading | disabled
 	&-loading,
 	&-disabled {
-		&.#{$prefix-base}-type-primary {
-			color: $info-color;
-			background-color: $primary-color-60;
+		&.#{$namespace-base}-type-primary {
+			color: var(--#{$namespace}-white-color-80);
+			background-color: var(--#{$namespace}-primary-color-60);
 		}
-		&.#{$prefix-base}-type-default,
-		&.#{$prefix-base}-type-dashed,
-		&.#{$prefix-base}-type-solid {
-			color: if($theme ==$light, $info-dark-color-80, $info-dark-color-30);
-			border-color: if($theme ==$light, $info-dark-color-90, $info-dark-color-30);
+		&.#{$namespace-base}-type-default,
+		&.#{$namespace-base}-type-dashed,
+		&.#{$namespace-base}-type-solid {
+			color: var(--#{$namespace}-disabled-color-20);
+			border-color: var(--#{$namespace}-disabled-color-20);
 		}
 	}
 	&-loading {

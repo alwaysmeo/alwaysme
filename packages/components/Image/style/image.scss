@@ -1,24 +1,24 @@
-$prefix-base: #{$prefix}-image;
+$namespace-base: #{$namespace}-image;
 
-.#{$prefix-base} {
+.#{$namespace-base} {
 	position: relative;
 	display: inline-block;
-	border-radius: $radius-square;
-	width: var(--#{$prefix-base}-width);
-	height: var(--#{$prefix-base}-height);
+	border-radius: var(--#{$namespace}-radius-base);
+	width: var(--#{$namespace-base}-width);
+	height: var(--#{$namespace-base}-height);
 	transition: box-shadow 0.3s;
+	box-shadow: var(--#{$namespace}-box-shadow-color);
 
-	&:not(.#{$prefix-base}[data-status='true']):hover {
-		box-shadow: -2px -2px 4px 2px if($theme ==$light, $white-color, $info-dark-color-20),
-			2px 2px 4px 2px if($theme ==$light, $info-dark-color-70, $black-color);
+	&:not(.#{$namespace-base}[data-status='true']):hover {
+		box-shadow: var(--#{$namespace}-box-shadow-hover-color);
 	}
 
 	&-img {
-		object-fit: var(--#{$prefix-base}-fit);
+		object-fit: var(--#{$namespace-base}-fit);
 		vertical-align: middle;
 		width: 100%;
 		height: 100%;
-		border-radius: $radius-square;
+		border-radius: var(--#{$namespace}-radius-base);
 		border-style: none;
 		&-failed {
 			display: inline-flex;
@@ -27,9 +27,9 @@ $prefix-base: #{$prefix}-image;
 			width: 100%;
 			height: 100%;
 			vertical-align: middle;
-			background: $info-color;
-			border-radius: $radius-square;
-			border: 1px solid $info-dark-color-90;
+			background: var(--#{$namespace}-white-color-10);
+			border-radius: var(--#{$namespace}-radius-base);
+			border: 1px solid var(--#{$namespace}-border-color-30);
 		}
 	}
 
@@ -44,9 +44,9 @@ $prefix-base: #{$prefix}-image;
 		justify-content: center;
 		text-align: center;
 		font-size: 1rem;
-		color: $light;
+		color: var(--#{$namespace}-white-color);
 		user-select: none;
-		border-radius: $radius-square;
+		border-radius: var(--#{$namespace}-radius-base);
 		background: #00000066;
 		transition: opacity 0.3s;
 		cursor: pointer;

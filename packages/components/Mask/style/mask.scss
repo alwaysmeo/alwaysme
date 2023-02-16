@@ -1,6 +1,6 @@
-$prefix-base: #{$prefix}-mask;
+$namespace-base: #{$namespace}-mask;
 
-.#{$prefix-base} {
+.#{$namespace-base} {
 	overflow: hidden;
 	position: absolute;
 	top: 0;
@@ -9,6 +9,6 @@ $prefix-base: #{$prefix}-mask;
 	left: 0;
 	user-select: none;
 	background: #00000066;
-	backdrop-filter: blur(var(--#{$prefix-base}-blur));
-	z-index: var(--#{$prefix-base}-zindex);
+	backdrop-filter: blur(var(--#{$namespace-base}-blur));
+	z-index: var(--#{$namespace-base}-zindex);
 }

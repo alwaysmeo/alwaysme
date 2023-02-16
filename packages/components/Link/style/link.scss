@@ -1,27 +1,27 @@
-$prefix-base: #{$prefix}-link;
+$namespace-base: #{$namespace}-link;
 
-.#{$prefix-base} {
+.#{$namespace-base} {
 	margin-right: 8px;
-	color: $primary-color;
+	color: var(--#{$namespace}-primary-color);
 	text-decoration: none;
 	border-bottom: 1px solid transparent;
 	transition: border 0.3s, color 0.3s;
 	line-height: 20px;
 
 	&:hover {
-		color: $primary-secondary-color-40;
+		color: var(--#{$namespace}-primary-secondary-color-40);
 	}
 
 	&-underline:hover {
-		border-color: $primary-secondary-color-40;
+		border-color: var(--#{$namespace}-primary-secondary-color-40);
 	}
 
 	&-disabled {
-		color: $primary-color-60;
+		color: var(--#{$namespace}-primary-color-60);
 
 		&:hover {
 			cursor: not-allowed;
-			color: $primary-color-60;
+			color: var(--#{$namespace}-primary-color-60);
 			border-color: transparent;
 		}
 	}

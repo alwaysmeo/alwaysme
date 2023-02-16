@@ -1,6 +1,6 @@
 <template>
 	<button :class="classes" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
-		<component :is="`${prefix}-icon`" v-if="props.loading" name="loading" />
+		<component :is="`${namespace}-icon`" v-if="props.loading" name="loading" />
 		<slot v-if="slots.icon" name="icon" />
 		<slot />
 	</button>
@@ -27,14 +27,13 @@
 
 	const classes = computed(() => {
 		return [
-			'shadow',
-			`${prefix}-button`,
-			`${prefix}-button-type-${props.type}`,
-			`${prefix}-button-shape-${props.shape}`,
+			`${namespace}-button`,
+			`${namespace}-button-type-${props.type}`,
+			`${namespace}-button-shape-${props.shape}`,
 			{
-				[`${prefix}-button-long`]: props.long,
-				[`${prefix}-button-loading`]: props.loading,
-				[`${prefix}-button-disabled`]: props.disabled
+				[`${namespace}-button-long`]: props.long,
+				[`${namespace}-button-loading`]: props.loading,
+				[`${namespace}-button-disabled`]: props.disabled
 			}
 		]
 	})

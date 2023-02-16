@@ -1,5 +1,5 @@
-$prefix-base: #{$prefix}-timeline;
+$namespace-base: #{$namespace}-timeline;
 
-.#{$prefix-base} {
-	text-align: var(--#{$prefix-base}-item-position);
+.#{$namespace-base} {
+	text-align: var(--#{$namespace-base}-item-position);
 }

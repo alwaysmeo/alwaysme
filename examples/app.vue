@@ -77,7 +77,7 @@
 				height="100px"
 			></me-image>
 			<me-button type="primary" @click="visible = !visible">预览</me-button>
-			<me-image-preview infinite :list="url" v-model:visible="visible" />
+			<me-image-preview :infinite="false" :list="url" v-model:visible="visible" />
 		</div>
 
 		<div>

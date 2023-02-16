@@ -1,8 +1,8 @@
-$prefix-base: #{$prefix}-icon;
+$namespace-base: #{$namespace}-icon;
 
-.#{$prefix-base} {
-	font-size: var(--#{$prefix-base}-size);
-	color: var(--#{$prefix-base}-color);
-	line-height: var(--#{$prefix-base}-line-height);
+.#{$namespace-base} {
+	font-size: var(--#{$namespace-base}-size);
+	color: var(--#{$namespace-base}-color);
+	line-height: var(--#{$namespace-base}-line-height);
 	vertical-align: middle;
 }

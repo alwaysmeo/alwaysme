@@ -1,19 +1,24 @@
-$prefix-base: #{$prefix}-tag;
+$namespace-base: #{$namespace}-tag;
 
-.#{$prefix-base} {
+.#{$namespace-base} {
 	box-sizing: border-box;
 	display: inline-flex;
 	align-items: center;
 	padding: 0 10px;
 	vertical-align: middle;
 	font-weight: 500;
-	color: var(--#{$prefix-base}-color);
+	color: var(--#{$namespace-base}-color);
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	vertical-align: middle;
-	background-color: var(--#{$prefix-base}-background-color);
+	background-color: var(--#{$namespace-base}-background-color);
+	box-shadow: var(--#{$namespace}-box-shadow-color);
+	transition: box-shadow 0.3s;
+	&:hover {
+		box-shadow: var(--#{$namespace}-box-shadow-hover-color);
+	}
 
-	> .#{$prefix}-icon {
+	> .#{$namespace}-icon {
 		&[data-type='icon'] {
 			margin-right: 4px;
 		}
@@ -36,10 +41,10 @@ $prefix-base: #{$prefix}-tag;
 	}
 	// shape
 	&-shape-default {
-		border-radius: $radius-base;
+		border-radius: var(--#{$namespace}-radius-base);
 	}
 
 	&-shape-square {
-		border-radius: $radius-square;
+		border-radius: var(--#{$namespace}-radius-square);
 	}
 }

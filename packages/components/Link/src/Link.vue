@@ -24,10 +24,11 @@
 
 	const classes = computed(() => {
 		return [
-			`${prefix}-link`,
+			`shadow`,
+			`${namespace}-link`,
 			{
-				[`${prefix}-link-underline`]: props.underline,
-				[`${prefix}-link-disabled`]: props.disabled
+				[`${namespace}-link-underline`]: props.underline,
+				[`${namespace}-link-disabled`]: props.disabled
 			}
 		]
 	})

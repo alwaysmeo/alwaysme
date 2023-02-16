@@ -1,0 +1,62 @@
+// TODO: 👻 Me Sass Color
+
+$colors: (
+	primary-color: #1088ff,
+	secondary-color: #00ddff,
+	danger-color: #c21533,
+	success-color: #00b66a,
+	warning-color: #f79600,
+	black-color: #000000,
+	white-color: #ffffff
+);
+
+$themes: (
+	light: (
+		theme-color: #eceff2,
+		theme-opposite-color: #22272e,
+		font-color: #3c3e42
+	),
+	dark: (
+		theme-color: #22272e,
+		theme-opposite-color: #eceff2,
+		font-color: #dddee0
+	)
+);
+
+// TODO: 亮主题混色
+html:not(html[data-theme='dark']),
+html[data-theme='light'] {
+	@each $key, $val in map-get($themes, light) {
+		--#{$namespace}-#{$key}: #{$val};
+	}
+	@each $key, $val in $colors {
+		@for $i from 1 to 10 {
+			--#{$namespace}-#{$key}-#{$i * 10}: #{mix($val, map-get(map-get($themes, light), theme-color), 10% * $i)};
+		}
+		--#{$namespace}-#{$key}: #{$val};
+	}
+}
+
+// TODO: 暗主题混色
+html[data-theme='dark'] {
+	@each $key, $val in map-get($themes, dark) {
+		--#{$namespace}-#{$key}: #{$val};
+	}
+	@each $key, $val in $colors {
+		@for $i from 1 to 10 {
+			--#{$namespace}-#{$key}-#{$i * 10}: #{mix($val, map-get(map-get($themes, dark), theme-color), 10% * $i)};
+		}
+		--#{$namespace}-#{$key}: #{$val};
+	}
+}
+
+html {
+	// TODO: 主色调+副色调混色
+	@for $i from 1 to 10 {
+		--#{$namespace}-primary-secondary-color-#{$i * 10}: #{mix(
+				map-get($colors, primary-color),
+				map-get($colors, secondary-color),
+				10% * $i
+			)};
+	}
+}

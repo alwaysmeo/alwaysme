@@ -1,10 +1,9 @@
-import { prefix } from '@utils/config'
-import { App } from 'vue'
+
 import '@components/Icon/style/icon.scss'
 import Icon from '@components/Icon/src/Icon.vue'
 
-Icon.install = function (app: App) {
-	app.component(`${prefix}Icon`, Icon)
+Icon.install = (app: App) => {
+	app.component(`${namespace}Icon`, Icon)
 	return app
 }
 

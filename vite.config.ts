@@ -1,3 +1,4 @@
+import { namespace } from './packages/utils/config'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
@@ -20,7 +21,7 @@ export default defineConfig({
 	css: {
 		preprocessorOptions: {
 			scss: {
-				additionalData: `@import './packages/style/index.scss';`
+				additionalData: `$namespace: '${namespace}'; @import './packages/style/index.scss'; @import './packages/icon/iconfont.scss';`
 			}
 		}
 	},
