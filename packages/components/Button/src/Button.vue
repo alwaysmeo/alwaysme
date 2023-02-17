@@ -1,5 +1,5 @@
 <template>
-	<button :class="classes" :disabled="props.disabled" :type="props.htmlType" @click="handleClick">
+	<button :class="classes" :disabled="props.disabled" :type="props.htmlType" @click="onClick">
 		<component :is="`${namespace}-icon`" v-if="props.loading" name="loading" />
 		<slot v-if="slots.icon" name="icon" />
 		<slot />
@@ -38,7 +38,7 @@
 		]
 	})
 
-	const handleClick = (event: MouseEvent) => {
+	const onClick = (event: MouseEvent) => {
 		if (props.disabled || props.loading) return event.preventDefault()
 		emits('onClick', event)
 	}

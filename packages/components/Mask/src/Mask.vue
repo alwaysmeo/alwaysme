@@ -1,7 +1,7 @@
 <!-- 遮罩组件 -->
 <template>
 	<teleport :to="props.mount">
-		<transition name="fade">
+		<transition name="fade-zoom">
 			<div v-if="state.visible" :class="`${namespace}-mask`" :style="styles" @click="close">
 				<slot />
 			</div>
