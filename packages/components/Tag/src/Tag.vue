@@ -73,19 +73,12 @@
 	})
 
 	const classes = computed(() => {
-		return [
-			`${namespace}-box-shadow`,
-			`${namespace}-tag`,
-			`${namespace}-tag-size-${props.size}`,
-			`${namespace}-tag-shape-${props.shape}`
-		]
+		return [`${namespace}-box-shadow`, `${namespace}-tag`, `${namespace}-tag-size-${props.size}`, `${namespace}-tag-shape-${props.shape}`]
 	})
 
 	const styles = computed(() => {
 		return {
-			[`--${namespace}-tag-color`]: Object.keys(state.colorMapping).includes(props.color)
-				? state.colorMapping[props.color][0]
-				: '#fff',
+			[`--${namespace}-tag-color`]: Object.keys(state.colorMapping).includes(props.color) ? state.colorMapping[props.color][0] : '#fff',
 			[`--${namespace}-tag-background-color`]: Object.keys(state.colorMapping).includes(props.color)
 				? state.colorMapping[props.color][1]
 				: props.color

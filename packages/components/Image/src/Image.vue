@@ -1,14 +1,7 @@
 <!-- 图片组件 -->
 <template>
 	<div :class="`${namespace}-box-shadow ${namespace}-image`" :style="styles" :data-status="state.failed">
-		<img
-			v-show="!state.failed"
-			:class="`${namespace}-image-img`"
-			:src="props.src"
-			:alt="props.alt"
-			@load="load"
-			@error="error"
-		/>
+		<img v-show="!state.failed" :class="`${namespace}-image-img`" :src="props.src" :alt="props.alt" @load="load" @error="error" />
 		<div v-if="state.failed" :class="`${namespace}-image-img-failed`">
 			<component
 				:is="`${namespace}-icon`"
