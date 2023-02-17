@@ -20,7 +20,7 @@ $namespace-base: #{$namespace}-image-preview;
 			transition: color 0.3s;
 			cursor: pointer;
 			&:hover {
-				color: var(--#{$namespace}-border-color-30);
+				color: var(--#{$namespace}-gray-color-30);
 			}
 		}
 	}
@@ -39,10 +39,10 @@ $namespace-base: #{$namespace}-image-preview;
 		transition: color 0.3s;
 		cursor: pointer;
 		&:hover {
-			color: var(--#{$namespace}-border-color-30);
+			color: var(--#{$namespace}-gray-color-30);
 		}
 		&[data-status='true'] {
-			color: var(--#{$namespace}-disabled-color-20);
+			color: var(--#{$namespace}-gray-color-20);
 			background-color: #ffffff19;
 			cursor: not-allowed;
 		}
@@ -90,8 +90,8 @@ $namespace-base: #{$namespace}-image-preview;
 			max-height: 100%;
 			cursor: grab;
 			transition: transform 0.3s;
-			transform: translate(var(--#{$namespace-base}-offsetX), var(--#{$namespace-base}-offsetY))
-				rotate(var(--#{$namespace-base}-rotate)) scale3d(var(--#{$namespace-base}-scale), var(--#{$namespace-base}-scale), 1);
+			transform: translate(var(--#{$namespace-base}-offsetX), var(--#{$namespace-base}-offsetY)) rotate(var(--#{$namespace-base}-rotate))
+				scale3d(var(--#{$namespace-base}-scale), var(--#{$namespace-base}-scale), 1);
 		}
 	}
 }

@@ -5,7 +5,7 @@ $namespace-base: #{$namespace}-stepper;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	border: 1px solid var(--#{$namespace}-border-color-30);
+	border: 1px solid var(--#{$namespace}-gray-color-30);
 	background-color: var(--#{$namespace}-theme-color);
 	transition: box-shadow 0.3s;
 
@@ -15,8 +15,8 @@ $namespace-base: #{$namespace}-stepper;
 	}
 
 	&-disabled {
-		background-color: var(--#{$namespace}-disabled-color-10);
-		color: var(--#{$namespace}-disabled-color-40);
+		background-color: var(--#{$namespace}-gray-color-10);
+		color: var(--#{$namespace}-gray-color-40);
 		cursor: not-allowed;
 	}
 
@@ -39,7 +39,7 @@ $namespace-base: #{$namespace}-stepper;
 			}
 		}
 		&[data-disabled='true'] {
-			color: var(--#{$namespace}-disabled-color-40);
+			color: var(--#{$namespace}-gray-color-40);
 			cursor: not-allowed;
 		}
 		&[data-disabled='false'] {
@@ -55,8 +55,8 @@ $namespace-base: #{$namespace}-stepper;
 	&-input {
 		input {
 			&[disabled] {
-				background-color: var(--#{$namespace}-disabled-color-10);
-				color: var(--#{$namespace}-disabled-color-40);
+				background-color: var(--#{$namespace}-gray-color-10);
+				color: var(--#{$namespace}-gray-color-40);
 				cursor: not-allowed;
 			}
 			box-sizing: border-box;
@@ -69,8 +69,8 @@ $namespace-base: #{$namespace}-stepper;
 			line-height: var(--#{$namespace-base}-height);
 			color: var(--#{$namespace}-font-color);
 			background-color: var(--#{$namespace}-theme-color);
-			border-left: 1px solid var(--#{$namespace}-border-color-30);
-			border-right: 1px solid var(--#{$namespace}-border-color-30);
+			border-left: 1px solid var(--#{$namespace}-gray-color-30);
+			border-right: 1px solid var(--#{$namespace}-gray-color-30);
 		}
 	}
 }

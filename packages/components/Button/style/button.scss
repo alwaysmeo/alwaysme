@@ -19,7 +19,7 @@ $namespace-base: #{$namespace}-button;
 	&-type-dashed,
 	&-type-solid {
 		background-color: var(--#{$namespace}-theme-color);
-		border-color: var(--#{$namespace}-border-color-30);
+		border-color: var(--#{$namespace}-gray-color-30);
 	}
 	&-type-dashed {
 		border-style: dashed;
@@ -57,8 +57,8 @@ $namespace-base: #{$namespace}-button;
 		&.#{$namespace-base}-type-default,
 		&.#{$namespace-base}-type-dashed,
 		&.#{$namespace-base}-type-solid {
-			color: var(--#{$namespace}-disabled-color-20);
-			border-color: var(--#{$namespace}-disabled-color-20);
+			color: var(--#{$namespace}-gray-color-20);
+			border-color: var(--#{$namespace}-gray-color-20);
 		}
 	}
 	&-loading {

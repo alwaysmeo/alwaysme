@@ -18,7 +18,7 @@ $namespace-base: #{$namespace}-timeline-item;
 		display: block;
 		width: 1px;
 		height: 100%;
-		background-color: var(--#{$namespace}-border-color-30);
+		background-color: var(--#{$namespace}-gray-color-30);
 	}
 
 	&-container {

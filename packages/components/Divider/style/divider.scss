@@ -19,7 +19,7 @@ $namespace-base: #{$namespace}-divider;
 		width: 50%;
 		transform: translateY(50%);
 		border-top-width: 1px;
-		border-top-color: var(--#{$namespace}-border-color-30);
+		border-top-color: var(--#{$namespace}-gray-color-30);
 		border-top-style: solid;
 	}
 
@@ -65,6 +65,6 @@ $namespace-base: #{$namespace}-divider;
 		height: 0.9em;
 		width: 1px;
 		vertical-align: middle;
-		background-color: var(--#{$namespace}-border-color-30);
+		background-color: var(--#{$namespace}-gray-color-30);
 	}
 }
