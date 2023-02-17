@@ -1,7 +1,6 @@
 $namespace-base: #{$namespace}-button;
 
 .#{$namespace-base} {
-	margin: 4px;
 	position: relative;
 	padding: 7px 15px;
 	color: var(--#{$namespace}-font-color);
