@@ -1,9 +1,17 @@
-<!-- 标签组件 -->
+<!-- 开关组件 -->
 <template>
 	<div :class="classes" :style="styles">
-		<span v-if="props.type === 'block'" :class="`${namespace}-switch-text`">{{ props.text[Number(!state.value)] }}</span>
+		<div v-if="props.type === 'block'" :class="`${namespace}-switch-text`">
+			<slot v-if="slots['on-icon'] && state.value" name="on-icon" />
+			<slot v-else-if="slots['off-icon']" name="off-icon" />
+			<span v-else>{{ props.text[Number(!state.value)] }}</span>
+		</div>
 		<div :class="`${namespace}-switch-handle`">
-			<span v-if="props.type === 'default'" :class="`${namespace}-switch-text`">{{ props.text[Number(!state.value)] }}</span>
+			<template v-if="props.type === 'default'">
+				<slot v-if="slots['on-icon'] && state.value" name="on-icon" />
+				<slot v-else-if="slots['off-icon']" name="off-icon" />
+				<span v-else>{{ props.text[Number(!state.value)] }}</span>
+			</template>
 		</div>
 		<input
 			v-model="state.value"
@@ -18,6 +26,8 @@
 </template>
 
 <script setup lang="ts">
+	const slots = useSlots()
+
 	const emits = defineEmits<{
 		(key: 'onChange', value: boolean): void
 		(key: 'update:value', value: boolean): void

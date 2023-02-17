@@ -95,7 +95,14 @@
 		</div> -->
 
 		<div>
-			<me-switch width="10rem"></me-switch>
+			<me-switch width="10rem">
+				<template #on-icon>
+					<me-icon name="arrow-left-solid" />
+				</template>
+				<template #off-icon>
+					<me-icon name="arrow-right-solid" />
+				</template>
+			</me-switch>
 			<me-switch shape="square" on-color="var(--me-danger-color)"></me-switch>
 			<me-switch shape="round" on-color="var(--me-success-color)" disabled></me-switch>
 			<me-switch type="block" on-color="var(--me-warning-color)"></me-switch>

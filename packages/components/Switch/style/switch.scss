@@ -33,15 +33,16 @@ $namespace-base: #{$namespace}-switch;
 
 	&-handle {
 		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
 		font-size: 10px;
 		font-weight: bold;
-		line-height: 24px;
 		user-select: none;
-		text-align: center;
 		transition: left 0.3s, width 0.3s, background-color 0.3s;
 	}
 
@@ -85,7 +86,7 @@ $namespace-base: #{$namespace}-switch;
 			.#{$namespace-base}-text {
 				color: var(--#{$namespace}-white-color);
 				right: calc(var(--#{$namespace-base}-width) - 20px);
-				text-align: left;
+				justify-content: left;
 			}
 		}
 		&[class*='checked']:not([class*='disabled']):active .#{$namespace-base}-handle {
@@ -94,7 +95,9 @@ $namespace-base: #{$namespace}-switch;
 
 		.#{$namespace-base}-text {
 			position: absolute;
-			display: inline-block;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			padding: 0 6px;
 			top: 0;
 			left: 0;
@@ -103,8 +106,7 @@ $namespace-base: #{$namespace}-switch;
 			color: var(--#{$namespace-base}-off-color);
 			font-size: 10px;
 			font-weight: bold;
-			text-align: right;
-			line-height: 24px;
+			justify-content: right;
 			user-select: none;
 		}
 	}
