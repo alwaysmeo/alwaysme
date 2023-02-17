@@ -13,7 +13,7 @@
 			:name="props.name"
 			@change="onChange"
 		/>
-		<div v-if="props.disabled" :class="`${namespace}-switch-disabled-mask`"></div>
+		<div v-if="props.disabled" :class="`${namespace}-disabled-mask`"></div>
 	</div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
 	<div class="always-me">
-		<div>
+		<!-- <div>
 			<me-button type="primary" long @click="handleClick">按钮</me-button>
 			<me-button type="primary" shape="round" loading />
 			<me-button type="dashed" shape="round">按钮</me-button>
@@ -92,10 +92,10 @@
 			<me-tag color="#147ffa" shape="square">标签4</me-tag>
 			<me-tag color="blue" closable>标签5</me-tag>
 			<me-tag color="arcoblue">标签5</me-tag>
-		</div>
+		</div> -->
 
 		<div>
-			<me-switch></me-switch>
+			<me-switch width="10rem"></me-switch>
 			<me-switch shape="square" on-color="var(--me-danger-color)"></me-switch>
 			<me-switch shape="round" on-color="var(--me-success-color)" disabled></me-switch>
 			<me-switch type="block" on-color="var(--me-warning-color)"></me-switch>

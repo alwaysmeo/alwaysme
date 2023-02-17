@@ -1,6 +1,7 @@
 $namespace-base: #{$namespace}-stepper;
 
 .#{$namespace-base} {
+	overflow: hidden;
 	position: relative;
 	display: inline-flex;
 	align-items: center;
@@ -12,12 +13,6 @@ $namespace-base: #{$namespace}-stepper;
 	&,
 	&::after {
 		border-radius: var(--#{$namespace}-radius-base);
-	}
-
-	&-disabled {
-		background-color: var(--#{$namespace}-gray-color-10);
-		color: var(--#{$namespace}-gray-color-40);
-		cursor: not-allowed;
 	}
 
 	&-minus,
@@ -55,9 +50,7 @@ $namespace-base: #{$namespace}-stepper;
 	&-input {
 		input {
 			&[disabled] {
-				background-color: var(--#{$namespace}-gray-color-10);
 				color: var(--#{$namespace}-gray-color-40);
-				cursor: not-allowed;
 			}
 			box-sizing: border-box;
 			width: var(--#{$namespace-base}-input-width);

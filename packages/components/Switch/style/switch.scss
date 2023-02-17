@@ -7,25 +7,26 @@ $namespace-base: #{$namespace}-switch;
 	width: var(--#{$namespace-base}-width);
 	height: 24px;
 	transition: background-color 0.3s;
+	background-color: var(--#{$namespace}-theme-color);
 
 	// shape
 	&-shape-default,
 	&-shape-default::after,
-	&-shape-default &-disabled-mask,
+	&-shape-default .#{$namespace}-disabled-mask,
 	&-shape-default &-handle {
 		border-radius: var(--#{$namespace}-radius-base);
 	}
 
 	&-shape-round,
 	&-shape-round::after,
-	&-shape-round &-disabled-mask,
+	&-shape-round .#{$namespace}-disabled-mask,
 	&-shape-round &-handle {
 		border-radius: var(--#{$namespace}-radius-round);
 	}
 
 	&-shape-square,
 	&-shape-square::after,
-	&-shape-square &-disabled-mask,
+	&-shape-square .#{$namespace}-disabled-mask,
 	&-shape-square &-handle {
 		border-radius: var(--#{$namespace}-radius-square);
 	}
@@ -39,6 +40,7 @@ $namespace-base: #{$namespace}-switch;
 		font-size: 10px;
 		font-weight: bold;
 		line-height: 24px;
+		user-select: none;
 		text-align: center;
 		transition: left 0.3s, width 0.3s, background-color 0.3s;
 	}
@@ -103,6 +105,7 @@ $namespace-base: #{$namespace}-switch;
 			font-weight: bold;
 			text-align: right;
 			line-height: 24px;
+			user-select: none;
 		}
 	}
 
@@ -119,16 +122,5 @@ $namespace-base: #{$namespace}-switch;
 		border: 0;
 		cursor: pointer;
 		opacity: 0;
-	}
-
-	&-disabled-mask {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-color: var(--#{$namespace}-gray-color-20);
-		opacity: 0.5;
-		cursor: not-allowed;
 	}
 }
