@@ -1,0 +1,134 @@
+$namespace-base: #{$namespace}-switch;
+
+.#{$namespace-base} {
+	margin: 4px;
+	position: relative;
+	display: inline-block;
+	width: var(--#{$namespace-base}-width);
+	height: 24px;
+	transition: background-color 0.3s;
+
+	// shape
+	&-shape-default,
+	&-shape-default::after,
+	&-shape-default &-disabled-mask,
+	&-shape-default &-handle {
+		border-radius: var(--#{$namespace}-radius-base);
+	}
+
+	&-shape-round,
+	&-shape-round::after,
+	&-shape-round &-disabled-mask,
+	&-shape-round &-handle {
+		border-radius: var(--#{$namespace}-radius-round);
+	}
+
+	&-shape-square,
+	&-shape-square::after,
+	&-shape-square &-disabled-mask,
+	&-shape-square &-handle {
+		border-radius: var(--#{$namespace}-radius-square);
+	}
+
+	&-handle {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		font-size: 10px;
+		font-weight: bold;
+		line-height: 24px;
+		text-align: center;
+		transition: left 0.3s, width 0.3s, background-color 0.3s;
+	}
+
+	&-type-default {
+		.#{$namespace-base}-handle {
+			width: 28px;
+			height: 24px;
+			color: var(--#{$namespace}-white-color);
+			background-color: var(--#{$namespace-base}-off-color);
+		}
+		&:active:not([class*='disabled']) .#{$namespace-base}-handle {
+			width: calc(var(--#{$namespace-base}-width) / 1);
+		}
+		&[class*='checked'] .#{$namespace-base}-handle {
+			left: calc(var(--#{$namespace-base}-width) - 28px);
+			background-color: var(--#{$namespace-base}-on-color);
+		}
+		&[class*='checked']:active:not([class*='disabled']) .#{$namespace-base}-handle {
+			left: calc(var(--#{$namespace-base}-width) / 1 - var(--#{$namespace-base}-width));
+		}
+		.#{$namespace-base}-checkbox {
+			background-color: var(--#{$namespace}-theme-color);
+		}
+	}
+
+	&-type-block {
+		.#{$namespace-base}-handle {
+			margin: 2px;
+			width: 20px;
+			height: 20px;
+			background-color: var(--#{$namespace}-white-color);
+		}
+		&:not([class*='disabled']):active .#{$namespace-base}-handle {
+			width: calc(var(--#{$namespace-base}-width) / 1 - 4px);
+		}
+		&[class*='checked'] {
+			background-color: var(--#{$namespace-base}-on-color);
+			.#{$namespace-base}-handle {
+				left: calc(var(--#{$namespace-base}-width) - 24px);
+			}
+			.#{$namespace-base}-text {
+				color: var(--#{$namespace}-white-color);
+				right: calc(var(--#{$namespace-base}-width) - 20px);
+				text-align: left;
+			}
+		}
+		&[class*='checked']:not([class*='disabled']):active .#{$namespace-base}-handle {
+			left: calc(var(--#{$namespace-base}-width) / 1 - (var(--#{$namespace-base}-width)));
+		}
+
+		.#{$namespace-base}-text {
+			position: absolute;
+			display: inline-block;
+			padding: 0 6px;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			color: var(--#{$namespace-base}-off-color);
+			font-size: 10px;
+			font-weight: bold;
+			text-align: right;
+			line-height: 24px;
+		}
+	}
+
+	.#{$namespace-base}-shape-default {
+		border-radius: calc(var(--#{$namespace}-radius-base) - 2px);
+	}
+	&-checkbox {
+		position: relative;
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		width: var(--#{$namespace-base}-width);
+		height: 24px;
+		border: 0;
+		cursor: pointer;
+		opacity: 0;
+	}
+
+	&-disabled-mask {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: var(--#{$namespace}-gray-color-20);
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+}

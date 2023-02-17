@@ -94,7 +94,14 @@
 			<me-tag color="arcoblue">标签5</me-tag>
 		</div>
 
-		<div></div>
+		<div>
+			<me-switch></me-switch>
+			<me-switch shape="square" on-color="var(--me-danger-color)"></me-switch>
+			<me-switch shape="round" on-color="var(--me-success-color)" disabled></me-switch>
+			<me-switch type="block" on-color="var(--me-warning-color)"></me-switch>
+			<me-switch type="block" shape="square"></me-switch>
+			<me-switch type="block" shape="round" disabled></me-switch>
+		</div>
 	</div>
 </template>
 

@@ -7,5 +7,6 @@ import { Image } from '@components/Image'
 import { Mask } from '@components/Mask'
 import { Stepper } from '@components/Stepper'
 import { Tag } from '@components/Tag'
+import { Switch } from '@components/Switch'
 
-export default [Icon, Button, Link, Divider, Timeline, Image, Mask, Stepper, Tag]
+export default [Icon, Button, Link, Divider, Timeline, Image, Mask, Stepper, Tag, Switch]
