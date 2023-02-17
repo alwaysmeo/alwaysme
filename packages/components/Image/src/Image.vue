@@ -1,6 +1,6 @@
 <!-- 图片组件 -->
 <template>
-	<div :class="`${namespace}-box-shadow ${namespace}-image`" :style="styles" :data-status="state.failed">
+	<div :class="classes" :style="styles" :data-status="state.failed">
 		<img v-show="!state.failed" :class="`${namespace}-image-img`" :src="props.src" :alt="props.alt" @load="load" @error="error" />
 		<div v-if="state.failed" :class="`${namespace}-image-img-failed`">
 			<component
@@ -81,6 +81,16 @@
 	const state = reactive<State>({
 		failed: true,
 		visible: false
+	})
+
+	const classes = computed(() => {
+		return [
+			`${namespace}-box-shadow`,
+			`${namespace}-image`,
+			{
+				[`${namespace}-image-disabled`]: state.failed
+			}
+		]
 	})
 
 	const styles = computed(() => {
