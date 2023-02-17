@@ -1,22 +1,23 @@
 $namespace-base: #{$namespace}-stepper;
 
 .#{$namespace-base} {
+	position: relative;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: var(--#{$namespace}-radius-base);
 	border: 1px solid var(--#{$namespace}-border-color-30);
 	background-color: var(--#{$namespace}-theme-color);
-	box-shadow: var(--#{$namespace}-box-shadow-color);
 	transition: box-shadow 0.3s;
 
-	&[data-disabled='true'] {
+	&,
+	&::after {
+		border-radius: var(--#{$namespace}-radius-base);
+	}
+
+	&-disabled {
 		background-color: var(--#{$namespace}-disabled-color-10);
 		color: var(--#{$namespace}-disabled-color-40);
 		cursor: not-allowed;
-	}
-	&[data-disabled='false']:hover {
-		box-shadow: var(--#{$namespace}-box-shadow-hover-color);
 	}
 
 	&-minus,

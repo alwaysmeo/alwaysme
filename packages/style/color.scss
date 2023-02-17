@@ -12,13 +12,13 @@ $colors: (
 
 $themes: (
 	light: (
-		theme-color: #eceff2,
+		theme-color: #dfe3e6,
 		theme-opposite-color: #22272e,
 		font-color: #3c3e42
 	),
 	dark: (
 		theme-color: #22272e,
-		theme-opposite-color: #eceff2,
+		theme-opposite-color: #dfe3e6,
 		font-color: #dddee0
 	)
 );
@@ -53,10 +53,6 @@ html[data-theme='dark'] {
 html {
 	// TODO: 主色调+副色调混色
 	@for $i from 1 to 10 {
-		--#{$namespace}-primary-secondary-color-#{$i * 10}: #{mix(
-				map-get($colors, primary-color),
-				map-get($colors, secondary-color),
-				10% * $i
-			)};
+		--#{$namespace}-primary-secondary-color-#{$i * 10}: #{mix(map-get($colors, primary-color), map-get($colors, secondary-color), 10% * $i)};
 	}
 }

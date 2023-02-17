@@ -1,6 +1,6 @@
 <!-- 图片组件 -->
 <template>
-	<div :class="`${namespace}-image`" :style="styles" :data-status="state.failed">
+	<div :class="`${namespace}-box-shadow ${namespace}-image`" :style="styles" :data-status="state.failed">
 		<img
 			v-show="!state.failed"
 			:class="`${namespace}-image-img`"

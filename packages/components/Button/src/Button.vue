@@ -27,6 +27,7 @@
 
 	const classes = computed(() => {
 		return [
+			`${namespace}-box-shadow`,
 			`${namespace}-button`,
 			`${namespace}-button-type-${props.type}`,
 			`${namespace}-button-shape-${props.shape}`,

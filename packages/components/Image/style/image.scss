@@ -3,14 +3,13 @@ $namespace-base: #{$namespace}-image;
 .#{$namespace-base} {
 	position: relative;
 	display: inline-block;
-	border-radius: var(--#{$namespace}-radius-base);
 	width: var(--#{$namespace-base}-width);
 	height: var(--#{$namespace-base}-height);
 	transition: box-shadow 0.3s;
-	box-shadow: var(--#{$namespace}-box-shadow-color);
 
-	&:not(.#{$namespace-base}[data-status='true']):hover {
-		box-shadow: var(--#{$namespace}-box-shadow-hover-color);
+	&,
+	&::after {
+		border-radius: var(--#{$namespace}-radius-base);
 	}
 
 	&-img {

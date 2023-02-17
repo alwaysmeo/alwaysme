@@ -1,16 +1,13 @@
 $namespace-base: #{$namespace}-button;
 
 .#{$namespace-base} {
+	margin: 4px;
+	position: relative;
 	padding: 7px 15px;
 	color: var(--#{$namespace}-font-color);
 	border: 1px solid transparent;
-	transition: box-shadow 0.3s, border 0.3s, color 0.3s, background-color 0.3s;
-	box-shadow: var(--#{$namespace}-box-shadow-color);
+	transition: border 0.3s, color 0.3s, background-color 0.3s;
 	cursor: pointer;
-
-	&:not(.#{$namespace-base}-loading):not(.#{$namespace-base}-disabled):hover {
-		box-shadow: var(--#{$namespace}-box-shadow-hover-color);
-	}
 
 	// type
 	&-type-default {
@@ -33,13 +30,16 @@ $namespace-base: #{$namespace}-button;
 	}
 
 	// shape
-	&-shape-default {
+	&-shape-default,
+	&-shape-default::after {
 		border-radius: var(--#{$namespace}-radius-base);
 	}
-	&-shape-square {
+	&-shape-square,
+	&-shape-square::after {
 		border-radius: var(--#{$namespace}-radius-square);
 	}
-	&-shape-round {
+	&-shape-round,
+	&-shape-round::after {
 		border-radius: 16px;
 	}
 

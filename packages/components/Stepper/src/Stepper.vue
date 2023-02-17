@@ -1,7 +1,11 @@
 <!-- 步进器组件 -->
 <template>
-	<div :class="`${namespace}-stepper`" :style="styles" :data-disabled="props.disabled">
-		<div :class="`${namespace}-stepper-minus`" :data-disabled="props.disabled || state.value <= props.min" @click="minus">
+	<div :class="classes" :style="styles">
+		<div
+			:class="`${namespace}-stepper-minus`"
+			:data-disabled="props.disabled || state.value <= props.min"
+			@click="minus"
+		>
 			<component :is="`${namespace}-icon`" name="minus" size="16" data-type="minus" />
 		</div>
 		<div :class="`${namespace}-stepper-input`">
@@ -47,10 +51,22 @@
 		value: computed(() => props.defaultValue).value
 	})
 
+	const classes = computed(() => {
+		return [
+			`${namespace}-box-shadow`,
+			`${namespace}-stepper`,
+			{
+				[`${namespace}-stepper-disabled`]: props.disabled
+			}
+		]
+	})
+
 	const styles = computed(() => {
 		return {
 			[`--${namespace}-stepper-height`]: isNaN(<number>props.height) ? props.height : `${props.height}px`,
-			[`--${namespace}-stepper-input-width`]: isNaN(<number>props.inputWidth) ? props.inputWidth : `${props.inputWidth}px`
+			[`--${namespace}-stepper-input-width`]: isNaN(<number>props.inputWidth)
+				? props.inputWidth
+				: `${props.inputWidth}px`
 		}
 	})
 

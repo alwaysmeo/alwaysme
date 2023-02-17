@@ -34,10 +34,8 @@ img {
 // TODO: 亮主题公共样式
 html:not(html[data-theme='dark']),
 html[data-theme='light'] {
-	--#{$namespace}-box-shadow-color: -2px -2px 4px 0 var(--#{$namespace}-white-color),
-		2px 2px 4px 0 var(--#{$namespace}-black-color-50);
-	--#{$namespace}-box-shadow-hover-color: -2px -2px 4px 2px var(--#{$namespace}-white-color),
-		2px 2px 4px 2px var(--#{$namespace}-black-color-50);
+	--#{$namespace}-box-shadow-color: -2px -2px 4px 0 var(--#{$namespace}-white-color), 2px 2px 4px 0 var(--#{$namespace}-black-color-50);
+	--#{$namespace}-box-shadow-hover-color: -2px -2px 4px 2px var(--#{$namespace}-white-color), 2px 2px 4px 2px var(--#{$namespace}-black-color-50);
 	@for $i from 1 to 10 {
 		--#{$namespace}-disabled-color-#{$i * 10}: var(--#{$namespace}-black-color-#{$i * 10});
 		--#{$namespace}-border-color-#{$i * 10}: var(--#{$namespace}-black-color-#{$i * 10});
@@ -46,12 +44,29 @@ html[data-theme='light'] {
 
 // TODO: 暗主题公共样式
 html[data-theme='dark'] {
-	--#{$namespace}-box-shadow-color: -2px -2px 4px 0 var(--#{$namespace}-white-color-10),
-		2px 2px 4px 0 var(--#{$namespace}-black-color-80);
-	--#{$namespace}-box-shadow-hover-color: -2px -2px 4px 2px var(--#{$namespace}-white-color-10),
-		2px 2px 4px 2px var(--#{$namespace}-black-color-80);
+	--#{$namespace}-box-shadow-color: -2px -2px 4px 0 var(--#{$namespace}-white-color-10), 2px 2px 4px 0 var(--#{$namespace}-black-color-80);
+	--#{$namespace}-box-shadow-hover-color: -2px -2px 4px 1px var(--#{$namespace}-white-color-20), 2px 2px 4px 2px var(--#{$namespace}-black-color-90);
 	@for $i from 1 to 10 {
 		--#{$namespace}-disabled-color-#{$i * 10}: var(--#{$namespace}-white-color-#{$i * 10});
 		--#{$namespace}-border-color-#{$i * 10}: var(--#{$namespace}-white-color-#{$i * 10});
+	}
+}
+
+// TODO: 全局公共样式
+.#{$namespace}-box-shadow::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	transition: box-shadow 0.3s;
+	box-shadow: var(--#{$namespace}-box-shadow-color);
+	z-index: -1;
+}
+
+.#{$namespace}-box-shadow:not([class*='loading']):not([class*='disabled']):hover {
+	&::after {
+		box-shadow: var(--#{$namespace}-box-shadow-hover-color);
 	}
 }

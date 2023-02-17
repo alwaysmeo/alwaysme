@@ -1,6 +1,7 @@
 $namespace-base: #{$namespace}-tag;
 
 .#{$namespace-base} {
+	position: relative;
 	box-sizing: border-box;
 	display: inline-flex;
 	align-items: center;
@@ -12,11 +13,7 @@ $namespace-base: #{$namespace}-tag;
 	text-overflow: ellipsis;
 	vertical-align: middle;
 	background-color: var(--#{$namespace-base}-background-color);
-	box-shadow: var(--#{$namespace}-box-shadow-color);
 	transition: box-shadow 0.3s;
-	&:hover {
-		box-shadow: var(--#{$namespace}-box-shadow-hover-color);
-	}
 
 	> .#{$namespace}-icon {
 		&[data-type='icon'] {
@@ -40,11 +37,13 @@ $namespace-base: #{$namespace}-tag;
 		line-height: 30px;
 	}
 	// shape
-	&-shape-default {
+	&-shape-default,
+	&-shape-default::after {
 		border-radius: var(--#{$namespace}-radius-base);
 	}
 
-	&-shape-square {
+	&-shape-square,
+	&-shape-square::after {
 		border-radius: var(--#{$namespace}-radius-square);
 	}
 }
