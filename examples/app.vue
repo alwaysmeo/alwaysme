@@ -1,44 +1,6 @@
 <template>
-	<div class="always-me">
-		<!-- <div>
-			<me-button type="primary" long @click="handleClick">按钮</me-button>
-			<me-button type="primary" shape="round" loading />
-			<me-button type="dashed" shape="round">按钮</me-button>
-			<me-button type="solid" shape="round">按钮</me-button>
-			<me-button shape="round">按钮</me-button>
-		</div>
-		<div>
-			<me-button type="primary">按钮</me-button>
-			<me-button>按钮</me-button>
-			<me-button type="dashed">按钮</me-button>
-			<me-button type="solid">按钮</me-button>
-		</div>
-		<div>
-			<me-button type="primary" disabled>按钮</me-button>
-			<me-button disabled>按钮</me-button>
-			<me-button type="dashed" disabled>按钮</me-button>
-			<me-button type="solid" disabled>按钮</me-button>
-		</div>
-		<div>
-			<me-button type="primary" loading>按钮</me-button>
-			<me-button loading>按钮</me-button>
-			<me-button type="dashed" loading>按钮</me-button>
-			<me-button type="solid" loading>按钮</me-button>
-		</div>
-		<div>
-			<me-button type="primary" ghost>按钮</me-button>
-			<me-button ghost>按钮</me-button>
-			<me-button type="dashed" ghost>按钮</me-button>
-			<me-button type="solid" ghost>按钮</me-button>
-		</div>
-
-		<div>
-			<me-link underline>链接1</me-link>
-			<me-link disabled>链接2</me-link>
-			<me-link>链接3</me-link>
-		</div>
-
-		<div>
+	<me-space class="always-me" direction="vertical">
+		<div style="width: 800px">
 			<me-divider textalign="center" dashed>Text</me-divider>
 			<me-divider textalign="center" />
 			<div>
@@ -50,47 +12,87 @@
 			</div>
 		</div>
 
+		<div style="width: 300px">
+			<me-button type="primary" long @click="handleClick">按钮</me-button>
+		</div>
+		<me-space>
+			<me-button type="primary" shape="round" loading />
+			<me-button type="dashed" shape="round">按钮</me-button>
+			<me-button type="solid" shape="round">按钮</me-button>
+			<me-button shape="round">按钮</me-button>
+		</me-space>
+		<me-space>
+			<me-button type="primary">按钮</me-button>
+			<me-button>按钮</me-button>
+			<me-button type="dashed">按钮</me-button>
+			<me-button type="solid">按钮</me-button>
+		</me-space>
+		<me-space>
+			<me-button type="primary" disabled>按钮</me-button>
+			<me-button disabled>按钮</me-button>
+			<me-button type="dashed" disabled>按钮</me-button>
+			<me-button type="solid" disabled>按钮</me-button>
+		</me-space>
+		<me-space>
+			<me-button type="primary" loading>按钮</me-button>
+			<me-button loading>按钮</me-button>
+			<me-button type="dashed" loading>按钮</me-button>
+			<me-button type="solid" loading>按钮</me-button>
+		</me-space>
+		<me-space>
+			<me-button type="primary" ghost>按钮</me-button>
+			<me-button ghost>按钮</me-button>
+			<me-button type="dashed" ghost>按钮</me-button>
+			<me-button type="solid" ghost>按钮</me-button>
+		</me-space>
+
+		<me-space>
+			<me-link underline>链接1</me-link>
+			<me-link disabled>链接2</me-link>
+			<me-link>链接3</me-link>
+		</me-space>
+
 		<div style="width: 400px">
 			<me-timeline position="left">
 				<me-timeline-item color="#147ffa">
 					<template #title>2022-02-21 12:00:00</template>
 					<div>内容内容内容内容内容内容内容内容</div>
 				</me-timeline-item>
-				<me-timeline-item title="2022-02-21 12:23:00">
+				<me-timeline-item title="2022-02-21 12:23:00" color="#147ffa">
 					<template #icon>
-						<me-icon name="collection-hollow" color="#147ffa" />
+						<me-icon name="collection-linear" size="14" />
 					</template>
-					<div>内容内容内容内容内容内容内容内容</div>
+					<div>内容内容</div>
 				</me-timeline-item>
 				<me-timeline-item>
 					<template #title>2022-02-21 12:00:00</template>
 					<div>内容内容内容内容内容内容内容内容</div>
 				</me-timeline-item>
 			</me-timeline>
-		</div> -->
+		</div>
 
-		<!-- <div>
+		<me-space>
 			<me-image v-for="item in url" :key="url" :src="item" :list="url" width="180px" height="100px"></me-image>
-			<me-image src="http://files.drcloud.me/2ab32929-3827-4807-a308-13d56753ffbe_" width="180px" height="100px"></me-image>
+			<me-image src="" width="180px" height="100px"></me-image>
 			<me-button type="primary" @click="visible = !visible">预览</me-button>
 			<me-image-preview :infinite="false" :list="url" v-model:visible="visible" />
-		</div>
+		</me-space>
 
-		<div>
+		<me-space>
 			<me-stepper v-model:value="value" disabled></me-stepper>
 			<me-stepper v-model:value="value"></me-stepper>
-		</div>
+		</me-space>
 
-		<div>
+		<me-space>
 			<me-tag closable icon="issues" size="small">标签1</me-tag>
 			<me-tag color="red" closable>标签2</me-tag>
 			<me-tag color="purple" closable closeIcon="push" size="large">标签3</me-tag>
 			<me-tag color="#147ffa" shape="square">标签4</me-tag>
 			<me-tag color="blue" closable>标签5</me-tag>
 			<me-tag color="arcoblue">标签5</me-tag>
-		</div>
+		</me-space>
 
-		<div>
+		<me-space>
 			<me-switch width="10rem" v-model:value="visible">
 				<template #on-icon>
 					<me-icon name="arrow-left-solid" />
@@ -104,8 +106,8 @@
 			<me-switch type="block" on-color="var(--me-warning-color)"></me-switch>
 			<me-switch type="block" shape="square"></me-switch>
 			<me-switch type="block" shape="round" disabled></me-switch>
-		</div> -->
-	</div>
+		</me-space>
+	</me-space>
 </template>
 
 <script setup lang="ts">
@@ -125,7 +127,8 @@
 
 <style scoped lang="scss">
 	.always-me {
-		height: 100vh;
+		box-sizing: border-box;
+		width: calc(100vw - 60px);
 		padding: 30px;
 	}
 </style>
