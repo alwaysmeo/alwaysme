@@ -10,7 +10,6 @@
 		<div :class="`${namespace}-stepper-push`" :data-disabled="props.disabled || state.value >= props.max" @click="push">
 			<component :is="`${namespace}-icon`" name="push" size="16" data-type="push" />
 		</div>
-		<div v-if="props.disabled" :class="`${namespace}-disabled-mask`"></div>
 	</div>
 </template>
 
@@ -53,6 +52,7 @@
 			`${namespace}-box-shadow`,
 			`${namespace}-stepper`,
 			{
+				[`${namespace}-disabled-mask`]: props.disabled,
 				[`${namespace}-stepper-disabled`]: props.disabled
 			}
 		]

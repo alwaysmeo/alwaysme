@@ -1,17 +1,18 @@
 $namespace-base: #{$namespace}-stepper;
 
 .#{$namespace-base} {
-	overflow: hidden;
+	margin: 10px;
 	position: relative;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	border: 1px solid var(--#{$namespace}-gray-color-30);
+	// border: 1px solid var(--#{$namespace}-gray-color-30);
 	background-color: var(--#{$namespace}-theme-color);
 	transition: box-shadow 0.3s;
 
 	&,
-	&::after {
+	&::after,
+	&::before  {
 		border-radius: var(--#{$namespace}-radius-base);
 	}
 
@@ -22,7 +23,6 @@ $namespace-base: #{$namespace}-stepper;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border-radius: var(--#{$namespace}-radius-base);
 		cursor: pointer;
 		> .#{$namespace}-icon {
 			user-select: none;
@@ -62,8 +62,8 @@ $namespace-base: #{$namespace}-stepper;
 			line-height: var(--#{$namespace-base}-height);
 			color: var(--#{$namespace}-font-color);
 			background-color: var(--#{$namespace}-theme-color);
-			border-left: 1px solid var(--#{$namespace}-gray-color-30);
-			border-right: 1px solid var(--#{$namespace}-gray-color-30);
+			border-left: 1px solid var(--#{$namespace}-gray-color-10);
+			border-right: 1px solid var(--#{$namespace}-gray-color-10);
 		}
 	}
 }

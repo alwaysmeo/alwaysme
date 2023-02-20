@@ -21,7 +21,6 @@
 			:name="props.name"
 			@change="onChange"
 		/>
-		<div v-if="props.disabled" :class="`${namespace}-disabled-mask`"></div>
 	</div>
 </template>
 
@@ -72,6 +71,7 @@
 			`${namespace}-switch-type-${props.type}`,
 			`${namespace}-switch-shape-${props.shape}`,
 			{
+				[`${namespace}-disabled-mask`]: props.disabled,
 				[`${namespace}-switch-disabled`]: props.disabled,
 				[`${namespace}-switch-checked`]: state.value
 			}

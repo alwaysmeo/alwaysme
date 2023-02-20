@@ -1,7 +1,6 @@
 $namespace-base: #{$namespace}-switch;
 
 .#{$namespace-base} {
-	margin: 4px;
 	position: relative;
 	display: inline-block;
 	width: var(--#{$namespace-base}-width);
@@ -12,21 +11,21 @@ $namespace-base: #{$namespace}-switch;
 	// shape
 	&-shape-default,
 	&-shape-default::after,
-	&-shape-default .#{$namespace}-disabled-mask,
+	&-shape-default::before,
 	&-shape-default &-handle {
 		border-radius: var(--#{$namespace}-radius-base);
 	}
 
 	&-shape-round,
 	&-shape-round::after,
-	&-shape-round .#{$namespace}-disabled-mask,
+	&-shape-round::before,
 	&-shape-round &-handle {
 		border-radius: var(--#{$namespace}-radius-round);
 	}
 
 	&-shape-square,
 	&-shape-square::after,
-	&-shape-square .#{$namespace}-disabled-mask,
+	&-shape-square::before,
 	&-shape-square &-handle {
 		border-radius: var(--#{$namespace}-radius-square);
 	}
