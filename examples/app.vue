@@ -1,6 +1,6 @@
 <template>
 	<div class="always-me">
-		<div>
+		<!-- <div>
 			<me-button type="primary" long @click="handleClick">按钮</me-button>
 			<me-button type="primary" shape="round" loading />
 			<me-button type="dashed" shape="round">按钮</me-button>
@@ -67,15 +67,11 @@
 					<div>内容内容内容内容内容内容内容内容</div>
 				</me-timeline-item>
 			</me-timeline>
-		</div>
+		</div> -->
 
-		<div>
+		<!-- <div>
 			<me-image v-for="item in url" :key="url" :src="item" :list="url" width="180px" height="100px"></me-image>
-			<me-image
-				src="http://files.drcloud.me/2ab32929-3827-4807-a308-13d56753ffbe_"
-				width="180px"
-				height="100px"
-			></me-image>
+			<me-image src="http://files.drcloud.me/2ab32929-3827-4807-a308-13d56753ffbe_" width="180px" height="100px"></me-image>
 			<me-button type="primary" @click="visible = !visible">预览</me-button>
 			<me-image-preview :infinite="false" :list="url" v-model:visible="visible" />
 		</div>
@@ -95,7 +91,7 @@
 		</div>
 
 		<div>
-			<me-switch width="10rem">
+			<me-switch width="10rem" v-model:value="visible">
 				<template #on-icon>
 					<me-icon name="arrow-left-solid" />
 				</template>
@@ -108,7 +104,7 @@
 			<me-switch type="block" on-color="var(--me-warning-color)"></me-switch>
 			<me-switch type="block" shape="square"></me-switch>
 			<me-switch type="block" shape="round" disabled></me-switch>
-		</div>
+		</div> -->
 	</div>
 </template>
 

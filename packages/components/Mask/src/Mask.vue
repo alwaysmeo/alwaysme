@@ -57,17 +57,17 @@
 		emits('onClose', event)
 	}
 
+	const keydownHandler = throttle((event: KeyboardEvent) => {
+		if (!state.visible) return
+		switch (event.code) {
+			case 'Escape':
+				props.closeOnPressEscape && close(event)
+				break
+		}
+		event.preventDefault()
+	}, 500)
+
 	onMounted(() => {
-		useEventListener(
-			document,
-			'keyup',
-			throttle((event: KeyboardEvent) => {
-				switch (event.code) {
-					case 'Escape':
-						props.closeOnPressEscape && close(event)
-						break
-				}
-			}, 1000)
-		)
+		useEventListener(document, 'keyup', keydownHandler)
 	})
 </script>

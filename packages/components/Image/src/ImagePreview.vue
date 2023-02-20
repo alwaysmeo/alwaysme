@@ -51,7 +51,6 @@
 
 <script setup lang="ts">
 	import { useEventListener } from '@vueuse/core'
-	const scopeEventListener = effectScope()
 
 	const emits = defineEmits<{
 		(key: 'switch', index: number): void // 切换图片触发的事件
@@ -158,16 +157,12 @@
 		event.preventDefault()
 	}
 
-	function registerEventListener() {
-		const mousewheelHandler = (event: WheelEvent) => {
-			event.deltaY > 0 ? state.transform.scale > 0.4 && (state.transform.scale -= 0.2) : (state.transform.scale += 0.2)
-		}
-		scopeEventListener.run(() => {
-			useEventListener(document, 'wheel', mousewheelHandler)
-		})
+	const mousewheelHandler = (event: WheelEvent) => {
+		if (!state.visible) return
+		event.deltaY > 0 ? state.transform.scale > 0.4 && (state.transform.scale -= 0.2) : (state.transform.scale += 0.2)
 	}
 
 	onMounted(() => {
-		registerEventListener()
+		useEventListener(document, 'mousewheel', mousewheelHandler)
 	})
 </script>
