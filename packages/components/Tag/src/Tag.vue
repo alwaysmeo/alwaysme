@@ -1,6 +1,6 @@
 <!-- 标签组件 -->
 <template>
-	<transition name="fade">
+	<transition name="fade-zoom">
 		<span v-if="state.visible" :class="classes" :style="styles">
 			<component
 				:is="`${namespace}-icon`"

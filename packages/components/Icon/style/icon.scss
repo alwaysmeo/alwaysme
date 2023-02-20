@@ -1,8 +1,14 @@
 $namespace-base: #{$namespace}-icon;
 
 .#{$namespace-base} {
-	font-size: var(--#{$namespace-base}-size);
-	color: var(--#{$namespace-base}-color);
-	line-height: var(--#{$namespace-base}-line-height);
+	width: 1em;
+	height: 1em;
+	font-size: calc(var(--#{$namespace-base}-size));
+	fill: var(--#{$namespace-base}-color);
 	vertical-align: middle;
+}
+
+.#{$namespace-base}-loading > use {
+	transform-origin: 50%;
+	animation: rotate 1.5s linear infinite;
 }

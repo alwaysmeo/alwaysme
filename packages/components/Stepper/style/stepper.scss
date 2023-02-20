@@ -12,7 +12,7 @@ $namespace-base: #{$namespace}-stepper;
 
 	&,
 	&::after,
-	&::before  {
+	&::before {
 		border-radius: var(--#{$namespace}-radius-base);
 	}
 
@@ -36,6 +36,9 @@ $namespace-base: #{$namespace}-stepper;
 		&[data-disabled='true'] {
 			color: var(--#{$namespace}-gray-color-40);
 			cursor: not-allowed;
+			> .#{$namespace}-icon {
+				fill: var(--#{$namespace}-gray-color-40);
+			}
 		}
 		&[data-disabled='false'] {
 			color: var(--#{$namespace}-font-color);

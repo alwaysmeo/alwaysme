@@ -2,7 +2,9 @@
 	<button :class="classes" :disabled="props.disabled" :type="props.htmlType" @click="onClick">
 		<component :is="`${namespace}-icon`" v-if="props.loading" name="loading" />
 		<slot v-if="slots.icon" name="icon" />
-		<slot />
+		<span :class="`${namespace}-button-text`">
+			<slot />
+		</span>
 	</button>
 </template>
 

@@ -11,6 +11,14 @@ $namespace-base: #{$namespace}-button;
 	transition: border 0.3s, color 0.3s, background-color 0.3s;
 	cursor: pointer;
 
+	&-text {
+		vertical-align: middle;
+	}
+
+	> .#{$namespace}-icon {
+		fill: var(--#{$namespace}-font-color);
+	}
+
 	// type
 	&-type-default {
 		background-color: var(--#{$namespace}-theme-color);
@@ -18,6 +26,9 @@ $namespace-base: #{$namespace}-button;
 	&-type-primary {
 		color: var(--#{$namespace}-white-color);
 		background-color: var(--#{$namespace}-primary-color);
+		> .#{$namespace}-icon {
+			fill: var(--#{$namespace}-white-color);
+		}
 	}
 	&-type-dashed,
 	&-type-solid {
@@ -56,12 +67,18 @@ $namespace-base: #{$namespace}-button;
 		&.#{$namespace-base}-type-primary {
 			color: var(--#{$namespace}-white-color-80);
 			background-color: var(--#{$namespace}-primary-color-60);
+			> .#{$namespace}-icon {
+				fill: var(--#{$namespace}-white-color-80);
+			}
 		}
 		&.#{$namespace-base}-type-default,
 		&.#{$namespace-base}-type-dashed,
 		&.#{$namespace-base}-type-solid {
 			color: var(--#{$namespace}-gray-color-20);
 			border-color: var(--#{$namespace}-gray-color-20);
+			> .#{$namespace}-icon {
+				fill: var(--#{$namespace}-gray-color-20);
+			}
 		}
 	}
 	&-loading {

@@ -4,21 +4,21 @@ $namespace-base: #{$namespace}-timeline-item;
 	position: relative;
 	&-icon {
 		height: 100%;
-		top: 0;
+		top: -2px;
 		position: absolute;
-		> .#{$namespace}-icon {
-			background-color: var(--#{$namespace}-theme-color);
-			color: var(--#{$namespace-base}-color);
-		}
 	}
 
-	&:not(:last-child) &-icon > .#{$namespace}-icon::after {
+	.#{$namespace}-icon {
+		fill: var(--#{$namespace-base}-color);
+	}
+
+	&:not(:last-child) &-icon::after {
 		content: '';
-		margin: 0 auto;
+		margin: -1px auto 0 auto;
 		display: block;
 		width: 1px;
-		height: 100%;
-		background-color: var(--#{$namespace}-gray-color-30);
+		height: calc(100% - 1em);
+		background-color: var(--#{$namespace}-gray-color-10);
 	}
 
 	&-container {
@@ -26,7 +26,6 @@ $namespace-base: #{$namespace}-timeline-item;
 	}
 
 	&-title {
-		padding-top: 2px;
 		font-weight: 700;
 		color: var(--#{$namespace-base}-color);
 		margin-bottom: 12px;

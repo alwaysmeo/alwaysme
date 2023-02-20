@@ -1,4 +1,5 @@
 import { App } from 'vue'
+import '@components/Icon/iconfont'
 import '@components/Icon/style/icon.scss'
 import Icon from '@components/Icon/src/Icon.vue'
 

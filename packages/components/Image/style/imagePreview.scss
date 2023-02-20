@@ -16,7 +16,7 @@ $namespace-base: #{$namespace}-image-preview;
 		transform: translate(-50%);
 		> .#{$namespace}-icon {
 			padding: 0 8px;
-			color: var(--#{$namespace}-white-color);
+			fill: var(--#{$namespace}-white-color);
 			transition: color 0.3s;
 			cursor: pointer;
 			&:hover {

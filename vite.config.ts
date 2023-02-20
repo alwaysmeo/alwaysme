@@ -3,12 +3,14 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import { visualizer } from 'rollup-plugin-visualizer'
 import AutoImport from 'unplugin-auto-import/vite'
 
 export default defineConfig({
 	plugins: [
 		vue(),
+		vueJsx(),
 		dts({ outputDir: 'es' }),
 		visualizer(),
 		AutoImport({
@@ -21,7 +23,7 @@ export default defineConfig({
 	css: {
 		preprocessorOptions: {
 			scss: {
-				additionalData: `$namespace: '${namespace}'; @import './packages/style/index.scss'; @import './packages/icon/iconfont.scss';`
+				additionalData: `$namespace: '${namespace}'; @import './packages/style/index.scss';`
 			}
 		}
 	},
