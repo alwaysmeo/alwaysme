@@ -21,7 +21,7 @@
 				/>
 			</div>
 			<div :class="`${namespace}-image-preview-close`" @click.stop="close">
-				<component :is="`${namespace}-icon`" name="close" size="18" line-height="36" />
+				<component :is="`${namespace}-icon`" name="close" size="18" />
 			</div>
 			<div :class="`${namespace}-image-preview-toolbar`" @click.stop="handleToolbar">
 				<component :is="`${namespace}-icon`" name="rotate-left" size="20" data-type="rotate-left" />
@@ -35,14 +35,14 @@
 					:data-status="!props.infinite && state.index === 0"
 					@click.stop="handleSwitch(state.index - 1)"
 				>
-					<component :is="`${namespace}-icon`" name="arrow-left" size="18" line-height="36" />
+					<component :is="`${namespace}-icon`" name="arrow-left" size="18" />
 				</div>
 				<div
 					:class="`${namespace}-image-preview-switch-right`"
 					:data-status="!props.infinite && state.index === state.list.length - 1"
 					@click.stop="handleSwitch(state.index + 1)"
 				>
-					<component :is="`${namespace}-icon`" name="arrow-right" size="18" line-height="36" />
+					<component :is="`${namespace}-icon`" name="arrow-right" size="18" />
 				</div>
 			</template>
 		</component>

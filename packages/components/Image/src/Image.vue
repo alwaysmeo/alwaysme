@@ -13,7 +13,7 @@
 		<div v-else-if="props.preview" :class="`${namespace}-image-mask`" @click.stop="handleMask">
 			<slot v-if="slots.mask" name="mask" />
 			<div v-else :class="`${namespace}-image-mask-text`">
-				<component :is="`${namespace}-icon`" name="eye" />
+				<component :is="`${namespace}-icon`" name="eye" :color="`var(--${namespace}-white-color)`" />
 				<span :style="`display: ${parseInt(props.width.toString()) >= 60 ? 'inline-block' : 'none'}`">预览</span>
 			</div>
 		</div>

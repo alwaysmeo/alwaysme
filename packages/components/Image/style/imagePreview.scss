@@ -17,10 +17,10 @@ $namespace-base: #{$namespace}-image-preview;
 		> .#{$namespace}-icon {
 			padding: 0 8px;
 			fill: var(--#{$namespace}-white-color);
-			transition: color 0.3s;
+			transition: fill 0.3s;
 			cursor: pointer;
 			&:hover {
-				color: var(--#{$namespace}-gray-color-30);
+				fill: var(--#{$namespace}-gray-color-30);
 			}
 		}
 	}
@@ -28,23 +28,29 @@ $namespace-base: #{$namespace}-image-preview;
 	&-switch-right,
 	&-close {
 		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		width: 36px;
 		height: 36px;
-		text-align: center;
-		color: var(--#{$namespace}-white-color);
 		background-color: #ffffff7f;
 		backdrop-filter: blur(var(--#{$namespace}-blur-base));
 		border-radius: 50%;
 		box-shadow: 0 0 8px 0 #0000004c;
-		transition: color 0.3s;
 		cursor: pointer;
-		&:hover {
-			color: var(--#{$namespace}-gray-color-30);
+		> .#{$namespace}-icon {
+			transition: fill 0.3s;
+			fill: var(--#{$namespace}-white-color);
+		}
+		&:hover > .#{$namespace}-icon {
+			fill: var(--#{$namespace}-gray-color-30);
 		}
 		&[data-status='true'] {
-			color: var(--#{$namespace}-gray-color-20);
 			background-color: #ffffff19;
 			cursor: not-allowed;
+			> .#{$namespace}-icon {
+				fill: var(--#{$namespace}-gray-color-20);
+			}
 		}
 	}
 	&-switch-left {

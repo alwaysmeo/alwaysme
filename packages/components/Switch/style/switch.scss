@@ -51,6 +51,9 @@ $namespace-base: #{$namespace}-switch;
 			height: 24px;
 			color: var(--#{$namespace}-white-color);
 			background-color: var(--#{$namespace-base}-off-color);
+			> .#{$namespace}-icon {
+				fill: var(--#{$namespace}-white-color);
+			}
 		}
 		&:active:not([class*='disabled']) .#{$namespace-base}-handle {
 			width: calc(var(--#{$namespace-base}-width) / 1);
