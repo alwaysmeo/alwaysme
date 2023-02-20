@@ -87,13 +87,13 @@
 			<me-tag closable icon="issues" size="small">标签1</me-tag>
 			<me-tag color="red" closable>标签2</me-tag>
 			<me-tag color="purple" closable closeIcon="push" size="large">标签3</me-tag>
-			<me-tag color="#147ffa" shape="square">标签4</me-tag>
+			<me-tag color="#147ffa" shape="square" closable>标签4</me-tag>
 			<me-tag color="blue" closable>标签5</me-tag>
 			<me-tag color="arcoblue">标签5</me-tag>
 		</me-space>
 
 		<me-space>
-			<me-switch width="10rem" v-model:value="visible">
+			<me-switch width="10rem">
 				<template #on-icon>
 					<me-icon name="arrow-left-solid" />
 				</template>

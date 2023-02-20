@@ -16,6 +16,7 @@ $namespace-base: #{$namespace}-tag;
 	transition: box-shadow 0.3s;
 
 	> .#{$namespace}-icon {
+		fill: var(--#{$namespace}-tag-color);
 		&[data-type='icon'] {
 			margin-right: 4px;
 		}

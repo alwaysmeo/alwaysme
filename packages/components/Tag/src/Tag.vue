@@ -8,7 +8,6 @@
 				data-type="icon"
 				:name="props.icon"
 				:size="{ small: 12, medium: 12, large: 14 }[props.size]"
-				:color="`var(--${namespace}-tag-color)`"
 			/>
 			<slot />
 			<component
@@ -17,7 +16,6 @@
 				data-type="close"
 				:name="props.closeIcon"
 				:size="{ small: 12, medium: 12, large: 14 }[props.size]"
-				:color="`var(--${namespace}-tag-color)`"
 				@click="close"
 			/>
 		</span>
