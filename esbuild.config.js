@@ -1,7 +1,6 @@
 import { build } from 'esbuild'
 import vue from 'esbuild-plugin-vue'
-import { sassPlugin } from 'esbuild-sass-plugin'
-import progress from 'esbuild-plugin-progress'
+import sassPlugin from 'esbuild-plugin-sass'
 import esbuildPluginBowserSync from 'esbuild-plugin-browser-sync'
 import components from './components.js'
 
@@ -24,7 +23,7 @@ async function buildLibrary() {
 			'.ttf': 'file',
 			'.woff': 'file'
 		},
-		plugins: [sassPlugin({}), vue(), progress()]
+		plugins: [vue()]
 	})
 
 	await build({
@@ -42,7 +41,7 @@ async function buildLibrary() {
 			'.ttf': 'dataurl',
 			'.woff': 'dataurl'
 		},
-		plugins: [sassPlugin({}), vue(), progress()]
+		plugins: [vue()]
 	})
 }
 
@@ -66,9 +65,8 @@ function buildExamples() {
 			'.woff': 'file'
 		},
 		plugins: [
-			sassPlugin({}),
+			sassPlugin(),
 			vue(),
-			progress(),
 			esbuildPluginBowserSync({
 				server: 'examples'
 			})

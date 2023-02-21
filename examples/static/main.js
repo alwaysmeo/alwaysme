@@ -13753,56 +13753,8 @@ Component that was made reactive: `, type);
   };
   var Switch_default2 = Switch_default;
 
-  // packages/components/Space/index.ts
-  init_config();
-  init_config();
-
-  // packages/components/Space/Space.tsx
-  init_config();
-  init_config();
-  var Space_default = defineComponent({
-    props: {
-      align: {
-        type: String,
-        default: "start"
-      },
-      direction: {
-        type: String,
-        default: "horizontal"
-      },
-      size: {
-        type: [String, Number],
-        default: "1rem"
-      }
-    },
-    setup(props, { slots }) {
-      const classes = computed2(() => {
-        return [`${namespace}-space`];
-      });
-      const styles = computed2(() => {
-        return {
-          [`--${namespace}-space-align`]: props.align,
-          [`--${namespace}-space-direction`]: { horizontal: "row", vertical: "column" }[props.direction],
-          [`--${namespace}-space-size`]: isNaN(props.size) ? props.size : `${props.size}px`
-        };
-      });
-      return () => {
-        return <div class={classes.value} style={styles.value}>{slots.default?.().map((item, index) => {
-          return <div key={item.key ?? `${namespace}-space-item-${index}`} class={`${namespace}-space-item`}>{item}</div>;
-        })}</div>;
-      };
-    }
-  });
-
-  // packages/components/Space/index.ts
-  Space_default.install = (app2) => {
-    app2.component(`${namespace}Space`, Space_default);
-    return app2;
-  };
-  var Space_default2 = Space_default;
-
   // packages/components.ts
-  var components_default = [Icon_default2, Button_default2, Link_default2, Divider_default2, Timeline_default2, Image_default2, Mask_default2, Stepper_default2, Tag_default2, Switch_default2, Space_default2];
+  var components_default = [Icon_default2, Button_default2, Link_default2, Divider_default2, Timeline_default2, Image_default2, Mask_default2, Stepper_default2, Tag_default2, Switch_default2];
 
   // packages/index.ts
   var install = (app2) => {
