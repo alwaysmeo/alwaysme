@@ -1,5 +1,6 @@
+import './style/index.scss'
 import { App } from 'vue'
-import components from '@/component'
+import components from './components'
 
 // Import components completely
 const install = (app: App) => {

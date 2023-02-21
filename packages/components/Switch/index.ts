@@ -1,10 +1,10 @@
 import { App } from 'vue'
-import '@components/Switch/style/switch.scss'
-import Switch from '@components/Switch/src/Switch.vue'
+import './style/switch.scss'
+import Switch from './src/Switch.vue'
 
 Switch.install = (app: App) => {
 	app.component(`${namespace}Switch`, Switch)
 	return app
 }
 
-export { Switch }
+export default Switch

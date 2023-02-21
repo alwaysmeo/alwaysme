@@ -1,6 +1,6 @@
 {
 	"name": "@alwaysme/design",
-	"version": "1.0.13-dev",
+	"version": "{{version}}-dev",
 	"private": false,
 	"title": "Alwaysme Design",
 	"description": "Alwaysme UI design language and Vue-based implementation",
@@ -14,12 +14,13 @@
 	"homepage": "https://www.alwaysme.org",
 	"author": "AlwaysMeo <hello2000@vip.qq.com>",
 	"license": "MIT",
-	"types": "./es/packages/index.d.ts",
-	"module": "./es/packages/main.es.js",
-	"main": "./lib/packages/main.cjs.js",
+	"type": "module",
+	"types": "./types/index.d.ts",
+	"module": "./lib/{{name}}.js",
+	"main": "./lib/{{name}}.js",
 	"exports": {
 		".": {
-			"types": "./es/packages/index.d.ts",
+			"types": "./types/index.d.ts",
 			"module": "./es/packages/main.es.js",
 			"main": "./lib/packages/main.cjs.js"
 		},
@@ -27,27 +28,45 @@
 	},
 	"style": "./es/style.css",
 	"files": [
-		"./es/",
-		"./lib/"
+		"lib",
+		"types",
+		"packages"
 	],
 	"repository": "https://github.com/Alwaysmeo/Alwaysme.git",
 	"scripts": {
-		"dev": "vite --host --mode dev",
-		"lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue packages",
-		"build": "vue-tsc --noEmit && vite build"
+		"serve": "npm run clean && node esbuild.config.js serve",
+		"build": "npm run clean && node esbuild.config.js",
+		"clean": "rimraf ./lib ./examples/static",
+		"lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue packages"
+	},
+	"dependencies": {
+		"@types/lodash": "^4.14.191",
+		"@types/lodash-es": "^4.17.6",
+		"@vueuse/core": "^9.12.0",
+		"lodash": "^4.17.21"
 	},
 	"devDependencies": {
-		"@types/lodash-es": "^4.17.6",
 		"@types/node": "^18.11.10",
 		"@types/sass": "^1.43.1",
 		"@typescript-eslint/eslint-plugin": "^5.45.1",
 		"@typescript-eslint/parser": "^5.45.1",
 		"@vitejs/plugin-vue": "^4.0.0",
 		"@vitejs/plugin-vue-jsx": "^3.0.0",
-		"@vueuse/core": "^9.12.0",
+		"@vue/compiler-sfc": "^3.2.47",
+		"autoprefixer": "^10.4.13",
+		"browser-sync": "^2.27.11",
+		"esbuild": "^0.15.6",
+		"esbuild-plugin-browser-sync": "^0.1.1",
+		"esbuild-plugin-progress": "^1.0.1",
+		"esbuild-plugin-vue": "^0.2.4",
+		"esbuild-sass-plugin": "^2.3.2",
 		"eslint": "^8.29.0",
 		"eslint-plugin-vue": "^9.8.0",
 		"mitt": "^3.0.0",
+		"postcss": "^8.4.16",
+		"postcss-import": "^15.0.0",
+		"postcss-minify": "^1.1.0",
+		"postcss-preset-env": "^7.8.0",
 		"prettier": "^2.7.1",
 		"rollup-plugin-visualizer": "^5.9.0",
 		"sass": "^1.56.1",

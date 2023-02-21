@@ -1,5 +1,10 @@
 # AlwaysMe-Design-Vue3
 
+### 📌 Introduction
+-   新拟态风格 AlwaysMe UI 组件库，基于 Vue3 开发，支持 TypeScript。
+
+    Neumorphism-style AlwaysMe UI component library, developed based on Vue3, supports TypeScript.
+
 ### 📌 Desc
 
 -   🔥 This project is in the development stage and should not be used in the production environment.
@@ -29,7 +34,7 @@
     import App from './App.vue'
 
     import AlwaysMe from '@alwaysme/design'
-    import '@alwaysme/design/style.css'
+    import '@alwaysme/design/index.css'
     createApp(App).use(AlwaysMe).mount('#app')
     ```
 
