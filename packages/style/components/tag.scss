@@ -1,0 +1,51 @@
+@import '../index.scss';
+$namespace-base: #{$namespace}-tag;
+
+.#{$namespace-base} {
+	position: relative;
+	box-sizing: border-box;
+	display: inline-flex;
+	align-items: center;
+	padding: 0 10px;
+	vertical-align: middle;
+	font-weight: 500;
+	color: var(--#{$namespace-base}-color);
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	vertical-align: middle;
+	background-color: var(--#{$namespace-base}-background-color);
+	transition: box-shadow 0.3s;
+
+	> .#{$namespace}-icon {
+		fill: var(--#{$namespace}-tag-color);
+		&[data-type='icon'] {
+			margin-right: 4px;
+		}
+		&[data-type='close'] {
+			margin-left: 4px;
+			cursor: pointer;
+		}
+	}
+	&-size-small {
+		font-size: 12px;
+		line-height: 20px;
+	}
+	&-size-medium {
+		font-size: 12px;
+		line-height: 24px;
+	}
+	&-size-large {
+		font-size: 14px;
+		line-height: 30px;
+	}
+	// shape
+	&-shape-default,
+	&-shape-default::after {
+		border-radius: var(--#{$namespace}-radius-base);
+	}
+
+	&-shape-square,
+	&-shape-square::after {
+		border-radius: var(--#{$namespace}-radius-square);
+	}
+}

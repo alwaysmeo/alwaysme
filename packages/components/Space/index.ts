@@ -1,6 +1,7 @@
 import { App } from 'vue'
-import './style/space.scss'
-import Space from './src/Space.tsx'
+import { namespace } from '../../utils/config'
+import '../../style/components/space.scss'
+import Space from './Space.tsx'
 
 Space.install = (app: App) => {
 	app.component(`${namespace}Space`, Space)

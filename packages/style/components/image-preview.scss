@@ -1,0 +1,104 @@
+@import '../index.scss';
+$namespace-base: #{$namespace}-image-preview;
+
+.#{$namespace-base} {
+	display: inline-block;
+	&-toolbar {
+		position: absolute;
+		bottom: 50px;
+		left: 50%;
+		padding: 12px;
+		display: flex;
+		align-items: content;
+		background-color: #ffffff7f;
+		backdrop-filter: blur(var(--#{$namespace}-blur-base));
+		border-radius: 32px;
+		box-shadow: 0 0 8px 0 #0000004c;
+		transform: translate(-50%);
+		> .#{$namespace}-icon {
+			padding: 0 8px;
+			fill: var(--#{$namespace}-white-color);
+			transition: fill 0.3s;
+			cursor: pointer;
+			&:hover {
+				fill: var(--#{$namespace}-gray-color-30);
+			}
+		}
+	}
+	&-switch-left,
+	&-switch-right,
+	&-close {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 36px;
+		height: 36px;
+		background-color: #ffffff7f;
+		backdrop-filter: blur(var(--#{$namespace}-blur-base));
+		border-radius: 50%;
+		box-shadow: 0 0 8px 0 #0000004c;
+		cursor: pointer;
+		> .#{$namespace}-icon {
+			transition: fill 0.3s;
+			fill: var(--#{$namespace}-white-color);
+		}
+		&:hover > .#{$namespace}-icon {
+			fill: var(--#{$namespace}-gray-color-30);
+		}
+		&[data-status='true'] {
+			background-color: #ffffff19;
+			cursor: not-allowed;
+			> .#{$namespace}-icon {
+				fill: var(--#{$namespace}-gray-color-20);
+			}
+		}
+	}
+	&-switch-left {
+		top: 50%;
+		left: 20px;
+		transform: translateY(-50%);
+		> .#{$namespace}-icon {
+			margin-left: -2px;
+		}
+	}
+	&-switch-right {
+		top: 50%;
+		right: 20px;
+		transform: translateY(-50%);
+		> .#{$namespace}-icon {
+			margin-right: -2px;
+		}
+	}
+	&-close {
+		top: 20px;
+		right: 20px;
+		> .#{$namespace}-icon {
+			font-size: 16px;
+		}
+	}
+	&-image {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		text-align: center;
+		vertical-align: middle;
+		&::before {
+			content: '';
+			display: inline-block;
+			width: 0;
+			height: 100%;
+			vertical-align: middle;
+		}
+		&-img {
+			max-width: 100%;
+			max-height: 100%;
+			cursor: grab;
+			transition: transform 0.3s;
+			transform: translate(var(--#{$namespace-base}-offsetX), var(--#{$namespace-base}-offsetY)) rotate(var(--#{$namespace-base}-rotate))
+				scale3d(var(--#{$namespace-base}-scale), var(--#{$namespace-base}-scale), 1);
+		}
+	}
+}

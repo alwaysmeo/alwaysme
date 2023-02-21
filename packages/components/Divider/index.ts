@@ -1,6 +1,7 @@
 import { App } from 'vue'
-import './style/divider.scss'
-import Divider from './src/Divider.vue'
+import { namespace } from '../../utils/config'
+import '../../style/components/divider.scss'
+import Divider from './Divider.vue'
 
 Divider.install = (app: App) => {
 	app.component(`${namespace}Divider`, Divider)

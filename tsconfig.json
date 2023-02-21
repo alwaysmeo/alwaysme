@@ -2,6 +2,7 @@
 	"compilerOptions": {
 		"target": "ESNext",
 		"useDefineForClassFields": true,
+		"jsxFragmentFactory": "Fragment",
 		"module": "ESNext",
 		"moduleResolution": "Node",
 		"strict": true,

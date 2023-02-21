@@ -1,6 +1,7 @@
 import { App } from 'vue'
-import './style/stepper.scss'
-import Stepper from './src/Stepper.vue'
+import { namespace } from '../../utils/config'
+import '../../style/components/stepper.scss'
+import Stepper from './Stepper.vue'
 
 Stepper.install = (app: App) => {
 	app.component(`${namespace}Stepper`, Stepper)

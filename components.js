@@ -9,5 +9,5 @@ export default {
 	Stepper: './packages/components/Stepper/index.ts',
 	Tag: './packages/components/Tag/index.ts',
 	Switch: './packages/components/Switch/index.ts',
-	Space: './packages/components/Space/index.ts'
+	// Space: './packages/components/Space/index.ts'
 }

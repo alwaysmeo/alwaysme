@@ -56,8 +56,10 @@ function buildExamples() {
 		format: 'iife',
 		watch: true,
 		sourcemap: true,
+		inject: ['./packages/utils/config.ts'],
 		loader: {
-			'.ts': 'ts',
+			'.js': 'jsx',
+			'.ts': 'tsx',
 			'.eot': 'file',
 			'.svg': 'file',
 			'.ttf': 'file',

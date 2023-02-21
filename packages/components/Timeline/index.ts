@@ -1,8 +1,9 @@
 import { App } from 'vue'
-import './style/timeline.scss';
-import './style/timelineItem.scss';
-import Timeline from './src/Timeline.vue'
-import TimelineItem from './src/TimelineItem.vue'
+import { namespace } from '../../utils/config'
+import '../../style/components/timeline.scss';
+import '../../style/components/timeline-item.scss';
+import Timeline from './Timeline.vue'
+import TimelineItem from './TimelineItem.vue'
 
 Timeline.install = (app: App) => {
 	app.component(`${namespace}Timeline`, Timeline)

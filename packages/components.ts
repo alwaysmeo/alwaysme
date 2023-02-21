@@ -11,4 +11,4 @@ import Tag from './components/Tag'
 import Switch from './components/Switch'
 import Space from './components/Space'
 
-export default [Icon, Button, Link, Divider, Timeline, Image, Mask, Stepper, Tag, Switch, Space]
+export default [Icon, Button, Link, Divider, Timeline, Image, Mask, Stepper, Tag, Switch]

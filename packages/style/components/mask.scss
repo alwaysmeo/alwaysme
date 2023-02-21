@@ -1,0 +1,15 @@
+@import '../index.scss';
+$namespace-base: #{$namespace}-mask;
+
+.#{$namespace-base} {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	user-select: none;
+	background: #00000066;
+	backdrop-filter: blur(var(--#{$namespace-base}-blur));
+	z-index: var(--#{$namespace-base}-zindex);
+}

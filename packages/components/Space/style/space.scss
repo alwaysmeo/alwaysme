@@ -1,9 +1,0 @@
-@import '../../../style/index.scss';
-$namespace-base: #{$namespace}-space;
-
-.#{$namespace-base} {
-	display: inline-flex;
-	align-items: var(--#{$namespace}-space-align);
-	flex-direction: var(--#{$namespace}-space-direction);
-	gap: var(--#{$namespace}-space-size);
-}

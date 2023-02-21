@@ -112,6 +112,7 @@
 </template>
 
 <script setup lang="ts">
+	import { ref } from 'vue'
 	const handleClick = (e: Event) => {
 		console.log(e)
 	}
