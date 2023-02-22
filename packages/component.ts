@@ -11,4 +11,17 @@ import { Switch } from '@components/Switch'
 import { Space } from '@components/Space'
 import { Tooltip } from '@components/Tooltip'
 
-export default [Icon, Button, Link, Divider, Timeline, Image, Mask, Stepper, Tag, Switch, Space, Tooltip]
+export default [
+	Icon,
+	Button,
+	Link,
+	Divider,
+	Timeline,
+	Image,
+	Mask,
+	Stepper,
+	Tag,
+	Switch,
+	Space,
+	Tooltip
+]
