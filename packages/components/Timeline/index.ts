@@ -1,7 +1,7 @@
 import { App } from 'vue'
 import '@style/components/timeline.scss';
 import '@style/components/timeline-item.scss';
-import Timeline from './Timeline.vue'
+import Timeline from './Timeline.tsx'
 import TimelineItem from './TimelineItem.vue'
 
 Timeline.install = (app: App) => {

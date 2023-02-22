@@ -53,20 +53,20 @@
 		</me-space>
 
 		<div style="width: 400px">
-			<me-timeline position="left">
+			<me-timeline :position="visible1 ? 'left' : 'right'">
 				<me-timeline-item color="#147ffa">
 					<template #title>2022-02-21 12:00:00</template>
-					<div>内容内容内容内容内容内容内容内容</div>
+					<div>我的内容内容内容内容内容内容内容内容</div>
 				</me-timeline-item>
 				<me-timeline-item title="2022-02-21 12:23:00" color="#147ffa">
 					<template #icon>
 						<me-icon name="collection-linear" size="14" />
 					</template>
-					<div>内容内容</div>
+					<div>我的内容内容</div>
 				</me-timeline-item>
 				<me-timeline-item>
 					<template #title>2022-02-21 12:00:00</template>
-					<div>内容内容内容内容内容内容内容内容</div>
+					<div>我的内容内容内容内容内容内容内容内容</div>
 				</me-timeline-item>
 			</me-timeline>
 		</div>
@@ -114,6 +114,7 @@
 <script setup lang="ts">
 	const handleClick = (e: Event) => {
 		console.log(e)
+		visible1.value = !visible1.value
 	}
 	const url = ref([
 		'http://files.drcloud.me/727788e6-5841-49fb-902e-5c5b3a240bc1',
@@ -122,6 +123,7 @@
 		'http://files.drcloud.me/50602bfc-b603-4b45-a629-b0f474601f29'
 	])
 	const visible = ref(false)
+	const visible1 = ref(false)
 	const show = ref(false)
 	const value = ref(1)
 </script>
