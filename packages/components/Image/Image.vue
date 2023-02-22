@@ -22,7 +22,7 @@
 			v-model:visible="state.visible"
 			:list="props.list"
 			:infinite="props.infinite"
-			:zindex="props.zindex ?? currentZIndex.value"
+			:zindex="props.zindex ?? currentZIndex"
 			:index="props.index ?? props.list.findIndex((item) => item === props.src)"
 			:mount="props.mount"
 			:close-on-press-escape="props.closeOnPressEscape"
@@ -55,7 +55,7 @@
 		preview?: boolean // 是否允许预览
 		list?: Array<string> // 预览列表
 		infinite?: boolean // 是否循环展示
-		zindex?: number // 设置预览层级
+		zindex?: number | string // 设置预览层级
 		index?: number // 初始预览索引
 		mount?: string // 挂载节点
 		closeOnPressEscape?: boolean // 是否支持按下 ESC 关闭预览

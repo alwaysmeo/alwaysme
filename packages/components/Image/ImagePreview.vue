@@ -5,7 +5,7 @@
 		<component
 			:is="`${namespace}-mask`"
 			v-model:visible="state.visible"
-			:zindex="props.zindex ?? currentZIndex.value"
+			:zindex="props.zindex ?? computedZIndex"
 			:mount="props.mount"
 			:close-on-press-escape="props.closeOnPressEscape"
 			@on-close="close"
@@ -48,9 +48,10 @@
 
 <script setup lang="ts">
 	import { useEventListener } from '@vueuse/core'
-	import { useZIndex } from '@hooks'
+	import { useTools, useZIndex } from '@hooks'
 
-	const { currentZIndex } = useZIndex()
+	const { isEmpty, transformNum } = useTools()
+	const { nextZIndex } = useZIndex()
 
 	const emits = defineEmits<{
 		(key: 'switch', index: number): void // 切换图片触发的事件
@@ -62,7 +63,7 @@
 		visible: boolean // 是否可见
 		list?: Array<string> // 预览列表
 		infinite?: boolean // 是否循环展示
-		zindex?: number // 设置预览层级
+		zindex?: number | string // 设置预览层级
 		index?: number // 初始预览索引
 		mount?: string // 挂载节点
 		closeOnPressEscape?: boolean // 是否支持按下 ESC 关闭预览
@@ -106,6 +107,10 @@
 			[`--${namespace}-image-preview-offsetX`]: `${state.transform.offsetX}px`,
 			[`--${namespace}-image-preview-offsetY`]: `${state.transform.offsetY}px`
 		}
+	})
+	console.log(isEmpty(''));
+	const computedZIndex = computed(() => {
+		return !isEmpty(props.zindex) ? transformNum(props.zindex || '') : nextZIndex()
 	})
 
 	function handleSwitch(index: number) {
