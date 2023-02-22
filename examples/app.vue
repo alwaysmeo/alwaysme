@@ -44,15 +44,15 @@
 			<me-button ghost>按钮</me-button>
 			<me-button type="dashed" ghost>按钮</me-button>
 			<me-button type="solid" ghost>按钮</me-button>
-		</me-space>
+		</me-space> -->
 
-		<me-space>
+		<!-- <me-space>
 			<me-link underline>链接1</me-link>
 			<me-link disabled>链接2</me-link>
 			<me-link>链接3</me-link>
-		</me-space>
+		</me-space> -->
 
-		<div style="width: 400px">
+		<!-- <div style="width: 400px">
 			<me-timeline :position="visible1 ? 'left' : 'right'">
 				<me-timeline-item color="#147ffa">
 					<template #title>2022-02-21 12:00:00</template>
@@ -69,7 +69,7 @@
 					<div>我的内容内容内容内容内容内容内容内容</div>
 				</me-timeline-item>
 			</me-timeline>
-		</div>
+		</div> -->
 
 		<me-space>
 			<me-image v-for="item in url" :key="url" :src="item" :list="url" width="180px" height="100px"></me-image>
@@ -78,7 +78,7 @@
 			<me-image-preview :infinite="false" :list="url" v-model:visible="visible" />
 		</me-space>
 
-		<me-space>
+		<!-- <me-space>
 			<me-stepper v-model:value="value" disabled></me-stepper>
 			<me-stepper v-model:value="value"></me-stepper>
 		</me-space>
@@ -107,7 +107,12 @@
 			<me-switch type="block" shape="square"></me-switch>
 			<me-switch type="block" shape="round" disabled></me-switch>
 		</me-space> -->
-		<me-space></me-space>
+
+		<me-space>
+			<me-tooltip>
+				<me-button>文字提示</me-button>
+			</me-tooltip>
+		</me-space>
 	</me-space>
 </template>
 
