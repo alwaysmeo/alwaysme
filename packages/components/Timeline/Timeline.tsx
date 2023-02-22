@@ -1,4 +1,5 @@
 // 时间轴组件
+import { mitt } from '@utils'
 
 export default defineComponent({
 	props: {

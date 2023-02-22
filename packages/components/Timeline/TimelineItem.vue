@@ -16,6 +16,8 @@
 </template>
 
 <script setup lang="ts">
+	import { mitt } from '@utils'
+
 	const slots = useSlots()
 
 	interface Props {
