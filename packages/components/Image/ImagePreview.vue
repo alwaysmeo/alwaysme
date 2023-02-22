@@ -23,11 +23,8 @@
 			<div :class="`${namespace}-image-preview-close`" @click.stop="close">
 				<component :is="`${namespace}-icon`" name="close" size="18" />
 			</div>
-			<div :class="`${namespace}-image-preview-toolbar`" @click.stop="handleToolbar">
-				<component :is="`${namespace}-icon`" name="rotate-left" size="20" data-type="rotate-left" />
-				<component :is="`${namespace}-icon`" name="rotate-right" size="20" data-type="rotate-right" />
-				<component :is="`${namespace}-icon`" name="zoom-in" size="20" data-type="zoom-in" />
-				<component :is="`${namespace}-icon`" name="zoom-out" size="20" data-type="zoom-out" />
+			<div :class="`${namespace}-image-preview-toolbar`" @click.stop>
+				<component :is="`${namespace}-icon`" v-for="item in state.iconList" :key="item" :name="item" size="20" @click.stop="handleToolbar(item)" />
 			</div>
 			<template v-if="state.list.length > 1">
 				<div
@@ -72,6 +69,7 @@
 		visible: boolean
 		index: number
 		list: Array<string>
+		iconList: Array<string>
 		transform: { scale: number; rotate: number; offsetX: number; offsetY: number }
 	}
 
@@ -88,6 +86,7 @@
 		visible: false,
 		index: computed(() => props.index).value,
 		list: computed(() => props.list).value,
+		iconList: ['rotate-left', 'rotate-right', 'zoom-in', 'zoom-out'],
 		transform: { scale: 1, rotate: 0, offsetX: 0, offsetY: 0 }
 	})
 
@@ -124,22 +123,22 @@
 		emits('update:visible', false)
 	}
 
-	function handleToolbar(event: MouseEvent) {
-		if (event?.target instanceof HTMLElement)
-			switch (event.target.dataset.type) {
-				case 'zoom-in':
-					state.transform.scale += 0.2
-					break
-				case 'zoom-out':
-					state.transform.scale > 0.4 && (state.transform.scale -= 0.2)
-					break
-				case 'rotate-left':
-					state.transform.rotate -= 90
-					break
-				case 'rotate-right':
-					state.transform.rotate += 90
-					break
+	function handleToolbar(icon: string) {
+		const fun: { [key: string]: () => void } = {
+			'zoom-in': () => {
+				state.transform.scale += 0.2
+			},
+			'zoom-out': () => {
+				state.transform.scale > 0.4 && (state.transform.scale -= 0.2)
+			},
+			'rotate-left': () => {
+				state.transform.rotate -= 90
+			},
+			'rotate-right': () => {
+				state.transform.rotate += 90
 			}
+		}
+		fun[icon]()
 	}
 
 	function handleMouseDown(event: MouseEvent) {
