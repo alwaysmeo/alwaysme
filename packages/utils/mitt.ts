@@ -1,4 +1,4 @@
-import _mitt, { Emitter } from 'mitt'
-const emitter: Emitter<{ [name: string]: any }> = _mitt<Events>()
+import mitt, { Emitter } from 'mitt'
+const emitter: Emitter<{ [name: string]: any }> = mitt<Events>()
 
-export const mitt = emitter
+export default emitter
