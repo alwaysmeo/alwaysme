@@ -5,7 +5,7 @@
 		<component
 			:is="`${namespace}-mask`"
 			v-model:visible="state.visible"
-			:zindex="props.zindex"
+			:zindex="props.zindex ?? currentZIndex.value"
 			:mount="props.mount"
 			:close-on-press-escape="props.closeOnPressEscape"
 			@on-close="close"
@@ -48,6 +48,9 @@
 
 <script setup lang="ts">
 	import { useEventListener } from '@vueuse/core'
+	import { useZIndex } from '@hooks'
+
+	const { currentZIndex } = useZIndex()
 
 	const emits = defineEmits<{
 		(key: 'switch', index: number): void // 切换图片触发的事件
@@ -76,7 +79,7 @@
 	const props = withDefaults(defineProps<Props>(), {
 		list: () => [],
 		infinite: true,
-		zindex: 1000,
+		zindex: undefined,
 		index: 0,
 		mount: 'body',
 		closeOnPressEscape: true

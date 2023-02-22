@@ -12,6 +12,9 @@
 <script setup lang="ts">
 	import { useEventListener } from '@vueuse/core'
 	import { throttle } from 'lodash'
+	import { useZIndex } from '@hooks'
+
+	const { currentZIndex } = useZIndex()
 
 	const emits = defineEmits<{
 		(key: 'update:visible', visible: boolean): void
@@ -32,7 +35,7 @@
 
 	const props = withDefaults(defineProps<Props>(), {
 		blur: 12,
-		zindex: 1000,
+		zindex: undefined,
 		mount: 'body',
 		closeOnPressEscape: true
 	})
@@ -48,7 +51,7 @@
 	const styles = computed(() => {
 		return {
 			[`--${namespace}-mask-blur`]: isNaN(<number>props.blur) ? props.blur : `${props.blur}px`,
-			[`--${namespace}-mask-zindex`]: props.zindex
+			[`--${namespace}-mask-zindex`]: props.zindex ?? currentZIndex.value
 		}
 	})
 

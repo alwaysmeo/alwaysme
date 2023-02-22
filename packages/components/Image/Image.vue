@@ -22,7 +22,7 @@
 			v-model:visible="state.visible"
 			:list="props.list"
 			:infinite="props.infinite"
-			:zindex="props.zindex"
+			:zindex="props.zindex ?? currentZIndex.value"
 			:index="props.index ?? props.list.findIndex((item) => item === props.src)"
 			:mount="props.mount"
 			:close-on-press-escape="props.closeOnPressEscape"
@@ -33,6 +33,10 @@
 </template>
 
 <script setup lang="ts">
+	import { useZIndex } from '@hooks'
+
+	const { currentZIndex } = useZIndex()
+
 	const slots = useSlots()
 	const emits = defineEmits<{
 		(key: 'load', event: Event): void // 加载成功回调
@@ -72,7 +76,7 @@
 		fit: 'cover',
 		list: () => [],
 		infinite: true,
-		zindex: 1000,
+		zindex: undefined,
 		index: undefined,
 		mount: 'body',
 		closeOnPressEscape: true
