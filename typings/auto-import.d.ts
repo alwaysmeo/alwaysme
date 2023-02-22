@@ -17,8 +17,7 @@ declare global {
   const isReadonly: typeof import('vue')['isReadonly']
   const isRef: typeof import('vue')['isRef']
   const markRaw: typeof import('vue')['markRaw']
-  const mitt: typeof import('../packages/utils/mitt')['default']
-  const namespace: typeof import('../packages/utils/config')['namespace']
+  const namespace: typeof import('../packages/config/index')['namespace']
   const nextTick: typeof import('vue')['nextTick']
   const onActivated: typeof import('vue')['onActivated']
   const onBeforeMount: typeof import('vue')['onBeforeMount']
@@ -76,8 +75,7 @@ declare module 'vue' {
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
-    readonly mitt: UnwrapRef<typeof import('../packages/utils/mitt')['default']>
-    readonly namespace: UnwrapRef<typeof import('../packages/utils/config')['namespace']>
+    readonly namespace: UnwrapRef<typeof import('../packages/config/index')['namespace']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
     readonly onBeforeMount: UnwrapRef<typeof import('vue')['onBeforeMount']>

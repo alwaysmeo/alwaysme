@@ -1,4 +1,4 @@
-import { namespace } from './packages/utils/config'
+import { namespace } from './packages/config'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import viteDts from 'vite-plugin-dts'
@@ -15,7 +15,7 @@ export default defineConfig({
 		visualizer(),
 		AutoImport({
 			imports: ['vue'],
-			dirs: ['./packages/utils'],
+			dirs: ['./packages/config'],
 			dts: './typings/auto-import.d.ts',
 			vueTemplate: true
 		})
@@ -31,6 +31,7 @@ export default defineConfig({
 		alias: {
 			'@': resolve(__dirname, './packages'),
 			'@components': resolve(__dirname, './packages/components'),
+			'@hooks': resolve(__dirname, './packages/hooks'),
 			'@utils': resolve(__dirname, './packages/utils'),
 			'@style': resolve(__dirname, './packages/style')
 		}
