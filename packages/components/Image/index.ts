@@ -1,6 +1,6 @@
 import { App } from 'vue'
 import '@style/components/image.scss'
-import '@style/components/imagePreview.scss'
+import '@style/components/image-preview.scss'
 import Image from './Image.vue'
 import ImagePreview from './ImagePreview.vue'
 
