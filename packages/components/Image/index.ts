@@ -1,8 +1,8 @@
 import { App } from 'vue'
-import '@components/Image/style/image.scss'
-import '@components/Image/style/imagePreview.scss'
-import Image from '@components/Image/src/Image.vue'
-import ImagePreview from '@components/Image/src/ImagePreview.vue'
+import '@style/components/image.scss'
+import '@style/components/imagePreview.scss'
+import Image from './Image.vue'
+import ImagePreview from './ImagePreview.vue'
 
 Image.install = (app: App) => {
 	app.component(`${namespace}ImagePreview`, ImagePreview)

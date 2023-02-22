@@ -1,7 +1,7 @@
 import { namespace } from './packages/utils/config'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
-import dts from 'vite-plugin-dts'
+import viteDts from 'vite-plugin-dts'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { visualizer } from 'rollup-plugin-visualizer'
@@ -11,7 +11,7 @@ export default defineConfig({
 	plugins: [
 		vue(),
 		vueJsx(),
-		dts({ outputDir: 'es' }),
+		viteDts({ outputDir: 'es' }),
 		visualizer(),
 		AutoImport({
 			imports: ['vue'],

@@ -1,6 +1,6 @@
 import { App } from 'vue'
-import '@components/Link/style/link.scss'
-import Link from '@components/Link/src/Link.vue'
+import '@style/components/link.scss'
+import Link from './Link.vue'
 
 Link.install = (app: App) => {
 	app.component(`${namespace}Link`, Link)

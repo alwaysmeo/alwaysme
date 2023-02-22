@@ -1,6 +1,6 @@
 import { App } from 'vue'
-import '@components/Mask/style/mask.scss'
-import Mask from '@components/Mask/src/Mask.vue'
+import '@style/components/mask.scss'
+import Mask from './Mask.vue'
 
 Mask.install = (app: App) => {
 	app.component(`${namespace}Mask`, Mask)

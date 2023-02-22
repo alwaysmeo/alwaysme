@@ -1,6 +1,6 @@
 import { App } from 'vue'
-import '@components/Tag/style/tag.scss'
-import Tag from '@components/Tag/src/Tag.vue'
+import '@style/components/tag.scss'
+import Tag from './Tag.vue'
 
 Tag.install = (app: App) => {
 	app.component(`${namespace}Tag`, Tag)

@@ -1,6 +1,6 @@
 import { App } from 'vue'
-import '@components/Switch/style/switch.scss'
-import Switch from '@components/Switch/src/Switch.vue'
+import '@style/components/switch.scss'
+import Switch from './Switch.vue'
 
 Switch.install = (app: App) => {
 	app.component(`${namespace}Switch`, Switch)
