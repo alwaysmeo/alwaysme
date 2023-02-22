@@ -86,10 +86,10 @@
 		}
 	})
 
-	function onChange(payload: Event) {
-		if (payload.target instanceof HTMLInputElement) {
-			emits('onChange', payload.target.checked)
-			emits('update:value', payload.target.checked)
+	function onChange(event: Event) {
+		if (event.target instanceof HTMLInputElement) {
+			emits('onChange', event.target.checked)
+			emits('update:value', event.target.checked)
 		}
 	}
 </script>
