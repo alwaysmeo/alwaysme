@@ -28,7 +28,7 @@ export default defineComponent({
 			return {
 				[`--${namespace}-space-align`]: props.align,
 				[`--${namespace}-space-direction`]: { horizontal: 'row', vertical: 'column' }[props.direction],
-				[`--${namespace}-space-size`]: typeof props.size === 'number' ? props.size : `${props.size}px`
+				[`--${namespace}-space-size`]: typeof props.size === 'number' ? `${props.size}px` : props.size
 			}
 		})
 
@@ -36,11 +36,7 @@ export default defineComponent({
 			return (
 				<div class={classes.value} style={styles.value}>
 					{slots.default?.().map((item, index) => {
-						return (
-							<Fragment key={item.key ?? `${namespace}-space-item-${index}`}>
-								{item}
-							</Fragment>
-						)
+						return <Fragment key={item.key ?? `${namespace}-space-item-${index}`}>{item}</Fragment>
 					})}
 				</div>
 			)
