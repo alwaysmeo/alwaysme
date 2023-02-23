@@ -34,7 +34,7 @@
     import App from './App.vue'
 
     import AlwaysMe from '@alwaysme/design'
-    import '@alwaysme/design/style.css'
+    import '@alwaysme/design/dist/style.css'
     createApp(App).use(AlwaysMe).mount('#app')
     ```
 
