@@ -2,20 +2,43 @@
 
 export default defineComponent({
 	props: {
-		// 对齐方式
-		align: {
-			type: String as PropType<'start' | 'center' | 'end'>,
-			default: 'start'
+		// 是否可见
+		visible: {
+			type: Boolean,
+			default: false
 		},
-		direction: {
-			// 方向
-			type: String as PropType<'horizontal' | 'vertical'>,
+		// 显示的内容，可被 slot#content 覆盖
+		content: {
+			type: String,
+			default: ''
+		},
+		// 显示的方向
+		position: {
+			type: String as PropType<
+				| 'top'
+				| 'top-start'
+				| 'top-end'
+				| 'bottom'
+				| 'bottom-start'
+				| 'bottom-end'
+				| 'left'
+				| 'left-start'
+				| 'left-end'
+				| 'right'
+				| 'right-start'
+				| 'right-end'
+			>,
 			default: 'horizontal'
 		},
-		size: {
-			// 间距大小
-			type: [String, Number],
-			default: '1rem'
+		// 出现位置偏移量
+		offset: {
+			type: Array as PropType<[number, number]>,
+			default: () => [0, 0]
+		},
+		// 触发方式
+		trigger: {
+			type: String as PropType<'hover' | 'click'>,
+			default: 'hover'
 		}
 	},
 	setup(props, { slots }) {
@@ -24,18 +47,14 @@ export default defineComponent({
 		})
 
 		const styles = computed(() => {
-			return {
-				[`--${namespace}-tooltip-align`]: props.align,
-				[`--${namespace}-tooltip-direction`]: { horizontal: 'row', vertical: 'column' }[props.direction],
-				[`--${namespace}-tooltip-size`]: isNaN(props.size) ? props.size : `${props.size}px`
-			}
+			return {}
 		})
 
 		return () => {
 			return (
-				<div class={classes.value} style={styles.value}>
+				<Fragment class={classes.value} style={styles.value}>
 					{slots.default?.()}
-				</div>
+				</Fragment>
 			)
 		}
 	}

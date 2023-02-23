@@ -51,8 +51,8 @@
 
 	const styles = computed(() => {
 		return {
-			'backdrop-filter': `blur(${isNaN(<number>props.blur) ? props.blur : `${props.blur}px`})`,
-			'z-index': computedZIndex.value
+			[`--${namespace}-mask-blur`]: isNaN(<number>props.blur) ? props.blur : `${props.blur}px`,
+			[`--${namespace}-mask-zindex`]: computedZIndex.value
 		}
 	})
 

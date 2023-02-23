@@ -8,7 +8,7 @@ export const useTools = () => {
 		if (variable === null || variable === undefined) return true
 		if (typeof variable === 'string' && !variable.trim().length) return true
 		if (typeof variable === 'object' && !Object.keys(variable).length) return true
-		if (typeof variable === 'array' && !variable.length) return true
+		if (Array.isArray(variable) && !variable.length) return true
 		return false
 	}
 

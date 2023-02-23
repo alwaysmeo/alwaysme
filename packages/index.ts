@@ -1,5 +1,5 @@
 import { App } from 'vue'
-import components from '@/component'
+import components from './component'
 
 // Import components completely
 const install = (app: App) => {
