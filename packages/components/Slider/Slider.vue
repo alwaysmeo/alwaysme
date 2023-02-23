@@ -37,7 +37,7 @@
 		disabled: false,
 		step: 1,
 		range: false,
-		rangeValue: () => [0, 0],
+		rangeValue: () => [0, 100],
 		size: 300,
 		vertical: false,
 		showTooltip: false,

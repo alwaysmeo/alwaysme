@@ -15,11 +15,11 @@
 		"types": [],
 		"baseUrl": "./",
 		"paths": {
-			"@": ["packages"],
-			"@components": ["packages/components"],
-			"@hooks": ["packages/hooks"],
-			"@utils": ["packages/utils"],
-			"@style": ["packages/style"]
+			"@": ["./packages"],
+			"@components": ["./packages/components"],
+			"@hooks": ["./packages/hooks"],
+			"@utils": ["./packages/utils"],
+			"@style": ["./packages/style"]
 		}
 	},
 	"include": ["examples/app.vue", "typings/**/*.ts", "packages/**/*.ts", "packages/**/*.tsx", "packages/**/*.vue"],

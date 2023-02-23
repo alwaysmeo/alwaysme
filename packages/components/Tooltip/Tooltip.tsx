@@ -1,4 +1,5 @@
 // 文字提示组件
+import { PropType } from 'vue'
 
 export default defineComponent({
 	props: {
@@ -32,7 +33,7 @@ export default defineComponent({
 		},
 		// 出现位置偏移量
 		offset: {
-			type: Array as PropType<[number, number]>,
+			type: Array,
 			default: () => [0, 0]
 		},
 		// 触发方式
@@ -52,9 +53,9 @@ export default defineComponent({
 
 		return () => {
 			return (
-				<Fragment class={classes.value} style={styles.value}>
+				<div class={classes.value} style={styles.value}>
 					{slots.default?.()}
-				</Fragment>
+				</div>
 			)
 		}
 	}
