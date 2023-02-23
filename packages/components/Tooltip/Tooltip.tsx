@@ -1,4 +1,4 @@
-// 文字头提示组件
+// 文字提示组件
 
 export default defineComponent({
 	props: {
