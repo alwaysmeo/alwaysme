@@ -2,8 +2,6 @@ stats.html
 package-lock.json
 node_modules
 dist
-lib
-es
 
 # Editor directories and files
 .vscode/*

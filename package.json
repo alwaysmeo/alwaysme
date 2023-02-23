@@ -32,9 +32,9 @@
 	],
 	"repository": "https://github.com/Alwaysmeo/Alwaysme.git",
 	"scripts": {
-		"dev": "vite --host --mode dev",
+		"dev": "vite --host --mode development",
 		"lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue packages",
-		"build": "vue-tsc --noEmit && vite build"
+		"build": "vue-tsc --noEmit && vite build --mode production"
 	},
 	"devDependencies": {
 		"@types/lodash-es": "^4.17.6",
