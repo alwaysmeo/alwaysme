@@ -19,10 +19,6 @@ export default defineComponent({
 		}
 	},
 	setup(props, { slots }) {
-		const classes = computed(() => {
-			return [`${namespace}-space`]
-		})
-
 		const styles = computed(() => {
 			return {
 				'align-items': props.align,
@@ -33,12 +29,12 @@ export default defineComponent({
 
 		return () => {
 			return (
-				<div class={classes.value} style={styles.value}>
+				<div class={`${namespace}-space`} style={styles.value}>
 					{slots.default?.().map((item, index) => {
 						return (
-							<div key={item.key ?? `${namespace}-space-item-${index}`} class={`${namespace}-space-item`}>
+							<Fragment class={`${namespace}-space-item`} key={item.key ?? `${namespace}-space-item-${index}`}>
 								{item}
-							</div>
+							</Fragment>
 						)
 					})}
 				</div>

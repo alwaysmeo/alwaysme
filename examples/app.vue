@@ -1,6 +1,6 @@
 <template>
 	<me-space class="always-me" direction="vertical">
-		<div style="width: 800px">
+		<!-- <div style="width: 800px">
 			<me-divider textalign="center" dashed>Text</me-divider>
 			<me-divider textalign="center" />
 			<div>
@@ -82,7 +82,7 @@
 			<me-tag color="purple" closable closeIcon="push" size="large">标签3</me-tag>
 			<me-tag color="#147ffa" shape="square" closable>标签4</me-tag>
 			<me-tag color="blue" closable>标签5</me-tag>
-			<me-tag color="arcoblue">标签5</me-tag>
+			<me-tag color="arcoblue" closable>标签5</me-tag>
 		</me-space>
 
 		<me-space>
@@ -106,7 +106,7 @@
 			<me-image src="" width="180px" height="100px"></me-image>
 			<me-button type="primary" @click="visible = !visible">预览</me-button>
 			<me-image-preview :infinite="false" :list="url" v-model:visible="visible" />
-		</me-space>
+		</me-space> -->
 
 		<me-space>
 			<me-tooltip>
