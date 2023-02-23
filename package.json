@@ -1,6 +1,6 @@
 {
 	"name": "@alwaysme/design",
-	"version": "1.0.13-dev",
+	"version": "1.0.14-dev",
 	"private": false,
 	"title": "Alwaysme Design",
 	"description": "Alwaysme UI design language and Vue-based implementation",
@@ -14,21 +14,20 @@
 	"homepage": "https://www.alwaysme.org",
 	"author": "AlwaysMeo <hello2000@vip.qq.com>",
 	"license": "MIT",
-	"types": "./es/packages/index.d.ts",
-	"module": "./es/packages/main.es.js",
-	"main": "./lib/packages/main.cjs.js",
+	"types": "./dist/es/packages/index.d.ts",
+	"module": "./dist/es/packages/main.es.js",
+	"main": "./dist/lib/packages/main.cjs.js",
 	"exports": {
 		".": {
-			"types": "./es/packages/index.d.ts",
-			"module": "./es/packages/main.es.js",
-			"main": "./lib/packages/main.cjs.js"
+			"types": "./dist/es/packages/index.d.ts",
+			"module": "./dist/es/packages/main.es.js",
+			"main": "./dist/lib/packages/main.cjs.js"
 		},
-		"./style.css": "./es/style.css"
+		"./style.css": "./dist/es/style.css"
 	},
-	"style": "./es/style.css",
+	"style": "./dist/es/style.css",
 	"files": [
-		"./es/",
-		"./lib/"
+		"./dist/"
 	],
 	"repository": "https://github.com/Alwaysmeo/Alwaysme.git",
 	"scripts": {
