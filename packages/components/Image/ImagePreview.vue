@@ -108,7 +108,7 @@
 			[`--${namespace}-image-preview-offsetY`]: `${state.transform.offsetY}px`
 		}
 	})
-	console.log(isEmpty(''));
+
 	const computedZIndex = computed(() => {
 		return isEmpty(props.zindex) ? nextZIndex() : transformNum(props.zindex)
 	})

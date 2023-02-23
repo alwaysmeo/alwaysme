@@ -3,6 +3,8 @@ $namespace-base: #{$namespace}-image;
 .#{$namespace-base} {
 	position: relative;
 	display: inline-block;
+	width: var(--#{$namespace-base}-width);
+	height: var(--#{$namespace-base}-height);
 	transition: box-shadow 0.3s;
 
 	&,
@@ -11,6 +13,7 @@ $namespace-base: #{$namespace}-image;
 	}
 
 	&-img {
+		object-fit: var(--#{$namespace-base}-fit);
 		vertical-align: middle;
 		width: 100%;
 		height: 100%;

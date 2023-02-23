@@ -5,14 +5,7 @@
 			<component :is="`${namespace}-icon`" name="minus" size="16" data-type="minus" />
 		</div>
 		<div :class="`${namespace}-stepper-input`">
-			<input
-				type="text"
-				:style="{ width: isNaN(<number>props.inputWidth) ? props.inputWidth : `${props.inputWidth}px`}"
-				:value="state.value"
-				:disabled="props.disabled"
-				@input="input"
-				@blur="blur"
-			/>
+			<input type="text" :value="state.value" :disabled="props.disabled" @input="input" @blur="blur" />
 		</div>
 		<div :class="`${namespace}-stepper-push`" :data-disabled="props.disabled || state.value >= props.max" @click="push">
 			<component :is="`${namespace}-icon`" name="push" size="16" data-type="push" />
@@ -67,7 +60,8 @@
 
 	const styles = computed(() => {
 		return {
-			[`--${namespace}-stepper-height`]: isNaN(<number>props.height) ? props.height : `${props.height}px`
+			[`--${namespace}-stepper-height`]: isNaN(<number>props.height) ? props.height : `${props.height}px`,
+			[`--${namespace}-stepper-input-width`]: isNaN(<number>props.inputWidth) ? props.inputWidth : `${props.inputWidth}px`
 		}
 	})
 

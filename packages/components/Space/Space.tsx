@@ -21,9 +21,9 @@ export default defineComponent({
 	setup(props, { slots }) {
 		const styles = computed(() => {
 			return {
-				'align-items': props.align,
-				'flex-direction': { horizontal: 'row', vertical: 'column' }[props.direction],
-				gap: isNaN(props.size) ? props.size : `${props.size}px`
+				[`--${namespace}-space-align`]: props.align,
+				[`--${namespace}-space-direction`]: { horizontal: 'row', vertical: 'column' }[props.direction],
+				[`--${namespace}-space-size`]: isNaN(props.size) ? props.size : `${props.size}px`
 			}
 		})
 
