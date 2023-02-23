@@ -1,6 +1,5 @@
 // 间距组件
 import { Fragment, PropType } from 'vue'
-import { useTools } from '@hooks'
 
 export default defineComponent({
 	props: {
@@ -21,8 +20,6 @@ export default defineComponent({
 		}
 	},
 	setup(props, { slots }) {
-		const { isNumber } = useTools()
-
 		const classes = computed(() => {
 			return [`${namespace}-space`]
 		})
@@ -31,7 +28,7 @@ export default defineComponent({
 			return {
 				[`--${namespace}-space-align`]: props.align,
 				[`--${namespace}-space-direction`]: { horizontal: 'row', vertical: 'column' }[props.direction],
-				[`--${namespace}-space-size`]: isNumber(props.size) ? props.size : `${props.size}px`
+				[`--${namespace}-space-size`]: typeof props.size === 'number' ? props.size : `${props.size}px`
 			}
 		})
 
@@ -39,7 +36,11 @@ export default defineComponent({
 			return (
 				<div class={classes.value} style={styles.value}>
 					{slots.default?.().map((item, index) => {
-						return <Fragment key={item.key ?? `${namespace}-space-item-${index}`}>{item}</Fragment>
+						return (
+							<Fragment key={item.key ?? `${namespace}-space-item-${index}`}>
+								{item}
+							</Fragment>
+						)
 					})}
 				</div>
 			)

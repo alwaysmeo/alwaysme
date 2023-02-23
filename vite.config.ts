@@ -19,8 +19,8 @@ export default defineConfig(({ command, mode }) => {
 			visualizer(),
 			AutoImport({
 				imports: ['vue'],
-				dirs: ['../packages/config'],
-				dts: '../typings/auto-import.d.ts',
+				dirs: ['./packages/config'],
+				dts: './typings/auto-import.d.ts',
 				vueTemplate: true
 			})
 		],
@@ -48,7 +48,7 @@ export default defineConfig(({ command, mode }) => {
 			lib: {
 				entry: resolve(__dirname, './index.ts'),
 				name: 'alwaysme',
-				fileName: (format, name) => `${name.replace(/_(\S*)/, '')}.${format}.js`
+				fileName: (format, name) => `${name}.${format}.js`
 			},
 			rollupOptions: {
 				external: ['vue'],

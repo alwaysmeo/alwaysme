@@ -13,13 +13,13 @@ export const useTools = () => {
 	}
 
 	/**
-	 * @description 验证变量是否为 Number
+	 * @description 验证是否为 Number 类型
 	 * @param variable
 	 * @returns boolean
 	 */
 	const isNumber = (variable: any) => {
-		if (typeof variable === 'number') return true
 		if (isEmpty(variable)) return false
+		if (typeof variable === 'number') return true
 		return false
 	}
 
