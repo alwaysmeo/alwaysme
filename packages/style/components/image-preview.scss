@@ -96,8 +96,6 @@ $namespace-base: #{$namespace}-image-preview;
 			max-height: 100%;
 			cursor: grab;
 			transition: transform 0.3s;
-			transform: translate(var(--#{$namespace-base}-offsetX), var(--#{$namespace-base}-offsetY)) rotate(var(--#{$namespace-base}-rotate))
-				scale3d(var(--#{$namespace-base}-scale), var(--#{$namespace-base}-scale), 1);
 		}
 	}
 }

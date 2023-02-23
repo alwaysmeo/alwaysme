@@ -25,9 +25,9 @@ export default defineComponent({
 
 		const styles = computed(() => {
 			return {
-				[`--${namespace}-space-align`]: props.align,
-				[`--${namespace}-space-direction`]: { horizontal: 'row', vertical: 'column' }[props.direction],
-				[`--${namespace}-space-size`]: isNaN(props.size) ? props.size : `${props.size}px`
+				'align-items': props.align,
+				'flex-direction': { horizontal: 'row', vertical: 'column' }[props.direction],
+				gap: isNaN(props.size) ? props.size : `${props.size}px`
 			}
 		})
 

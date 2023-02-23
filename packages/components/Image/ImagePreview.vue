@@ -13,7 +13,10 @@
 			<div :class="`${namespace}-image-preview-image`">
 				<img
 					:class="`${namespace}-image-preview-image-img`"
-					:style="styles"
+					:style="{
+						transform: `translate(${state.transform.offsetX}px, ${state.transform.offsetY}px) rotate(${state.transform.rotate}deg)
+									scale3d(${state.transform.scale}, ${state.transform.scale}, 1)`
+					}"
 					:src="state.list?.[state.index]"
 					alt=""
 					@click.stop
@@ -98,15 +101,6 @@
 		resetTransform()
 		state.visible = computed(() => props.visible).value
 		emits('onVisibleChange', { visible: state.visible, index: state.index })
-	})
-
-	const styles = computed(() => {
-		return {
-			[`--${namespace}-image-preview-scale`]: state.transform.scale,
-			[`--${namespace}-image-preview-rotate`]: `${state.transform.rotate}deg`,
-			[`--${namespace}-image-preview-offsetX`]: `${state.transform.offsetX}px`,
-			[`--${namespace}-image-preview-offsetY`]: `${state.transform.offsetY}px`
-		}
 	})
 
 	const computedZIndex = computed(() => {

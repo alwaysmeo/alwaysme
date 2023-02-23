@@ -5,7 +5,6 @@ $namespace-base: #{$namespace}-stepper;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	// border: 1px solid var(--#{$namespace}-gray-color-30);
 	background-color: var(--#{$namespace}-theme-color);
 	transition: box-shadow 0.3s;
 
@@ -55,7 +54,6 @@ $namespace-base: #{$namespace}-stepper;
 				color: var(--#{$namespace}-gray-color-40);
 			}
 			box-sizing: border-box;
-			width: var(--#{$namespace-base}-input-width);
 			height: var(--#{$namespace-base}-height);
 			text-align: center;
 			border: none;

@@ -1,12 +1,20 @@
 <!-- 图片组件 -->
 <template>
 	<div :class="classes" :style="styles" :data-status="state.failed">
-		<img v-show="!state.failed" :class="`${namespace}-image-img`" :src="props.src" :alt="props.alt" @load="load" @error="error" />
+		<img
+			v-show="!state.failed"
+			:class="`${namespace}-image-img`"
+			:style="{ 'object-fit': props.fit }"
+			:src="props.src"
+			:alt="props.alt"
+			@load="load"
+			@error="error"
+		/>
 		<div v-if="state.failed" :class="`${namespace}-image-img-failed`">
 			<component
 				:is="`${namespace}-icon`"
 				name="image-failed"
-				:size="`calc(min(${styles[`--${namespace}-image-width`]}, ${styles[`--${namespace}-image-height`]}) / 4)`"
+				:size="`calc(min(${styles.width}, ${styles.height}) / 4)`"
 				color="#878b90"
 			/>
 		</div>
@@ -99,9 +107,8 @@
 
 	const styles = computed(() => {
 		return {
-			[`--${namespace}-image-width`]: isNaN(<number>props.width) ? props.width : `${props.width}px`,
-			[`--${namespace}-image-height`]: isNaN(<number>props.height) ? props.height : `${props.height}px`,
-			[`--${namespace}-image-fit`]: props.fit
+			width: isNaN(<number>props.width) ? props.width : `${props.width}px`,
+			height: isNaN(<number>props.height) ? props.height : `${props.height}px`
 		}
 	})
 

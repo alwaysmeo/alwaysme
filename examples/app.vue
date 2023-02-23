@@ -1,6 +1,6 @@
 <template>
 	<me-space class="always-me" direction="vertical">
-		<!-- <div style="width: 800px">
+		<div style="width: 800px">
 			<me-divider textalign="center" dashed>Text</me-divider>
 			<me-divider textalign="center" />
 			<div>
@@ -99,7 +99,7 @@
 			<me-switch type="block" on-color="var(--me-warning-color)"></me-switch>
 			<me-switch type="block" shape="square"></me-switch>
 			<me-switch type="block" shape="round" disabled></me-switch>
-		</me-space> -->
+		</me-space>
 
 		<me-space>
 			<me-image v-for="item in url" :key="url" :src="item" :list="url" width="180px" height="100px"></me-image>
