@@ -5,7 +5,7 @@
 		<component
 			:is="`${namespace}-mask`"
 			v-model:visible="state.visible"
-			:zindex="props.zindex ?? computedZIndex"
+			:zindex="computedZIndex"
 			:mount="props.mount"
 			:close-on-press-escape="props.closeOnPressEscape"
 			@on-close="close"
@@ -108,9 +108,9 @@
 			[`--${namespace}-image-preview-offsetY`]: `${state.transform.offsetY}px`
 		}
 	})
-	console.log(isEmpty(''));
+
 	const computedZIndex = computed(() => {
-		return !isEmpty(props.zindex) ? transformNum(props.zindex || '') : nextZIndex()
+		return isEmpty(props.zindex) ? nextZIndex() : transformNum(props.zindex)
 	})
 
 	function handleSwitch(index: number) {

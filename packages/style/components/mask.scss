@@ -9,6 +9,4 @@ $namespace-base: #{$namespace}-mask;
 	left: 0;
 	user-select: none;
 	background: #00000066;
-	backdrop-filter: blur(var(--#{$namespace-base}-blur));
-	z-index: var(--#{$namespace-base}-zindex);
 }

@@ -12,9 +12,10 @@
 <script setup lang="ts">
 	import { useEventListener } from '@vueuse/core'
 	import { throttle } from 'lodash'
-	import { useZIndex } from '@hooks'
+	import { useTools, useZIndex } from '@hooks'
 
-	const { currentZIndex } = useZIndex()
+	const { isEmpty, transformNum } = useTools()
+	const { nextZIndex } = useZIndex()
 
 	const emits = defineEmits<{
 		(key: 'update:visible', visible: boolean): void
@@ -50,9 +51,13 @@
 
 	const styles = computed(() => {
 		return {
-			[`--${namespace}-mask-blur`]: isNaN(<number>props.blur) ? props.blur : `${props.blur}px`,
-			[`--${namespace}-mask-zindex`]: props.zindex ?? currentZIndex.value
+			'backdrop-filter': `blur(${isNaN(<number>props.blur) ? props.blur : `${props.blur}px`})`,
+			'z-index': computedZIndex.value
 		}
+	})
+
+	const computedZIndex = computed(() => {
+		return isEmpty(props.zindex) ? nextZIndex() : transformNum(props.zindex)
 	})
 
 	function close(event: MouseEvent | KeyboardEvent) {
