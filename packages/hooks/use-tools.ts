@@ -17,8 +17,7 @@ export const useTools = () => {
 	 * @param str
 	 * @returns number | undefined
 	 */
-	const transformNum = (str: string | number | undefined) => {
-		if (typeof str === 'number') return str
+	const transformNum = (str: string | undefined) => {
 		if (isEmpty(str)) return str
 		const _str = str.trim().replace(/[^0-9]/g, '')
 		if (!_str.length) return undefined

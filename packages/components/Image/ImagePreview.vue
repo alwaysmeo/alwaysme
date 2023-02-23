@@ -13,10 +13,7 @@
 			<div :class="`${namespace}-image-preview-image`">
 				<img
 					:class="`${namespace}-image-preview-image-img`"
-					:style="{
-						transform: `translate(${state.transform.offsetX}px, ${state.transform.offsetY}px) rotate(${state.transform.rotate}deg)
-									scale3d(${state.transform.scale}, ${state.transform.scale}, 1)`
-					}"
+					:style="styles"
 					:src="state.list?.[state.index]"
 					alt=""
 					@click.stop
@@ -103,6 +100,15 @@
 		emits('onVisibleChange', { visible: state.visible, index: state.index })
 	})
 
+	const styles = computed(() => {
+		return {
+			[`--${namespace}-image-preview-scale`]: state.transform.scale,
+			[`--${namespace}-image-preview-rotate`]: `${state.transform.rotate}deg`,
+			[`--${namespace}-image-preview-offsetX`]: `${state.transform.offsetX}px`,
+			[`--${namespace}-image-preview-offsetY`]: `${state.transform.offsetY}px`
+		}
+	})
+	console.log(isEmpty(''));
 	const computedZIndex = computed(() => {
 		return isEmpty(props.zindex) ? nextZIndex() : transformNum(props.zindex)
 	})
