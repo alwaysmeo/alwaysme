@@ -1,5 +1,6 @@
 // 文字提示组件
-import { PropType } from 'vue'
+import { Fragment, PropType } from 'vue'
+import { useEventListener } from '@vueuse/core'
 
 export default defineComponent({
 	props: {
@@ -12,6 +13,11 @@ export default defineComponent({
 		content: {
 			type: String,
 			default: ''
+		},
+		// 触发方式
+		trigger: {
+			type: String as PropType<'hover' | 'click' | 'focus'>,
+			default: 'hover'
 		},
 		// 显示的方向
 		position: {
@@ -36,10 +42,10 @@ export default defineComponent({
 			type: Array,
 			default: () => [0, 0]
 		},
-		// 触发方式
-		trigger: {
-			type: String as PropType<'hover' | 'click'>,
-			default: 'hover'
+		// 挂载节点
+		mount: {
+			type: String,
+			default: 'body'
 		}
 	},
 	setup(props, { slots }) {
@@ -51,12 +57,27 @@ export default defineComponent({
 			return {}
 		})
 
+		const element = ref<HTMLElement>()
+
+		onMounted(() => {
+			useEventListener(element.value, 'mouseenter', (event: MouseEvent) => {
+				console.log(event)
+			})
+			useEventListener(element.value, 'mouseleave', (event: MouseEvent) => {
+				console.log(event)
+			})
+		})
+
+		console.log(slots.default?.())
+
 		return () => {
-			return (
-				<div class={classes.value} style={styles.value}>
-					{slots.default?.()}
-				</div>
-			)
+			return <component is={`${namespace}-trigger`}>{slots.default?.()}</component>
 		}
 	}
 })
+
+{/* <teleport to={props.mount}>
+<transition name='fade-zoom'>
+	<div class={classes.value}></div>
+</transition>
+</teleport> */}
