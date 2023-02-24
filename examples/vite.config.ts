@@ -22,18 +22,19 @@ export default defineConfig(({ command, mode }) => {
 		css: {
 			preprocessorOptions: {
 				scss: {
-					additionalData: `$namespace: '${namespace}'; @import '../packages/style/index.scss';`
+					additionalData: `$namespace: '${namespace}';`
 				}
 			}
 		},
 		resolve: {
 			alias: {
-				'@': resolve(__dirname, '../packages'),
-				'@components': resolve(__dirname, '../packages/components'),
-				'@hooks': resolve(__dirname, '../packages/hooks'),
-				'@utils': resolve(__dirname, '../packages/utils'),
-				'@style': resolve(__dirname, '../packages/style')
+				'@': resolve(__dirname, './'),
+				'@views': resolve(__dirname, './views'),
+				'@assets': resolve(__dirname, './assets')
 			}
+		},
+		build: {
+			outDir: VITE_OUTDIR
 		},
 		server: {
 			host: VITE_HOST,

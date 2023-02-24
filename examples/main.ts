@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import App from './app.vue'
+import Router from './router'
 
 // import AlwaysMe from '../packages/index'
 
@@ -8,4 +9,4 @@ import '../dist/es/style.css'
 
 const app = createApp(App)
 
-app.use(AlwaysMe).mount('#app')
+app.use(Router).use(AlwaysMe).mount('#app')

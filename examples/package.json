@@ -1,6 +1,7 @@
 {
 	"name": "examples",
 	"scripts": {
-		"dev": "vite --host --mode development"
+		"dev": "vite --host --mode development",
+		"build": "vite build --mode production"
 	}
 }
