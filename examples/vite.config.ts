@@ -15,7 +15,7 @@ export default defineConfig(({ command, mode }) => {
 			AutoImport({
 				imports: ['vue'],
 				dirs: ['../packages/config'],
-				dts: '../typings/auto-import.d.ts',
+				dts: './typings/auto-import.d.ts',
 				vueTemplate: true
 			})
 		],
