@@ -35,8 +35,11 @@
 		"lint": "pnpm run --filter ./packages lint",
 		"build": "pnpm run --filter ./packages build"
 	},
-	"devDependencies": {
+	"dependencies": {
 		"@types/lodash-es": "^4.17.6",
+		"lodash-es": "^4.17.21"
+	},
+	"devDependencies": {
 		"@types/node": "^18.11.10",
 		"@types/sass": "^1.43.1",
 		"@typescript-eslint/eslint-plugin": "^5.45.1",

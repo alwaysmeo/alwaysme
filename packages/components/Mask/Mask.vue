@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 	import { useEventListener } from '@vueuse/core'
-	import { throttle } from 'lodash'
+	import { throttle } from 'lodash-es'
 	import { useTools, useZIndex } from '@hooks'
 
 	const { isEmpty, transformNum } = useTools()
