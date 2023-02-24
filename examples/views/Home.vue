@@ -1,6 +1,6 @@
 <template>
 	<me-space class="always-me" direction="vertical">
-		<div style="width: 800px">
+		<!-- <div style="width: 800px">
 			<me-divider textalign="center" dashed>Text</me-divider>
 			<me-divider textalign="center" />
 			<div>
@@ -106,17 +106,21 @@
 			<me-image src="" width="180px" height="100px"></me-image>
 			<me-button type="primary" @click="visible = !visible">预览</me-button>
 			<me-image-preview :infinite="false" :list="url" v-model:visible="visible" />
-		</me-space>
+		</me-space> -->
 
 		<me-space>
 			<me-tooltip>
-				<me-button>文字提示</me-button>
+				<me-button @click="visible = false">文字提示</me-button>
+			</me-tooltip>
+			<me-tooltip>
+				<me-button>内容提示</me-button>
 			</me-tooltip>
 		</me-space>
 	</me-space>
 </template>
 
 <script setup lang="ts">
+	import { ref } from 'vue'
 	const handleClick = (e: Event) => {
 		console.log(e)
 		visible1.value = !visible1.value

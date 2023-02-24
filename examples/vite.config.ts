@@ -15,7 +15,7 @@ export default defineConfig(({ command, mode }) => {
 			AutoImport({
 				imports: ['vue'],
 				dirs: ['../packages/config'],
-				dts: './typings/auto-import.d.ts',
+				dts: '../typings/auto-import.d.ts',
 				vueTemplate: true
 			})
 		],
@@ -35,7 +35,7 @@ export default defineConfig(({ command, mode }) => {
 				'@components': resolve(__dirname, '../packages/components'),
 				'@utils': resolve(__dirname, '../packages/utils'),
 				'@hooks': resolve(__dirname, '../packages/hooks'),
-				'@style': resolve(__dirname, '../packages/style'),
+				'@style': resolve(__dirname, '../packages/style')
 			}
 		},
 		build: {
@@ -43,9 +43,9 @@ export default defineConfig(({ command, mode }) => {
 		},
 		server: {
 			host: VITE_HOST,
-			port: VITE_PORT,
-			open: VITE_OPEN,
-			hmr: VITE_HMR
+			port: VITE_PORT as unknown as number,
+			open: VITE_OPEN as unknown as boolean,
+			hmr: VITE_HMR as unknown as boolean
 		}
 	}
 })
