@@ -1,6 +1,6 @@
 {
 	"name": "@alwaysme/design",
-	"version": "1.0.16-dev",
+	"version": "1.0.17-dev",
 	"private": false,
 	"title": "Alwaysme Design",
 	"description": "Alwaysme UI design language and Vue-based implementation",
@@ -31,9 +31,11 @@
 	],
 	"repository": "https://github.com/Alwaysmeo/Alwaysme.git",
 	"scripts": {
-		"clean": "rimraf ./dist",
+		"clean:dist": "rimraf ./dist",
+		"clean:docs": "rimraf ./docs",
 		"dev": "pnpm run --filter ./examples dev",
-		"build": "npm run clean && pnpm run --filter ./packages build",
+		"build:docs": "npm run clean:docs && pnpm run --filter ./examples build",
+		"build": "npm run clean:dist && pnpm run --filter ./packages build",
 		"lint": "pnpm run --filter ./packages lint"
 	},
 	"dependencies": {
@@ -59,6 +61,7 @@
 		"vite": "^4.1.2",
 		"vite-plugin-dts": "^1.7.3",
 		"vue": "^3.2.45",
+		"vue-router": "^4.1.6",
 		"vue-tsc": "^1.1.7"
 	}
 }
