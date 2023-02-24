@@ -30,7 +30,12 @@ export default defineConfig(({ command, mode }) => {
 			alias: {
 				'@': resolve(__dirname, './'),
 				'@views': resolve(__dirname, './views'),
-				'@assets': resolve(__dirname, './assets')
+				'@assets': resolve(__dirname, './assets'),
+				// packages
+				'@components': resolve(__dirname, '../packages/components'),
+				'@utils': resolve(__dirname, '../packages/utils'),
+				'@hooks': resolve(__dirname, '../packages/hooks'),
+				'@style': resolve(__dirname, '../packages/style'),
 			}
 		},
 		build: {

@@ -2,10 +2,13 @@ import { createApp } from 'vue'
 import App from './app.vue'
 import Router from './router'
 
-// import AlwaysMe from '../packages/index'
+// packages
+import AlwaysMe from '../packages/index'
+import '../packages/style/index.scss'
 
-import AlwaysMe from '../dist/es/main.mjs'
-import '../dist/es/style.css'
+// dist
+// import AlwaysMe from '../dist/es/main.mjs'
+// import '../dist/es/style.css'
 
 const app = createApp(App)
 
