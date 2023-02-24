@@ -1,5 +1,4 @@
 import { Icon } from './components/Icon'
-import { Trigger } from './components/Trigger'
 import { Button } from './components/Button'
 import { Link } from './components/Link'
 import { Divider } from './components/Divider'
@@ -14,7 +13,6 @@ import { Tooltip } from './components/Tooltip'
 
 export default [
 	Icon,
-	Trigger,
 	Button,
 	Link,
 	Divider,
