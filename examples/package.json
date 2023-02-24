@@ -1,0 +1,6 @@
+{
+	"name": "examples",
+	"scripts": {
+		"dev": "vite --host --mode development"
+	}
+}
