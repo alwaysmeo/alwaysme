@@ -2,6 +2,7 @@
 .vscode
 examples
 public
+docs
 /node_modules
 /packages
 /typings
