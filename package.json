@@ -31,9 +31,10 @@
 	],
 	"repository": "https://github.com/Alwaysmeo/Alwaysme.git",
 	"scripts": {
+		"clean": "rimraf ./dist",
 		"dev": "pnpm run --filter ./examples dev",
-		"lint": "pnpm run --filter ./packages lint",
-		"build": "pnpm run --filter ./packages build"
+		"build": "npm run clean && pnpm run --filter ./packages build",
+		"lint": "pnpm run --filter ./packages lint"
 	},
 	"dependencies": {
 		"@types/lodash-es": "^4.17.6",
