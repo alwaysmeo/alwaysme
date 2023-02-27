@@ -2,7 +2,7 @@
 <template>
 	<teleport :to="props.mount">
 		<transition name="fade-zoom">
-			<div v-if="state.visible" :class="`${namespace}-mask`" :style="styles" @click="close">
+			<div v-if="visible" :class="`${namespace}-mask`" :style="styles" @click="close">
 				<slot />
 			</div>
 		</transition>
@@ -30,10 +30,6 @@
 		closeOnPressEscape?: boolean // 是否支持按下 ESC 关闭预览
 	}
 
-	interface State {
-		visible: boolean
-	}
-
 	const props = withDefaults(defineProps<Props>(), {
 		blur: 12,
 		zindex: undefined,
@@ -41,13 +37,7 @@
 		closeOnPressEscape: true
 	})
 
-	const state = reactive<State>({
-		visible: false
-	})
-
-	watchEffect(() => {
-		state.visible = computed(() => props.visible).value
-	})
+	const visible = toRef(props, 'visible')
 
 	const styles = computed(() => {
 		return {
@@ -66,7 +56,7 @@
 	}
 
 	const keydownHandler = throttle((event: KeyboardEvent) => {
-		if (!state.visible) return
+		if (!visible) return
 		switch (event.code) {
 			case 'Escape':
 				props.closeOnPressEscape && close(event)
