@@ -1,6 +1,7 @@
 // 文字提示组件
-import { Fragment, PropType } from 'vue'
+import { PropType, Teleport, Transition, mergeProps, VNode } from 'vue'
 import { useEventListener } from '@vueuse/core'
+import { VNodeProps } from 'vue'
 
 export default defineComponent({
 	props: {
@@ -42,42 +43,75 @@ export default defineComponent({
 			type: Array,
 			default: () => [0, 0]
 		},
+		// 鼠标移入后延时多少才显示 Tooltip，单位：秒
+		mouseEnterDelay: {
+			type: Number,
+			default: 100
+		},
+		// 鼠标移出后延时多少才隐藏 Tooltip，单位：秒
+		mouseLeaveDelay: {
+			type: Number,
+			default: 300
+		},
 		// 挂载节点
 		mount: {
 			type: String,
 			default: 'body'
+		},
+		// 过渡动画
+		transition: {
+			type: String,
+			default: 'fade'
 		}
 	},
 	setup(props, { slots }) {
+		const visible = ref(props.visible)
 		const classes = computed(() => {
 			return [`${namespace}-tooltip`]
 		})
 
 		const styles = computed(() => {
-			return {}
+			return {
+				[`--${namespace}-tooltip-color`]: undefined
+			}
 		})
 
-		const element = ref<HTMLElement>()
-
-		onMounted(() => {
-			useEventListener(element.value, 'mouseenter', (event: MouseEvent) => {
-				console.log(event)
+		let vnode: VNode = <></>
+		console.log(slots.default())
+		if (slots.default) {
+			vnode = slots.default()[0] as VNode
+			vnode.props = mergeProps(vnode.props, {
+				onMouseenter: () => {
+					setTimeout(() => {
+						visible.value = true
+					}, props.mouseEnterDelay)
+				},
+				onMouseleave: () => {
+					setTimeout(() => {
+						visible.value = false
+					}, props.mouseLeaveDelay)
+				}
 			})
-			useEventListener(element.value, 'mouseleave', (event: MouseEvent) => {
-				console.log(event)
-			})
-		})
+		}
 
-		console.log(slots.default?.())
+		console.warn('<Tooptip> can only be used on a single element or component.');
+
 
 		return () => {
-			return <component is={`${namespace}-trigger`}>{slots.default?.()}</component>
+			return (
+				<>
+					{vnode}
+					<Teleport to={props.mount}>
+						<Transition name={props.transition}>
+							{visible.value && (
+								<div class={classes.value} style={styles.value}>
+									123123123
+								</div>
+							)}
+						</Transition>
+					</Teleport>
+				</>
+			)
 		}
 	}
 })
-
-{/* <teleport to={props.mount}>
-<transition name='fade-zoom'>
-	<div class={classes.value}></div>
-</transition>
-</teleport> */}
