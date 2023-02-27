@@ -18,10 +18,11 @@ export default defineComponent({
 			})
 		})
 
-		if (slots.default?.())
+		if (slots.default)
 			for (const item of slots.default?.())
 				if (item?.type !== TimelineItem) {
-					console.warn('There appears to be a non-TimelineItem component in Timeline')
+					// eslint-disable-next-line no-console
+					console.warn('There appears to be a non-<TimelineItem> component in <Timeline>')
 					break
 				}
 
