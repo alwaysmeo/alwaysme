@@ -1,7 +1,7 @@
 export const useTools = () => {
 	/**
 	 * @description 验证变量是否为空
-	 * @param variable
+	 * @param variable <any>
 	 * @returns boolean
 	 */
 	const isEmpty = (variable: any) => {
@@ -14,7 +14,7 @@ export const useTools = () => {
 
 	/**
 	 * @description 验证是否为 Number 类型
-	 * @param variable
+	 * @param variable <any>
 	 * @returns boolean
 	 */
 	const isNumber = (variable: any) => {
@@ -25,8 +25,8 @@ export const useTools = () => {
 
 	/**
 	 * @description 将字符串转换为数字
-	 * @param source
-	 * @returns string | number | undefined
+	 * @param source <string | number | undefined>
+	 * @returns number | undefined
 	 */
 	const transformNum = (source: string | number | undefined) => {
 		if (isEmpty(source)) return source
