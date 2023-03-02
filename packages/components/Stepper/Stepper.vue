@@ -60,8 +60,8 @@
 
 	const styles = computed(() => {
 		return {
-			[`--${namespace}-stepper-height`]: isNaN(<number>props.height) ? props.height : `${props.height}px`,
-			[`--${namespace}-stepper-input-width`]: isNaN(<number>props.inputWidth) ? props.inputWidth : `${props.inputWidth}px`
+			[`--${namespace}-stepper-height`]: isNaN(props.height as number) ? props.height : `${props.height}px`,
+			[`--${namespace}-stepper-input-width`]: isNaN(props.inputWidth as number) ? props.inputWidth : `${props.inputWidth}px`
 		}
 	})
 

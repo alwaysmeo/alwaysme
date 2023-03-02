@@ -80,7 +80,7 @@
 
 	const styles = computed(() => {
 		return {
-			[`--${namespace}-switch-width`]: isNaN(<number>props.width) ? props.width : `${props.width}px`,
+			[`--${namespace}-switch-width`]: isNaN(props.width as number) ? props.width : `${props.width}px`,
 			[`--${namespace}-switch-on-color`]: props.onColor,
 			[`--${namespace}-switch-off-color`]: props.offColor
 		}

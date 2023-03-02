@@ -21,7 +21,7 @@
 	const styles = computed(() => {
 		return {
 			[`--${namespace}-icon-color`]: props.color,
-			[`--${namespace}-icon-size`]: isNaN(<number>props.size) ? props.size : `${props.size}px`
+			[`--${namespace}-icon-size`]: isNaN(props.size as number) ? props.size : `${props.size}px`
 		}
 	})
 </script>

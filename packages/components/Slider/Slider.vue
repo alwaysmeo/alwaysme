@@ -62,7 +62,7 @@
 
 	const styles = computed(() => {
 		return {
-			[`--${namespace}-slider-${props.vertical ? 'height' : 'width'}`]: isNaN(<number>props.size) ? props.size : `${props.size}px`
+			[`--${namespace}-slider-${props.vertical ? 'height' : 'width'}`]: isNaN(props.size as number) ? props.size : `${props.size}px`
 		}
 	})
 

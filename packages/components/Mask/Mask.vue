@@ -41,7 +41,7 @@
 
 	const styles = computed(() => {
 		return {
-			[`--${namespace}-mask-blur`]: isNaN(<number>props.blur) ? props.blur : `${props.blur}px`,
+			[`--${namespace}-mask-blur`]: isNaN(props.blur as number) ? props.blur : `${props.blur}px`,
 			[`--${namespace}-mask-zindex`]: computedZIndex.value
 		}
 	})

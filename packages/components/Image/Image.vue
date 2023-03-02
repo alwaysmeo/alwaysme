@@ -99,8 +99,8 @@
 
 	const styles = computed(() => {
 		return {
-			[`--${namespace}-image-width`]: isNaN(<number>props.width) ? props.width : `${props.width}px`,
-			[`--${namespace}-image-height`]: isNaN(<number>props.height) ? props.height : `${props.height}px`,
+			[`--${namespace}-image-width`]: isNaN(props.width as number) ? props.width : `${props.width}px`,
+			[`--${namespace}-image-height`]: isNaN(props.height as number) ? props.height : `${props.height}px`,
 			[`--${namespace}-image-fit`]: props.fit
 		}
 	})
