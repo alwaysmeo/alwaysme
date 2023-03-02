@@ -11,10 +11,10 @@
 
 <script setup lang="ts">
 	import { useEventListener } from '@vueuse/core'
-	import { throttle } from 'lodash-es'
+	import { isEmpty, throttle } from 'lodash-es'
 	import { useTools, useZIndex } from '@hooks'
 
-	const { isEmpty, transformNum } = useTools()
+	const { transformNum } = useTools()
 	const { nextZIndex } = useZIndex()
 
 	const emits = defineEmits<{

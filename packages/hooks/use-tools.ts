@@ -1,17 +1,6 @@
-export const useTools = () => {
-	/**
-	 * @description 验证变量是否为空
-	 * @param variable <any>
-	 * @returns boolean
-	 */
-	const isEmpty = (variable: any) => {
-		if (variable === null || variable === undefined) return true
-		if (typeof variable === 'string' && !variable.trim().length) return true
-		if (typeof variable === 'object' && !Object.keys(variable).length) return true
-		if (Array.isArray(variable) && !variable.length) return true
-		return false
-	}
+import { isEmpty } from 'lodash-es'
 
+export const useTools = () => {
 	/**
 	 * @description 验证是否为 Number 类型
 	 * @param variable <any>
@@ -39,7 +28,6 @@ export const useTools = () => {
 	}
 
 	return {
-		isEmpty,
 		isNumber,
 		transformNum
 	}
