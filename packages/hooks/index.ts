@@ -1,2 +1,2 @@
-export * from './use-z-index'
+export * from './use-zindex'
 export * from './use-tools'
