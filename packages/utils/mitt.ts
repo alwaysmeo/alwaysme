@@ -1,4 +1,4 @@
 import mitt, { Emitter } from 'mitt'
-type Events = { [name: string]: any }
-const emitter: Emitter<Events> = mitt<Events>()
+const emitter: Emitter<{ [name: string]: any }> = mitt()
+
 export default emitter

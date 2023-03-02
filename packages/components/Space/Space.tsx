@@ -1,6 +1,5 @@
 // 间距组件
-import { defineComponent, PropType, computed } from 'vue'
-import { namespace } from '../../utils/config'
+import { Fragment, PropType } from 'vue'
 
 export default defineComponent({
 	props: {
@@ -29,7 +28,7 @@ export default defineComponent({
 			return {
 				[`--${namespace}-space-align`]: props.align,
 				[`--${namespace}-space-direction`]: { horizontal: 'row', vertical: 'column' }[props.direction],
-				[`--${namespace}-space-size`]: isNaN(props.size) ? props.size : `${props.size}px`
+				[`--${namespace}-space-size`]: typeof props.size === 'number' ? `${props.size}px` : props.size
 			}
 		})
 
@@ -37,11 +36,7 @@ export default defineComponent({
 			return (
 				<div class={classes.value} style={styles.value}>
 					{slots.default?.().map((item, index) => {
-						return (
-							<div key={item.key ?? `${namespace}-space-item-${index}`} class={`${namespace}-space-item`}>
-								{item}
-							</div>
-						)
+						return <Fragment key={item.key ?? `${namespace}-space-item-${index}`}>{item}</Fragment>
 					})}
 				</div>
 			)

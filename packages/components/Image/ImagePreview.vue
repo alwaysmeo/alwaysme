@@ -5,7 +5,7 @@
 		<component
 			:is="`${namespace}-mask`"
 			v-model:visible="state.visible"
-			:zindex="props.zindex"
+			:zindex="computedZIndex"
 			:mount="props.mount"
 			:close-on-press-escape="props.closeOnPressEscape"
 			@on-close="close"
@@ -23,11 +23,8 @@
 			<div :class="`${namespace}-image-preview-close`" @click.stop="close">
 				<component :is="`${namespace}-icon`" name="close" size="18" />
 			</div>
-			<div :class="`${namespace}-image-preview-toolbar`" @click.stop="handleToolbar">
-				<component :is="`${namespace}-icon`" name="rotate-left" size="20" data-type="rotate-left" />
-				<component :is="`${namespace}-icon`" name="rotate-right" size="20" data-type="rotate-right" />
-				<component :is="`${namespace}-icon`" name="zoom-in" size="20" data-type="zoom-in" />
-				<component :is="`${namespace}-icon`" name="zoom-out" size="20" data-type="zoom-out" />
+			<div :class="`${namespace}-image-preview-toolbar`" @click.stop>
+				<component :is="`${namespace}-icon`" v-for="item in state.iconList" :key="item" :name="item" size="20" @click.stop="handleToolbar(item)" />
 			</div>
 			<template v-if="state.list.length > 1">
 				<div
@@ -53,6 +50,11 @@
 	import { withDefaults, onMounted, computed, reactive, watchEffect, nextTick } from 'vue'
 	import { namespace } from '../../utils/config'
 	import { useEventListener } from '@vueuse/core'
+	import { useTools, useZIndex } from '@hooks'
+	import { isEmpty } from 'lodash-es'
+
+	const { transformNum } = useTools()
+	const { nextZIndex } = useZIndex()
 
 	const emits = defineEmits<{
 		(key: 'switch', index: number): void // 切换图片触发的事件
@@ -64,7 +66,7 @@
 		visible: boolean // 是否可见
 		list?: Array<string> // 预览列表
 		infinite?: boolean // 是否循环展示
-		zindex?: number // 设置预览层级
+		zindex?: number | string // 设置预览层级
 		index?: number // 初始预览索引
 		mount?: string // 挂载节点
 		closeOnPressEscape?: boolean // 是否支持按下 ESC 关闭预览
@@ -74,13 +76,14 @@
 		visible: boolean
 		index: number
 		list: Array<string>
+		iconList: Array<string>
 		transform: { scale: number; rotate: number; offsetX: number; offsetY: number }
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
 		list: () => [],
 		infinite: true,
-		zindex: 1000,
+		zindex: undefined,
 		index: 0,
 		mount: 'body',
 		closeOnPressEscape: true
@@ -90,6 +93,7 @@
 		visible: false,
 		index: computed(() => props.index).value,
 		list: computed(() => props.list).value,
+		iconList: ['rotate-left', 'rotate-right', 'zoom-in', 'zoom-out'],
 		transform: { scale: 1, rotate: 0, offsetX: 0, offsetY: 0 }
 	})
 
@@ -106,6 +110,10 @@
 			[`--${namespace}-image-preview-offsetX`]: `${state.transform.offsetX}px`,
 			[`--${namespace}-image-preview-offsetY`]: `${state.transform.offsetY}px`
 		}
+	})
+
+	const computedZIndex = computed(() => {
+		return isEmpty(props.zindex) ? nextZIndex() : transformNum(props.zindex)
 	})
 
 	function handleSwitch(index: number) {
@@ -126,22 +134,22 @@
 		emits('update:visible', false)
 	}
 
-	function handleToolbar(event: MouseEvent) {
-		if (event?.target instanceof HTMLElement)
-			switch (event.target.dataset.type) {
-				case 'zoom-in':
-					state.transform.scale += 0.2
-					break
-				case 'zoom-out':
-					state.transform.scale > 0.4 && (state.transform.scale -= 0.2)
-					break
-				case 'rotate-left':
-					state.transform.rotate -= 90
-					break
-				case 'rotate-right':
-					state.transform.rotate += 90
-					break
+	function handleToolbar(icon: string) {
+		const fun: { [key: string]: () => void } = {
+			'zoom-in': () => {
+				state.transform.scale += 0.2
+			},
+			'zoom-out': () => {
+				state.transform.scale > 0.4 && (state.transform.scale -= 0.2)
+			},
+			'rotate-left': () => {
+				state.transform.rotate -= 90
+			},
+			'rotate-right': () => {
+				state.transform.rotate += 90
 			}
+		}
+		fun[icon]()
 	}
 
 	function handleMouseDown(event: MouseEvent) {

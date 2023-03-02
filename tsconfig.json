@@ -2,36 +2,27 @@
 	"compilerOptions": {
 		"target": "ESNext",
 		"useDefineForClassFields": true,
-		"jsxFragmentFactory": "Fragment",
 		"module": "ESNext",
 		"moduleResolution": "Node",
 		"strict": true,
 		"jsx": "preserve",
-		"sourceMap": true,
+		"sourceMap": false,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"esModuleInterop": true,
 		"lib": ["ESNext", "DOM"],
 		"skipLibCheck": true,
 		"types": [],
-		"baseUrl": "./",
+		"baseUrl": ".",
 		"paths": {
-			"@/*": ["packages/*"],
-			"@components/*": ["packages/components/*"],
-			"@utils/*": ["packages/utils/*"],
-			"@style/*": ["packages/style/*"]
+			"@": ["./packages"],
+			"@components": ["./packages/components"],
+			"@hooks": ["./packages/hooks"],
+			"@utils": ["./packages/utils"],
+			"@style": ["./packages/style"]
 		}
 	},
-	"include": [
-		"typings/**/*.ts",
-		"packages/**/*.ts",
-		"packages/**/*.tsx",
-		"packages/**/*.vue",
-		"examples/**/*.js",
-		"examples/**/*.ts",
-		"examples/**/*.tsx",
-		"examples/**/*.vue"
-	],
+	"include": ["./examples/app.vue", "./typings/**/*.ts", "./packages/**/*.ts", "./packages/**/*.tsx", "./packages/**/*.vue"],
 	"references": [
 		{
 			"path": "./tsconfig.node.json"

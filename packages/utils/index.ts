@@ -1,1 +1,3 @@
-const namespace = 'me'
+import mitt from './mitt'
+
+export { mitt }

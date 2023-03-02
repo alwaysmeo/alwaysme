@@ -83,16 +83,16 @@
 
 	const styles = computed(() => {
 		return {
-			[`--${namespace}-switch-width`]: isNaN(<number>props.width) ? props.width : `${props.width}px`,
+			[`--${namespace}-switch-width`]: isNaN(props.width as number) ? props.width : `${props.width}px`,
 			[`--${namespace}-switch-on-color`]: props.onColor,
 			[`--${namespace}-switch-off-color`]: props.offColor
 		}
 	})
 
-	function onChange(payload: Event) {
-		if (payload.target instanceof HTMLInputElement) {
-			emits('onChange', payload.target.checked)
-			emits('update:value', payload.target.checked)
+	function onChange(event: Event) {
+		if (event.target instanceof HTMLInputElement) {
+			emits('onChange', event.target.checked)
+			emits('update:value', event.target.checked)
 		}
 	}
 </script>

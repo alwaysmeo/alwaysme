@@ -1,8 +1,7 @@
 import { App } from 'vue'
-import { namespace } from '../../utils/config'
-import '../../style/components/timeline.scss';
-import '../../style/components/timeline-item.scss';
-import Timeline from './Timeline.vue'
+import '@style/components/timeline.scss';
+import '@style/components/timeline-item.scss';
+import Timeline from './Timeline'
 import TimelineItem from './TimelineItem.vue'
 
 Timeline.install = (app: App) => {
@@ -11,4 +10,4 @@ Timeline.install = (app: App) => {
 	return app
 }
 
-export default Timeline
+export { Timeline }

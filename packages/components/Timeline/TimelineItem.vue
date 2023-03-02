@@ -16,9 +16,7 @@
 </template>
 
 <script setup lang="ts">
-	import { withDefaults, useSlots, reactive } from 'vue'
-	import { namespace } from '../../utils/config'
-	import mitt from '../../utils/mitt'
+	import { mitt } from '@utils'
 
 	const slots = useSlots()
 

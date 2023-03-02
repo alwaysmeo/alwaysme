@@ -1,0 +1,7 @@
+{
+	"name": "packages",
+	"scripts": {
+		"lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue ./",
+		"build": "vue-tsc --noEmit && vite build --mode production"
+	}
+}

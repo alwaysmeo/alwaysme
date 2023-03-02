@@ -1,6 +1,5 @@
 import { App } from 'vue'
-import { namespace } from '../../utils/config'
-import '../../style/components/switch.scss'
+import '@style/components/switch.scss'
 import Switch from './Switch.vue'
 
 Switch.install = (app: App) => {
@@ -8,4 +7,4 @@ Switch.install = (app: App) => {
 	return app
 }
 
-export default Switch
+export { Switch }

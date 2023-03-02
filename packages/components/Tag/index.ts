@@ -1,6 +1,5 @@
 import { App } from 'vue'
-import { namespace } from '../../utils/config'
-import '../../style/components/tag.scss'
+import '@style/components/tag.scss'
 import Tag from './Tag.vue'
 
 Tag.install = (app: App) => {
@@ -8,4 +7,4 @@ Tag.install = (app: App) => {
 	return app
 }
 
-export default Tag
+export { Tag }

@@ -1,6 +1,5 @@
 import { App } from 'vue'
-import { namespace } from '../../utils/config'
-import '../../style/components/stepper.scss'
+import '@style/components/stepper.scss'
 import Stepper from './Stepper.vue'
 
 Stepper.install = (app: App) => {
@@ -8,4 +7,4 @@ Stepper.install = (app: App) => {
 	return app
 }
 
-export default Stepper
+export { Stepper }

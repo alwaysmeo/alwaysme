@@ -22,7 +22,7 @@
 			v-model:visible="state.visible"
 			:list="props.list"
 			:infinite="props.infinite"
-			:zindex="props.zindex"
+			:zindex="props.zindex ?? currentZIndex"
 			:index="props.index ?? props.list.findIndex((item) => item === props.src)"
 			:mount="props.mount"
 			:close-on-press-escape="props.closeOnPressEscape"
@@ -33,8 +33,9 @@
 </template>
 
 <script setup lang="ts">
-	import { withDefaults, computed, reactive, useSlots } from 'vue'
-	import { namespace } from '../../utils/config'
+	import { useZIndex } from '@hooks'
+
+	const { currentZIndex } = useZIndex()
 
 	const slots = useSlots()
 	const emits = defineEmits<{
@@ -54,7 +55,7 @@
 		preview?: boolean // 是否允许预览
 		list?: Array<string> // 预览列表
 		infinite?: boolean // 是否循环展示
-		zindex?: number // 设置预览层级
+		zindex?: number | string // 设置预览层级
 		index?: number // 初始预览索引
 		mount?: string // 挂载节点
 		closeOnPressEscape?: boolean // 是否支持按下 ESC 关闭预览
@@ -75,7 +76,7 @@
 		fit: 'cover',
 		list: () => [],
 		infinite: true,
-		zindex: 1000,
+		zindex: undefined,
 		index: undefined,
 		mount: 'body',
 		closeOnPressEscape: true
@@ -98,8 +99,8 @@
 
 	const styles = computed(() => {
 		return {
-			[`--${namespace}-image-width`]: isNaN(<number>props.width) ? props.width : `${props.width}px`,
-			[`--${namespace}-image-height`]: isNaN(<number>props.height) ? props.height : `${props.height}px`,
+			[`--${namespace}-image-width`]: isNaN(props.width as number) ? props.width : `${props.width}px`,
+			[`--${namespace}-image-height`]: isNaN(props.height as number) ? props.height : `${props.height}px`,
 			[`--${namespace}-image-fit`]: props.fit
 		}
 	})

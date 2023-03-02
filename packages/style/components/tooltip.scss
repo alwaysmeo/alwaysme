@@ -1,0 +1,26 @@
+$namespace-base: #{$namespace}-tooltip;
+
+.#{$namespace-base} {
+	position: absolute;
+	color: var(--#{$namespace}-white-color);
+	border-radius: 4px;
+	background-color: var(--#{$namespace-base}-color);
+	backdrop-filter: blur(var(--#{$namespace-base}-blur));
+	z-index: var(--#{$namespace-base}-zindex);
+	> div {
+		position: relative;
+		padding: 4px 8px;
+		.#{$namespace-base}-arrow {
+			position: absolute;
+			top: var(--#{$namespace-base}-arrow-top);
+			bottom: var(--#{$namespace-base}-arrow-bottom);
+			left: var(--#{$namespace-base}-arrow-left);
+			right: var(--#{$namespace-base}-arrow-right);
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: var(--#{$namespace-base}-arrow-border-width);
+			border-color: var(--#{$namespace-base}-arrow-border-color);
+		}
+	}
+}

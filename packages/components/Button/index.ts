@@ -1,7 +1,6 @@
 
 import { App } from 'vue'
-import { namespace } from '../../utils/config'
-import '../../style/components/button.scss'
+import '@style/components/button.scss'
 import Button from './Button.vue'
 
 Button.install = (app: App) => {
@@ -9,4 +8,4 @@ Button.install = (app: App) => {
 	return app
 }
 
-export default Button
+export { Button }

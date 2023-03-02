@@ -1,6 +1,5 @@
 import { App } from 'vue'
-import { namespace } from '../../utils/config'
-import '../../style/components/mask.scss'
+import '@style/components/mask.scss'
 import Mask from './Mask.vue'
 
 Mask.install = (app: App) => {
@@ -8,4 +7,4 @@ Mask.install = (app: App) => {
 	return app
 }
 
-export default Mask
+export { Mask }

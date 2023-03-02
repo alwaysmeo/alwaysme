@@ -2,7 +2,7 @@
 <template>
 	<teleport :to="props.mount">
 		<transition name="fade-zoom">
-			<div v-if="state.visible" :class="`${namespace}-mask`" :style="styles" @click="close">
+			<div v-if="visible" :class="`${namespace}-mask`" :style="styles" @click="close">
 				<slot />
 			</div>
 		</transition>
@@ -10,10 +10,12 @@
 </template>
 
 <script setup lang="ts">
-	import { withDefaults, onMounted, computed, reactive, watchEffect } from 'vue'
 	import { useEventListener } from '@vueuse/core'
-	import { throttle } from 'lodash'
-	import { namespace } from '../../utils/config'
+	import { isEmpty, throttle } from 'lodash-es'
+	import { useTools, useZIndex } from '@hooks'
+
+	const { transformNum } = useTools()
+	const { nextZIndex } = useZIndex()
 
 	const emits = defineEmits<{
 		(key: 'update:visible', visible: boolean): void
@@ -28,30 +30,24 @@
 		closeOnPressEscape?: boolean // 是否支持按下 ESC 关闭预览
 	}
 
-	interface State {
-		visible: boolean
-	}
-
 	const props = withDefaults(defineProps<Props>(), {
 		blur: 12,
-		zindex: 1000,
+		zindex: undefined,
 		mount: 'body',
 		closeOnPressEscape: true
 	})
 
-	const state = reactive<State>({
-		visible: false
-	})
-
-	watchEffect(() => {
-		state.visible = computed(() => props.visible).value
-	})
+	const visible = toRef(props, 'visible')
 
 	const styles = computed(() => {
 		return {
-			[`--${namespace}-mask-blur`]: isNaN(<number>props.blur) ? props.blur : `${props.blur}px`,
-			[`--${namespace}-mask-zindex`]: props.zindex
+			[`--${namespace}-mask-blur`]: isNaN(props.blur as number) ? props.blur : `${props.blur}px`,
+			[`--${namespace}-mask-zindex`]: computedZIndex.value
 		}
+	})
+
+	const computedZIndex = computed(() => {
+		return isEmpty(props.zindex) ? nextZIndex() : transformNum(props.zindex)
 	})
 
 	function close(event: MouseEvent | KeyboardEvent) {
@@ -60,7 +56,7 @@
 	}
 
 	const keydownHandler = throttle((event: KeyboardEvent) => {
-		if (!state.visible) return
+		if (!visible) return
 		switch (event.code) {
 			case 'Escape':
 				props.closeOnPressEscape && close(event)

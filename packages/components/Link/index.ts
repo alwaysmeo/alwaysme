@@ -1,6 +1,5 @@
 import { App } from 'vue'
-import { namespace } from '../../utils/config'
-import '../../style/components/link.scss'
+import '@style/components/link.scss'
 import Link from './Link.vue'
 
 Link.install = (app: App) => {
@@ -8,4 +7,4 @@ Link.install = (app: App) => {
 	return app
 }
 
-export default Link
+export { Link }
