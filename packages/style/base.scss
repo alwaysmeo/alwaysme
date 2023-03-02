@@ -15,8 +15,6 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	width: 100%;
-	height: 100%;
 }
 
 div {
@@ -45,7 +43,7 @@ html:not(html[data-theme='dark']) {
 // TODO: 暗主题公共样式
 html[data-theme='dark'] {
 	--#{$namespace}-box-shadow: -2px -2px 4px 0 var(--#{$namespace}-white-color-10), 2px 2px 4px 0 var(--#{$namespace}-black-color-80);
-	--#{$namespace}-box-shadow-hover-color: -2px -2px 4px 1px var(--#{$namespace}-white-color-20), 2px 2px 4px 2px var(--#{$namespace}-black-color-90);
+	--#{$namespace}-box-shadow-hover: -2px -2px 4px 1px var(--#{$namespace}-white-color-20), 2px 2px 4px 2px var(--#{$namespace}-black-color-90);
 	@for $i from 1 to 10 {
 		--#{$namespace}-gray-color-#{$i * 10}: var(--#{$namespace}-white-color-#{$i * 10});
 	}
