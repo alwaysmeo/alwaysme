@@ -1,7 +1,8 @@
 // 文字提示组件
 import { PropType, Teleport, Transition, VNode, VNodeArrayChildren } from 'vue'
 import { useEventListener } from '@vueuse/core'
-import { useTheme, useZIndex } from '@hooks'
+import { useTheme, useTools, useZIndex } from '@hooks'
+import { isEmpty } from 'lodash-es'
 
 export default defineComponent({
 	props: {
@@ -81,7 +82,8 @@ export default defineComponent({
 	},
 	setup(props) {
 		const slots = useSlots()
-		const { currentZIndex } = useZIndex()
+		const { nextZIndex } = useZIndex()
+		const { transformNum } = useTools()
 		const theme = useTheme()
 
 		const classes = computed(() => {
@@ -92,7 +94,7 @@ export default defineComponent({
 			return {
 				top: `${position.top}px`,
 				left: `${position.left}px`,
-				[`--${namespace}-tooltip-zindex`]: props.zindex ?? currentZIndex,
+				[`--${namespace}-tooltip-zindex`]: zindex,
 				[`--${namespace}-tooltip-blur`]: isNaN(props.blur as number) ? props.blur : `${props.blur}px`,
 				[`--${namespace}-tooltip-color`]: props.color ?? { light: '#000000b2', dark: '#535353cc' }[theme.get()],
 				[`--${namespace}-tooltip-arrow-border-width`]: arrow['border'][arrow.position].width,
@@ -103,6 +105,8 @@ export default defineComponent({
 				[`--${namespace}-tooltip-arrow-right`]: `${arrow.right}px`
 			}
 		})
+
+		const zindex = isEmpty(props.zindex) ? nextZIndex() : transformNum(props.zindex)
 
 		const tooltipRef = ref<HTMLElement>()
 
