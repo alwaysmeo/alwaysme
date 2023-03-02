@@ -1,6 +1,6 @@
 <template>
 	<me-space class="always-me" direction="vertical">
-		<!-- <div style="width: 800px">
+		<div style="width: 800px">
 			<me-divider textalign="center" dashed>Text</me-divider>
 			<me-divider textalign="center" />
 			<div>
@@ -106,14 +106,44 @@
 			<me-image src="" width="180px" height="100px"></me-image>
 			<me-button type="primary" @click="visible = !visible">预览</me-button>
 			<me-image-preview :infinite="false" :list="url" v-model:visible="visible" />
-		</me-space> -->
+		</me-space>
 
 		<me-space>
-			<me-tooltip>
-				<me-button @click="visible = false">文字提示</me-button>
+			<me-tooltip content="文字提示1" position="top">
+				<me-button>top</me-button>
 			</me-tooltip>
-			<me-tooltip>
-				<me-button>内容提示</me-button>
+			<me-tooltip content="文字提示2" position="top-start">
+				<me-button>top-start</me-button>
+			</me-tooltip>
+			<me-tooltip content="文字提示3dasdas" position="top-end">
+				<me-button>top-end</me-button>
+			</me-tooltip>
+			<me-tooltip content="文字提示4" position="bottom">
+				<me-button>bottom</me-button>
+			</me-tooltip>
+			<me-tooltip content="文字提示5" position="bottom-start">
+				<me-button>bottom-start</me-button>
+			</me-tooltip>
+			<me-tooltip content="文字提示6" position="bottom-end">
+				<me-button>bottom-end</me-button>
+			</me-tooltip>
+			<me-tooltip content="文字提示7" position="left">
+				<me-button>left</me-button>
+			</me-tooltip>
+			<me-tooltip content="文字提示8" position="left-start">
+				<me-button>left-start</me-button>
+			</me-tooltip>
+			<me-tooltip content="文字提示9" position="left-end">
+				<me-button>left-end</me-button>
+			</me-tooltip>
+			<me-tooltip content="文字提示10" position="right">
+				<me-button>right</me-button>
+			</me-tooltip>
+			<me-tooltip content="文字提示11" position="right-start">
+				<me-button>right-start</me-button>
+			</me-tooltip>
+			<me-tooltip content="文字提示12" position="right-end">
+				<me-button>right-end</me-button>
 			</me-tooltip>
 		</me-space>
 	</me-space>
@@ -140,7 +170,6 @@
 <style scoped lang="scss">
 	.always-me {
 		box-sizing: border-box;
-		width: calc(100vw - 60px);
-		padding: 30px;
+		padding: 30px 30px 120px 30px;
 	}
 </style>
