@@ -42,13 +42,11 @@
 	const styles = computed(() => {
 		return {
 			[`--${namespace}-mask-blur`]: isNaN(props.blur as number) ? props.blur : `${props.blur}px`,
-			[`--${namespace}-mask-zindex`]: computedZIndex.value
+			[`--${namespace}-mask-zindex`]: zindex
 		}
 	})
 
-	const computedZIndex = computed(() => {
-		return isEmpty(props.zindex) ? nextZIndex() : transformNum(props.zindex)
-	})
+	const zindex = isEmpty(props.zindex) ? nextZIndex() : transformNum(props.zindex)
 
 	function close(event: MouseEvent | KeyboardEvent) {
 		emits('update:visible', false)

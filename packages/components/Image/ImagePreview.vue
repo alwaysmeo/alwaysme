@@ -5,7 +5,7 @@
 		<component
 			:is="`${namespace}-mask`"
 			v-model:visible="state.visible"
-			:zindex="computedZIndex"
+			:zindex="zindex"
 			:mount="props.mount"
 			:close-on-press-escape="props.closeOnPressEscape"
 			@on-close="close"
@@ -110,9 +110,7 @@
 		}
 	})
 
-	const computedZIndex = computed(() => {
-		return isEmpty(props.zindex) ? nextZIndex() : transformNum(props.zindex)
-	})
+	const zindex = isEmpty(props.zindex) ? nextZIndex() : transformNum(props.zindex)
 
 	function handleSwitch(index: number) {
 		resetTransform()
