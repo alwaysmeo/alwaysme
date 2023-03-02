@@ -22,7 +22,7 @@ export default defineComponent({
 			for (const item of slots.default?.())
 				if (item?.type !== TimelineItem) {
 					// eslint-disable-next-line no-console
-					console.warn('There appears to be a non-<TimelineItem> component in <Timeline>')
+					console.warn('There appears to be a non <TimelineItem> component within the <Timeline> component.')
 					break
 				}
 
