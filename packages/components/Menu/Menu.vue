@@ -1,13 +1,15 @@
 <!-- 菜单组件 -->
 <template>
 	<ul ref="menuRef" :class="classes" :style="styles">
-		<slot />
+		<li>
+			<slot />
+		</li>
 	</ul>
 </template>
 
 <script setup lang="ts">
 	import { useEventListener } from '@vueuse/core'
-	import { isEmpty, isBoolean } from 'lodash-es'
+	import { isEmpty, isBoolean, eq } from 'lodash-es'
 	import { useTools, useZIndex } from '@hooks'
 
 	const { nextZIndex } = useZIndex()
@@ -22,8 +24,13 @@
 		collapse?: boolean // 是否折叠 受控模式
 		zindex?: number | string // 菜单层级
 		mode?: 'horizontal' | 'vertical' // 菜单展示模式
-		width?: number | string // 菜单展开时宽度
+		openWidth?: number | string // 菜单展开时宽度
+		width?: number | string // 菜单折叠时宽度
 		height?: number | string // 菜单高度
+		top?: number | string // 菜单距离顶部的距离
+		right?: number | string // 菜单距离右边的距离
+		bottom?: number | string // 菜单距离底部的距离
+		left?: number | string // 菜单距离左边的距离
 		color?: string // 背景颜色
 		blur?: number | string // 背景模糊度
 		mouseEnterDelay?: number // 鼠标移入后延时多少才显示 Tooltip，单位：秒
@@ -38,8 +45,13 @@
 		collapse: undefined,
 		zindex: undefined,
 		mode: 'vertical',
-		width: 240,
+		openWidth: 240,
+		width: 60,
 		height: 'auto',
+		top: 0,
+		right: 0,
+		bottom: 0,
+		left: 0,
 		color: undefined,
 		blur: 10,
 		mouseEnterDelay: 100,
@@ -56,8 +68,15 @@
 
 	const styles = computed(() => {
 		return {
+			top: transformCssUnit(props.top),
+			right: transformCssUnit(props.right),
+			bottom: transformCssUnit(props.bottom),
+			left: transformCssUnit(props.left),
 			[`--${namespace}-menu-zindex`]: zindex,
-			[`--${namespace}-menu-width`]: state.collapse ? transformCssUnit(props.width) : '60px',
+			[`--${namespace}-menu-width`]: {
+				horizontal: transformCssUnit(props.width),
+				vertical: transformCssUnit(state.collapse ? props.openWidth : props.width)
+			}[props.mode],
 			[`--${namespace}-menu-height`]: transformCssUnit(props.height),
 			[`--${namespace}-menu-color`]: props.color,
 			[`--${namespace}-menu-blur`]: transformCssUnit(props.blur)

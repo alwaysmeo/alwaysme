@@ -148,8 +148,19 @@
 		</me-space>
 	</me-space>
 
-	<me-menu height="100vh">
-		<me-menu-item>123312</me-menu-item>
+	<me-menu height="calc(100vh - 60px)" top="60">
+		<me-menu-item>首页</me-menu-item>
+		<me-menu-item>文档</me-menu-item>
+		<me-menu-item>组件</me-menu-item>
+		<me-menu-item>高级组件</me-menu-item>
+		<me-menu-item>商店</me-menu-item>
+	</me-menu>
+	<me-menu height="60px" width="100vw" mode="horizontal">
+		<me-menu-item>首页</me-menu-item>
+		<me-menu-item>文档</me-menu-item>
+		<me-menu-item>组件</me-menu-item>
+		<me-menu-item>高级组件</me-menu-item>
+		<me-menu-item>商店</me-menu-item>
 	</me-menu>
 </template>
 

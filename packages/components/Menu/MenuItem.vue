@@ -10,6 +10,7 @@
 
 <script setup lang="ts">
 	import { eq } from 'lodash-es'
+	import { mitt } from '@utils'
 	import { useTools } from '@hooks'
 
 	const { transformCssUnit } = useTools()
@@ -33,7 +34,7 @@
 	})
 
 	const state = reactive<State>({
-		mode: 'vertical'
+		mode: undefined
 	})
 
 	const classes = computed(() => {
@@ -45,5 +46,10 @@
 			[`--${namespace}-menu-item-width`]: (eq(state.mode, 'horizontal') && transformCssUnit(props.width)) || '100%',
 			[`--${namespace}-menu-item-height`]: (eq(state.mode, 'vertical') && transformCssUnit(props.height)) || '100%'
 		}
+	})
+
+	mitt.on('menu-mode', (mode: 'horizontal' | 'vertical') => {
+		console.log('menu-mode', mode)
+		state.mode = mode
 	})
 </script>
