@@ -27,8 +27,25 @@ export const useTools = () => {
 		}
 	}
 
+	/**
+	 * @description 将字符转换为 css 可识别单位
+	 * @param source <string | number | undefined>
+	 * @returns string | undefined
+	 */
+	const transformCssUnit = (source: string | number | undefined) => {
+		if (isEmpty(source)) return source
+		if (typeof source === 'number') return `${source}px`
+		if (typeof source === 'string') {
+			if (source.trim() === 'auto') return source.trim()
+			const str = source.trim().replace(/[^0-9]/g, '')
+			if (!str.length) return undefined
+			return `${str}px`
+		}
+	}
+
 	return {
 		isNumber,
-		transformNum
+		transformNum,
+		transformCssUnit
 	}
 }
