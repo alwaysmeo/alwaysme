@@ -6,6 +6,10 @@
 </template>
 
 <script setup lang="ts">
+	import { useTools } from '@hooks'
+
+	const { transformCssUnit } = useTools()
+
 	interface Props {
 		name?: string // 图标颜色
 		color?: string // 图标颜色
@@ -21,7 +25,7 @@
 	const styles = computed(() => {
 		return {
 			[`--${namespace}-icon-color`]: props.color,
-			[`--${namespace}-icon-size`]: isNaN(props.size as number) ? props.size : `${props.size}px`
+			[`--${namespace}-icon-size`]: transformCssUnit(props.size)
 		}
 	})
 </script>

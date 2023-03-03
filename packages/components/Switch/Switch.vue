@@ -25,7 +25,10 @@
 </template>
 
 <script setup lang="ts">
+	import { useTools } from '@hooks'
+
 	const slots = useSlots()
+	const { transformCssUnit } = useTools()
 
 	const emits = defineEmits<{
 		(key: 'onChange', value: boolean): void
@@ -80,7 +83,7 @@
 
 	const styles = computed(() => {
 		return {
-			[`--${namespace}-switch-width`]: isNaN(props.width as number) ? props.width : `${props.width}px`,
+			[`--${namespace}-switch-width`]: transformCssUnit(props.width),
 			[`--${namespace}-switch-on-color`]: props.onColor,
 			[`--${namespace}-switch-off-color`]: props.offColor
 		}

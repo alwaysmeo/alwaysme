@@ -14,6 +14,10 @@
 </template>
 
 <script setup lang="ts">
+	import { useTools } from '@hooks'
+
+	const { transformCssUnit } = useTools()
+
 	const emits = defineEmits<{
 		(key: 'change', value: number): void
 		(key: 'blur', value: number): void
@@ -60,8 +64,8 @@
 
 	const styles = computed(() => {
 		return {
-			[`--${namespace}-stepper-height`]: isNaN(props.height as number) ? props.height : `${props.height}px`,
-			[`--${namespace}-stepper-input-width`]: isNaN(props.inputWidth as number) ? props.inputWidth : `${props.inputWidth}px`
+			[`--${namespace}-stepper-height`]: transformCssUnit(props.height),
+			[`--${namespace}-stepper-input-width`]: transformCssUnit(props.inputWidth)
 		}
 	})
 

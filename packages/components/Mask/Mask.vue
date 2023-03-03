@@ -14,7 +14,7 @@
 	import { isEmpty, throttle } from 'lodash-es'
 	import { useTools, useZIndex } from '@hooks'
 
-	const { transformNum } = useTools()
+	const { transformCssUnit } = useTools()
 	const { nextZIndex } = useZIndex()
 
 	const emits = defineEmits<{
@@ -41,12 +41,12 @@
 
 	const styles = computed(() => {
 		return {
-			[`--${namespace}-mask-blur`]: isNaN(props.blur as number) ? props.blur : `${props.blur}px`,
+			[`--${namespace}-mask-blur`]: transformCssUnit(props.blur),
 			[`--${namespace}-mask-zindex`]: zindex
 		}
 	})
 
-	const zindex = isEmpty(props.zindex) ? nextZIndex() : transformNum(props.zindex)
+	const zindex = isEmpty(props.zindex) ? nextZIndex() : props.zindex
 
 	function close(event: MouseEvent | KeyboardEvent) {
 		emits('update:visible', false)

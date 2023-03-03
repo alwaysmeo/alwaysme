@@ -78,7 +78,7 @@ export default defineComponent({
 	setup(props) {
 		const slots = useSlots()
 		const { nextZIndex } = useZIndex()
-		const { transformNum } = useTools()
+		const { transformCssUnit } = useTools()
 		const theme = useTheme()
 
 		const classes = computed(() => {
@@ -90,7 +90,7 @@ export default defineComponent({
 				top: `${position.top}px`,
 				left: `${position.left}px`,
 				[`--${namespace}-tooltip-zindex`]: zindex,
-				[`--${namespace}-tooltip-blur`]: isNaN(props.blur as number) ? props.blur : `${props.blur}px`,
+				[`--${namespace}-tooltip-blur`]: transformCssUnit(props.blur),
 				[`--${namespace}-tooltip-color`]: props.color ?? { light: '#000000b2', dark: '#535353cc' }[theme.get()],
 				[`--${namespace}-tooltip-arrow-border-width`]: arrow['border'][arrow.position].width,
 				[`--${namespace}-tooltip-arrow-border-color`]: arrow['border'][arrow.position].color,
@@ -101,7 +101,7 @@ export default defineComponent({
 			}
 		})
 
-		const zindex = isEmpty(props.zindex) ? nextZIndex() : transformNum(props.zindex)
+		const zindex = isEmpty(props.zindex) ? nextZIndex() : props.zindex
 
 		const tooltipRef = ref<HTMLElement>()
 

@@ -33,8 +33,9 @@
 </template>
 
 <script setup lang="ts">
-	import { useZIndex } from '@hooks'
+	import { useTools, useZIndex } from '@hooks'
 
+	const { transformCssUnit } = useTools()
 	const { currentZIndex } = useZIndex()
 
 	const slots = useSlots()
@@ -99,8 +100,8 @@
 
 	const styles = computed(() => {
 		return {
-			[`--${namespace}-image-width`]: isNaN(props.width as number) ? props.width : `${props.width}px`,
-			[`--${namespace}-image-height`]: isNaN(props.height as number) ? props.height : `${props.height}px`,
+			[`--${namespace}-image-width`]: transformCssUnit(props.width),
+			[`--${namespace}-image-height`]: transformCssUnit(props.height),
 			[`--${namespace}-image-fit`]: props.fit
 		}
 	})

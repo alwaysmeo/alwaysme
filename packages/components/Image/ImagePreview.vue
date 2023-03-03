@@ -48,10 +48,9 @@
 
 <script setup lang="ts">
 	import { useEventListener } from '@vueuse/core'
-	import { useTools, useZIndex } from '@hooks'
+	import { useZIndex } from '@hooks'
 	import { isEmpty } from 'lodash-es'
 
-	const { transformNum } = useTools()
 	const { nextZIndex } = useZIndex()
 
 	const emits = defineEmits<{
@@ -110,7 +109,7 @@
 		}
 	})
 
-	const zindex = isEmpty(props.zindex) ? nextZIndex() : transformNum(props.zindex)
+	const zindex = isEmpty(props.zindex) ? nextZIndex() : props.zindex
 
 	function handleSwitch(index: number) {
 		resetTransform()
