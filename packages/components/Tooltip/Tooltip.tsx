@@ -54,11 +54,6 @@ export default defineComponent({
 			type: Number,
 			default: 300
 		},
-		// 挂载节点
-		mount: {
-			type: String,
-			default: 'body'
-		},
 		// 过渡动画
 		transition: {
 			type: String,
@@ -224,7 +219,7 @@ export default defineComponent({
 				if (child.el.nodeType !== 1)
 					// eslint-disable-next-line no-console
 					return console.warn('The default slot of the <Tooltip> component appears to be a non-DOM element.')
-				useEventListener(child.el as HTMLElement, 'mouseenter', () => {
+				useEventListener(child.el as HTMLElement, { hover: 'mouseenter', click: 'click', focus: 'focus' }[props.trigger], () => {
 					setTimeout(() => {
 						visible.value = true
 						nextTick(() => {
@@ -234,11 +229,19 @@ export default defineComponent({
 						})
 					}, props.mouseEnterDelay)
 				})
-				useEventListener(child.el as HTMLElement, 'mouseleave', () => {
-					setTimeout(() => {
-						visible.value = false
-					}, props.mouseLeaveDelay)
-				})
+				if (props.trigger === 'click')
+					useEventListener(document as Document, 'click', () => {
+						visible.value &&
+							setTimeout(() => {
+								visible.value = false
+							}, props.mouseLeaveDelay)
+					})
+				else
+					useEventListener(child.el as HTMLElement, { hover: 'mouseleave', focus: 'blur' }[props.trigger], () => {
+						setTimeout(() => {
+							visible.value = false
+						}, props.mouseLeaveDelay)
+					})
 			}
 		})
 
@@ -246,7 +249,7 @@ export default defineComponent({
 			return (
 				<>
 					{wrapperSlot}
-					<Teleport to={props.mount}>
+					<Teleport to="body">
 						<Transition name={props.transition}>
 							{visible.value && (
 								<div ref={tooltipRef} class={classes.value} style={styles.value}>

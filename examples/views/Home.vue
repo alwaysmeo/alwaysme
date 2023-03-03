@@ -109,16 +109,16 @@
 		</me-space> -->
 
 		<me-space>
-			<me-tooltip content="文字提示1" position="top">
+			<me-tooltip content="文字提示1" position="top" color="#147ffa" trigger="click">
 				<me-button>top</me-button>
 			</me-tooltip>
-			<me-tooltip content="文字提示2" position="top-start">
+			<me-tooltip content="文字提示2" position="top-start" trigger="focus">
 				<me-button>top-start</me-button>
 			</me-tooltip>
 			<me-tooltip content="文字提示3dasdas" position="top-end">
 				<me-button>top-end</me-button>
 			</me-tooltip>
-			<me-tooltip content="文字提示4" position="bottom">
+			<me-tooltip content="文字提示4" position="bottom" :offset="[10, -10]">
 				<me-button>bottom</me-button>
 			</me-tooltip>
 			<me-tooltip content="文字提示5" position="bottom-start">
