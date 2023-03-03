@@ -5,7 +5,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import { visualizer } from 'rollup-plugin-visualizer'
 import AutoImport from 'unplugin-auto-import/vite'
 import { resolve } from 'path'
-import { namespace } from '../packages/config'
+import { namespace } from './config'
 
 const OUTDIR = '../dist'
 export default defineConfig({

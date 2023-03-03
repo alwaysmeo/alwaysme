@@ -7,6 +7,7 @@
 	},
 	"include": [
 		"./packages/vite.config.ts",
-		"./examples/vite.config.ts"
+		"./packages/config/index.ts",
+		"./examples/vite.config.ts",
 	]
 }
