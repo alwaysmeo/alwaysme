@@ -27,7 +27,7 @@
 	}
 
 	interface State {
-		position: string // 节点对齐方式
+		position: 'left' | 'right' // 节点对齐方式
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
@@ -37,10 +37,10 @@
 	})
 
 	const state = reactive<State>({
-		position: ''
+		position: undefined
 	})
 
-	mitt.on('timeline-position', (position: string) => {
+	mitt.on('timeline-position', (position: 'left' | 'right') => {
 		state.position = position
 	})
 </script>
