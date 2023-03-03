@@ -19,10 +19,6 @@
 		position: 'left'
 	})
 
-	watchEffect(() => {
-		mitt.emit('timeline-position', props.position)
-	})
-
 	if (slots.default)
 		for (const item of slots.default?.())
 			if (item?.type !== TimelineItem) {
@@ -30,4 +26,10 @@
 				console.warn('There appears to be a non <TimelineItem> component within the <Timeline> component.')
 				break
 			}
+
+	onMounted(() => {
+		watchEffect(() => {
+			mitt.emit('timeline-position', props.position)
+		})
+	})
 </script>
