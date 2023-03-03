@@ -1,0 +1,17 @@
+$namespace-base: #{$namespace}-menu;
+
+.#{$namespace-base} {
+	position: fixed;
+	left: 0;
+	top: 0;
+	border-right: 1px solid var(--#{$namespace}-gray-color-10);
+	background-color: var(--#{$namespace-base}-color);
+	backdrop-filter: blur(var(--#{$namespace-base}-blur));
+	z-index: var(--#{$namespace-base}-zindex);
+	transition: width 0.3s;
+	transform: translateZ(0);
+	&-mode-vertical {
+		width: var(--#{$namespace-base}-width);
+		height: var(--#{$namespace-base}-height);
+	}
+}
