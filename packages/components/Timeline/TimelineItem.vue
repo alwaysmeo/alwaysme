@@ -27,7 +27,7 @@
 	}
 
 	interface State {
-		position: 'left' | 'right' // 节点对齐方式
+		position?: 'left' | 'right' // 节点对齐方式
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
