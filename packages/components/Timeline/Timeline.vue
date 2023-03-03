@@ -1,5 +1,4 @@
 <!-- 时间轴组件 -->
-
 <template>
 	<div :class="`${namespace}-timeline`" :style="`--${namespace}-timeline-item-position: ${props.position}`">
 		<slot />
