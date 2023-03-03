@@ -15,6 +15,7 @@ export default defineConfig(({ command, mode }) => {
 			AutoImport({
 				imports: ['vue'],
 				dirs: ['../packages/config'],
+				// dts: './typings/auto-import.d.ts',
 				dts: '../typings/auto-import.d.ts',
 				vueTemplate: true
 			})
@@ -22,12 +23,13 @@ export default defineConfig(({ command, mode }) => {
 		css: {
 			preprocessorOptions: {
 				scss: {
-					additionalData: `$namespace: '${namespace}';`
+					additionalData: `$namespace: '${namespace}'; @import './assets/style/global.scss';`
 				}
 			}
 		},
 		resolve: {
 			alias: {
+				// examples
 				'@': resolve(__dirname, './'),
 				'@views': resolve(__dirname, './views'),
 				'@assets': resolve(__dirname, './assets'),
@@ -39,10 +41,13 @@ export default defineConfig(({ command, mode }) => {
 			}
 		},
 		build: {
-			outDir: VITE_OUTDIR
+			outDir: VITE_OUTDIR,
+			chunkSizeWarningLimit: 500,
+			minify: true, // 压缩
+			cssCodeSplit: false
 		},
 		server: {
-			host: VITE_HOST,
+			host: VITE_HOST as string,
 			port: VITE_PORT as unknown as number,
 			open: VITE_OPEN as unknown as boolean,
 			hmr: VITE_HMR as unknown as boolean
