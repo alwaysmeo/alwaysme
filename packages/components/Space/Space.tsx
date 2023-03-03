@@ -1,5 +1,6 @@
 // 间距组件
-import { Fragment, PropType } from 'vue'
+import { namespace } from '@config'
+import { computed, defineComponent, Fragment, PropType } from 'vue'
 
 export default defineComponent({
 	props: {

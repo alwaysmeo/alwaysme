@@ -33,6 +33,8 @@
 </template>
 
 <script setup lang="ts">
+	import { namespace } from '@config'
+	import { reactive, computed, useSlots } from 'vue'
 	import { useTools, useZIndex } from '@hooks'
 
 	const { transformCssUnit } = useTools()

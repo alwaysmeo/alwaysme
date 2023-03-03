@@ -10,6 +10,8 @@
 </template>
 
 <script setup lang="ts">
+	import { namespace } from '@config'
+	import { toRef, onMounted, computed } from 'vue'
 	import { useEventListener } from '@vueuse/core'
 	import { isEmpty, throttle } from 'lodash-es'
 	import { useTools, useZIndex } from '@hooks'

@@ -1,3 +1,4 @@
+import { namespace } from '@config'
 import { App } from 'vue'
 import '@style/components/stepper.scss'
 import Stepper from './Stepper.vue'

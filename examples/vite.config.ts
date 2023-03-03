@@ -1,7 +1,6 @@
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import AutoImport from 'unplugin-auto-import/vite'
 import { resolve } from 'path'
 import { namespace } from '../packages/config'
 
@@ -11,14 +10,7 @@ export default defineConfig(({ command, mode }) => {
 	return {
 		plugins: [
 			vue(),
-			vueJsx(),
-			AutoImport({
-				imports: ['vue'],
-				dirs: ['../packages/config'],
-				// dts: './typings/auto-import.d.ts',
-				dts: '../typings/auto-import.d.ts',
-				vueTemplate: true
-			})
+			vueJsx()
 		],
 		css: {
 			preprocessorOptions: {
@@ -35,6 +27,7 @@ export default defineConfig(({ command, mode }) => {
 				'@assets': resolve(__dirname, './assets'),
 				// packages
 				'@components': resolve(__dirname, '../packages/components'),
+				'@config': resolve(__dirname, '../packages/config'),
 				'@utils': resolve(__dirname, '../packages/utils'),
 				'@hooks': resolve(__dirname, '../packages/hooks'),
 				'@style': resolve(__dirname, '../packages/style')

@@ -16,6 +16,8 @@
 </template>
 
 <script setup lang="ts">
+	import { namespace } from '@config'
+	import { reactive, useSlots } from 'vue'
 	import { mitt } from '@utils'
 
 	const slots = useSlots()

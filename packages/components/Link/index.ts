@@ -1,3 +1,4 @@
+import { namespace } from '@config'
 import { App } from 'vue'
 import '@style/components/link.scss'
 import Link from './Link.vue'

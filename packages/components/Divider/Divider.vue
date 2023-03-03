@@ -8,6 +8,9 @@
 </template>
 
 <script setup lang="ts">
+	import { namespace } from '@config'
+	import { computed, useSlots } from 'vue'
+
 	const slots = useSlots()
 
 	interface Props {

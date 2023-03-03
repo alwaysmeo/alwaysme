@@ -14,6 +14,8 @@
 </template>
 
 <script setup lang="ts">
+	import { namespace } from '@config'
+	import { reactive, computed, watchEffect } from 'vue'
 	import { useTools } from '@hooks'
 
 	const { transformCssUnit } = useTools()

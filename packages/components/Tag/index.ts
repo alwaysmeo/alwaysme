@@ -1,3 +1,4 @@
+import { namespace } from '@config'
 import { App } from 'vue'
 import '@style/components/tag.scss'
 import Tag from './Tag.vue'

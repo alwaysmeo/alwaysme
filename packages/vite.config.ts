@@ -3,7 +3,6 @@ import viteDts from 'vite-plugin-dts'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { visualizer } from 'rollup-plugin-visualizer'
-import AutoImport from 'unplugin-auto-import/vite'
 import { resolve } from 'path'
 import { namespace } from './config'
 
@@ -16,13 +15,7 @@ export default defineConfig({
 			outputDir: `${OUTDIR}/es`,
 			tsConfigFilePath: '../tsconfig.json'
 		}),
-		visualizer(),
-		AutoImport({
-			imports: ['vue'],
-			dirs: ['./config'],
-			dts: './typings/auto-import.d.ts',
-			vueTemplate: true
-		})
+		visualizer()
 	],
 	css: {
 		preprocessorOptions: {
@@ -35,6 +28,7 @@ export default defineConfig({
 		alias: {
 			'@': resolve(__dirname, './'),
 			'@components': resolve(__dirname, './components'),
+			'@config': resolve(__dirname, './config'),
 			'@hooks': resolve(__dirname, './hooks'),
 			'@utils': resolve(__dirname, './utils'),
 			'@style': resolve(__dirname, './style')

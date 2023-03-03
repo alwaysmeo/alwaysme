@@ -23,6 +23,9 @@
 </template>
 
 <script setup lang="ts">
+	import { namespace } from '@config'
+	import { reactive, computed } from 'vue'
+
 	const emits = defineEmits<{
 		(key: 'close', event: MouseEvent): void
 		(key: 'update:visible', visible: boolean): void

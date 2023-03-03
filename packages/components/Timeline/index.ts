@@ -1,3 +1,4 @@
+import { namespace } from '@config'
 import { App } from 'vue'
 import '@style/components/timeline.scss';
 import '@style/components/timeline-item.scss';

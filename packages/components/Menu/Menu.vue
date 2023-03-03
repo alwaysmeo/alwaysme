@@ -8,6 +8,8 @@
 </template>
 
 <script setup lang="ts">
+	import { namespace } from '@config'
+	import { onMounted, ref, reactive, computed, watch, watchEffect } from 'vue'
 	import { useEventListener } from '@vueuse/core'
 	import { isEmpty, isBoolean, eq } from 'lodash-es'
 	import { useTools, useZIndex } from '@hooks'

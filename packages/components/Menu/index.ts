@@ -1,3 +1,4 @@
+import { namespace } from '@config'
 import { App } from 'vue'
 import '@style/components/menu.scss'
 import '@style/components/menu-item.scss'

@@ -47,6 +47,8 @@
 </template>
 
 <script setup lang="ts">
+	import { namespace } from '@config'
+	import { onMounted, reactive, computed, watchEffect } from 'vue'
 	import { useEventListener } from '@vueuse/core'
 	import { useZIndex } from '@hooks'
 	import { isEmpty } from 'lodash-es'

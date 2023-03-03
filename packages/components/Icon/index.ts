@@ -1,3 +1,4 @@
+import { namespace } from '@config'
 import { App } from 'vue'
 import './iconfont/iconfont.js'
 import '@style/components/icon.scss'

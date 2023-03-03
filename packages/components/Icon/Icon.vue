@@ -6,6 +6,8 @@
 </template>
 
 <script setup lang="ts">
+	import { namespace } from '@config'
+	import { computed } from 'vue'
 	import { useTools } from '@hooks'
 
 	const { transformCssUnit } = useTools()

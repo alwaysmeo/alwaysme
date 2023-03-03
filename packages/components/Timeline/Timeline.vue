@@ -6,6 +6,8 @@
 </template>
 
 <script setup lang="ts">
+	import { namespace } from '@config'
+	import { onMounted, watchEffect, useSlots } from 'vue'
 	import { mitt } from '@utils'
 	import TimelineItem from './TimelineItem.vue'
 
