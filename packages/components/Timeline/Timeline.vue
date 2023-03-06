@@ -7,8 +7,7 @@
 
 <script setup lang="ts">
 	import { namespace } from '@config'
-	import { onMounted, watchEffect, useSlots } from 'vue'
-	import { mitt } from '@utils'
+	import { provide, ref, useSlots, watchEffect } from 'vue'
 	import TimelineItem from './TimelineItem.vue'
 
 	const slots = useSlots()
@@ -29,9 +28,9 @@
 				break
 			}
 
-	onMounted(() => {
-		watchEffect(() => {
-			mitt.emit('timeline-position', props.position)
-		})
+	provide<{
+		position: 'left' | 'right'
+	}>('timeline-position', {
+		position: props.position
 	})
 </script>

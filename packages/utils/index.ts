@@ -1,3 +1,1 @@
-import mitt from './mitt'
-
-export { mitt }
+export * from './error'
