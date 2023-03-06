@@ -93,7 +93,7 @@ export default defineComponent({
 		const slots = useSlots()
 		const { nextZIndex } = useZIndex()
 		const { transformCssUnit } = useTools()
-		const theme = useTheme()
+		const { theme } = useTheme()
 
 		const classes = computed(() => {
 			return [`${namespace}-tooltip`]
@@ -105,7 +105,7 @@ export default defineComponent({
 				left: `${position.left}px`,
 				[`--${namespace}-tooltip-zindex`]: zindex,
 				[`--${namespace}-tooltip-blur`]: transformCssUnit(props.blur),
-				[`--${namespace}-tooltip-color`]: props.color ?? { light: '#000000b2', dark: '#535353cc' }[theme.get()],
+				[`--${namespace}-tooltip-color`]: props.color ?? { light: '#000000b2', dark: '#535353cc' }[theme.value],
 				[`--${namespace}-tooltip-arrow-border-width`]: arrow['border'][arrow.position].width,
 				[`--${namespace}-tooltip-arrow-border-color`]: arrow['border'][arrow.position].color,
 				[`--${namespace}-tooltip-arrow-top`]: `${arrow.top}px`,
