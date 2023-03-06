@@ -20,7 +20,7 @@
 
 	const props = withDefaults(defineProps<Props>(), {
 		name: undefined,
-		color: `var(--${namespace}-font-color)`,
+		color: undefined,
 		size: '1em'
 	})
 
