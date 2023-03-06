@@ -1,5 +1,6 @@
-const zIndex = ref<number>(0)
 import { ref, computed } from 'vue'
+
+const zIndex = ref<number>(0)
 
 export const useZIndex = () => {
 	const initialZIndex = ref<number>(2000)
@@ -10,7 +11,7 @@ export const useZIndex = () => {
 	}
 
 	return {
-		initialZIndex: initialZIndex.value,
+		initialZIndex,
 		currentZIndex,
 		nextZIndex
 	}
