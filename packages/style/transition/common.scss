@@ -1,0 +1,21 @@
+.fade-enter-active,
+.fade-leave-active {
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+	opacity: 0;
+}
+
+.fade-zoom-enter-active,
+.fade-zoom-leave-active {
+	transform: scale(1);
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.fade-zoom-enter-from,
+.fade-zoom-leave-to {
+	transform: scale(0);
+	opacity: 0;
+}

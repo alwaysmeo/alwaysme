@@ -1,0 +1,9 @@
+.menu-fade-zoom-enter-active {
+	transform: scale(1);
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-fade-zoom-enter-from {
+	transform: scale(0);
+	opacity: 0;
+}
