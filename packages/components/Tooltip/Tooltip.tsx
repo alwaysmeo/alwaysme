@@ -1,6 +1,19 @@
 // 文字提示组件
 import { namespace } from '@config'
-import { onMounted, ref, reactive, computed, useSlots, defineComponent, PropType, Teleport, Transition, VNode, VNodeArrayChildren } from 'vue'
+import {
+	computed,
+	defineComponent,
+	reactive,
+	ref,
+	nextTick,
+	onMounted,
+	PropType,
+	Teleport,
+	Transition,
+	useSlots,
+	VNode,
+	VNodeArrayChildren
+} from 'vue'
 import { useEventListener } from '@vueuse/core'
 import { useTheme, useTools, useZIndex } from '@hooks'
 import { isEmpty } from 'lodash-es'
