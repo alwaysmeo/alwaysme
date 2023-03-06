@@ -1,7 +1,7 @@
 <!-- 时间轴组件 -->
 <template>
 	<div :class="`${namespace}-timeline-item`" :style="`--${namespace}-timeline-item-color: ${props.color}`">
-		<div :class="`${namespace}-timeline-item-icon`" :style="`${timeline.position}: 0`">
+		<div :class="`${namespace}-timeline-item-icon`" :style="`${timeline.position.value}: 0`">
 			<slot v-if="slots.icon" name="icon" />
 			<component :is="`${namespace}-icon`" v-else :name="props.icon" size="14px" />
 		</div>
@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 	import { namespace } from '@config'
-	import { inject, useSlots } from 'vue'
+	import { inject, useSlots, ComputedRef } from 'vue'
 	import { throwError } from '@utils'
 
 	const slots = useSlots()
@@ -35,7 +35,7 @@
 	})
 
 	const timeline = inject<{
-		position: 'left' | 'right'
+		position: ComputedRef<'left' | 'right'>
 	}>('timeline-position')
 	if (!timeline) throw throwError(`TimelineItem`, 'Can not inject root timeline')
 </script>

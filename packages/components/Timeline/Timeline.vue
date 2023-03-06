@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 	import { namespace } from '@config'
-	import { provide, ref, useSlots, watchEffect } from 'vue'
+	import { computed, ComputedRef, provide, useSlots } from 'vue'
 	import TimelineItem from './TimelineItem.vue'
 
 	const slots = useSlots()
@@ -29,8 +29,8 @@
 			}
 
 	provide<{
-		position: 'left' | 'right'
+		position: ComputedRef<'left' | 'right'>
 	}>('timeline-position', {
-		position: props.position
+		position: computed(() => props.position)
 	})
 </script>
