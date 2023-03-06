@@ -21,7 +21,7 @@
 	const props = withDefaults(defineProps<Props>(), {
 		name: undefined,
 		color: `var(--${namespace}-font-color)`,
-		size: '16px'
+		size: '1em'
 	})
 
 	const styles = computed(() => {
