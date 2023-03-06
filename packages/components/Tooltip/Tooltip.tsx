@@ -45,12 +45,12 @@ export default defineComponent({
 			type: Array as PropType<number[]>,
 			default: () => [0, 0]
 		},
-		// 鼠标移入后延时多少才显示 Tooltip，单位：秒
+		// 鼠标移入后延时多少才显示 Tooltip
 		mouseEnterDelay: {
 			type: Number,
 			default: 100
 		},
-		// 鼠标移出后延时多少才隐藏 Tooltip，单位：秒
+		// 鼠标移出后延时多少才隐藏 Tooltip
 		mouseLeaveDelay: {
 			type: Number,
 			default: 300
