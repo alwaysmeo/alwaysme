@@ -102,7 +102,7 @@
 		</me-space>
 
 		<me-space>
-			<me-image v-for="item in url" :key="url" :src="item" :list="url" width="180px" height="100px"></me-image>
+			<me-image v-for="item in url" :key="item" :src="item" :list="url" width="180px" height="100px"></me-image>
 			<me-image src="" width="180px" height="100px"></me-image>
 			<me-button type="primary" @click="visible = !visible">预览</me-button>
 			<me-image-preview :infinite="false" :list="url" v-model:visible="visible" />
@@ -148,26 +148,31 @@
 		</me-space>
 	</me-space>
 
-	<me-menu height="calc(100vh - 60px)" top="60">
-		<me-menu-item>首页</me-menu-item>
-		<me-menu-item>文档</me-menu-item>
-		<me-menu-item>组件</me-menu-item>
-		<me-menu-item>高级组件</me-menu-item>
-		<me-menu-item>商店</me-menu-item>
+	<me-menu v-model:value="selectMenu" height="calc(100vh - 60px)" top="60">
+		<me-menu-item value="home">首页</me-menu-item>
+		<me-menu-item value="components">高级组件</me-menu-item>
+		<me-menu-item value="shop">商店</me-menu-item>
+		<me-menu-item value="other">其他</me-menu-item>
+		<me-menu-item value="document">我的文档</me-menu-item>
 	</me-menu>
-	<me-menu height="60px" width="100vw" mode="horizontal">
-		<me-menu-item>首页</me-menu-item>
-		<me-menu-item>文档</me-menu-item>
-		<me-menu-item>组件</me-menu-item>
-		<me-menu-item>高级组件</me-menu-item>
-		<me-menu-item>商店</me-menu-item>
+	<me-menu v-model:value="selectMenu" height="60px" width="100vw" mode="horizontal">
+		<me-menu-item value="home">首页</me-menu-item>
+		<me-menu-item value="components">高级组件组件</me-menu-item>
+		<me-menu-item value="shop">商店</me-menu-item>
+		<me-menu-item value="other">其他</me-menu-item>
+		<me-menu-item value="document">我的文档</me-menu-item>
 	</me-menu>
 </template>
 
 <script setup lang="ts">
+	import { useTheme } from '../../packages/hooks'
 	import { ref } from 'vue'
+
+	const { setTheme } = useTheme()
+
 	const handleClick = (e: Event) => {
 		visible1.value = !visible1.value
+		setTheme(visible1.value ? 'dark' : 'light')
 	}
 	const url = ref([
 		'http://files.drcloud.me/727788e6-5841-49fb-902e-5c5b3a240bc1',
@@ -179,6 +184,7 @@
 	const visible1 = ref(false)
 	const show = ref(false)
 	const value = ref(1)
+	const selectMenu = ref('home')
 </script>
 
 <style scoped lang="scss">

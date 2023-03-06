@@ -1,57 +1,54 @@
-<!-- 菜单组件 -->
+<!-- 菜单子组件 -->
 <template>
-	<li :class="classes" :style="styles">
+	<li :class="classes" :style="styles" :data-selected="eq(props.value, MenuRoot.value.value)" @click="MenuRoot.handleSelect(props.value)">
 		<div :class="`${namespace}-menu-item-icon`">
-			<slot name="icon" />
+			<slot v-if="slots.icon" name="icon" />
+			<component :is="`${namespace}-icon`" v-else :name="props.icon" size="18px" />
 		</div>
-		<slot />
+		<transition name="menu-fade-zoom">
+			<span v-show="MenuRoot.collapse.value || eq(MenuRoot.mode.value, 'horizontal')" :class="`${namespace}-menu-item-text`">
+				<slot />
+			</span>
+		</transition>
 	</li>
 </template>
 
 <script setup lang="ts">
 	import { namespace } from '@config'
-	import { reactive, computed } from 'vue'
+	import { computed, inject, useSlots } from 'vue'
 	import { eq } from 'lodash-es'
-	import { mitt } from '@utils'
-	import { useTools } from '@hooks'
+	import { useTheme } from '@hooks'
+	import { throwError } from '@utils'
+	import { MenuProvider } from './types'
 
-	const { transformCssUnit } = useTools()
-
-	const emits = defineEmits<{
-		// (key: 'select', { item, key }): void
-	}>()
+	const slots = useSlots()
+	const { theme } = useTheme()
 
 	interface Props {
-		width?: number | string // 菜单展开时宽度，仅 horizontal 模式下有效
-		height?: number | string // 菜单高度，仅 vertical 模式下有效
-	}
-
-	interface State {
-		mode?: 'horizontal' | 'vertical' // 菜单展示模式
+		value: string // 菜单项的唯一标志
+		icon?: string // 菜单项图标，可被 slot#icon 覆盖
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
-		width: 'auto',
-		height: 40
+		icon: 'selected'
 	})
 
-	const state = reactive<State>({
-		mode: undefined
-	})
+	const MenuRoot = inject<MenuProvider>('menu')
+	if (!MenuRoot) throw throwError(`MenuItem`, 'Can not inject root menu')
 
 	const classes = computed(() => {
-		return [`${namespace}-menu-item`, `${namespace}-menu-item-mode-${state.mode}`]
+		return [
+			`${namespace}-menu-item`,
+			`${namespace}-menu-item-mode-${MenuRoot.mode.value}`,
+			{
+				[`${namespace}-menu-item-collapse`]: MenuRoot.collapse.value
+			}
+		]
 	})
 
 	const styles = computed(() => {
 		return {
-			[`--${namespace}-menu-item-width`]: (eq(state.mode, 'horizontal') && transformCssUnit(props.width)) || '100%',
-			[`--${namespace}-menu-item-height`]: (eq(state.mode, 'vertical') && transformCssUnit(props.height)) || '100%'
+			[`--${namespace}-menu-item-hover-color`]: { light: '#ffffff33', dark: '#00000033' }[theme.value]
 		}
-	})
-
-	mitt.on('menu-mode', (mode: 'horizontal' | 'vertical') => {
-		console.log('menu-mode', mode)
-		state.mode = mode
 	})
 </script>

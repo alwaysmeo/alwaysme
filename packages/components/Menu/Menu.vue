@@ -1,29 +1,31 @@
 <!-- 菜单组件 -->
 <template>
 	<ul ref="menuRef" :class="classes" :style="styles">
-		<li>
-			<slot />
-		</li>
+		<slot />
 	</ul>
 </template>
 
 <script setup lang="ts">
 	import { namespace } from '@config'
-	import { onMounted, ref, reactive, computed, watch, watchEffect } from 'vue'
+	import { computed, onMounted, provide, reactive, ref, watch, watchEffect } from 'vue'
 	import { useEventListener } from '@vueuse/core'
-	import { isEmpty, isBoolean, eq } from 'lodash-es'
+	import { eq, isEmpty, isBoolean } from 'lodash-es'
 	import { useTools, useZIndex } from '@hooks'
+	import { MenuProvider } from './types'
 
-	const { nextZIndex } = useZIndex()
+	const { currentZIndex } = useZIndex()
 	const { transformCssUnit } = useTools()
 
 	const emits = defineEmits<{
 		(key: 'onCollapseChange', collapse: boolean): void
 		(key: 'update:collapse', collapse: boolean): void
+		(key: 'select', value: string): void
+		(key: 'update:value', value: string): void
 	}>()
 
 	interface Props {
-		collapse?: boolean // 是否折叠 受控模式
+		value?: string // 选中的菜单项 v-model
+		collapse?: boolean // 是否折叠 支持受控模式
 		zindex?: number | string // 菜单层级
 		mode?: 'horizontal' | 'vertical' // 菜单展示模式
 		openWidth?: number | string // 菜单展开时宽度
@@ -35,8 +37,8 @@
 		left?: number | string // 菜单距离左边的距离
 		color?: string // 背景颜色
 		blur?: number | string // 背景模糊度
-		mouseEnterDelay?: number // 鼠标移入后延时多少才显示 Tooltip，单位：秒
-		mouseLeaveDelay?: number // 鼠标移出后延时多少才隐藏 Tooltip，单位：秒
+		mouseEnterDelay?: number // 鼠标移入后延时多少才展开 Menu 栏
+		mouseLeaveDelay?: number // 鼠标移出后延时多少才折叠 Menu 栏
 	}
 
 	interface State {
@@ -44,6 +46,7 @@
 	}
 
 	const props = withDefaults(defineProps<Props>(), {
+		value: '',
 		collapse: undefined,
 		zindex: undefined,
 		mode: 'vertical',
@@ -64,8 +67,24 @@
 		collapse: false
 	})
 
+	provide<MenuProvider>('menu', {
+		mode: computed(() => props.mode),
+		collapse: computed(() => state.collapse),
+		value: computed(() => props.value),
+		handleSelect: function (value: string) {
+			emits('select', value)
+			emits('update:value', value)
+		}
+	})
+
 	const classes = computed(() => {
-		return [`${namespace}-menu`, `${namespace}-menu-mode-${props.mode}`]
+		return [
+			`${namespace}-menu`,
+			`${namespace}-menu-mode-${props.mode}`,
+			{
+				[`${namespace}-menu-collapse`]: state.collapse
+			}
+		]
 	})
 
 	const styles = computed(() => {
@@ -85,7 +104,7 @@
 		}
 	})
 
-	const zindex = isEmpty(props.zindex) ? nextZIndex() : props.zindex
+	const zindex = isEmpty(props.zindex) ? currentZIndex : props.zindex
 
 	const menuRef = ref<HTMLElement>()
 
@@ -102,7 +121,7 @@
 	})
 
 	onMounted(() => {
-		if (!isBoolean(props.collapse)) {
+		if (!isBoolean(props.collapse) && eq(props.mode, 'vertical')) {
 			useEventListener(menuRef.value as HTMLElement, 'mouseenter', () => {
 				setTimeout(() => {
 					state.collapse = true
