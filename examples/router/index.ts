@@ -2,7 +2,7 @@
 
 import { createRouter, createWebHistory } from 'vue-router'
 import Middleware from '../middleware'
-import components from './components'
+import componentsRouter from './components'
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -19,7 +19,7 @@ const router = createRouter({
 				title: 'Home'
 			}
 		},
-		...components,
+		...componentsRouter,
 		{
 			path: '/:catchAll(.*)',
 			name: 'NotFound',
