@@ -51,7 +51,7 @@ export default defineComponent({
 				| 'right-start'
 				| 'right-end'
 			>,
-			default: 'bottom'
+			default: 'top'
 		},
 		// 出现位置偏移量
 		offset: {
