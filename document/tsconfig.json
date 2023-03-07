@@ -15,16 +15,14 @@
 		"types": [],
 		"baseUrl": ".",
 		"paths": {
-			"@views": ["./examples/views"],
 			"@": ["./packages"],
-			"@components": ["./packages/components"],
-			"@config": ["./packages/config"],
-			"@hooks": ["./packages/hooks"],
-			"@utils": ["./packages/utils"],
-			"@style": ["./packages/style"]
+			"@views": ["./views"],
+			"@assets": ["./assets"],
+			"@components": ["./components"],
+			"@hooks": ["./hooks"]
 		}
 	},
-	"include": ["./examples/**/*.vue", "./typings/**/*.ts", "./packages/**/*.ts", "./packages/**/*.tsx", "./packages/**/*.vue"],
+	"include": ["./typings/**/*.ts", "./**/*.ts", "./**/*.tsx", "./**/*.vue", "../dist/**/*.mjs"],
 	"references": [
 		{
 			"path": "./tsconfig.node.json"
