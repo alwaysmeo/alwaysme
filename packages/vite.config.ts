@@ -6,7 +6,7 @@ import { visualizer } from 'rollup-plugin-visualizer'
 import { resolve } from 'path'
 import { namespace } from './config'
 
-export default defineConfig(({ command, mode }) => {
+export default defineConfig(({ mode }) => {
 	const { VITE_HOST, VITE_PORT, VITE_OPEN, VITE_HMR, VITE_OUTDIR } = loadEnv(mode, __dirname)
 
 	return {
