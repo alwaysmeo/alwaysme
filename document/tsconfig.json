@@ -13,9 +13,9 @@
 		"lib": ["ESNext", "DOM"],
 		"skipLibCheck": true,
 		"types": [],
-		"baseUrl": ".",
+		"baseUrl": "./",
 		"paths": {
-			"@": ["./packages"],
+			"@": ["./"],
 			"@views": ["./views"],
 			"@assets": ["./assets"],
 			"@components": ["./components"],
