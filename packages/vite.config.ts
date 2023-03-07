@@ -6,11 +6,11 @@ import { visualizer } from 'rollup-plugin-visualizer'
 import { resolve } from 'path'
 import { namespace } from './config'
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ command, mode }) => {
 	const { VITE_HOST, VITE_PORT, VITE_OPEN, VITE_HMR, VITE_OUTDIR } = loadEnv(mode, __dirname)
 
 	return {
-		root: resolve(__dirname, '../examples'),
+		root: { production: resolve(__dirname, './'), development: resolve(__dirname, '../examples') }[mode],
 		plugins: [
 			vue(),
 			vueJsx(),

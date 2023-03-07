@@ -33,10 +33,10 @@
 	"scripts": {
 		"clean:dist": "rimraf ./dist",
 		"clean:docs": "rimraf ./docs",
-		"dev:docs": "pnpm run --filter ./examples dev",
 		"dev:dist": "pnpm run --filter ./packages dev",
-		"build:docs": "npm run clean:docs && pnpm run --filter ./examples build",
+		"dev:docs": "pnpm run --filter ./examples dev",
 		"build:dist": "npm run clean:dist && pnpm run --filter ./packages build",
+		"build:docs": "npm run clean:docs && pnpm run --filter ./examples build",
 		"lint": "pnpm run --filter ./packages lint"
 	},
 	"dependencies": {

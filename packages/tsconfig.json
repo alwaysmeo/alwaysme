@@ -13,7 +13,7 @@
 		"lib": ["ESNext", "DOM"],
 		"skipLibCheck": true,
 		"types": [],
-		"baseUrl": ".",
+		"baseUrl": "./",
 		"paths": {
 			"@": ["./"],
 			"@components": ["./components"],
@@ -23,7 +23,7 @@
 			"@style": ["./style"]
 		}
 	},
-	"include": ["./typings/**/*.ts", "./**/*.ts", "./**/*.tsx", "./**/*.vue"],
+	"include": ["./typings/**/*.ts", "./**/*.ts", "./**/*.tsx", "./**/*.vue", "./config/index.ts"],
 	"references": [
 		{
 			"path": "./tsconfig.node.json"
