@@ -10,6 +10,7 @@ export default defineConfig(({ mode }) => {
 	const { VITE_HOST, VITE_PORT, VITE_OPEN, VITE_HMR, VITE_OUTDIR } = loadEnv(mode, __dirname)
 
 	return {
+		root: resolve(__dirname, '../examples'),
 		plugins: [
 			vue(),
 			vueJsx(),

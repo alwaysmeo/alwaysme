@@ -3,7 +3,6 @@ import App from './app.vue'
 
 // packages
 import AlwaysMe from '../packages/index'
-import '../packages/style/index.scss'
 
 const app = createApp(App)
 
