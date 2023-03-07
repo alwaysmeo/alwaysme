@@ -21,7 +21,7 @@
 	const props = withDefaults(defineProps<Props>(), {
 		underline: false,
 		disabled: false,
-		href: 'javascrit:;',
+		href: 'javascript:;',
 		target: '_self'
 	})
 
