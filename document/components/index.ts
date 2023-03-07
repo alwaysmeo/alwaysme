@@ -1,5 +1,5 @@
 import PageHeader from './PageHeader.vue'
 
-export default {
+export {
 	PageHeader
 }
