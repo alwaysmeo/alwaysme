@@ -1,5 +1,8 @@
+'use strict'
+
 import { createRouter, createWebHistory } from 'vue-router'
 import Middleware from '../middleware'
+import components from './components'
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -16,6 +19,7 @@ const router = createRouter({
 				title: 'Home'
 			}
 		},
+		...components,
 		{
 			path: '/:catchAll(.*)',
 			name: 'NotFound',

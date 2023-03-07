@@ -1,5 +1,5 @@
 <template>
-	<me-space class="always-me" direction="vertical">
+	<!-- <me-space class="always-me" direction="vertical">
 		<div style="width: 800px">
 			<me-divider textalign="center" dashed>Text</me-divider>
 			<me-divider textalign="center" />
@@ -161,7 +161,8 @@
 		<me-menu-item value="shop">商店</me-menu-item>
 		<me-menu-item value="other">其他</me-menu-item>
 		<me-menu-item value="document">我的文档</me-menu-item>
-	</me-menu>
+	</me-menu> -->
+	首页
 </template>
 
 <script setup lang="ts">

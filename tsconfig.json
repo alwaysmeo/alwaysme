@@ -15,6 +15,7 @@
 		"types": [],
 		"baseUrl": ".",
 		"paths": {
+			"@views": ["./examples/views"],
 			"@": ["./packages"],
 			"@components": ["./packages/components"],
 			"@config": ["./packages/config"],
@@ -23,7 +24,7 @@
 			"@style": ["./packages/style"]
 		}
 	},
-	"include": ["./examples/app.vue", "./typings/**/*.ts", "./packages/**/*.ts", "./packages/**/*.tsx", "./packages/**/*.vue"],
+	"include": ["./examples/**/*.vue", "./typings/**/*.ts", "./packages/**/*.ts", "./packages/**/*.tsx", "./packages/**/*.vue"],
 	"references": [
 		{
 			"path": "./tsconfig.node.json"
