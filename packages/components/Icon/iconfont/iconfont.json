@@ -6,6 +6,83 @@
   "description": "Alwaysme-Design",
   "glyphs": [
     {
+      "icon_id": "34453658",
+      "name": "bookmarks-solid",
+      "font_class": "bookmarks-solid",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "34453659",
+      "name": "bookmarks-linear",
+      "font_class": "bookmarks-linear",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "34453661",
+      "name": "bulb",
+      "font_class": "bulb",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "34453662",
+      "name": "tag-linear",
+      "font_class": "tag-linear",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "34453665",
+      "name": "code-linear",
+      "font_class": "code-linear",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "34453666",
+      "name": "tag-solid",
+      "font_class": "tag-solid",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "34453820",
+      "name": "file",
+      "font_class": "file",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "34453821",
+      "name": "copy",
+      "font_class": "copy",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "34453822",
+      "name": "paste",
+      "font_class": "paste",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "34451883",
+      "name": "sun",
+      "font_class": "sun",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "34451884",
+      "name": "moon",
+      "font_class": "moon",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    },
+    {
       "icon_id": "34188596",
       "name": "collection-solid",
       "font_class": "collection-solid",

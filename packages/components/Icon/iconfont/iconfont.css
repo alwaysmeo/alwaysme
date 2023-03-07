@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3788332 */
-  src: url('iconfont.woff2?t=1677135879706') format('woff2'),
-       url('iconfont.woff?t=1677135879706') format('woff'),
-       url('iconfont.ttf?t=1677135879706') format('truetype');
+  src: url('iconfont.woff2?t=1678174430741') format('woff2'),
+       url('iconfont.woff?t=1678174430741') format('woff'),
+       url('iconfont.ttf?t=1678174430741') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,50 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bookmarks-solid:before {
+  content: "\e64c";
+}
+
+.icon-bookmarks-linear:before {
+  content: "\e64d";
+}
+
+.icon-bulb:before {
+  content: "\e64e";
+}
+
+.icon-tag-linear:before {
+  content: "\e64f";
+}
+
+.icon-code-linear:before {
+  content: "\e650";
+}
+
+.icon-tag-solid:before {
+  content: "\e651";
+}
+
+.icon-file:before {
+  content: "\e652";
+}
+
+.icon-copy:before {
+  content: "\e653";
+}
+
+.icon-paste:before {
+  content: "\e654";
+}
+
+.icon-sun:before {
+  content: "\e64a";
+}
+
+.icon-moon:before {
+  content: "\e64b";
 }
 
 .icon-collection-solid:before {
