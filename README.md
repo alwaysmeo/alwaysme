@@ -15,7 +15,7 @@
 
 -   **版本：** Vue >= 3.2.0
 
-     **注意：** 由于 Vue3 不再支持 IE 浏览器环境，AlwaysMe 也不再支持 IE 浏览器环境。
+     **注意：** AlwaysMe-Design 不支持 IE 浏览器环境。
 
 ### 📦️ Install
 
