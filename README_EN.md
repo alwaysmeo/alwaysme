@@ -1,8 +1,10 @@
-# AlwaysMe-Design-Vue3
+<h1 align="center">
+  <a href="https://www.alwaysme.org" target="_blank">AlwaysMe-Design</a>
+</h1>
 
 ### 💬 Language
--   🇨🇳 [简体中文](https://github.com/Alwaysmeo/alwaysme-design/blob/main/README.md)
--   🇺🇸 [English](https://github.com/Alwaysmeo/alwaysme-design/blob/main/README_EN.md)
+-   [简体中文](./README.md) | English
+
 
 ### 📌 Introduction
 -   Neumorphism-style AlwaysMe UI component library, developed based on Vue3, supports TypeScript.
@@ -18,10 +20,12 @@
 ### 📦️ Install
 
 -   **Recommend using NPM or Yarn for package management**
-
-    `npm install @alwaysme/design`
-
-    `yarn add @alwaysme/design`
+```bash
+$ npm install @alwaysme/design
+```
+```bash
+$ yarn add @alwaysme/design
+```
 
 ### 🧑‍💻 Use
 

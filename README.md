@@ -1,8 +1,9 @@
-# AlwaysMe-Design-Vue3
+<h1 align="center">
+  <a href="https://www.alwaysme.org" target="_blank">AlwaysMe-Design</a>
+</h1>
 
 ### 💬 语言
--   🇨🇳 [简体中文](https://github.com/Alwaysmeo/alwaysme-design/blob/main/README.md)
--   🇺🇸 [English](https://github.com/Alwaysmeo/alwaysme-design/blob/main/README_EN.md)
+-   简体中文 | EN [English](./README_EN.md)
 
 ### 📌 简介
 -   新拟态风格 AlwaysMe UI 组件库，基于 Vue3 开发，支持 TypeScript。
@@ -14,16 +15,17 @@
 ### 💫 开始
 
 -   **版本：** Vue >= 3.2.0
-
-     **注意：** AlwaysMe-Design 不支持 IE 浏览器环境。
+    **注意：** AlwaysMe-Design 不支持 IE 浏览器环境。
 
 ### 📦️ 安装
 
 -   **推荐使用 npm 或 yarn 的方式进行包管理**
-
-    `npm install @alwaysme/design`
-
-    `yarn add @alwaysme/design`
+```bash
+$ npm install @alwaysme/design
+```
+```bash
+$ yarn add @alwaysme/design
+```
 
 ### 🧑‍💻 使用
 
