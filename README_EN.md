@@ -7,15 +7,12 @@
 
 
 ### 📌 Introduction
--   Neumorphism-style AlwaysMe UI component library, developed based on Vue3, supports TypeScript.
-
-### 📌 Desc
 -   👻 This project is in the development stage and should not be used in the production environment.
-
+-   Neumorphism-style AlwaysMe UI component library, developed based on Vue3, supports TypeScript.
 
 ### 💫 Start
 -   **Version** Vue >= 3.2.0
-    **Note：** AlwaysMe-Design The IE browser environment is not supported.
+-   **Note：** AlwaysMe-Design The IE browser environment is not supported.
 
 ### 📦️ Install
 

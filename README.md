@@ -3,19 +3,16 @@
 </h1>
 
 ### 💬 语言
--   简体中文 | EN [English](./README_EN.md)
+-   简体中文 | [English](./README_EN.md)
 
 ### 📌 简介
+-   👻 此项目正处于开发测试阶段，切勿在生产环境中使用。
 -   新拟态风格 AlwaysMe UI 组件库，基于 Vue3 开发，支持 TypeScript。
 
 
-### 📌 描述
--   👻 此项目正处于开发测试阶段，切勿在生产环境中使用。
-
-### 💫 开始
-
+### 💫 描述
 -   **版本：** Vue >= 3.2.0
-    **注意：** AlwaysMe-Design 不支持 IE 浏览器环境。
+-   **注意：** AlwaysMe-Design 不支持 IE 浏览器环境。
 
 ### 📦️ 安装
 
