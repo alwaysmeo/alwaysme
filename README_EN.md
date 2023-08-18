@@ -1,33 +1,31 @@
 # AlwaysMe-Design-Vue3
 
-### 💬 语言
+### 💬 Language
 -   🇨🇳 [简体中文](https://github.com/Alwaysmeo/alwaysme-design/blob/main/README.md)
 -   🇺🇸 [English](https://github.com/Alwaysmeo/alwaysme-design/blob/main/README_EN.md)
 
-### 📌 简介
--   新拟态风格 AlwaysMe UI 组件库，基于 Vue3 开发，支持 TypeScript。
+### 📌 Introduction
+-   Neumorphism-style AlwaysMe UI component library, developed based on Vue3, supports TypeScript.
+
+### 📌 Desc
+-   👻 This project is in the development stage and should not be used in the production environment.
 
 
-### 📌 描述
--   👻 此项目正处于开发测试阶段，切勿在生产环境中使用。
+### 💫 Start
+-   **Version** Vue >= 3.2.0
+    **Note：** AlwaysMe-Design The IE browser environment is not supported.
 
-### 💫 开始
+### 📦️ Install
 
--   **版本：** Vue >= 3.2.0
-
-     **注意：** AlwaysMe-Design 不支持 IE 浏览器环境。
-
-### 📦️ 安装
-
--   **推荐使用 npm 或 yarn 的方式进行包管理**
+-   **Recommend using NPM or Yarn for package management**
 
     `npm install @alwaysme/design`
 
     `yarn add @alwaysme/design`
 
-### 🧑‍💻 使用
+### 🧑‍💻 Use
 
--   `/src/main.js` 文件中全局引入 `AlwaysMe` 组件库
+-   `/src/main.js` global import in the file `AlwaysMe` component library.
 
     ```javascript
     import { createApp } from 'vue'
@@ -38,7 +36,7 @@
     createApp(App).use(AlwaysMe).mount('#app')
     ```
 
--   如果是 TypeScript 项目，需在您的项目 `.d.ts` 文件中添加以下内容，以避免报错。无此文件可自行创建。
+-   If it is a TypeScript project, you need to add the following content to your project `.d.ts` file to avoid errors. You cannot create this file yourself.
 
     ```typescript
     declare module '@alwaysme/design' {
@@ -46,5 +44,5 @@
     }
     ```
 
-###  📌 贡献者
+###  📌 Contributors
 -   <a href="https://github.com/Alwaysmeo" target="_blank"><img src="https://avatars.githubusercontent.com/u/62600916?v=4" height="52"></a>
