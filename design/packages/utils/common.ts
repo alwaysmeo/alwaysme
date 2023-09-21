@@ -10,6 +10,10 @@ const isString = (value: any) => {
 	return typeof value === 'string'
 }
 
+const isBoolean = (value: any) => {
+	return typeof value === 'boolean'
+}
+
 const isArray = (value: any) => {
 	return Array.isArray(value)
 }
@@ -38,4 +42,4 @@ const debounce = (fun: Function, time: number = 500) => {
 		}, time)
 	}
 }
-export { isEmpty, isNumber, isString, isArray, throttle, debounce }
+export { isEmpty, isNumber, isString, isBoolean, isArray, throttle, debounce }
