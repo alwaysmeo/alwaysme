@@ -1,18 +1,18 @@
 <h1 align="center">
-  <a href="https://www.alwaysme.org" target="_blank">AlwaysMe-Design</a>
+  <a href="https://www.alwaysme.org" target="_blank">Alwaysme-Design</a>
 </h1>
 
 ### 💬 Language
--   [简体中文](./README.md) | English
+-   [简体中文](https://github.com/Alwaysmeo/alwaysme/blob/main/design/README.md) | English
 
 
 ### 📌 Introduction
 -   👻 This project is in the development stage and should not be used in the production environment.
--   Neumorphism-style AlwaysMe UI component library, developed based on Vue3, supports TypeScript.
+-   Neumorphism-style Alwaysme UI component library, developed based on Vue3, supports TypeScript.
 
 ### 💫 Start
 -   **Version** Vue >= 3.2.0
--   **Note：** AlwaysMe-Design The IE browser environment is not supported.
+-   **Note：** Alwaysme-Design The IE browser environment is not supported.
 
 ### 📦️ Install
 
@@ -26,15 +26,15 @@ $ yarn add @alwaysme/design
 
 ### 🧑‍💻 Use
 
--   `/src/main.js` global import in the file `AlwaysMe` component library.
+-   `/src/main.js` global import in the file `Alwaysme` component library.
 
     ```javascript
     import { createApp } from 'vue'
     import App from './App.vue'
 
-    import AlwaysMe from '@alwaysme/design'
+    import Alwaysme from '@alwaysme/design'
     import '@alwaysme/design/dist/style.css'
-    createApp(App).use(AlwaysMe).mount('#app')
+    createApp(App).use(Alwaysme).mount('#app')
     ```
 
 -   If it is a TypeScript project, you need to add the following content to your project `.d.ts` file to avoid errors. You cannot create this file yourself.
