@@ -51,7 +51,7 @@
 	import { computed, nextTick, onMounted, reactive, watchEffect } from 'vue'
 	import { useEventListener } from '@vueuse/core'
 	import { useZIndex } from '@hooks'
-	import { isEmpty } from 'lodash-es'
+	import { isEmpty } from '@utils/common'
 
 	const { nextZIndex } = useZIndex()
 

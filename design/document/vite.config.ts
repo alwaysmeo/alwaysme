@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { resolve } from 'path'
 
-export default defineConfig(({ command, mode }) => {
+export default defineConfig(({ mode }) => {
 	const { VITE_HOST, VITE_PORT, VITE_OPEN, VITE_HMR, VITE_OUTDIR } = loadEnv(mode, __dirname)
 
 	return {
@@ -20,14 +20,13 @@ export default defineConfig(({ command, mode }) => {
 				'@': resolve(__dirname, './'),
 				'@views': resolve(__dirname, './views'),
 				'@assets': resolve(__dirname, './assets'),
-				'@components': resolve(__dirname, './components'),
-				'@hooks': resolve(__dirname, './hooks')
+				'@components': resolve(__dirname, './components')
 			}
 		},
 		build: {
 			outDir: VITE_OUTDIR,
 			chunkSizeWarningLimit: 500,
-			minify: true, // 压缩
+			minify: true,
 			cssCodeSplit: false
 		},
 		server: {

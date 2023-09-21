@@ -9,7 +9,7 @@
 	import { namespace } from '@config'
 	import { computed, onMounted, provide, reactive, ref, watch, watchEffect } from 'vue'
 	import { useEventListener } from '@vueuse/core'
-	import { eq, isEmpty, isBoolean } from 'lodash-es'
+	import { isEmpty, isBoolean } from '@utils/common'
 	import { useTools, useZIndex } from '@hooks'
 	import { MenuProvider } from './types'
 
@@ -121,7 +121,7 @@
 	})
 
 	onMounted(() => {
-		if (!isBoolean(props.collapse) && eq(props.mode, 'vertical')) {
+		if (!isBoolean(props.collapse) && props.mode === 'vertical') {
 			useEventListener(menuRef.value as HTMLElement, 'mouseenter', () => {
 				setTimeout(() => {
 					state.collapse = true

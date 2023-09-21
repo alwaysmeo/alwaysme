@@ -1,12 +1,12 @@
 <!-- 菜单子组件 -->
 <template>
-	<li :class="classes" :style="styles" :data-selected="eq(props.value, MenuRoot.value.value)" @click="MenuRoot.handleSelect(props.value)">
+	<li :class="classes" :style="styles" :data-selected="props.value === MenuRoot.value.value" @click="MenuRoot.handleSelect(props.value)">
 		<div :class="`${namespace}-menu-item-icon`">
 			<slot v-if="slots.icon" name="icon" />
 			<component :is="`${namespace}-icon`" v-else :name="props.icon" size="18px" />
 		</div>
 		<transition name="menu-fade-zoom">
-			<span v-show="MenuRoot.collapse.value || eq(MenuRoot.mode.value, 'horizontal')" :class="`${namespace}-menu-item-text`">
+			<span v-show="MenuRoot.collapse.value || MenuRoot.mode.value === 'horizontal'" :class="`${namespace}-menu-item-text`">
 				<slot />
 			</span>
 		</transition>
@@ -16,7 +16,6 @@
 <script setup lang="ts">
 	import { namespace } from '@config'
 	import { computed, inject, useSlots } from 'vue'
-	import { eq } from 'lodash-es'
 	import { useTheme } from '@hooks'
 	import { throwError } from '@utils'
 	import { MenuProvider } from './types'

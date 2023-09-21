@@ -13,7 +13,7 @@
 	import { namespace } from '@config'
 	import { toRef, onMounted, computed } from 'vue'
 	import { useEventListener } from '@vueuse/core'
-	import { isEmpty, throttle } from 'lodash-es'
+	import { isEmpty, throttle } from '@utils/common'
 	import { useTools, useZIndex } from '@hooks'
 
 	const { transformCssUnit } = useTools()

@@ -1,5 +1,5 @@
 {
-	"name": "examples",
+	"name": "document",
 	"scripts": {
 		"dev": "vite --host --mode development",
 		"build": "vite build --mode production"
