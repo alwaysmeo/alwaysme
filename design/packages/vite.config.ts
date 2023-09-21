@@ -1,13 +1,15 @@
 import { defineConfig, loadEnv } from 'vite'
-import viteDts from 'vite-plugin-dts'
-import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
 import { visualizer } from 'rollup-plugin-visualizer'
 import { resolve } from 'path'
 import { namespace } from './config'
+import viteDts from 'vite-plugin-dts'
+import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
-export default defineConfig(({ command, mode }) => {
+export default defineConfig(({ mode }) => {
 	const { VITE_HOST, VITE_PORT, VITE_OPEN, VITE_HMR, VITE_OUTDIR } = loadEnv(mode, __dirname)
+	// eslint-disable-next-line no-console
+	console.log(loadEnv(mode, __dirname))
 
 	return {
 		root: { production: resolve(__dirname, './'), development: resolve(__dirname, '../examples') }[mode],
@@ -69,7 +71,7 @@ export default defineConfig(({ command, mode }) => {
 		},
 		server: {
 			host: VITE_HOST as string,
-			port: VITE_PORT as unknown as number,
+			port: Number(VITE_PORT) as number,
 			open: VITE_OPEN as unknown as boolean,
 			hmr: VITE_HMR as unknown as boolean
 		}
