@@ -1,0 +1,66 @@
+{
+	"name": "@alwaysme/design",
+	"version": "1.0.18-dev",
+	"private": false,
+	"title": "Alwaysme Design",
+	"description": "Alwaysme UI design language and Vue-based implementation",
+	"keywords": [
+		"alwaysme",
+		"ui",
+		"vue3",
+		"design",
+		"component library"
+	],
+	"homepage": "https://www.alwaysme.org",
+	"author": "AlwaysMeo <hello2000@vip.qq.com>",
+	"license": "MIT",
+	"types": "./dist/es/packages/index.d.ts",
+	"module": "./dist/es/packages/main.es.js",
+	"main": "./dist/lib/packages/main.cjs.js",
+	"exports": {
+		".": {
+			"types": "./dist/es/packages/index.d.ts",
+			"module": "./dist/es/packages/main.es.js",
+			"main": "./dist/lib/packages/main.cjs.js"
+		},
+		"./style.css": "./dist/es/style.css"
+	},
+	"style": "./dist/es/style.css",
+	"files": [
+		"./dist/"
+	],
+	"repository": "https://github.com/Alwaysmeo/Alwaysme.git",
+	"scripts": {
+		"clean:dist": "rimraf ./dist",
+		"clean:docs": "rimraf ./docs",
+		"dev:dist": "pnpm run --filter ./packages dev",
+		"dev:docs": "pnpm run --filter ./document dev",
+		"build:dist": "npm run clean:dist && pnpm run --filter ./packages build",
+		"build:docs": "npm run clean:docs && pnpm run --filter ./document build",
+		"lint": "pnpm run --filter ./packages lint"
+	},
+	"dependencies": {
+		"@types/lodash-es": "^4.17.6",
+		"lodash-es": "^4.17.21"
+	},
+	"devDependencies": {
+		"@types/node": "^18.11.10",
+		"@types/sass": "^1.43.1",
+		"@typescript-eslint/eslint-plugin": "^5.45.1",
+		"@typescript-eslint/parser": "^5.45.1",
+		"@vitejs/plugin-vue": "^4.0.0",
+		"@vitejs/plugin-vue-jsx": "^3.0.0",
+		"@vueuse/core": "^9.12.0",
+		"eslint": "^8.29.0",
+		"eslint-plugin-vue": "^9.8.0",
+		"prettier": "^2.7.1",
+		"rollup-plugin-visualizer": "^5.9.0",
+		"sass": "^1.56.1",
+		"typescript": "^4.9.3",
+		"vite": "^4.1.2",
+		"vite-plugin-dts": "^1.7.3",
+		"vue": "^3.2.45",
+		"vue-router": "^4.1.6",
+		"vue-tsc": "^1.1.7"
+	}
+}

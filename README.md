@@ -1,49 +1,15 @@
-<h1 align="center">
-  <a href="https://www.alwaysme.org" target="_blank">AlwaysMe-Design</a>
-</h1>
+# AlwaysMe
 
-### 💬 语言
--   简体中文 | [English](./README_EN.md)
+---
 
-### 📌 简介
--   👻 此项目正处于开发测试阶段，切勿在生产环境中使用。
--   新拟态风格 AlwaysMe UI 组件库，基于 Vue3 开发，支持 TypeScript。
+#### 🌐 Link 链接地址
+-   AlwaysMe-Design-Vue3 新拟态风格 UI 组件库
 
+    NPM Package URL: [Go to](https://www.npmjs.com/package/@alwaysme/design)
 
-### 💫 描述
--   **版本：** Vue >= 3.2.0
--   **注意：** AlwaysMe-Design 不支持 IE 浏览器环境。
+    GitHub Project URL：[Go to](https://github.com/Alwaysmeo/alwaysme-design)
 
-### 📦️ 安装
+-   Home URL：[Go to](https://www.alwaysme.org)
 
--   **推荐使用 npm 或 yarn 的方式进行包管理**
-```bash
-$ npm install @alwaysme/design
-```
-```bash
-$ yarn add @alwaysme/design
-```
-
-### 🧑‍💻 使用
-
--   `/src/main.js` 文件中全局引入 `AlwaysMe` 组件库
-
-    ```javascript
-    import { createApp } from 'vue'
-    import App from './App.vue'
-
-    import AlwaysMe from '@alwaysme/design'
-    import '@alwaysme/design/dist/style.css'
-    createApp(App).use(AlwaysMe).mount('#app')
-    ```
-
--   如果是 TypeScript 项目，需在您的项目 `.d.ts` 文件中添加以下内容，以避免报错。无此文件可自行创建。
-
-    ```typescript
-    declare module '@alwaysme/design' {
-        export function install(app: App): void
-    }
-    ```
-
-###  📌 贡献者
--   <a href="https://github.com/Alwaysmeo" target="_blank"><img src="https://avatars.githubusercontent.com/u/62600916?v=4" height="52"></a>
+####  📌 Contributors 贡献者
+-   <a href="https://github.com/Alwaysmeo" target="_blank"><img src="https://avatars.githubusercontent.com/u/62600916?v=4" height="64"></a>
