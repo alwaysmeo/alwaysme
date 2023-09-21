@@ -13,8 +13,8 @@
 	import { namespace } from '@config'
 	import { toRef, onMounted, computed } from 'vue'
 	import { useEventListener } from '@vueuse/core'
-	import { isEmpty, throttle } from '@utils/common'
 	import { useTools, useZIndex } from '@hooks'
+	import { isEmpty, throttle } from 'lodash-es'
 
 	const { transformCssUnit } = useTools()
 	const { nextZIndex } = useZIndex()
@@ -56,7 +56,7 @@
 	}
 
 	const keydownHandler = throttle((event: KeyboardEvent) => {
-		if (!visible) return
+		if (!visible.value) return
 		switch (event.code) {
 			case 'Escape':
 				props.closeOnPressEscape && close(event)

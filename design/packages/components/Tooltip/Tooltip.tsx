@@ -16,7 +16,7 @@ import {
 } from 'vue'
 import { useEventListener } from '@vueuse/core'
 import { useTheme, useTools, useZIndex } from '@hooks'
-import { isEmpty } from '@utils/common'
+import { isEmpty } from 'lodash-es'
 
 export default defineComponent({
 	props: {

@@ -147,22 +147,6 @@
 			</me-tooltip>
 		</me-space>
 	</me-space>
-
-	<me-menu v-model:value="selectMenu" height="calc(100vh - 60px)" top="60">
-		<me-menu-item value="home">首页</me-menu-item>
-		<me-menu-item value="components">高级组件</me-menu-item>
-		<me-menu-item value="shop">商店</me-menu-item>
-		<me-menu-item value="other">其他</me-menu-item>
-		<me-menu-item value="document">我的文档</me-menu-item>
-	</me-menu>
-	<me-menu v-model:value="selectMenu" height="60px" width="100vw" mode="horizontal">
-		<me-menu-item value="home">首页</me-menu-item>
-		<me-menu-item value="components">高级组件组件</me-menu-item>
-		<me-menu-item value="shop">商店</me-menu-item>
-		<me-menu-item value="other">其他</me-menu-item>
-		<me-menu-item value="document">我的文档</me-menu-item>
-	</me-menu>
-	首页
 </template>
 
 <script setup lang="ts">

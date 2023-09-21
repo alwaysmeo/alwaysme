@@ -10,7 +10,6 @@ import { Tag } from './components/Tag'
 import { Switch } from './components/Switch'
 import { Space } from './components/Space'
 import { Tooltip } from './components/Tooltip'
-import { Menu } from './components/Menu'
 
 export default [
 	Icon,
@@ -24,6 +23,5 @@ export default [
 	Tag,
 	Switch,
 	Space,
-	Tooltip,
-	Menu
+	Tooltip
 ]
