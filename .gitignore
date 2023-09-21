@@ -1,0 +1,15 @@
+design/stats.html
+design/package-lock.json
+design/node_modules
+design/dist
+design/docs
+
+# Editor directories and files
+.vscode/*
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
