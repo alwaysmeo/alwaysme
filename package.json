@@ -12,5 +12,15 @@
 	"homepage": "https://www.alwaysme.org",
 	"author": "AlwaysMeo <hello2000@vip.qq.com>",
 	"license": "MIT",
-	"repository": "https://github.com/Alwaysmeo/Alwaysme.git"
+	"repository": "https://github.com/Alwaysmeo/Alwaysme.git",
+	"scripts": {
+		"clean": "rimraf ./design/dist && rimraf ./design/docs",
+		"clean:dist": "rimraf ./design/dist",
+		"clean:docs": "rimraf ./design/docs",
+		"dev": "pnpm run --filter ./design/packages dev",
+		"build": "npm run clean:dist && pnpm run --filter ./design/packages build",
+		"dev:docs": "pnpm run --filter ./design/document dev",
+		"build:docs": "npm run clean:docs && pnpm run --filter ./design/document build",
+		"lint": "pnpm run --filter ./design/packages lint"
+	}
 }

@@ -31,11 +31,12 @@
 	],
 	"repository": "https://github.com/Alwaysmeo/Alwaysme.git",
 	"scripts": {
+		"clean": "rimraf ./dist && rimraf ./docs",
 		"clean:dist": "rimraf ./dist",
 		"clean:docs": "rimraf ./docs",
 		"dev": "pnpm run --filter ./packages dev",
-		"dev:docs": "pnpm run --filter ./document dev",
 		"build": "npm run clean:dist && pnpm run --filter ./packages build",
+		"dev:docs": "pnpm run --filter ./document dev",
 		"build:docs": "npm run clean:docs && pnpm run --filter ./document build",
 		"lint": "pnpm run --filter ./packages lint"
 	},
